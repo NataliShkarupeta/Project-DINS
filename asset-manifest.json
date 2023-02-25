@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Project-DINS/static/css/main.7acaea2f.css",
+    "main.js": "/Project-DINS/static/js/main.8a71f990.js",
+    "index.html": "/Project-DINS/index.html",
+    "main.7acaea2f.css.map": "/Project-DINS/static/css/main.7acaea2f.css.map",
+    "main.8a71f990.js.map": "/Project-DINS/static/js/main.8a71f990.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.8a71f990.js"
+  ]
+}
