@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <Head>
       <p>Logo</p>
-      <p>Шкарупета Наталія</p>
+      <p> Наталі Шкарупета</p>
     </Head>
   );
 };
