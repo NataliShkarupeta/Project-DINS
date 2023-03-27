@@ -1,4 +1,4 @@
-
+import { motion } from 'framer-motion';
 import {
   H1,
   WrapHome,
@@ -9,55 +9,58 @@ import {
   Circle,
 } from './HomePage.styled';
 
+export const HomePage = () => {
+  return (
+    <WrapHome>
+      <div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        />
+        <Circle>https://framer.com/m/framer/Globe.js</Circle>
+        <Circle></Circle>
+        <Circle></Circle>
+      </div>
+      <div>
+        <H1>
+          Наталі
+          <br />
+          Шкарупета
+        </H1>
+        <p>
+          {' '}
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nisi
+          beatae neque nam architecto! Vero esse vel doloremque eum facere
+          placeat eaque dolores voluptatem. Soluta fugit nihil quis odit
+          reprehenderit.
+        </p>
+      </div>
+      <WrapLinks>
+        <Ul>
+          <Li>
+            <NavigationLink to="/developer">Front-end розробник</NavigationLink>
+          </Li>
+          <Li>
+            <NavigationLink to="/painting"> Художник</NavigationLink>
+          </Li>
+          <Li>
+            <NavigationLink to="/astrology">Астролог</NavigationLink>
+          </Li>
+          <Li>
+            <NavigationLink to="/beauty">
+              Майстер з нарощування вій
+            </NavigationLink>
+          </Li>
+          <Li>
+            <NavigationLink to="/beauty">?</NavigationLink>
+          </Li>
+          <Li>
+            <NavigationLink to="/beauty">?</NavigationLink>
+          </Li>
+        </Ul>
+      </WrapLinks>
+    </WrapHome>
+  );
+};
 
-export const HomePage=()=>{
-    return (
-      <WrapHome>
-        <div>
-          <Circle></Circle>
-          <Circle></Circle>
-          <Circle></Circle>
-        </div>
-        <div>
-          <H1>
-            Наталі
-            <br />
-            Шкарупета
-          </H1>
-          <p>
-            {' '}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            nisi beatae neque nam architecto! Vero esse vel doloremque eum
-            facere placeat eaque dolores voluptatem. Soluta fugit nihil quis
-            odit reprehenderit.
-          </p>
-        </div>
-        <WrapLinks>
-          <Ul>
-            <Li>
-              <NavigationLink to="/developer">
-                Front-end розробник
-              </NavigationLink>
-            </Li>
-            <Li>
-              <NavigationLink to="/painting"> Художник</NavigationLink>
-            </Li>
-            <Li>
-              <NavigationLink to="/astrology">Астролог</NavigationLink>
-            </Li>
-            <Li>
-              <NavigationLink to="/beauty">
-                Майстер з нарощування вій
-              </NavigationLink>
-            </Li>
-            <Li>
-              <NavigationLink to="/beauty">?</NavigationLink>
-            </Li>
-            <Li>
-              <NavigationLink to="/beauty">?</NavigationLink>
-            </Li>
-          </Ul>
-        </WrapLinks>
-      </WrapHome>
-    );
-}
