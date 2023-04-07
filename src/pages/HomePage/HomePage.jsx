@@ -18,7 +18,7 @@ export const HomePage = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         />
-        <Circle>https://framer.com/m/framer/Globe.js</Circle>
+        {/* <Circle>https://framer.com/m/framer/Globe.js</Circle> */}
         <Circle></Circle>
         <Circle></Circle>
       </div>

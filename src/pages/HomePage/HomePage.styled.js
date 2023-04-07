@@ -28,28 +28,28 @@ export const H1 = styled.h1`
 `;
 
 export const WrapLinks = styled.div`
-  width: 40%;
+  /* width: 40%;
   margin: ${p => p.theme.space[0]}px;
-  padding: ${p => p.theme.space[0]}px;
-  text-align: left;
+  padding: ${p => p.theme.space[0]}px; */
+  /* text-align: left; */
 `;
 
 export const Ul = styled.ul`
-  list-style: none;
-  margin: ${p => p.theme.space[0]}px;
+  /* list-style: none; */
+  /* margin: ${p => p.theme.space[0]}px;
   padding: ${p => p.theme.space[0]}px;
   font-family: ${p => p.theme.fonts.monospace};
   font-size: ${p => p.theme.fontSizes[5]}px;
-  font-weight: ${p => p.theme.fontWeights.bold};
+  font-weight: ${p => p.theme.fontWeights.bold}; */
 `;
 export const Li = styled.li`
-  display: block;
-  height: 45px;
-  margin: ${p => p.theme.space[1]}px;
-  padding: ${p => p.theme.space[2]}px;
-  background-color: ${p => p.theme.colors.accent};
+  /* display: block;
+  height: 45px; */
+  /* margin: ${p => p.theme.space[1]}px;
+  padding: ${p => p.theme.space[2]}px; */
+  /* background-color: ${p => p.theme.colors.accent};
   border: ${p => p.theme.borders.normal};
-  border-radius: ${p => p.theme.radii.normal};
+  border-radius: ${p => p.theme.radii.normal}; */
   
   :hover,
   :focus {
