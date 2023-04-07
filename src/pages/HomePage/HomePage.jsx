@@ -2,11 +2,10 @@ import { motion } from 'framer-motion';
 import {
   H1,
   WrapHome,
-  WrapLinks,
-  Ul,
-  Li,
-  NavigationLink,
-  Circle,
+  // WrapLinks,
+  // Ul,
+  // Li,
+  // NavigationLink,
 } from './HomePage.styled';
 
 export const HomePage = () => {
@@ -18,9 +17,7 @@ export const HomePage = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         />
-        {/* <Circle>https://framer.com/m/framer/Globe.js</Circle> */}
-        <Circle></Circle>
-        <Circle></Circle>
+    
       </div>
       <div>
         <H1>
@@ -36,7 +33,7 @@ export const HomePage = () => {
           reprehenderit.
         </p>
       </div>
-      <WrapLinks>
+      {/* <WrapLinks>
         <Ul>
           <Li>
             <NavigationLink to="/developer">Front-end розробник</NavigationLink>
@@ -59,7 +56,7 @@ export const HomePage = () => {
             <NavigationLink to="/beauty">?</NavigationLink>
           </Li>
         </Ul>
-      </WrapLinks>
+      </WrapLinks> */}
     </WrapHome>
   );
 };
