@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Project-DINS/static/css/main.7acaea2f.css",
-    "main.js": "/Project-DINS/static/js/main.464bdc0a.js",
+    "main.css": "/Project-DINS/static/css/main.db067486.css",
+    "main.js": "/Project-DINS/static/js/main.2e905199.js",
     "index.html": "/Project-DINS/index.html",
-    "main.7acaea2f.css.map": "/Project-DINS/static/css/main.7acaea2f.css.map",
-    "main.464bdc0a.js.map": "/Project-DINS/static/js/main.464bdc0a.js.map"
+    "main.db067486.css.map": "/Project-DINS/static/css/main.db067486.css.map",
+    "main.2e905199.js.map": "/Project-DINS/static/js/main.2e905199.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.464bdc0a.js"
+    "static/css/main.db067486.css",
+    "static/js/main.2e905199.js"
   ]
 }
