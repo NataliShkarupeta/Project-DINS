@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Project-DINS/static/css/main.db067486.css",
-    "main.js": "/Project-DINS/static/js/main.2e905199.js",
+    "main.js": "/Project-DINS/static/js/main.d7827adf.js",
     "index.html": "/Project-DINS/index.html",
     "main.db067486.css.map": "/Project-DINS/static/css/main.db067486.css.map",
-    "main.2e905199.js.map": "/Project-DINS/static/js/main.2e905199.js.map"
+    "main.d7827adf.js.map": "/Project-DINS/static/js/main.d7827adf.js.map"
   },
   "entrypoints": [
     "static/css/main.db067486.css",
-    "static/js/main.2e905199.js"
+    "static/js/main.d7827adf.js"
   ]
 }
