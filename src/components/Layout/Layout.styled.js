@@ -7,5 +7,5 @@ export const WrapBody = styled.div`
 `;
 
 export const WrapMain = styled.main`
-  flex-grow: 1;
+  /* flex-grow: 1; */
 `;
