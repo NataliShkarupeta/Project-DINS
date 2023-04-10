@@ -27,7 +27,8 @@ export const theme = {
     background: '#4B0082',
     accent: '#FFE4B5',
     primary: '',
-    secondary: '#9370DB',
+    // secondary: '#9370DB',
+    secondary:'#d6d0d9',
     muted: 'transparent',
     modes: {
       dark: {
