@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import {
   H1,
-  WrapHome,
+  NameAndPhoto,
+  PhotoWrap,
+  Article,
+  ButtonUnderArticle,
   // WrapLinks,
   // Ul,
   // Li,
@@ -10,28 +13,38 @@ import {
 
 export const HomePage = () => {
   return (
-    <WrapHome>
+    <>
       <div>
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         />
-    
       </div>
-      <div>
+      <NameAndPhoto>
         <H1>
           Наталі
           <br />
           Шкарупета
         </H1>
-        <p>
+        <PhotoWrap>
+          <img
+            src={require('../../images/author/IMG_0043.jpg')}
+            width="340"
+            height="340"
+            alt="Фотографія автора"
+          />
+        </PhotoWrap>
+      </NameAndPhoto>
+      <div>
+        <Article>
           {' '}
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nisi
           beatae neque nam architecto! Vero esse vel doloremque eum facere
           placeat eaque dolores voluptatem. Soluta fugit nihil quis odit
           reprehenderit.
-        </p>
+        </Article>
+        <ButtonUnderArticle>Дізнатись більше</ButtonUnderArticle>
       </div>
       {/* <WrapLinks>
         <Ul>
@@ -57,7 +70,6 @@ export const HomePage = () => {
           </Li>
         </Ul>
       </WrapLinks> */}
-    </WrapHome>
+    </>
   );
 };
-

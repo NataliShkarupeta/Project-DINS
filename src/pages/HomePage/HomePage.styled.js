@@ -7,6 +7,36 @@ const fontStyles = css`
   font-weight: ${p => p.theme.fontWeights.heading};
 `;
 
+export const NameAndPhoto = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: ${p => p.theme.space[4]}px;
+`;
+export const PhotoWrap = styled.div`
+  padding: ${p => p.theme.space[5]}px;
+  border: ${p => p.theme.borders.normal};
+  border-color: ${p => p.theme.colors.muted};
+  background-color: #8c3b19;
+`;
+
+export const Article = styled.article`
+  height: 250px;
+  padding: ${p => p.theme.space[3]}px;
+  /* background-color: ${p => p.theme.colors.secondary}; */
+  /* overflow-y: scroll; */
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 3px 7px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0);
+  margin-bottom: ${p => p.theme.space[3]}px;
+  position: relative;
+  
+`;
+
+export const ButtonUnderArticle=styled.button`
+position:absolute;
+right: 3.1%;
+`
+
 export const NavigationLink = styled(NavLink)`
   text-decoration: none;
   color: ${p => p.theme.colors.text};
@@ -26,8 +56,7 @@ export const WrapHome = styled.div`
 
 export const H1 = styled.h1`
   color: ${p => p.theme.colors.text};
-  margin: ${p => p.theme.space[0]}px;
-  padding: ${p => p.theme.space[0]}px;
+
   ${fontStyles}
 `;
 
@@ -52,14 +81,12 @@ export const Li = styled.li`
   /* background-color: ${p => p.theme.colors.accent};
   border: ${p => p.theme.borders.normal};
   border-radius: ${p => p.theme.radii.normal}; */
-  
+
   :hover,
   :focus {
     color: ${p => p.theme.colors.accent};
     background-color: ${p => p.theme.colors.secondary};
   }
-  
+
   transition: ${p => p.theme.transitions};
 `;
-
-
