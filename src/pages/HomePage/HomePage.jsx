@@ -1,10 +1,11 @@
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import {
-  H1,
+  Name,
   NameAndPhoto,
   PhotoWrap,
   Article,
   ButtonUnderArticle,
+  Motto,
   // WrapLinks,
   // Ul,
   // Li,
@@ -14,19 +15,31 @@ import {
 export const HomePage = () => {
   return (
     <>
-      <div>
+      <Motto>
+        З давніх давен життя називали рікою, кожен наступний метр вона не така
+        як була раніше, за рахунок нового складу грутну,притоків тощо ... <br />
+        Кожен новий день життя насичується чимось новим - думками, відчуттями,
+        знаннями. А якщо це зупинеться, як ріка перетвориться на болото, так і
+        життя почне закисати,гнити та вмирати.
+        <br />
+        Розвиток та розквіт-це обовїязок кожної людини, не зупиняйтесь!
+      </Motto>
+      {/* <div>
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         />
-      </div>
+      </div> */}
       <NameAndPhoto>
-        <H1>
-          Наталі
-          <br />
-          Шкарупета
-        </H1>
+        <p>
+          <Name>
+            Наталі
+            <br />
+            Шкарупета
+          </Name>
+        </p>
+
         <PhotoWrap>
           <img
             src={require('../../images/author/IMG_0043.jpg')}
