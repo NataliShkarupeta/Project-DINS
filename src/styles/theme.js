@@ -1,5 +1,7 @@
+
+
 export const theme = {
-   media: {
+  media: {
     extraLarge: '(max-width: 1140px)',
     large: '(max-width: 960px)',
     medium: '(max-width: 720px)',
@@ -8,7 +10,7 @@ export const theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'Noto Serif, sans-serif',
-    heading: 'Roboto, sans-serif',
+    heading: 'Roboto , sans-serif',
     monospace: 'monospace',
   },
 
@@ -24,11 +26,11 @@ export const theme = {
   },
   colors: {
     text: '#000000',
-    background: '#4B0082',
+    background: '#fff',
     accent: '#FFE4B5',
-    primary: '',
-    // secondary: '#9370DB',
-    secondary:'#d6d0d9',
+    primary: '#8c3b19',
+    // secondary: '#8c3b19',
+    secondary: '#d6d0d9',
     muted: 'transparent',
     modes: {
       dark: {
@@ -77,7 +79,6 @@ export const theme = {
   },
   transitions: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
 };
-
 
 export const themeSecond = {
   colors: {
