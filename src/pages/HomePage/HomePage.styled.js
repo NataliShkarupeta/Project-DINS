@@ -19,6 +19,7 @@ export const Motto = styled.span`
 
 export const NameAndPhoto = styled.div`
   display: flex;
+  gap: 20px;
   justify-content: space-around;
   align-items: center;
   margin-bottom: ${p => p.theme.space[4]}px;
@@ -64,6 +65,7 @@ export const WrapHome = styled.div`
 `;
 
 export const Name = styled.span`
+
   font-weight: bold;
   font-size: 10em;
   color: #f5f5f5;
@@ -90,6 +92,7 @@ export const Name = styled.span`
       white -0.15em -0.1em 100px;
   }
   font-family: ${p => p.theme.fonts.monospace};
+ 
 `;
 
 export const WrapLinks = styled.div`
