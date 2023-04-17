@@ -1,44 +1,28 @@
-// import { motion } from 'framer-motion';
 import {
   Name,
   NameAndPhoto,
   PhotoWrap,
   Article,
   ButtonUnderArticle,
+  WrapName,
   Motto,
-  // WrapLinks,
-  // Ul,
-  // Li,
-  // NavigationLink,
 } from './HomePage.styled';
+import { useTranslation } from 'react-i18next';
 
-export const HomePage = () => {
+export const HomePage = ({ setMore }) => {
+  const [t] = useTranslation();
+
   return (
     <>
-      <Motto>
-        З давніх давен життя називали рікою, кожен наступний метр вона не така
-        як була раніше, за рахунок нового складу грутну,притоків тощо ... <br />
-        Кожен новий день життя насичується чимось новим - думками, відчуттями,
-        знаннями. А якщо це зупинеться, як ріка перетвориться на болото, так і
-        життя почне закисати,гнити та вмирати.
-        <br />
-        Розвиток та розквіт - це обовїязок кожної людини, не зупиняйтесь!
-      </Motto>
-      {/* <div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        />
-      </div> */}
+      <Motto>{t('info')}</Motto>
       <NameAndPhoto>
-        <div>
+        <WrapName>
           <Name>
-            Наталі
+            {t('firstName')}
             <br />
-            Шкарупета
+            {t('secondName')}
           </Name>
-        </div>
+        </WrapName>
 
         <PhotoWrap>
           <img
@@ -52,37 +36,12 @@ export const HomePage = () => {
       <div>
         <Article>
           {' '}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nisi
-          beatae neque nam architecto! Vero esse vel doloremque eum facere
-          placeat eaque dolores voluptatem. Soluta fugit nihil quis odit
-          reprehenderit.
+          {t('aboutMe')} <br /> {t('aboutMe1')}
         </Article>
-        <ButtonUnderArticle>Дізнатись більше</ButtonUnderArticle>
+        <ButtonUnderArticle onClick={() => setMore(true)}>
+          {t('textBut')}
+        </ButtonUnderArticle>
       </div>
-      {/* <WrapLinks>
-        <Ul>
-          <Li>
-            <NavigationLink to="/developer">Front-end розробник</NavigationLink>
-          </Li>
-          <Li>
-            <NavigationLink to="/painting"> Художник</NavigationLink>
-          </Li>
-          <Li>
-            <NavigationLink to="/astrology">Астролог</NavigationLink>
-          </Li>
-          <Li>
-            <NavigationLink to="/beauty">
-              Майстер з нарощування вій
-            </NavigationLink>
-          </Li>
-          <Li>
-            <NavigationLink to="/beauty">?</NavigationLink>
-          </Li>
-          <Li>
-            <NavigationLink to="/beauty">?</NavigationLink>
-          </Li>
-        </Ul>
-      </WrapLinks> */}
     </>
   );
 };

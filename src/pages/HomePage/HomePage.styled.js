@@ -7,6 +7,8 @@ import { NavLink } from 'react-router-dom';
 //   font-weight: ${p => p.theme.fontWeights.heading};
 // `;
 
+
+
 export const Motto = styled.span`
   display: block;
   font-family: ${p => p.theme.fonts.heading};
@@ -15,6 +17,7 @@ export const Motto = styled.span`
   /* width: ${p => p.theme.sizes[8]}px; */
   line-height: ${p => p.theme.lineHeights.heading};
   margin-bottom: ${p => p.theme.space[4]}px;
+  /* color: ${p => p.theme.colors.text}; */
 `;
 
 export const NameAndPhoto = styled.div`
@@ -28,14 +31,21 @@ export const PhotoWrap = styled.div`
   padding: ${p => p.theme.space[5]}px;
   border: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.muted};
-  background-color: #8c3b19;
+  background-color: ${p => p.theme.colors.primary};
+`;
+
+export const WrapName = styled.div`
+  /* width: 60%; */
 `;
 
 export const Article = styled.article`
   height: 250px;
   padding: ${p => p.theme.space[3]}px;
-  background-color: ${p => p.theme.colors.background};
+  background-color: ${p => p.theme.colors.modes.light.background};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  line-height: ${p => p.theme.lineHeights.heading};
   /* overflow-y: scroll; */
+  overflow: hidden;
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 3px 7px rgba(0, 0, 0, 0.3),
     inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0);
   margin-bottom: ${p => p.theme.space[3]}px;
@@ -48,15 +58,7 @@ export const ButtonUnderArticle = styled.button`
 `;
 
 export const NavigationLink = styled(NavLink)`
-  text-decoration: none;
-  color: ${p => p.theme.colors.text};
-
-  :hover,
-  :focus {
-    color: ${p => p.theme.colors.accent};
-    background-color: ${p => p.theme.colors.secondary};
-  }
-  transition: ${p => p.theme.transitions};
+  text-transform: uppercase;
 `;
 
 export const WrapHome = styled.div`
@@ -65,9 +67,9 @@ export const WrapHome = styled.div`
 `;
 
 export const Name = styled.span`
-
   font-weight: bold;
-  font-size: 10em;
+  /* font-size: 9em; */
+  font-size: 120px;
   color: #f5f5f5;
   transform: rotateX(35deg) rotateZ(1deg);
   text-shadow: white 0.006em 0.006em 0.007em, #9c9c9c 1px 1px 1px,
@@ -91,37 +93,33 @@ export const Name = styled.span`
       rgba(16, 16, 16, 0.2) 1px 46px 65px, rgba(16, 16, 16, 0.4) 1px 50px 95px,
       white -0.15em -0.1em 100px;
   }
-  font-family: ${p => p.theme.fonts.monospace};
- 
+  font-family: ${p => p.theme.fonts.body};
+  color: ${p => p.theme.colors.modes.dark.primary};
 `;
 
 export const WrapLinks = styled.div`
-  /* width: 40%;
+
  
-  /* text-align: left; */
 `;
 
 export const Ul = styled.ul`
-  /* list-style: none; */
-
-  /* font-family: ${p => p.theme.fonts.monospace};
-  font-size: ${p => p.theme.fontSizes[5]}px;
-  font-weight: ${p => p.theme.fontWeights.bold}; */ */
+  font-family: ${p => p.theme.fonts.monospase};
+  list-style: none;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  gap: 35px;
 `;
 export const Li = styled.li`
-  /* display: block;
-  height: 45px; */
-  /* margin: ${p => p.theme.space[1]}px;
-  padding: ${p => p.theme.space[2]}px; */
-  /* background-color: ${p => p.theme.colors.accent};
-  border: ${p => p.theme.borders.normal};
-  border-radius: ${p => p.theme.radii.normal}; */
-
+  font-size: ${p => p.theme.fontSizes[1]}px;
   :hover,
   :focus {
-    color: ${p => p.theme.colors.accent};
-    background-color: ${p => p.theme.colors.secondary};
+    color: ${p => p.theme.colors.modes.dark.primary};
+    text-shadow: 2px 3px 11px rgba(0, 0, 0, 0.72);
+    /* background-color: ${p => p.theme.colors.secondary}; */
+
+    transform: scale(1.3);
   }
 
-  transition: ${p => p.theme.transitions};
+  transition: 0.3s linear; ;
 `;
