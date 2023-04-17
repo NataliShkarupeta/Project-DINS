@@ -1,0 +1,25 @@
+{
+  "text": "write text",
+  "info": "Since ancient times, life has been called a river, every next meter it is not the same as it was before, due to the new composition of the soil, tributaries, etc. Every new day of life is filled with something new - thoughts, feelings, knowledge. And if this stops, just as the river turns into a swamp, so life will begin to sour, rot and die. Development and prosperity is the duty of every person.",
+  "name": "Natali Shkarupeta",
+  "email": "send me letter",
+  "firstName": "Natali",
+  "secondName": "Shkarupeta",
+  "footer": {
+    "date": "Today is {{date, DATE_HUGE}}",
+    "date_morning": "Good morning! Today is {{date, DATE_HUGE}} | Have a nice day!",
+    "date_afternoon": "Good afternoon! It's {{date, DATE_HUGE}}",
+    "date_evening": "Good evening! Today was the {{date, DATE_HUGE}}"
+  },
+  "textBut":"To learn more",
+  "aboutMe":"Welcome to my website :). I am a person who will never get tired of learning about life, looking for answers to questions that arise, and I will never stop developing myself as a being created in the image and likeness of God.",
+  "aboutMe1":"Many years ago, I got acquainted with an ancient culture, according to the philosophy of which, man is an incredible creature that is constantly developing and changing. A person is a process, so say modern yogis!According to this, life is a constant assimilation of energies and their transformation into material - into physical abilities, eventually talents (of course not without a spiritual aspect, but this topic is worth a separate site:)). And I support it!!! The time of our upbringing somehow created the illusion that a person should choose one profession for the rest of his life, which I do not agree with one hundred percent! Such a restriction stops and condemns to a pure existence, and it contradicts the laws of evolution. In my opinion, we should start learning from what our teachers stopped at, in everything - then knowledge and thought will be forced to move on. ",
+   "professions":{
+      "dev":"developer",
+      "art":"artist",
+      "astr":"astrologer",
+      "lash":"lashmaker",
+      "teacher":"educator",
+      "herb":"herbal"
+ }
+}

@@ -5,21 +5,16 @@ import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 import { theme, themeSecond } from '../styles/theme';
 import { useState } from 'react';
-
+import { LearnMore } from './LearnMore/LearnMore'; 
+// import { useTranslation } from 'react-i18next';
 
 export const App = () => {
-const [mainThema, setMainThema]=useState(true)
+  const [mainThema, setMainThema] = useState(true);
+  const[more,setMore]=useState(false)
 
   return (
     <>
-      <ThemeProvider theme={ mainThema ? theme : themeSecond}>
-        <div
-          onClick={() => {
-            setMainThema(!mainThema);
-          }}
-        >
-          Click
-        </div>
+      <ThemeProvider theme={mainThema ? theme : themeSecond}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>Natali Shkarupera</title>
@@ -27,8 +22,13 @@ const [mainThema, setMainThema]=useState(true)
           <meta name="description" content="Natali Shkarupera" />
         </Helmet>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
+          <Route path="/" element={<Layout setMainThema={setMainThema} />}>
+            <Route
+              index
+              element={
+                !more ? <HomePage setMore={setMore} /> : <LearnMore setMore ={setMore}/>
+              }
+            />
             <Route path="developer"></Route>
             <Route path="painting"></Route>
             <Route path="astrology"></Route>

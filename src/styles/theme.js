@@ -26,8 +26,10 @@ export const theme = {
   },
   colors: {
     text: '#000000',
-    background: '#fff',
-    accent: '#FFE4B5',
+    background: '#faf9f7',
+    // background: '#fff',
+    // accent: '#FFE4B5',
+    accent: '',
     primary: '#8c3b19',
     // secondary: '#8c3b19',
     secondary: '#d6d0d9',
@@ -36,13 +38,13 @@ export const theme = {
       dark: {
         text: '#fff',
         background: '#000',
-        primary: '',
-        secondary: '',
+        primary: '#8c3b19',
+        secondary: '#d6d0d9',
         muted: '',
       },
       light: {
         text: '',
-        background: '',
+        background: '#fff',
       },
     },
   },
@@ -82,9 +84,23 @@ export const theme = {
 
 export const themeSecond = {
   colors: {
-    text: 'red',
-    background: 'blue',
-    accent: '#FFE4B5',
+    text: '#2c9241',
+    background: 'black',
+    accent: '',
+    primary: 'black',
+    secondary: '',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+        primary: '#d6d0d9',
+        secondary: '#215711',
+        muted: '',
+      },
+      light: {
+        background: '',
+      },
+    },
   },
   media: {
     extraLarge: '(max-width: 1140px)',
