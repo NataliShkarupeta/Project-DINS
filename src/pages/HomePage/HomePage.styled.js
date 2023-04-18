@@ -7,8 +7,6 @@ import { NavLink } from 'react-router-dom';
 //   font-weight: ${p => p.theme.fontWeights.heading};
 // `;
 
-
-
 export const Motto = styled.span`
   display: block;
   font-family: ${p => p.theme.fonts.heading};
@@ -31,7 +29,7 @@ export const PhotoWrap = styled.div`
   padding: ${p => p.theme.space[5]}px;
   border: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.muted};
-  background-color: ${p => p.theme.colors.primary};
+  background-color: ${p => p.theme.colors.secondary};
 `;
 
 export const WrapName = styled.div`
@@ -59,6 +57,9 @@ export const ButtonUnderArticle = styled.button`
 
 export const NavigationLink = styled(NavLink)`
   text-transform: uppercase;
+  &.active {
+    color: purple;
+  }
 `;
 
 export const WrapHome = styled.div`
@@ -97,16 +98,13 @@ export const Name = styled.span`
   color: ${p => p.theme.colors.modes.dark.primary};
 `;
 
-export const WrapLinks = styled.div`
-
- 
-`;
+export const WrapLinks = styled.div``;
 
 export const Ul = styled.ul`
   font-family: ${p => p.theme.fonts.monospase};
   list-style: none;
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 35px;
 `;
@@ -115,7 +113,7 @@ export const Li = styled.li`
   :hover,
   :focus {
     color: ${p => p.theme.colors.modes.dark.primary};
-    text-shadow: 2px 3px 11px rgba(0, 0, 0, 0.72);
+    text-shadow: -0.5px 1px 0.1px rgba(0, 0, 0, 0.72);
     /* background-color: ${p => p.theme.colors.secondary}; */
 
     transform: scale(1.3);

@@ -39,7 +39,7 @@ export const HomePage = ({ setMore }) => {
           {t('aboutMe')} <br /> {t('aboutMe1')}
         </Article>
         <ButtonUnderArticle onClick={() => setMore(true)}>
-          {t('textBut')}
+          {t('button.textBut')}
         </ButtonUnderArticle>
       </div>
     </>

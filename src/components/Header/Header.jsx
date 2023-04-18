@@ -8,9 +8,11 @@ import {
   NavigationLink,
 } from 'pages/HomePage/HomePage.styled';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 export const Header = () => {
   const [t] = useTranslation();
+ const location = useLocation();
 
   const pVariants = {
     hidden: { opacity: 0, scale: 0.5 },
@@ -30,7 +32,7 @@ export const Header = () => {
         animate={'visible'}
         transition={{
           duration: 1.5,
-          delay:0.5,
+          delay: 0.5,
           // reteat: Infinity,
           // repeatType: 'reverse',
           // type: 'tween',
@@ -44,32 +46,32 @@ export const Header = () => {
       <WrapLinks>
         <Ul>
           <Li>
-            <NavigationLink to="/developer">
+            <NavigationLink to="/developer" state={{ from: location }}>
               front-end {t('professions.dev')}
             </NavigationLink>
           </Li>
           <Li>
-            <NavigationLink to="/painting">
+            <NavigationLink to="/painting" state={{ from: location }}>
               {t('professions.art')}
             </NavigationLink>
           </Li>
           <Li>
-            <NavigationLink to="/astrology">
+            <NavigationLink to="/astrology" state={{ from: location }}>
               {t('professions.astr')}
             </NavigationLink>
           </Li>
           <Li>
-            <NavigationLink to="/beauty">
+            <NavigationLink to="/beauty" state={{ from: location }}>
               {t('professions.lash')}
             </NavigationLink>
           </Li>
           <Li>
-            <NavigationLink to="/educator">
+            <NavigationLink to="/educator" state={{ from: location }}>
               {t('professions.teacher')}
             </NavigationLink>
           </Li>
           <Li>
-            <NavigationLink to="/health">
+            <NavigationLink to="/health" state={{ from: location }}>
               {t('professions.herb')}
             </NavigationLink>
           </Li>
@@ -89,7 +91,7 @@ export const Header = () => {
               e.preventDefault();
             }}
           >
-            {t('email')}
+            {t('button.email')}
           </ButtonEmail>
         </>
       </WrapSender>
