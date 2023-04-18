@@ -38,7 +38,7 @@ export const theme = {
       dark: {
         text: '#fff',
         background: '#000',
-        primary: '#8c3b19',
+        primary: '#d6d0d9',
         secondary: '#d6d0d9',
         muted: '',
       },
