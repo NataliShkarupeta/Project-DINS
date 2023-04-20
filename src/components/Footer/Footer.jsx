@@ -40,13 +40,13 @@ export const Footer = () => {
         <TextConnect>{t('footer.connect_me')}</TextConnect>
         <Ul>
           <motion.li
-            initial={{ opacity: 0.6 }}
-            whileHover={{
-              scale: 1.2,
-              transition: { duration: 1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            whileInView={{ opacity: 1 }}
+            // initial={{ opacity: 0.6 }}
+            // whileHover={{
+            //   scale: 1.2,
+            //   transition: { duration: 1 },
+            // }}
+            // whileTap={{ scale: 0.9 }}
+            // whileInView={{ opacity: 1 }}
           >
             <ButtonLin>
               <a
@@ -59,13 +59,13 @@ export const Footer = () => {
             </ButtonLin>
           </motion.li>
           <motion.li
-            initial={{ opacity: 0.6 }}
-            whileHover={{
-              scale: 1.2,
-              transition: { duration: 0.5 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            whileInView={{ opacity: 1 }}
+            // initial={{ opacity: 0.6 }}
+            // whileHover={{
+            //   scale: 1.2,
+            //   transition: { duration: 0.5 },
+            // }}
+            // whileTap={{ scale: 0.9 }}
+            // whileInView={{ opacity: 1 }}
           >
             <ButtonInst>
               <a
@@ -78,13 +78,13 @@ export const Footer = () => {
             </ButtonInst>
           </motion.li>
           <motion.li
-            initial={{ opacity: 0.6 }}
-            whileHover={{
-              scale: 1.2,
-              transition: { duration: 1 },
-            }}
-            whileTap={{ scale: 0.9 }}
-            whileInView={{ opacity: 1 }}
+            // initial={{ opacity: 0.6 }}
+            // whileHover={{
+            //   scale: 1.2,
+            //   transition: { duration: 1 },
+            // }}
+            // whileTap={{ scale: 0.9 }}
+            // whileInView={{ opacity: 1 }}
           >
             <ButtonTel initial={{}}>
               <a

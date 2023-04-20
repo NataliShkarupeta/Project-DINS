@@ -6,6 +6,20 @@ export const BlockUnderLine = styled.div`
   margin-bottom: ${p => p.theme.space[4]}px;
 `;
 
+export const Blog = styled.div`
+  margin-bottom: ${p => p.theme.space[2]}px;
+  text-align: center;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(14, 174, 87, 1) 0%,
+    rgba(12, 116, 117, 1) 90%
+  );
+  color: ${p => p.theme.colors.modes.dark.text};
+  padding: ${p => p.theme.space[2]}px;
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  line-height: ${p => p.theme.lineHeights.heading};
+`;
+
 export const WrapMoonAndSun = styled.div`
   display: flex;
   gap: 5px;
@@ -40,9 +54,7 @@ export const Background = styled.div`
 `;
 
 export const WrapMain = styled.main`
-  /* flex-grow: 1; */
   padding: 20px 0 0;
-
   padding-left: ${p => p.theme.space[4]}px;
   padding-right: ${p => p.theme.space[4]}px;
   margin-bottom: ${p => p.theme.space[5]}px;
