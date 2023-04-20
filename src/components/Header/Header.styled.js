@@ -1,21 +1,20 @@
 import styled from 'styled-components';
 
 export const Head = styled.header`
-  padding: ${p => p.theme.space[2]}px;
-
+  padding: ${p => p.theme.space[3]}px;
+  height: 100px;
   align-items: center;
   display: flex;
+  gap: 10px;
   justify-content: space-between;
   border-bottom: ${p => p.theme.borders.normal};
   box-shadow: 0px 8px 21px rgba(61, 29, 29, 0.25);
-
 `;
 
 export const WrapSender = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-
 `;
 
 export const SmallWrap = styled.div`
@@ -23,7 +22,6 @@ export const SmallWrap = styled.div`
 
   align-items: center;
   gap: 5px;
- 
 `;
 
 export const ButtonEmail = styled.button`

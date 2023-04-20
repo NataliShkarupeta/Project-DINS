@@ -32,6 +32,13 @@ const stylesBut = css`
   width: 50px;
   height: 50px;
   padding: 0;
+  transition: 0.3s linear;
+
+  :hover,
+  :focus {
+    transform: scale(1.2);
+    transition: 0.3s linear;
+  }
 `;
 
 export const ButtonInst = styled.button`

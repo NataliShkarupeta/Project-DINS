@@ -15,7 +15,7 @@ export const Motto = styled.span`
   /* width: ${p => p.theme.sizes[8]}px; */
   line-height: ${p => p.theme.lineHeights.heading};
   margin-bottom: ${p => p.theme.space[4]}px;
-  /* color: ${p => p.theme.colors.text}; */
+  margin-top: ${p => p.theme.space[4]}px;
 `;
 
 export const NameAndPhoto = styled.div`

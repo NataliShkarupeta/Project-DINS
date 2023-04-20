@@ -35,7 +35,6 @@ export const HomePage = ({ setMore }) => {
       </NameAndPhoto>
       <div>
         <Article>
-          {' '}
           {t('aboutMe')} <br /> {t('aboutMe1')}
         </Article>
         <ButtonUnderArticle onClick={() => setMore(true)}>
