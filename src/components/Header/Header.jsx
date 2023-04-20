@@ -80,7 +80,6 @@ export const Header = () => {
 
       <WrapSender>
         <SmallWrap>
-          {' '}
           <FaEnvelope />
           <p>{t('name')}</p>
         </SmallWrap>
@@ -98,3 +97,7 @@ export const Header = () => {
     </Head>
   );
 };
+
+
+// приклад випадаючого меню для мобілки https://codesandbox.io/s/framer-motion-side-menu-mx2rw?from-embed=&file=/src/Example.tsx
+// https://www.framer.com/motion/examples/

@@ -51,7 +51,10 @@ export const App = () => {
               }
             />
             <Route path="developer" element={<FrontEndPage />}></Route>
-            <Route path="painting" element={<PaintingPage />}></Route>
+            <Route path="painting" element={<PaintingPage />}>
+              <Route path="painting/social-project" />
+              <Route path="painting/my-gallary" />
+            </Route>
             <Route path="astrology" element={<AstrologyPage />}></Route>
             <Route path="beauty" element={<BeautyPage />}></Route>
             <Route path="educator" element={<EducatorPage />}></Route>

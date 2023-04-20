@@ -84,6 +84,7 @@ a {
 }
 
 body {
+    /* background-image:url('images/Depositphotos_211953146_XL\ \(1\).jpg'); */
   /* color: #000000; */
   /* font-family: 'Circe', sans-serif; */
   /* padding: 20px 0 0; */
@@ -93,3 +94,7 @@ body {
   /* height: 100%;
   width: 100%; */
 }  
+
+/* html{
+ background-image:url('images/Depositphotos_211953146_XL\ \(1\).jpg');
+} */

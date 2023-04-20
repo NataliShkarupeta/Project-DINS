@@ -30,6 +30,12 @@ export const ButtonTranslate = styled.button`
 
 export const Background = styled.div`
   color: ${p => p.theme.colors.text};
+  /* background-image: linear-gradient(
+    174.2deg,
+    rgba(255, 244, 228, 1) 7.1%,
+    rgba(240, 246, 238, 1) 67.4%
+  ); */
+
   background-color: ${p => p.theme.colors.background};
 `;
 
