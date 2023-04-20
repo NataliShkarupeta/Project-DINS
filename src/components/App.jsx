@@ -64,7 +64,7 @@ export const App = () => {
             <Route path="beauty" element={<BeautyPage />}></Route>
             <Route path="educator" element={<EducatorPage />}></Route>
             <Route path="health" element={<HealthPage />}></Route>
-            <Route path="*" />
+            <Route path="*" element={<HomePage/>}/>
           </Route>
         </Routes>
       </ThemeProvider>

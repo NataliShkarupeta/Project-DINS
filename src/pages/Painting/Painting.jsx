@@ -1,7 +1,7 @@
 import { ButtonHome } from 'components/ButtonHome/ButtonHome';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { NavigationLink } from 'pages/HomePage/HomePage.styled';
+// import { NavigationLink } from 'pages/HomePage/HomePage.styled';
 import { Ul } from './Painting.styled';
 
 const PaintingPage = () => {
@@ -15,14 +15,14 @@ const PaintingPage = () => {
       </Link>
       <Ul>
         <li>
-          <NavigationLink to={'/painting'}>
+          <NavLink to={'/painting'}>
             <h3>{t('paintin_page.paintinTitle1')}</h3>
-          </NavigationLink>
+          </NavLink>
         </li>
         <li>
-          <NavigationLink to={'/painting/my-gallary'}>
+          <NavLink to={'/painting/my-gallary'}>
             <h3>{t('paintin_page.paintinTitle2')}</h3>
-          </NavigationLink>
+          </NavLink>
         </li>
       </Ul>
       <Outlet />
