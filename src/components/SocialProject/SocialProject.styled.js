@@ -6,6 +6,8 @@ export const WrapSections = styled.div`
   gap: 10px;
 `;
 
+
+
 export const SectionMain = styled.section`
   width: 75%;
   border-right: ${p => p.theme.borders.normal};
@@ -15,12 +17,19 @@ export const SectionMain = styled.section`
   padding: ${p => p.theme.space[2]}px;
 `;
 export const WrapPhoto = styled.div`
-
   display: flex;
-  gap:5px;
+  gap: 5px;
+  margin-bottom: ${p => p.theme.space[4]}px;
+  align-items: flex-start;
 `;
 export const Img2 = styled.img`
-  /* flex: 1 1 160px; */
+`;
+export const Call = styled.h2`
+  display: inline-block;
+  text-shadow: 0 10px 5px #8c928f, 0 40px 60px #8c928f;
+  margin-bottom: ${p => p.theme.space[4]}px;
+  font-size: ${p => p.theme.fontSizes[5]}px;
+  color: ${p => p.theme.colors.modes.light.text};
 `;
 
 

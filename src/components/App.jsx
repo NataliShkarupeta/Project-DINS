@@ -18,6 +18,7 @@ const SocialProject = lazy(() =>
   import('components/SocialProject/SocialProject')
 );
 const Gallary = lazy(() => import('components/Gallery/Gallery'));
+const BlogPage = lazy(() => import('pages/Blog/Blog'));
 
 export const App = () => {
   const [mainThema, setMainThema] = useState(true);
@@ -59,12 +60,12 @@ export const App = () => {
               <Route index element={<SocialProject />} />
               <Route path="my-gallary" element={<Gallary />} />
             </Route>
-            <Route path="blog"></Route>
+            <Route path="blog" element={<BlogPage />}></Route>
             <Route path="astrology" element={<AstrologyPage />}></Route>
             <Route path="beauty" element={<BeautyPage />}></Route>
             <Route path="educator" element={<EducatorPage />}></Route>
             <Route path="health" element={<HealthPage />}></Route>
-            <Route path="*" element={<HomePage/>}/>
+            <Route path="*" element={<HomePage />} />
           </Route>
         </Routes>
       </ThemeProvider>

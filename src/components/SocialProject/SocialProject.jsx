@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 import {
   SectionMain,
   SectionSecond,
@@ -6,10 +7,13 @@ import {
   H2,
   Img2,
   WrapPhoto,
+  Call,
 } from './SocialProject.styled';
+import { motion } from 'framer-motion';
 
 const SocialProject = () => {
   const [t] = useTranslation();
+
   return (
     <WrapSections>
       <SectionMain>
@@ -39,34 +43,39 @@ const SocialProject = () => {
             src={require('../../images/bgSocialProject/bg5 (1).jpg')}
             alt=""
             width="240"
-            height="240"
           />
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-            consequuntur quisquam quia beatae dignissimos! Ipsam, dignissimos
-            tenetur ea corrupti, consequuntur labore esse, quo consequatur sit
-            commodi deleniti velit nostrum omnis.
-          </div>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-            distinctio numquam accusamus excepturi dolorum, temporibus nesciunt
-            facere eveniet quos ullam sint repudiandae cum quod harum vel. Autem
-            tempore quibusdam quos?
-          </div>
+          <div>{t('socialProject_page.text1')}</div>
+          {/* <div>{t('socialProject_page.text2')}</div> */}
           <img
             src={require('../../images/bgSocialProject/bg6 (1).jpg')}
             alt=""
             width="240"
           />
+
           {/* <img
             src={require('../../images/bgSocialProject/bg8 (1).jpg')}
             alt=""
             width="240"
           /> */}
         </WrapPhoto>
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1.1, 1, 1],
+          }}
+          transition={{
+            duration: 2,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            repeatDelay: 1,
+          }}
+        >
+          <Call>{t('socialProject_page.call')}</Call>
+        </motion.div>
       </SectionMain>
       <SectionSecond>
-        <p>{t('paintin_page.paintinTitle2')}</p>
+        <NavLink to={'/painting/my-gallary'}>
+          <p>{t('paintin_page.paintinTitle2')}</p>
+        </NavLink>
       </SectionSecond>
     </WrapSections>
   );

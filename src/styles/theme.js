@@ -43,7 +43,7 @@ export const theme = {
         muted: '',
       },
       light: {
-        text: '',
+        text: '#8c3b19',
         background: '#fff',
       },
     },
@@ -98,6 +98,7 @@ export const themeSecond = {
         muted: '',
       },
       light: {
+        text: '#d6d0d9',
         background: '',
       },
     },
