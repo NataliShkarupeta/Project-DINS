@@ -37,7 +37,16 @@
   },
   "socialProject_page": {
     "text1": "An hour after the explosions in my city (Kharkiv), my husband, two children, a cat and a dog were already in the car on the way out of the city. The four of us had only one half-empty suitcase and a bag with the food that was in the fridge at the time. I remember traffic jams, incredible queues at gas stations and ATMs, frightened eyes all around, crowded old cars barely moving, not understanding anything, the feeling of being 'in nowhere'... And also nausea, a constant lump in my throat that prevented me from eating and drinking. From the east to the western cities, we drove for about a week, spent the night somewhere, drove again, and did not understand anything. WAR.",
-    "text2": "" ,
-    "call":"A picture of a friendly family!!!"
-  }
+    "text2": "",
+    "call": "A picture of a friendly family!!!"
+  },
+  "dev_page": {
+    "info": "My osteopath friend says that the body begins to age when the spine begins to age, and brains begin to age when they stop working. Tension during brain activity guarantees liveliness and adequacy of the mind. To keep the mind active, it needs exercise, and development pairs well with that! </br> I finished the intensive FullStack Front-end developer course in April 2023, and since then I am even happier than I was before :). I love development and work on projects with pleasure.",
+    "info1": "I am engaged in the development of sites. </br> ",
+    "*": "I have a turnkey development option (in the Devops, Back-End team)",
+    "ex": "Examples of work",
+    "connect": "For an order or consultation on website development, contact me via "
+  },
+
+  "learn_more": ""
 }
