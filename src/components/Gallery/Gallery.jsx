@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 import {
   SectionMain,
   SectionSecond,
@@ -14,7 +15,9 @@ const Gallary = () => {
         <H2>{t('paintin_page.paintinTitle2')} </H2>
       </SectionMain>
       <SectionSecond>
-        <p>{t('paintin_page.paintinTitle1')}</p>
+        <NavLink to={'/painting'}>
+          <p>{t('paintin_page.paintinTitle1')}</p>
+        </NavLink>
       </SectionSecond>
     </WrapSections>
   );
