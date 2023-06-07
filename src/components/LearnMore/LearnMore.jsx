@@ -23,6 +23,7 @@ export const LearnMore = ({ setMore }) => {
       <P>{t('learn_more5.step4')}</P>
       <P>{t('learn_more5.step5')}</P>
       <P>{t('learn_more5.step6')}</P>
+      <P>{t('learn_more1')}</P>
       <P>{t('learn_more5.step7')}</P>
       <Ul>
         <li>{t('dalay_lama._1')}</li>
