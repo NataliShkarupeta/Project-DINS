@@ -48,7 +48,6 @@ export const App = () => {
                       exit={{ height: 0, opacity: 0 }}
                       style={{ overflow: 'hidden' }}
                       transition={{ duration: 2 }}
-                      
                     >
                       <LearnMore setMore={setMore} />
                     </motion.div>

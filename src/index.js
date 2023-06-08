@@ -10,13 +10,13 @@ import './18n'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    {/* {/* /* <ThemeProvider theme={theme}>  */}
+  // <React.StrictMode>
+    // {/* {/* /* <ThemeProvider theme={theme}>  */}
     <BrowserRouter basename="/Project-DINS">
       <Suspense fallback={<div> Завантаження...</div>}>
         <App />
       </Suspense>
     </BrowserRouter>
-    {/* </ThemeProvider>  */}
-  </React.StrictMode>
+    // {/* </ThemeProvider>  */}
+  // </React.StrictMode>
 );
