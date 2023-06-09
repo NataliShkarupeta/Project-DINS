@@ -22,7 +22,7 @@ export const theme = {
   },
   lineHeights: {
     body: 1.5,
-    normal:1.25,
+    normal: 1.25,
     heading: 1.125,
   },
   colors: {
@@ -30,7 +30,7 @@ export const theme = {
     background: '#fff4e4cc',
     // background: '#fff',
     // accent: '#FFE4B5',
-    accent: '',
+    accent: '#d7e6da',
     primary: '#8c3b19',
     // secondary: '#8c3b19',
     secondary: '#d6d0d9',
@@ -59,7 +59,6 @@ export const theme = {
     normal: '4px',
     round: '50%',
   },
-  shadows: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   zIndices: [0, 2, 3],
   sizes: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 

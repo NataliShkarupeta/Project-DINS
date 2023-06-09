@@ -1,5 +1,11 @@
 {
   "blog": "My blog",
+  "pageBlog": {
+    "modal": {
+      "attention": "Attention! This action is only available to the author.",
+      "key": "Enter key"
+    }
+  },
   "info": "Since ancient times, life has been called a river, every next meter it is not the same as it was before, due to the new composition of the soil, tributaries, etc. Every new day of life is filled with something new - thoughts, feelings, knowledge. And if this stops, just as the river turns into a swamp, so life will begin to sour, rot and die. Development and prosperity is the duty of every person.",
   "name": "Natali Shkarupeta",
 
@@ -25,7 +31,7 @@
   },
 
   "button": {
-    "email": "send me letter",
+    "email": "Send me letter",
     "textBut": "To learn more",
     "buttonHome": "Home",
     "back": "Back"
