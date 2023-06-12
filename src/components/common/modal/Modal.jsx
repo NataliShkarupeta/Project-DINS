@@ -60,15 +60,12 @@ export const Modal = ({
           <ContainerPost>
             <h2>{postForChange.title}</h2>
             <form>
-              <Text></Text>
               <Input
-                value={postForChange.descriptions}
+                defaultValue={postForChange.descriptions}
                 type="text"
                 name="descriptions"
               />
-              {/* <WrapButtonsModal> */}
-              <Button type="submit"></Button>
-              {/* </WrapButtonsModal> */}
+              <Button type="submit">Змінити</Button>
             </form>
           </ContainerPost>
         </Overlay>

@@ -33,7 +33,7 @@ const BlogPage = memo(() => {
     // setIsOpen(true);
     const post = Object.values(posts).find(post => post._id === id);
     setTodoId(post);
-    console.log('postId', postId);
+    // console.log('postId', postId);
   };
 
   return (
