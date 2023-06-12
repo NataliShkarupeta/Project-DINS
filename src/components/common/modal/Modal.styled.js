@@ -33,8 +33,34 @@ export const ModalContainer = styled.div`
   justify-content: space-around;
   gap: 15px;
   align-items: center;
-  z-index: 20;
+  z-index: 1;
 `;
+
+export const Input = styled.input`
+  display: block;
+  height: 300px;
+  width: 600px;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-top: 5px solid gray;
+  border-bottom: 5px solid gray;
+`;
+
+export const ContainerPost = styled.div`
+  max-width: 80%;
+  width:80%;
+  height: 500px;
+  background-color: #ffffff;
+  padding: 10px;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 15px;
+  align-items: center;
+  z-index: 1;
+`;
+
 export const Button = styled.button`
   padding: 5px;
   width: 60px;

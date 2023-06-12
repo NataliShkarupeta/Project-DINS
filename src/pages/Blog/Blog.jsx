@@ -19,14 +19,22 @@ import { normalizedDate } from './normalizeDate';
 
 const BlogPage = memo(() => {
   //  don't forgot create a button for delete && update && show one for repost post through additional the ask-password window //
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState({});
   const [showModal, setShowModal] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
+  const [postId, setTodoId] = useState('');
   const [t] = useTranslation();
 
   useEffect(() => {
     getAllPosts().then(res => setPosts(res));
   }, []);
 
+  const saveIdPost = id => {
+    // setIsOpen(true);
+    const post = Object.values(posts).find(post => post._id === id);
+    setTodoId(post);
+    console.log('postId', postId);
+  };
 
   return (
     <>
@@ -40,35 +48,38 @@ const BlogPage = memo(() => {
           textButton={<RxCheck />}
           textButton1={<RxCross2 />}
           close={setShowModal}
-          // clickHandler1={()=>setShowModal(false)}
+          postForChange={postId}
         />
       )}
       <ul>
         {posts &&
-          posts.map(({ title, descriptions, _id, createdAt }) => (
-            <Li key={_id}>
-              <WrapTitleAndDate>
-                <Title>{title} </Title>
-                <Date>{normalizedDate(createdAt)}</Date>
-              </WrapTitleAndDate>
-              <Text>{descriptions}</Text>
-              <BlockButton>
-                <CommonButton
-                  text={<RxPencil1 />}
-                  clickHandler={() => {
-                    setShowModal(true);
-                  }}
-                ></CommonButton>
-                <CommonButton
-                  text={<RxTrash />}
-                  clickHandler={() => {
-                    setShowModal(true);
-                  }}
-                ></CommonButton>
-                <CommonButton text={<RxShare1 />}></CommonButton>
-              </BlockButton>
-            </Li>
-          ))}
+          Object.values(posts).map(
+            ({ title, descriptions, _id, createdAt }) => (
+              <Li key={_id}>
+                <WrapTitleAndDate>
+                  <Title>{title} </Title>
+                  <Date>{normalizedDate(createdAt)}</Date>
+                </WrapTitleAndDate>
+                <Text>{descriptions}</Text>
+                <BlockButton>
+                  <CommonButton
+                    text={<RxPencil1 />}
+                    clickHandler={() => {
+                      setShowModal(true);
+                      saveIdPost(_id);
+                    }}
+                  ></CommonButton>
+                  <CommonButton
+                    text={<RxTrash />}
+                    clickHandler={() => {
+                      setShowModal(true);
+                    }}
+                  ></CommonButton>
+                  <CommonButton text={<RxShare1 />}></CommonButton>
+                </BlockButton>
+              </Li>
+            )
+          )}
       </ul>
     </>
   );
