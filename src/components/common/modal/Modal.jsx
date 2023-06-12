@@ -12,23 +12,31 @@ export const Modal = ({
   descriptions,
   textButton,
   clickHandler,
-  clickHandler1,
+  // clickHandler1,
+  close,
   textButton1,
 }) => {
+
+
+  const onClose = evt => {
+    if (evt.code === 'Escape' || evt.currentTarget === evt.target) {
+    close(false)
+    }
+  };
+
   return (
     <>
-      <Overlay>
+      <Overlay onClick={onClose}>
         <ModalContainer>
           <Title>{text}</Title>
           <form>
             <Text>{descriptions}</Text>
             <input />
+            <WrapButtonsModal>
+              <Button onClick={(e)=>{e.preventDefault()}}>{textButton}</Button>
+              <Button onClick={onClose}>{textButton1}</Button>
+            </WrapButtonsModal>
           </form>
-
-          <WrapButtonsModal>
-            <Button onClick={clickHandler}>{textButton}</Button>
-            <Button onClick={clickHandler1}>{textButton1}</Button>
-          </WrapButtonsModal>
         </ModalContainer>
       </Overlay>
     </>

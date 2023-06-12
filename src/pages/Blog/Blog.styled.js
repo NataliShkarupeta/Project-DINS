@@ -52,6 +52,7 @@ export const Date = styled.span`
 
 export const Text = styled.span`
   font-family: ${p => p.theme.fonts.heading};
-  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
+  line-height: ${p => p.theme.lineHeights.heading};
 `;

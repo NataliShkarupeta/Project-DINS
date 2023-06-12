@@ -15,6 +15,7 @@ import { RxPencil1, RxTrash, RxShare1 } from 'react-icons/rx';
 import { Modal } from 'components/common/modal/Modal';
 import { useTranslation } from 'react-i18next';
 import { RxCheck, RxCross2 } from 'react-icons/rx';
+import { normalizedDate } from './normalizeDate';
 
 const BlogPage = memo(() => {
   //  don't forgot create a button for delete && update && show one for repost post through additional the ask-password window //
@@ -26,7 +27,7 @@ const BlogPage = memo(() => {
     getAllPosts().then(res => setPosts(res));
   }, []);
 
-  console.log(posts);
+
   return (
     <>
       <Link to={'/'}>
@@ -38,7 +39,8 @@ const BlogPage = memo(() => {
           descriptions={t('pageBlog.modal.key')}
           textButton={<RxCheck />}
           textButton1={<RxCross2 />}
-          clickHandler1={()=>setShowModal(false)}
+          close={setShowModal}
+          // clickHandler1={()=>setShowModal(false)}
         />
       )}
       <ul>
@@ -47,7 +49,7 @@ const BlogPage = memo(() => {
             <Li key={_id}>
               <WrapTitleAndDate>
                 <Title>{title} </Title>
-                <Date>{createdAt.split('').slice(0, 10)}</Date>
+                <Date>{normalizedDate(createdAt)}</Date>
               </WrapTitleAndDate>
               <Text>{descriptions}</Text>
               <BlockButton>
