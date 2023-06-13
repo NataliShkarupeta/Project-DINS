@@ -36,10 +36,11 @@ export const ModalContainer = styled.div`
   z-index: 1;
 `;
 
-export const Input = styled.input`
+export const Input = styled.textarea`
   display: block;
+  padding: 10px;
   height: 300px;
-  width: 600px;
+  width: 658px;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   border-top: 5px solid gray;

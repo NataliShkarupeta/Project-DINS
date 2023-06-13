@@ -10,10 +10,21 @@ export const getAllPosts = async () => {
       ...obj,
       createdAt: Date.parse(obj.createdAt),
     }));
-     console.log(sortDate);
+    // console.log(sortDate);
     const sortPosts = [...sortDate].sort((a, b) => b.createdAt - a.createdAt);
-    
+
     return sortPosts;
+  } catch (error) {
+    return error.massage;
+  }
+};
+
+export const changePost = async (id, descriptions) => {
+  try {
+   
+    const { data } = await axios.patch(`${URL}/${id._id}`, { descriptions });
+    
+    return data.data.result;
   } catch (error) {
     return error.massage;
   }

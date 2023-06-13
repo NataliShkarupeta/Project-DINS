@@ -9,6 +9,7 @@ import {
   ContainerPost,
   Input,
 } from './Modal.styled';
+import { changePost } from 'service/blogService';
 
 export const Modal = ({
   text,
@@ -36,7 +37,15 @@ export const Modal = ({
     } else {
       alert('secret key is not correct');
     }
-    console.log(changepost);
+    e.target.reset();
+  };
+  
+  const submitChange = e => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const descriptions = formData.get('descriptions');
+    changePost(postForChange, descriptions);
+    close(false);
   };
 
   return (
@@ -56,16 +65,19 @@ export const Modal = ({
           </ModalContainer>
         </Overlay>
       ) : (
-        <Overlay>
+        <Overlay onClick={onClose}>
           <ContainerPost>
             <h2>{postForChange.title}</h2>
-            <form>
+            <form onSubmit={submitChange}>
               <Input
                 defaultValue={postForChange.descriptions}
                 type="text"
                 name="descriptions"
               />
-              <Button type="submit">Змінити</Button>
+              <WrapButtonsModal>
+                <Button type="submit">Змінити</Button>
+                <Button onClick={onClose}>{textButton1}</Button>
+              </WrapButtonsModal>
             </form>
           </ContainerPost>
         </Overlay>

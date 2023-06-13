@@ -21,7 +21,6 @@ const BlogPage = memo(() => {
   //  don't forgot create a button for delete && update && show one for repost post through additional the ask-password window //
   const [posts, setPosts] = useState({});
   const [showModal, setShowModal] = useState(false);
-  // const [isOpen, setIsOpen] = useState(false);
   const [postId, setTodoId] = useState('');
   const [t] = useTranslation();
 
@@ -30,10 +29,8 @@ const BlogPage = memo(() => {
   }, []);
 
   const saveIdPost = id => {
-    // setIsOpen(true);
     const post = Object.values(posts).find(post => post._id === id);
     setTodoId(post);
-    // console.log('postId', postId);
   };
 
   return (
