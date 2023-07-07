@@ -18,13 +18,16 @@ import { useTranslation } from 'react-i18next';
 import { RxCheck, RxCross2 } from 'react-icons/rx';
 import { normalizedDate } from './normalizeDate';
 import { Tooltip } from 'react-tooltip';
+import { ModalForDeletePost } from 'components/ModalForDelete/ModalForDelete';
 
 const BlogPage = memo(() => {
   //  don't forgot create a button for delete && update && show one for repost post through additional the ask-password window //
   const [posts, setPosts] = useState({});
+  const [canDelet,setCanDelete]=useState(false);
   const [showModal, setShowModal] = useState(false);
   const [postId, setTodoId] = useState('');
   const [t] = useTranslation();
+  
 
   useEffect(() => {
     getAllPosts().then(res => setPosts(res));
@@ -41,6 +44,13 @@ const BlogPage = memo(() => {
         <ButtonHome />
       </Link>
 
+      {canDelet && (
+        <ModalForDeletePost
+          text="Ти збираєшся видалити пост, впевнена?"
+          textButton="Видалити пост"
+          close={setCanDelete}
+        />
+      )}
       {showModal && (
         <Modal
           text={t('pageBlog.modal.attention')}
@@ -104,7 +114,7 @@ const BlogPage = memo(() => {
                       <CommonButton
                         text={<RxTrash />}
                         clickHandler={() => {
-                          setShowModal(true);
+                          setCanDelete(true);
                         }}
                       ></CommonButton>
                     </p>

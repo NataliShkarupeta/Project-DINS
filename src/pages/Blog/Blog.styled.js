@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import img from '../../images/Depositphotos_211953146_XL (1).jpg';
 
-export const WrapForTooltip = styled.button`
+export const WrapForTooltip = styled.div`
   margin: 0;
   padding: 0;
   background-color: ${p => p.theme.colors.muted};
