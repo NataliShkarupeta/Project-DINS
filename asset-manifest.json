@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Project-DINS/static/css/main.4d8c6e8d.css",
-    "main.js": "/Project-DINS/static/js/main.d7f60011.js",
+    "main.js": "/Project-DINS/static/js/main.dc9ee515.js",
     "static/js/606.c07d17e5.chunk.js": "/Project-DINS/static/js/606.c07d17e5.chunk.js",
     "static/js/499.c6ec01c8.chunk.js": "/Project-DINS/static/js/499.c6ec01c8.chunk.js",
     "static/js/422.a840b8cf.chunk.js": "/Project-DINS/static/js/422.a840b8cf.chunk.js",
@@ -10,8 +10,8 @@
     "static/js/208.57aebceb.chunk.js": "/Project-DINS/static/js/208.57aebceb.chunk.js",
     "static/js/798.eff79b09.chunk.js": "/Project-DINS/static/js/798.eff79b09.chunk.js",
     "static/js/409.f9b039bd.chunk.js": "/Project-DINS/static/js/409.f9b039bd.chunk.js",
-    "static/js/680.7fa45fd2.chunk.js": "/Project-DINS/static/js/680.7fa45fd2.chunk.js",
-    "static/js/468.c6f4a987.chunk.js": "/Project-DINS/static/js/468.c6f4a987.chunk.js",
+    "static/js/680.94e96086.chunk.js": "/Project-DINS/static/js/680.94e96086.chunk.js",
+    "static/js/914.b73bedba.chunk.js": "/Project-DINS/static/js/914.b73bedba.chunk.js",
     "static/media/IMG_0043.jpg": "/Project-DINS/static/media/IMG_0043.d12410cc6960920f5576.jpg",
     "static/media/Depositphotos_211953146_XL (1).jpg": "/Project-DINS/static/media/Depositphotos_211953146_XL (1).f538b04247fba8f2ac79.jpg",
     "static/media/bg6 (1).jpg": "/Project-DINS/static/media/bg6 (1).18e7a963aeca107980ce.jpg",
@@ -20,7 +20,7 @@
     "index.html": "/Project-DINS/index.html",
     "static/media/getFetch.cjs": "/Project-DINS/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.4d8c6e8d.css.map": "/Project-DINS/static/css/main.4d8c6e8d.css.map",
-    "main.d7f60011.js.map": "/Project-DINS/static/js/main.d7f60011.js.map",
+    "main.dc9ee515.js.map": "/Project-DINS/static/js/main.dc9ee515.js.map",
     "606.c07d17e5.chunk.js.map": "/Project-DINS/static/js/606.c07d17e5.chunk.js.map",
     "499.c6ec01c8.chunk.js.map": "/Project-DINS/static/js/499.c6ec01c8.chunk.js.map",
     "422.a840b8cf.chunk.js.map": "/Project-DINS/static/js/422.a840b8cf.chunk.js.map",
@@ -29,11 +29,11 @@
     "208.57aebceb.chunk.js.map": "/Project-DINS/static/js/208.57aebceb.chunk.js.map",
     "798.eff79b09.chunk.js.map": "/Project-DINS/static/js/798.eff79b09.chunk.js.map",
     "409.f9b039bd.chunk.js.map": "/Project-DINS/static/js/409.f9b039bd.chunk.js.map",
-    "680.7fa45fd2.chunk.js.map": "/Project-DINS/static/js/680.7fa45fd2.chunk.js.map",
-    "468.c6f4a987.chunk.js.map": "/Project-DINS/static/js/468.c6f4a987.chunk.js.map"
+    "680.94e96086.chunk.js.map": "/Project-DINS/static/js/680.94e96086.chunk.js.map",
+    "914.b73bedba.chunk.js.map": "/Project-DINS/static/js/914.b73bedba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d8c6e8d.css",
-    "static/js/main.d7f60011.js"
+    "static/js/main.dc9ee515.js"
   ]
 }
