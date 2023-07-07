@@ -1,5 +1,3 @@
-
-
 export const theme = {
   media: {
     extraLarge: '(max-width: 1140px)',

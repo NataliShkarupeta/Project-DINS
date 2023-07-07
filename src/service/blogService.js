@@ -21,9 +21,7 @@ export const getAllPosts = async () => {
 
 export const changePost = async (id, descriptions) => {
   try {
-   
     const { data } = await axios.patch(`${URL}/${id._id}`, { descriptions });
-    
     return data.data.result;
   } catch (error) {
     return error.massage;

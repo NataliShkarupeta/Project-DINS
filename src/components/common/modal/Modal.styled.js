@@ -39,12 +39,13 @@ export const ModalContainer = styled.div`
 export const Input = styled.textarea`
   display: block;
   padding: 10px;
-  height: 300px;
-  width: 658px;
+  height: 350px;
+  width: 800px;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   border-top: 5px solid gray;
   border-bottom: 5px solid gray;
+  font-size: ${p => p.theme.fontSizes[3]}px;
 `;
 
 export const ContainerPost = styled.div`
