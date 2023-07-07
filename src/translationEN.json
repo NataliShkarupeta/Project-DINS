@@ -31,6 +31,12 @@
   },
 
   "button": {
+    "commonButton": {
+      "edit": "Edit",
+      "share": "Share",
+      "delete": "Delete",
+      "showMore": "Read all"
+    },
     "email": "Send me letter",
     "textBut": "To learn more",
     "buttonHome": "Home",

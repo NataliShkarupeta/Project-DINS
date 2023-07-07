@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 import img from '../../images/Depositphotos_211953146_XL (1).jpg';
 
+export const WrapForTooltip = styled.button`
+  margin: 0;
+  padding: 0;
+  background-color: ${p => p.theme.colors.muted};
+  border: ${p => p.theme.borders.normal};
+  border-color: ${p => p.theme.colors.muted};
+  border-radius: ${p => p.theme.radii.normal};
+`;
+
 export const BlockButton = styled.div`
   /* position: absolute;
   top: 465px;
@@ -44,7 +53,7 @@ export const Li = styled.li`
       rgba(255, 255, 0, 0.37),
       rgba(83, 177, 226, 1)
     ),
-    linear-gradient(to bottom, rgba(47, 48, 58,0.2), rgba(47, 48, 58,0.2)),
+    /* linear-gradient(to bottom, rgba(47, 48, 58,0.2), rgba(47, 48, 58,0.2)), */
     url('${img}');
   background-size: cover;
 `;

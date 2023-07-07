@@ -40,7 +40,7 @@ export const Input = styled.textarea`
   display: block;
   padding: 10px;
   height: 350px;
-  width: 800px;
+  width: 900px;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   border-top: 5px solid gray;

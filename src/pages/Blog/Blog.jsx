@@ -10,12 +10,14 @@ import {
   Text,
   WrapTitleAndDate,
   BlockButton,
+  WrapForTooltip,
 } from './Blog.styled';
-import { RxPencil1, RxTrash, RxShare1 } from 'react-icons/rx';
+import { RxPencil1, RxTrash, RxShare1, RxFileText } from 'react-icons/rx';
 import { Modal } from 'components/common/modal/Modal';
 import { useTranslation } from 'react-i18next';
 import { RxCheck, RxCross2 } from 'react-icons/rx';
 import { normalizedDate } from './normalizeDate';
+import { Tooltip } from 'react-tooltip';
 
 const BlogPage = memo(() => {
   //  don't forgot create a button for delete && update && show one for repost post through additional the ask-password window //
@@ -38,6 +40,7 @@ const BlogPage = memo(() => {
       <Link to={'/'}>
         <ButtonHome />
       </Link>
+
       {showModal && (
         <Modal
           text={t('pageBlog.modal.attention')}
@@ -59,20 +62,54 @@ const BlogPage = memo(() => {
                 </WrapTitleAndDate>
                 <Text>{descriptions}</Text>
                 <BlockButton>
-                  <CommonButton
-                    text={<RxPencil1 />}
-                    clickHandler={() => {
-                      setShowModal(true);
-                      saveIdPost(_id);
-                    }}
-                  ></CommonButton>
-                  <CommonButton
-                    text={<RxTrash />}
-                    clickHandler={() => {
-                      setShowModal(true);
-                    }}
-                  ></CommonButton>
-                  <CommonButton text={<RxShare1 />}></CommonButton>
+                  <WrapForTooltip>
+                    <p
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content={t('button.commonButton.showMore')}
+                    >
+                      <CommonButton text={<RxFileText />}></CommonButton>
+                    </p>
+                    <Tooltip id="my-tooltip" />
+                  </WrapForTooltip>
+                  <WrapForTooltip>
+                    <p
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content={t('button.commonButton.share')}
+                    >
+                      <CommonButton text={<RxShare1 />}></CommonButton>
+                    </p>
+                    <Tooltip id="my-tooltip" />
+                  </WrapForTooltip>
+                  <WrapForTooltip>
+                    <p
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content={t('button.commonButton.edit')}
+                    >
+                      <CommonButton
+                        text={<RxPencil1 />}
+                        clickHandler={() => {
+                          setShowModal(true);
+                          saveIdPost(_id);
+                        }}
+                      ></CommonButton>
+                    </p>
+                    <Tooltip id="my-tooltip" />
+                  </WrapForTooltip>
+
+                  <WrapForTooltip>
+                    <p
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content={t('button.commonButton.delete')}
+                    >
+                      <CommonButton
+                        text={<RxTrash />}
+                        clickHandler={() => {
+                          setShowModal(true);
+                        }}
+                      ></CommonButton>
+                    </p>
+                    <Tooltip id="my-tooltip" />
+                  </WrapForTooltip>
                 </BlockButton>
               </Li>
             )
