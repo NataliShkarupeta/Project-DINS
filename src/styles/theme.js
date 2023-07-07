@@ -15,6 +15,7 @@ export const theme = {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: {
     body: 400,
+
     heading: 900,
     bold: 700,
   },
@@ -23,14 +24,13 @@ export const theme = {
     normal: 1.25,
     heading: 1.125,
   },
+
   colors: {
     text: '#000000',
     background: '#fff4e4cc',
-    // background: '#fff',
-    // accent: '#FFE4B5',
+    therd: '#23033e',
     accent: '#d7e6da',
     primary: '#8c3b19',
-    // secondary: '#8c3b19',
     secondary: '#d6d0d9',
     muted: 'transparent',
     modes: {
@@ -86,6 +86,7 @@ export const themeSecond = {
     background: 'black',
     accent: '',
     primary: 'black',
+    therd: '#152313',
     secondary: '',
     modes: {
       dark: {

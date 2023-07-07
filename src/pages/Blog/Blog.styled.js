@@ -39,12 +39,12 @@ export const Li = styled.li`
   /* height: 30%; */
   overflow-y: scroll;
   background-image: 
-  /* linear-gradient(
+  linear-gradient(
       to bottom,
-      rgba(255, 255, 0, 0.67),
+      rgba(255, 255, 0, 0.37),
       rgba(83, 177, 226, 1)
-    ), */
-    /* linear-gradient(to bottom, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), */
+    ),
+    linear-gradient(to bottom, rgba(47, 48, 58,0.2), rgba(47, 48, 58,0.2)),
     url('${img}');
   background-size: cover;
 `;
@@ -53,6 +53,7 @@ export const Title = styled.h2`
   font-family: ${p => p.theme.fonts.heading};
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
+  color: ${p => p.theme.colors.therd};
 `;
 
 export const Date = styled.span`
@@ -65,4 +66,5 @@ export const Text = styled.span`
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.heading};
   font-size: ${p => p.theme.fontSizes[3]}px;
+  color: ${p => p.theme.colors.therd};
 `;
