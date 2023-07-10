@@ -27,6 +27,7 @@ export const Button = styled.button`
 
 export const Title = styled.h3`
   font-size: 30px;
+  margin-bottom: 20px;
 `;
 export const Text = styled.p`
   font-size: 24px;

@@ -27,3 +27,11 @@ export const changePost = async (id, descriptions) => {
     return error.massage;
   }
 };
+
+export const deletePost= async (id) =>{
+  try {
+    await axios.delete(`${URL}/${id._id}`);
+  } catch (error) {
+    return error.massage
+  }
+}

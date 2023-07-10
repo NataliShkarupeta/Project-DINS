@@ -46,9 +46,15 @@ const BlogPage = memo(() => {
 
       {canDelet && (
         <ModalForDeletePost
-          text="Ти збираєшся видалити пост, впевнена?"
-          textButton="Видалити пост"
+          text={t('pageBlog.modal.attention')}
+          textButton={<RxCheck />}
+          descriptions={t('pageBlog.modal.key')}
+          textButton1={<RxCross2 />}
+          // text="Ти збираєшся видалити пост, впевнена?"
+          // textButton="Видалити пост"
           close={setCanDelete}
+          postForDelete={postId}
+          closeAskModal={setCanDelete}
         />
       )}
       {showModal && (
@@ -115,6 +121,7 @@ const BlogPage = memo(() => {
                         text={<RxTrash />}
                         clickHandler={() => {
                           setCanDelete(true);
+                          saveIdPost(_id);
                         }}
                       ></CommonButton>
                     </p>
