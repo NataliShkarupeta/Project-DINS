@@ -71,6 +71,13 @@ const SocialProject = () => {
         >
           <Call>{t('socialProject_page.call')}</Call>
         </motion.div>
+        <p> {t('socialProject_page.text2')}</p>
+        <p>{t('socialProject_page.text3')}</p>
+        <p>{t('socialProject_page.text4')}</p>
+        <p>{t('socialProject_page.appreciation')}</p>
+        <p>{t('socialProject_page.appreciationDetales')}</p>
+
+        <Call>{t('socialProject_page.ukraineIsCool')}</Call>
       </SectionMain>
       <SectionSecond>
         <NavLink to={'/painting/my-gallary'}>
