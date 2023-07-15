@@ -6,7 +6,24 @@ export const WrapSections = styled.div`
   gap: 10px;
 `;
 
+export const H3 = styled.h3`
+  text-align: left;
+  font-size: ${p => p.theme.fontSizes[4]}px;
+  text-transform: uppercase;
+  margin-bottom: ${p => p.theme.space[2]}px;
+  margin-top: ${p => p.theme.space[3]}px;
+`;
 
+export const WrapAboutProject = styled.div`
+  border-bottom: ${p => p.theme.borders.normal};
+  border-color: ${p => p.theme.colors.primary};
+`;
+
+export const BoxForReport = styled.div`
+  height: 300px;
+  background-color: ${p => p.theme.colors.secondary};
+  margin-bottom: ${p => p.theme.space[4]}px;
+`;
 
 export const SectionMain = styled.section`
   width: 75%;

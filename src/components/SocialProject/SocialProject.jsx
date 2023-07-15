@@ -8,8 +8,12 @@ import {
   Img2,
   WrapPhoto,
   Call,
+  H3,
+  WrapAboutProject,
+  BoxForReport,
 } from './SocialProject.styled';
 import { motion } from 'framer-motion';
+import { BsHeart } from 'react-icons/bs';
 
 const SocialProject = () => {
   const [t] = useTranslation();
@@ -71,13 +75,23 @@ const SocialProject = () => {
         >
           <Call>{t('socialProject_page.call')}</Call>
         </motion.div>
-        <p> {t('socialProject_page.text2')}</p>
-        <p>{t('socialProject_page.text3')}</p>
-        <p>{t('socialProject_page.text4')}</p>
-        <p>{t('socialProject_page.appreciation')}</p>
-        <p>{t('socialProject_page.appreciationDetales')}</p>
+        <WrapAboutProject>
+          <p> {t('socialProject_page.text2')}</p>
+          <p>{t('socialProject_page.text3')}</p>
+          <p>{t('socialProject_page.text4')}</p>
+          <p>{t('socialProject_page.appreciation')}</p>
+          <p>{t('socialProject_page.appreciationDetales')}</p>
 
-        <Call>{t('socialProject_page.ukraineIsCool')}</Call>
+          <Call>{t('socialProject_page.ukraineIsCool')}</Call>
+          <div>
+            <BsHeart size={30} fill="blue"  />
+            <BsHeart fill="orange" size={30}/>
+          </div>
+        </WrapAboutProject>
+        <div>
+          <H3>{t('socialProject_page.report')}</H3>
+          <BoxForReport></BoxForReport>
+        </div>
       </SectionMain>
       <SectionSecond>
         <NavLink to={'/painting/my-gallary'}>
