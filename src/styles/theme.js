@@ -56,6 +56,7 @@ export const theme = {
     none: 'none',
     normal: '4px',
     round: '50%',
+    forSlider:'30px'
   },
   zIndices: [0, 2, 3],
   sizes: [0, 4, 8, 16, 32, 64, 128, 256, 512],

@@ -22,6 +22,7 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "react-swipeable": "^7.0.1",
     "react-tooltip": "^5.18.0",
     "styled-components": "^5.3.9",
     "web-vitals": "^2.1.3"
