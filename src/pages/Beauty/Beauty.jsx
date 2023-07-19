@@ -7,16 +7,23 @@ import {
   Img,
   WrapBottonTurn,
   ButtonTurn,
+  // SvgEye,
+  Description,
+  H2,
+  Ul,
+  Li,
+  WordLashMaker,
+  WrapTitleAndEye,
 } from './Beauty.styled';
 import { motion } from 'framer-motion';
-import l2 from '../../images/beauty/lash2 (1).jpg';
 import l3 from '../../images/beauty/lash3 (1).jpg';
 import l4 from '../../images/beauty/lash4 (1).jpg';
 import l6 from '../../images/beauty/lash6 (1).jpg';
-import l7 from '../../images/beauty/lash7 (1).jpg';
 import l8 from '../../images/beauty/lash8 (1).jpg';
 import l9 from '../../images/beauty/lash9 (1).jpg';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import { SiSvg, SiApachecassandra, SiAdafruit } from 'react-icons/si';
+import { useTranslation } from 'react-i18next';
 
 const styles = {
   position: 'absolute',
@@ -32,8 +39,8 @@ const styles = {
 
 const BeautyPage = () => {
   const [position, positionSet] = useState(0);
-  // const location = useLocation();
-  const photoArr = [l4, l2, l3,l6,l7,l8,l9];
+  const [t] = useTranslation();
+  const photoArr = [l4, l3, l6, l8, l9];
 
   const onRight = () => {
     if (position < photoArr.length - 1) {
@@ -51,6 +58,31 @@ const BeautyPage = () => {
       <Link to={'/'}>
         <ButtonHome />
       </Link>
+      <SiSvg />
+      {/* <SvgEye>
+        <SiApachecassandra size={60} color="blue" />
+      </SvgEye> */}
+
+      <SiAdafruit />
+      <WrapTitleAndEye>
+        <H2>
+          <WordLashMaker>{t('lashMakerPage.title')}</WordLashMaker>
+          {t('lashMakerPage.titleCompl')}
+        </H2>
+        <SiApachecassandra size={60} color="purple" />
+      </WrapTitleAndEye>
+
+      <Description> {t('lashMakerPage.description')}</Description>
+      <Description>{t('lashMakerPage.go')}</Description>
+      <Ul>
+        <Li>
+          <p>{t('lashMakerPage.generalInformation.first')}</p>
+        </Li>
+        <Li>
+          <p>{t('lashMakerPage.generalInformation.second')}</p>
+        </Li>
+      </Ul>
+
       <ContainerForSlider>
         <WrapBottonTurn>
           <ButtonTurn onClick={onRight}>
@@ -74,8 +106,6 @@ const BeautyPage = () => {
               transition={{
                 duration: 1,
                 type: 'tween',
-                // stiffness: 150,
-                // damping: 35,
               }}
             >
               <Img src={photo} alt="" />
