@@ -28,3 +28,15 @@ export const Img = styled.img`
   height: 100%;
   background-size: cover;
 `;
+
+export const WrapBottonTurn = styled.div`
+position: absolute;
+top: 290px;
+left: 45px;
+`
+
+export const ButtonTurn=styled.button`
+width: 40px;
+height: 25px;
+cursor: pointer;
+`

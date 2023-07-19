@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import { ButtonHome } from 'components/ButtonHome/ButtonHome';
 import { Link } from 'react-router-dom';
-import { ContainerForSlider, Row, Img } from './Beauty.styled';
+import {
+  ContainerForSlider,
+  Row,
+  Img,
+  WrapBottonTurn,
+  ButtonTurn,
+} from './Beauty.styled';
 import { motion } from 'framer-motion';
-// import l1 from '../../images/beauty/lash1 (1).jpg';
 import l2 from '../../images/beauty/lash2 (1).jpg';
 import l3 from '../../images/beauty/lash3 (1).jpg';
 import l4 from '../../images/beauty/lash4 (1).jpg';
-import l5 from '../../images/beauty/lash5 (1).jpg';
+import l6 from '../../images/beauty/lash6 (1).jpg';
+import l7 from '../../images/beauty/lash7 (1).jpg';
+import l8 from '../../images/beauty/lash8 (1).jpg';
+import l9 from '../../images/beauty/lash9 (1).jpg';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
 const styles = {
@@ -25,7 +33,7 @@ const styles = {
 const BeautyPage = () => {
   const [position, positionSet] = useState(0);
   // const location = useLocation();
-  const photoArr = [l4, l2, l3, l5];
+  const photoArr = [l4, l2, l3,l6,l7,l8,l9];
 
   const onRight = () => {
     if (position < photoArr.length - 1) {
@@ -44,20 +52,14 @@ const BeautyPage = () => {
         <ButtonHome />
       </Link>
       <ContainerForSlider>
-        <div
-          style={{
-            position: 'absolute',
-            top: 300,
-            left: 50,
-          }}
-        >
-          <button onClick={onRight}>
+        <WrapBottonTurn>
+          <ButtonTurn onClick={onRight}>
             <BsChevronLeft />
-          </button>
-          <button onClick={onLeft}>
+          </ButtonTurn>
+          <ButtonTurn onClick={onLeft}>
             <BsChevronRight />
-          </button>
-        </div>
+          </ButtonTurn>
+        </WrapBottonTurn>
         <Row>
           {photoArr.map((photo, index) => (
             <motion.div
