@@ -1,9 +1,55 @@
 import styled from 'styled-components';
 
-export const SvgEye = styled.span`
-  position: absolute;
-  top: 200px;
+export const H3 = styled.h3`
+  margin-top: ${p => p.theme.space[4]}px;
+  font-size: ${p => p.theme.fontSizes[4]}px;
+  font-weight: ${p => p.theme.fontWeights.bold};
+  line-height: ${p => p.theme.lineHeights.heading};
+  font-family: ${p => p.theme.fonts.monospace};
+  border-bottom: ${p => p.theme.borders.normal};
+  border-color: ${p => p.theme.colors.primary};
 `;
+
+export const WrapAdvice = styled.div`
+position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  padding: ${p => p.theme.space[4]}px;
+
+ 
+`;
+export const Advice = styled.p`
+  width: 800px;
+
+  &:nth-child(even) {
+    margin-left: 50%;
+    margin-top: ${p => p.theme.space[3]}px;
+    margin-bottom: ${p => p.theme.space[3]}px;
+  }
+`;
+
+export const SvgEye = styled.div`
+  position: absolute;
+  top: 40%;
+`;
+export const SvgEye2 = styled.div`
+  position: absolute;
+  left: 65%;
+`;
+
+export const SvgEye3 = styled.div`
+  position: absolute;
+  top: 75%;
+  left: 80%;
+`;
+export const SvgEye4 = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 60%;
+`;
+
+
 export const H2 = styled.h2`
   font-size: ${p => p.theme.fontSizes[5]}px;
 `;
@@ -23,6 +69,14 @@ export const Li = styled.li`
   margin-bottom: ${p => p.theme.space[3]}px;
 
   padding: ${p => p.theme.space[2]}px;
+
+  background-size: 3.2em 100%;
+  background: linear-gradient(
+      270deg,
+      rgba(255, 244, 228, 0.8) 50%,
+      rgb(125 5 209 / 7%) 50%
+    )
+    0% 0% / 3.2em 100% rgb(34 34 34 / 0%);
 `;
 
 export const Description = styled.p`
@@ -38,6 +92,7 @@ export const WrapTitleAndEye = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;
 
 export const ContainerForSlider = styled.div`

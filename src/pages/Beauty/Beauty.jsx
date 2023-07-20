@@ -5,12 +5,18 @@ import {
   ContainerForSlider,
   Row,
   Img,
+  WrapAdvice,
   WrapBottonTurn,
   ButtonTurn,
-  // SvgEye,
+  Advice,
   Description,
   H2,
   Ul,
+  H3,
+  SvgEye,
+  SvgEye2,
+  SvgEye3,
+  SvgEye4,
   Li,
   WordLashMaker,
   WrapTitleAndEye,
@@ -27,15 +33,14 @@ import { useTranslation } from 'react-i18next';
 
 const styles = {
   position: 'absolute',
-  // width: '60vw',
-  // height: '90vh',
   width: '50vw',
   height: '75vh',
   overflow: 'hidden',
-  // background: '#FFF',
   borderRadius: '30px',
   top: '-37.5vh',
 };
+
+
 
 const BeautyPage = () => {
   const [position, positionSet] = useState(0);
@@ -74,6 +79,7 @@ const BeautyPage = () => {
 
       <Description> {t('lashMakerPage.description')}</Description>
       <Description>{t('lashMakerPage.go')}</Description>
+
       <Ul>
         <Li>
           <p>{t('lashMakerPage.generalInformation.first')}</p>
@@ -113,6 +119,26 @@ const BeautyPage = () => {
           ))}
         </Row>
       </ContainerForSlider>
+      <div>
+        <H3>{t('lashMakerPage.needKnow.text')}</H3>
+        <WrapAdvice>
+          <SvgEye>
+            <SiSvg size={60} color="pink"  />
+          </SvgEye>
+          <SvgEye2>
+            <SiSvg size={60} color="pink" />
+          </SvgEye2>
+          <SvgEye3>
+            <SiSvg size={60} color="pink" />
+          </SvgEye3>
+          <SvgEye4>
+            <SiSvg size={60} color="pink" />
+          </SvgEye4>
+          <Advice>{t('lashMakerPage.needKnow.first')}</Advice>
+          <Advice>{t('lashMakerPage.needKnow.second')}</Advice>
+          <Advice>{t('lashMakerPage.needKnow.third')}</Advice>
+        </WrapAdvice>
+      </div>
     </>
   );
 };
