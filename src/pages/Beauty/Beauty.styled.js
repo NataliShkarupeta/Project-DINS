@@ -6,8 +6,8 @@ export const H3 = styled.h3`
   font-weight: ${p => p.theme.fontWeights.bold};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
-  border-bottom: ${p => p.theme.borders.normal};
-  border-color: ${p => p.theme.colors.primary};
+  /* border-bottom: ${p => p.theme.borders.normal};
+  border-color: ${p => p.theme.colors.primary}; */
 `;
 
 export const WrapAdvice = styled.div`
@@ -20,6 +20,9 @@ position: relative;
  
 `;
 export const Advice = styled.p`
+  border-left: ${p => p.theme.borders.normal};
+  border-color: ${p => p.theme.colors.primary};
+  padding-left:10px;
   width: 800px;
 
   &:nth-child(even) {

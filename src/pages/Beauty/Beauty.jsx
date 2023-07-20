@@ -13,10 +13,10 @@ import {
   H2,
   Ul,
   H3,
-  SvgEye,
-  SvgEye2,
-  SvgEye3,
-  SvgEye4,
+  // SvgEye,
+  // SvgEye2,
+  // SvgEye3,
+  // SvgEye4,
   Li,
   WordLashMaker,
   WrapTitleAndEye,
@@ -28,7 +28,12 @@ import l6 from '../../images/beauty/lash6 (1).jpg';
 import l8 from '../../images/beauty/lash8 (1).jpg';
 import l9 from '../../images/beauty/lash9 (1).jpg';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import { SiSvg, SiApachecassandra, SiAdafruit } from 'react-icons/si';
+import { SiSvg, SiApachecassandra} from 'react-icons/si';
+import {
+  GiDeadHead,
+  GiGems,
+  GiTwoShadows,
+} from 'react-icons/gi';
 import { useTranslation } from 'react-i18next';
 
 const styles = {
@@ -63,12 +68,7 @@ const BeautyPage = () => {
       <Link to={'/'}>
         <ButtonHome />
       </Link>
-      <SiSvg />
-      {/* <SvgEye>
-        <SiApachecassandra size={60} color="blue" />
-      </SvgEye> */}
-
-      <SiAdafruit />
+     
       <WrapTitleAndEye>
         <H2>
           <WordLashMaker>{t('lashMakerPage.title')}</WordLashMaker>
@@ -122,8 +122,8 @@ const BeautyPage = () => {
       <div>
         <H3>{t('lashMakerPage.needKnow.text')}</H3>
         <WrapAdvice>
-          <SvgEye>
-            <SiSvg size={60} color="pink"  />
+          {/* <SvgEye>
+            <SiSvg size={60} color="pink" />
           </SvgEye>
           <SvgEye2>
             <SiSvg size={60} color="pink" />
@@ -133,10 +133,20 @@ const BeautyPage = () => {
           </SvgEye3>
           <SvgEye4>
             <SiSvg size={60} color="pink" />
-          </SvgEye4>
-          <Advice>{t('lashMakerPage.needKnow.first')}</Advice>
-          <Advice>{t('lashMakerPage.needKnow.second')}</Advice>
-          <Advice>{t('lashMakerPage.needKnow.third')}</Advice>
+          </SvgEye4> */}
+
+          <Advice>
+            {t('lashMakerPage.needKnow.first')} <GiTwoShadows size={30}/>
+          </Advice>
+
+          <Advice>
+            {t('lashMakerPage.needKnow.second')} <GiDeadHead size={30}/>
+          </Advice>
+
+          <Advice>
+            {t('lashMakerPage.needKnow.third')}
+            <GiGems size={30}/>
+          </Advice>
         </WrapAdvice>
       </div>
     </>
