@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 // import img from '../../images/bgSocialProject/bg1 (1).jpg';
 
+export const Text = styled.div`
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  line-height: ${p => p.theme.lineHeights.heading};
+`;
+
 export const WrapSections = styled.div`
   display: flex;
   gap: 10px;
@@ -17,6 +22,8 @@ export const H3 = styled.h3`
 export const WrapAboutProject = styled.div`
   border-bottom: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.primary};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  line-height: ${p => p.theme.lineHeights.normal};
 `;
 
 export const BoxForReport = styled.div`
@@ -36,19 +43,20 @@ export const SectionMain = styled.section`
 export const WrapPhoto = styled.div`
   display: flex;
   gap: 5px;
-  margin-bottom: ${p => p.theme.space[4]}px;
   align-items: flex-start;
 `;
-export const Img2 = styled.img`
-`;
+
+export const Img2 = styled.img``;
+
+
 export const Call = styled.h2`
   display: inline-block;
   text-shadow: 0 10px 5px #8c928f, 0 40px 60px #8c928f;
   margin-bottom: ${p => p.theme.space[4]}px;
+  margin-top: ${p => p.theme.space[4]}px;
   font-size: ${p => p.theme.fontSizes[5]}px;
   color: ${p => p.theme.colors.modes.light.text};
 `;
-
 
 export const SectionSecond = styled.section`
   width: 25%;

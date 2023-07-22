@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const WrapForMargin = styled.div`
+  margin-top: ${p => p.theme.space[4]}px;
+`; 
+
 export const P = styled.p`
   text-indent: 2em;
   font-family: ${p => p.theme.fonts.body};

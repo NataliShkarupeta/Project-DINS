@@ -1,8 +1,8 @@
 import { ButtonHome } from 'components/ButtonHome/ButtonHome';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 // import { NavigationLink } from 'pages/HomePage/HomePage.styled';
-import { Ul } from './Painting.styled';
+import { Ul, NavigationLink } from './Painting.styled';
 
 const PaintingPage = () => {
   const [t] = useTranslation();
@@ -15,14 +15,14 @@ const PaintingPage = () => {
       </Link>
       <Ul>
         <li>
-          <NavLink to={'/painting'}>
+          <NavigationLink to={'/painting'}>
             <h3>{t('paintin_page.paintinTitle1')}</h3>
-          </NavLink>
+          </NavigationLink>
         </li>
         <li>
-          <NavLink to={'/painting/my-gallary'}>
+          <NavigationLink to={'/painting/my-gallary'}>
             <h3>{t('paintin_page.paintinTitle2')}</h3>
-          </NavLink>
+          </NavigationLink>
         </li>
       </Ul>
       <Outlet />

@@ -11,6 +11,7 @@ import {
   H3,
   WrapAboutProject,
   BoxForReport,
+  Text,
 } from './SocialProject.styled';
 import { motion } from 'framer-motion';
 import { BsHeart } from 'react-icons/bs';
@@ -23,44 +24,17 @@ const SocialProject = () => {
       <SectionMain>
         <H2>{t('paintin_page.paintinTitle1')} </H2>
         <WrapPhoto>
-          {/* <img
-              src={require('../../images/bgSocialProject/bg1 (1).jpg')}
-              alt=""
-               width="240"
-            /> */}
-          {/* <Img2
-            src={require('../../images/bgSocialProject/bg2 (1).jpg')}
-            alt=""
-            width="240"
-          /> */}
-          {/* <img
-            src={require('../../images/bgSocialProject/bg3 (1).jpg')}
-            alt=""
-            width="240"
-          /> */}
-          {/* <img
-            src={require('../../images/bgSocialProject/bg4 (1).jpg')}
-            alt=""
-            width="240"
-          /> */}
-          <Img2
+         <Img2
             src={require('../../images/bgSocialProject/bg5 (1).jpg')}
             alt=""
             width="240"
           />
-          <div>{t('socialProject_page.text1')}</div>
-          {/* <div>{t('socialProject_page.text2')}</div> */}
+          <Text>{t('socialProject_page.text1')}</Text>
           <img
             src={require('../../images/bgSocialProject/bg6 (1).jpg')}
             alt=""
             width="240"
           />
-
-          {/* <img
-            src={require('../../images/bgSocialProject/bg8 (1).jpg')}
-            alt=""
-            width="240"
-          /> */}
         </WrapPhoto>
         <motion.div
           animate={{
@@ -84,8 +58,8 @@ const SocialProject = () => {
 
           <Call>{t('socialProject_page.ukraineIsCool')}</Call>
           <div>
-            <BsHeart size={30} fill="blue"  />
-            <BsHeart fill="orange" size={30}/>
+            <BsHeart size={30} fill="blue" />
+            <BsHeart fill="orange" size={30} />
           </div>
         </WrapAboutProject>
         <div>

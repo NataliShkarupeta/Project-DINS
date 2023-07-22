@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { P, Ul, Span, WrapSen } from './LearnMore.styled';
+import { P, Ul, Span, WrapSen, WrapForMargin } from './LearnMore.styled';
 
 export const LearnMore = ({ setMore }) => {
   const [t] = useTranslation();
@@ -7,7 +7,11 @@ export const LearnMore = ({ setMore }) => {
   return (
     <>
       <button onClick={() => setMore(false)}>{t('button.back')}</button>
-      <P>{t('learn_more2')}</P>
+
+      <WrapForMargin>
+        <P>{t('learn_more2')}</P>
+      </WrapForMargin>
+
       <>
         <blockquote>
           <WrapSen>{t('dalay_lama._6')}</WrapSen> -{t('dalay_lama.name')}
