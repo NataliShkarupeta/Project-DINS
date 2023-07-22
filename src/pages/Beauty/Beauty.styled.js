@@ -6,8 +6,20 @@ export const H3 = styled.h3`
   font-weight: ${p => p.theme.fontWeights.bold};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
-  /* border-bottom: ${p => p.theme.borders.normal};
-  border-color: ${p => p.theme.colors.primary}; */
+   /* border-bottom: ${p => p.theme.borders.normal};
+  border-color: ${p => p.theme.colors.primary};  */
+`;
+
+export const Text = styled.p`
+  font-size: ${p => p.theme.fontSizes[4]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
+  line-height: ${p => p.theme.lineHeights.heading};
+  font-family: ${p => p.theme.fonts.monospace};
+  text-align: center;
+
+  border-top: ${p => p.theme.borders.normal};
+  padding-top: ${p => p.theme.space[3]}px;
+  border-color: ${p => p.theme.colors.fourth};
 `;
 
 export const WrapAdvice = styled.div`
@@ -16,6 +28,7 @@ position: relative;
   flex-wrap: wrap;
   font-size: ${p => p.theme.fontSizes[3]}px;
   padding: ${p => p.theme.space[4]}px;
+  
 
  
 `;
@@ -76,8 +89,8 @@ export const Li = styled.li`
   background-size: 3.2em 100%;
   background: linear-gradient(
       270deg,
-      rgba(255, 244, 228, 0.8) 50%,
-      rgb(125 5 209 / 7%) 50%
+      ${p => p.theme.colors.accent},
+    rgb(125 5 209 / 7%) 50%
     )
     0% 0% / 3.2em 100% rgb(34 34 34 / 0%);
 `;

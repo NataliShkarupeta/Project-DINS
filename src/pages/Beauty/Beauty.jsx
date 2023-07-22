@@ -13,6 +13,7 @@ import {
   H2,
   Ul,
   H3,
+  Text,
   // SvgEye,
   // SvgEye2,
   // SvgEye3,
@@ -28,12 +29,8 @@ import l6 from '../../images/beauty/lash6 (1).jpg';
 import l8 from '../../images/beauty/lash8 (1).jpg';
 import l9 from '../../images/beauty/lash9 (1).jpg';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import { SiSvg, SiApachecassandra} from 'react-icons/si';
-import {
-  GiDeadHead,
-  GiGems,
-  GiTwoShadows,
-} from 'react-icons/gi';
+import { SiApachecassandra } from 'react-icons/si';
+import { GiDeadHead, GiGems, GiTwoShadows, GiBullseye } from 'react-icons/gi';
 import { useTranslation } from 'react-i18next';
 
 const styles = {
@@ -44,8 +41,6 @@ const styles = {
   borderRadius: '30px',
   top: '-37.5vh',
 };
-
-
 
 const BeautyPage = () => {
   const [position, positionSet] = useState(0);
@@ -68,7 +63,7 @@ const BeautyPage = () => {
       <Link to={'/'}>
         <ButtonHome />
       </Link>
-     
+
       <WrapTitleAndEye>
         <H2>
           <WordLashMaker>{t('lashMakerPage.title')}</WordLashMaker>
@@ -136,19 +131,22 @@ const BeautyPage = () => {
           </SvgEye4> */}
 
           <Advice>
-            {t('lashMakerPage.needKnow.first')} <GiTwoShadows size={30}/>
+            {t('lashMakerPage.needKnow.first')} <GiTwoShadows size={30} />
           </Advice>
-
           <Advice>
-            {t('lashMakerPage.needKnow.second')} <GiDeadHead size={30}/>
+            {t('lashMakerPage.needKnow.fourth')}
+            <GiBullseye size={30} />
           </Advice>
-
+          <Advice>
+            {t('lashMakerPage.needKnow.second')} <GiDeadHead size={30} />
+          </Advice>
           <Advice>
             {t('lashMakerPage.needKnow.third')}
-            <GiGems size={30}/>
+            <GiGems size={30} />
           </Advice>
         </WrapAdvice>
       </div>
+      <Text>{t('lashMakerPage.text')}</Text>
     </>
   );
 };

@@ -32,6 +32,7 @@ export const theme = {
     primary: '#8c3b19',
     secondary: '#d6d0d9',
     muted: 'transparent',
+    fourth: '#800080',
     modes: {
       dark: {
         text: '#fff',
@@ -88,6 +89,7 @@ export const themeSecond = {
     primary: 'black',
     therd: '#152313',
     secondary: '',
+    fourth: '#800080',
     modes: {
       dark: {
         text: '#fff',
