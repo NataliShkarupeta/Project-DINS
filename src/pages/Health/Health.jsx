@@ -1,6 +1,7 @@
 import { ButtonHome } from 'components/ButtonHome/ButtonHome';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { WrapPhotos, Title, Text } from './Health.styled';
 
 const HealthPage = () => {
   const [t] = useTranslation();
@@ -10,7 +11,8 @@ const HealthPage = () => {
       <Link to={'/'}>
         <ButtonHome />
       </Link>
-      <div>
+      <Title>{t(`herbalPage.word`)}</Title>
+      <WrapPhotos>
         <img
           src={require('../../images/healthy/herb1 (1).jpg')}
           alt=""
@@ -26,13 +28,21 @@ const HealthPage = () => {
           alt=""
           width="340"
         />
-      </div>
+        <img
+          src={require('../../images/healthy/herbs10.jpg')}
+          alt=""
+          width="340"
+        />
+      </WrapPhotos>
       <div>
-        <h2>{t(`herbalPage.word`)}</h2>
-        <span>{t(`herbalPage.title`)}</span>
-        <p>{t(`herbalPage.text.bread`)}</p>
-        <p>{t(`herbalPage.text.nature`)}</p>
-        <p>{t(`herbalPage.text.herbalTea`)}</p>
+        {/* <Title>{t(`herbalPage.word`)}</Title> */}
+        <Text>{t(`herbalPage.title`)}</Text>
+        <br />
+        <Text>{t(`herbalPage.text.bread`)}</Text>
+        <br />
+        <Text>{t(`herbalPage.text.nature`)}</Text>
+        <br />
+        <Text>{t(`herbalPage.text.herbalTea`)}</Text>
       </div>
     </>
   );
