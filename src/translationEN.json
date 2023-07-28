@@ -111,11 +111,44 @@
   },
   "herbalPage": {
     "word": "MMMMM.....HERBS",
-    "title": "Few of us globally think about what surrounds us. Sun, air, water, fire, earth and, of course, herbs. This is taken as a given. People value what they invest their labor and energy into.",
+    "title": "Few of us globally think about what surrounds us. Sun, air, water, fire, earth and, of course, herbs. This is taken as a given. People value what they invest their labor and energy into, and that which simply exists remains out of consideration.",
     "text": {
       "bread": "Take a regular loaf of bread, it's just bread. How many people see the grain in a loaf of bread, the sun that warmed it, the rain that watered it and gave it the opportunity to grow, the lifetime of a person who collected grain, the baker's hands that made of flour ..... ordinary bread? How much do we really value nature, which does not take money from us for its work and makes our life possible?",
       "nature": "Nature has given us everything for life and survival. There are conditions, food and medicine. Everything that surrounds us is created from natural materials used in one way or another, medicine grows underfoot!",
-    "herbalTea": "If you think that the study of herbs is some kind of complex science, it is not so. You need a little love for nature, for yourself and a little attention. Knowing the minimum amount of herbs will allow you to replace one cup of tea or coffee a day with a herbal, fragrant drink that will imperceptibly cleanse and strengthen your body."
+      "herbalTea": "If you think that the study of herbs is some kind of complex science, it is not so. You need a little love for nature, for yourself and a little attention. Knowing the minimum amount of herbs will allow you to replace one cup of tea or coffee a day with a herbal, fragrant drink that will imperceptibly cleanse and strengthen your body."
+    },
+    "propose": "I invite your attention to familiarize yourself with herbs that you can easily find",
+    "cardSet": {
+      "mint": {
+        "title": "Mint",
+        "about": "",
+        "description": ""
+      },
+      "plantain": {
+        "title": "Plantain",
+        "about": "",
+        "description": ""
+      },
+      "St.John'sWort": {
+        "title": " St. John's wort/Hypericum",
+        "about": "",
+        "description": ""
+      },
+      "thyme": {
+        "title": "Thyme",
+        "about": "",
+        "description": ""
+      },
+      "Linden": {
+        "title": "Linden",
+        "about": "",
+        "description": ""
+      },
+      "blackСurrant": {
+        "title": "black currant leaves",
+        "about": "",
+        "description": ""
+      }
     }
   }
 }

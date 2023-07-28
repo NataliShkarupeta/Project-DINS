@@ -29,8 +29,6 @@ position: relative;
   font-size: ${p => p.theme.fontSizes[3]}px;
   padding: ${p => p.theme.space[4]}px;
   
-
- 
 `;
 export const Advice = styled.p`
   border-left: ${p => p.theme.borders.normal};

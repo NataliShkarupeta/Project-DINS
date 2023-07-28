@@ -12,10 +12,9 @@ export const Motto = styled.span`
   font-family: ${p => p.theme.fonts.heading};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body};
-  /* width: ${p => p.theme.sizes[8]}px; */
-  line-height: ${p => p.theme.lineHeights.heading};
   margin-bottom: ${p => p.theme.space[4]}px;
   margin-top: ${p => p.theme.space[4]}px;
+  line-height: ${p => p.theme.lineHeights.normal};
 `;
 
 export const NameAndPhoto = styled.div`
@@ -41,7 +40,9 @@ export const Article = styled.article`
   padding: ${p => p.theme.space[3]}px;
   background-color: ${p => p.theme.colors.modes.light.background};
   font-size: ${p => p.theme.fontSizes[3]}px;
-  line-height: ${p => p.theme.lineHeights.heading};
+  font-weight: ${p => p.theme.fontWeights.body};
+  line-height: ${p => p.theme.lineHeights.normal};
+  /* font-family: ${p => p.theme.fonts.monospace}; */
   /* overflow-y: scroll; */
   overflow: hidden;
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 3px 7px rgba(0, 0, 0, 0.3),
