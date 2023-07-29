@@ -15,6 +15,8 @@ import {
 } from './Health.styled';
 import { FcRightDown2 } from 'react-icons/fc';
 
+import arr from '../../herbsArray.json';
+console.log(arr);
 const HealthPage = () => {
   const [t] = useTranslation();
 
@@ -60,6 +62,22 @@ const HealthPage = () => {
         {t(`herbalPage.propose`)} <FcRightDown2 />
       </Propose>
       <Ul>
+        {Object.values(arr).map(({ img, title, about, description }) => (
+          <Li key={title}>
+            <CardWrap>
+              <img  alt="" width="370" />
+              <div>
+                <p>{t(`${description}`)}</p>
+              </div>
+            </CardWrap>
+            <InfoData>
+              <H3>{t(`${title}`)}</H3>
+              <p> {t(`${about}`)}</p>
+            </InfoData>
+          </Li>
+        ))}
+      </Ul>
+      {/* <Ul>
         <Li>
           <CardWrap>
             <img
@@ -156,9 +174,10 @@ const HealthPage = () => {
             <p></p>
           </InfoData>
         </Li>
-      </Ul>
+      </Ul> */}
     </>
   );
 };
 
 export default HealthPage;
+

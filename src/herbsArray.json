@@ -1,0 +1,38 @@
+{
+  "mint": {
+    "img": " ../../images/healthy/herb4 (1).jpg ",
+    "title": "herbalPage.cardSet.mint.title",
+    "about": "herbalPage.cardSet.mint.about",
+    "description": ""
+  },
+  "plantain": {
+    "img": "../../images/healthy/herbs5 (1).jpg",
+    "title": "herbalPage.cardSet.plantain.title",
+    "about": "",
+    "description": ""
+  },
+  "St.John'sWort": {
+    "img": "../../images/healthy/herbs6 (1).jpg",
+    "title": "herbalPage.cardSet.St.John'sWort.title",
+    "about": "",
+    "description": ""
+  },
+  "thyme": {
+    "img": "../../images/healthy/herbs7 (1).jpg",
+    "title": "herbalPage.cardSet.thyme.title",
+    "about": "",
+    "description": ""
+  },
+  "Linden": {
+    "img": "../../images/healthy/herbs8 (1).jpg",
+    "title": "herbalPage.cardSet.Linden.title",
+    "about": "",
+    "description": ""
+  },
+  "blackСurrant": {
+    "img": "../../images/healthy/herbs9 (1).jpg",
+    "title": "herbalPage.cardSet.blackСurrant.title",
+    "about": "",
+    "description": ""
+  }
+}
