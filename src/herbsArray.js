@@ -10,7 +10,7 @@ export const data = [
     image: h1,
     title: 'herbalPage.cardSet.mint.title',
     about: 'herbalPage.cardSet.mint.about',
-    description: '',
+    description: 'herbalPage.cardSet.mint.description',
   },
   {
     image: h2,

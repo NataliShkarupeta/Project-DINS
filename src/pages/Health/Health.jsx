@@ -12,11 +12,12 @@ import {
   CardWrap,
   InfoData,
   H3,
+  Overlay,
+  OverlayText,
 } from './Health.styled';
 import { FcRightDown2 } from 'react-icons/fc';
 
 import {data} from '../../herbsArray.js';
-console.log(data);
 const HealthPage = () => {
   const [t] = useTranslation();
 
@@ -65,9 +66,9 @@ const HealthPage = () => {
           <Li key={title}>
             <CardWrap>
               <img src={image} alt="" width="370" />
-              <div>
-                <p>{t(`${description}`)}</p>
-              </div>
+              <Overlay>
+                <OverlayText>{t(`${description}`)}</OverlayText>
+              </Overlay>
             </CardWrap>
             <InfoData>
               <H3>{t(`${title}`)}</H3>

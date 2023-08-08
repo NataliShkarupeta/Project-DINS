@@ -7,6 +7,27 @@ export const H3 = styled.h3`
   font-family: ${p => p.theme.fonts.monospace};
 `;
 
+export const OverlayText = styled.p`
+  padding: 13px 15px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  color: #fff;
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  background-color: rgba(112, 38, 115, 0.9);
+  transform: translatey(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   Li:hover & {
+    transform: translatey(0);
+  }
+`;
+
 export const InfoData = styled.div`
   /* width: 768px; */
 
@@ -16,6 +37,7 @@ export const InfoData = styled.div`
   border: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.fourth};
   border-top: none;
+
 `;
 
 export const CardWrap = styled.div`
@@ -27,13 +49,18 @@ export const CardWrap = styled.div`
 
 export const Li = styled.li`
   width: 370px;
-    cursor: pointer;
+  /* height: 350px; */
+  cursor: pointer;
   overflow: hidden;
-  /* -webkit-transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); */
-  /* transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); */
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
 `;
+
+
 export const Ul = styled.ul`
   display: flex;
   flex-wrap: wrap;
