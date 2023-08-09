@@ -131,24 +131,25 @@
       },
       "St.John'sWort": {
         "title": " St. John's wort/Hypericum",
-        "about": "",
+        "about": "St. John's wort provides anti-inflammatory, disinfectant, hemostatic, astringent, antibacterial effect.",
         "description": ""
       },
       "thyme": {
         "title": "Thyme",
-        "about": "",
-        "description": ""
+        "about": "Thyme decoction is used for the treatment of gastrointestinal diseases, nervous diseases, insomnia, diabetes, fatigue and nocturnal urinary incontinence.",
+        "description": "Thyme has a diaphoretic, antispasmodic, expectorant and anti-inflammatory effect. It serves as an antitussive, wound-healing, disinfectant, anti-rheumatic agent. It calms the nervous system, inhibits coccal microflora and pathogenic fungi. Thyme preparations improve the work of the pancreas, stimulate the activity of the digestive system, and increase appetite. They are useful for low acidity of gastric juice and duodenal ulcer. Thyme herb is used to treat diseases of the kidneys and urinary tract."
       },
       "Linden": {
         "title": "Linden",
-        "about": "",
-        "description": ""
+        "about": "It has anti-inflammatory, antipyretic, diaphoretic, expectorant, diuretic, analgesic effect.",
+        "description": "Lime tea reduces blood viscosity, removes toxins from the liver, activates the work of the gall bladder, stomach, bladder, kidneys and intestines. Linden is also very useful for external use: lotions with linden infusion treat skin ulcers, burns, hemorrhoids, relieve joint pain. And for insomnia, rheumatism, stomach colic and intestinal spasms, there is no better remedy than a warm bath with the addition of lime blossom."
       },
       "blackСurrant": {
         "title": "black currant leaves",
-        "about": "",
-        "description": ""
+        "about": "Currant tea is recommended for colds, runny noses, and coughs.",
+        "description": "Infusions and decoctions have diuretic, antimicrobial, capillary-strengthening, diaphoretic, anti-allergic, astringent and tonic properties and increase immunity. At the same time, infusions and decoctions are used for diseases of the kidneys, urinary tract, gastrointestinal tract, skin, cardiovascular system, as well as for atherosclerosis, rheumatism, gout, diabetes, hypertension, pulmonary tuberculosis."
       }
-    }
+    },
+    "siteFromInfo": "More information here"
   }
 }

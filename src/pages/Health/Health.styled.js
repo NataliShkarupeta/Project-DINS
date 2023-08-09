@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const LinkForSite = styled.span`
+  text-decoration: underline;
+  font-size: ${p => p.theme.fontSizes[1]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
+  line-height: ${p => p.theme.lineHeights.heading};
+`;
+
 export const H3 = styled.h3`
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
@@ -8,22 +15,25 @@ export const H3 = styled.h3`
 `;
 
 export const OverlayText = styled.p`
-  padding: 13px 15px;
+  padding: 23px 15px;
   margin: 0;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
   letter-spacing: 0.03em;
   color: #fff;
+  overflow-y: scroll;
+  height: 260px;
 `;
 
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
   background-color: rgba(112, 38, 115, 0.9);
+  /* overflow-y: scroll; */
   transform: translatey(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-   Li:hover & {
+  Li:hover & {
     transform: translatey(0);
   }
 `;
@@ -100,7 +110,7 @@ export const Title = styled.h2`
 `;
 
 export const Text = styled.span`
-  font-size: ${p => p.theme.fontSizes[4]}px;
+  font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};

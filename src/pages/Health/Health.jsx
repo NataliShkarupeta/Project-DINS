@@ -14,6 +14,7 @@ import {
   H3,
   Overlay,
   OverlayText,
+  LinkForSite,
 } from './Health.styled';
 import { FcRightDown2 } from 'react-icons/fc';
 
@@ -28,11 +29,11 @@ const HealthPage = () => {
       </Link>
       <Title>{t(`herbalPage.word`)}</Title>
       <WrapPhotos>
-        <img
+        {/* <img
           src={require('../../images/healthy/herb1 (1).jpg')}
           alt=""
           width="340"
-        />
+        /> */}
         <img
           src={require('../../images/healthy/herb2 (1).jpg')}
           alt=""
@@ -62,12 +63,18 @@ const HealthPage = () => {
         {t(`herbalPage.propose`)} <FcRightDown2 />
       </Propose>
       <Ul>
-        {data.map(({ title, image, about, description }) => (
+        {data.map(({ title, image, about, description, siteFrom }) => (
           <Li key={title}>
             <CardWrap>
               <img src={image} alt="" width="370" />
               <Overlay>
-                <OverlayText>{t(`${description}`)}</OverlayText>
+                <OverlayText>
+                  {t(`${description}`)}
+                  <br />
+                  <a href={siteFrom} target="_blank" rel="noopener noreferrer">
+                    <LinkForSite>{t(`herbalPage.siteFromInfo`)}</LinkForSite>
+                  </a>
+                </OverlayText>
               </Overlay>
             </CardWrap>
             <InfoData>
