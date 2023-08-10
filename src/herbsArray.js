@@ -18,7 +18,7 @@ export const data = [
     title: 'herbalPage.cardSet.plantain.title',
     about: 'herbalPage.cardSet.plantain.about',
     description: 'herbalPage.cardSet.plantain.description',
-    siteFrom: '',
+    siteFrom: 'https://ukr.media/medicine/307747/',
   },
   {
     image: h3,

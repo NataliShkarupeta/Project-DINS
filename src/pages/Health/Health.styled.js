@@ -12,6 +12,7 @@ export const H3 = styled.h3`
   font-weight: ${p => p.theme.fontWeights.bold};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
+  margin-bottom: ${p => p.theme.space[2]}px;
 `;
 
 export const OverlayText = styled.p`
@@ -39,35 +40,36 @@ export const Overlay = styled.div`
 `;
 
 export const InfoData = styled.div`
-  /* width: 768px; */
-
-  padding: 20px 24px;
+  height: 130px;
+  padding: 10px 24px;
   /* border: 1px solid #eee; */
 
-  border: ${p => p.theme.borders.normal};
+  /* border: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.fourth};
-  border-top: none;
+  border-top: none; */
 
 `;
 
 export const CardWrap = styled.div`
   width: fit-content;
-  /* height: 300px; */
+  height: 260px;
   overflow: hidden;
   position: relative;
 `;
 
 export const Li = styled.li`
   width: 370px;
-  /* height: 350px; */
+  height: 390px;
   cursor: pointer;
   overflow: hidden;
+  border: ${p => p.theme.borders.normal};
+  border-color: ${p => p.theme.colors.fourth};
+  border-top: none;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-
 `;
 
 
