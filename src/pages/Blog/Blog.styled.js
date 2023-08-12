@@ -60,7 +60,7 @@ export const Li = styled.li`
 
 export const Title = styled.h2`
   font-family: ${p => p.theme.fonts.heading};
-  font-size: ${p => p.theme.fontSizes[4]}px;
+  font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.therd};
 `;
@@ -73,7 +73,7 @@ export const Text = styled.span`
   font-family: ${p => p.theme.fonts.heading};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
-  line-height: ${p => p.theme.lineHeights.heading};
-  font-size: ${p => p.theme.fontSizes[3]}px;
+  line-height: ${p => p.theme.lineHeights.normal};
+  /* font-size: ${p => p.theme.fontSizes[3]}px; */
   color: ${p => p.theme.colors.therd};
 `;

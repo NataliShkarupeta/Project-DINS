@@ -1,5 +1,44 @@
 import styled from 'styled-components';
 
+export const InRightBlock = styled.div`
+  position: sticky;
+  aspect-ratio: square;
+  background-color: ${p => p.theme.colors.accent};
+  width: 400px;
+  height: 400px;
+  border-radius: ${p => p.theme.radii.normal};
+ /* transform: translateY(-50%);  */
+`;
+export const NameDisease = styled.p`
+  font-size: ${p => p.theme.fontSizes[5]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
+  line-height: ${p => p.theme.lineHeights.heading};
+  font-family: ${p => p.theme.fonts.monospace};
+  margin-bottom: ${p => p.theme.space[5]}px;
+`;
+
+export const TwoColumns = styled.div`
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  margin-bottom: ${p => p.theme.space[4]}px;
+  margin-top: ${p => p.theme.space[4]}px;
+`;
+
+export const LeftColumn = styled.div`
+  width: 50%;
+  padding: ${p => p.theme.space[5]}px;
+`;
+export const RightColumn = styled.div`
+  width: 50%;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const LinkForSite = styled.span`
   text-decoration: underline;
   font-size: ${p => p.theme.fontSizes[1]}px;
@@ -47,7 +86,6 @@ export const InfoData = styled.div`
   /* border: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.fourth};
   border-top: none; */
-
 `;
 
 export const CardWrap = styled.div`
@@ -71,7 +109,6 @@ export const Li = styled.li`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;
-
 
 export const Ul = styled.ul`
   display: flex;

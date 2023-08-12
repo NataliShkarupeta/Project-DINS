@@ -18,15 +18,14 @@ export const data = [
     title: 'herbalPage.cardSet.plantain.title',
     about: 'herbalPage.cardSet.plantain.about',
     description: 'herbalPage.cardSet.plantain.description',
-    siteFrom: 'https://ukr.media/medicine/307747/',
+    siteFrom: '',
   },
   {
     image: h3,
     title: "herbalPage.cardSet.St.John'sWort.title",
     about: "herbalPage.cardSet.St.John'sWort.about",
     description: "herbalPage.cardSet.St.John'sWort.description",
-    siteFrom:
-      'https://fitomarket.com.ua/ua/fitoblog/zvirobij-zvichajnij-vlastivosti-i-zastosuvannja',
+    siteFrom: 'https://fitomarket.com.ua/ua/fitoblog/zvirobij-zvichajnij-vlastivosti-i-zastosuvannja',
   },
   {
     image: h4,
