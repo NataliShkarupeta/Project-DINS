@@ -15,19 +15,21 @@ export const NameDisease = styled.p`
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
   margin-bottom: ${p => p.theme.space[5]}px;
+
 `;
 
 export const TwoColumns = styled.div`
   display: flex;
   align-items: start;
   gap: 20px;
-  margin-bottom: ${p => p.theme.space[4]}px;
-  margin-top: ${p => p.theme.space[4]}px;
+  /* margin-bottom: ${p => p.theme.space[4]}px;
+  margin-top: ${p => p.theme.space[4]}px; */
 `;
 
 export const LeftColumn = styled.div`
   width: 50%;
-  padding: ${p => p.theme.space[5]}px;
+  padding: 50vh;
+  /* padding: ${p => p.theme.space[5]}px; */
 `;
 export const RightColumn = styled.div`
   width: 50%;

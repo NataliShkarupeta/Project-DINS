@@ -18,13 +18,13 @@ import {
   TwoColumns,
   LeftColumn,
   RightColumn,
-  NameDisease,
   InRightBlock,
 } from './Health.styled';
 import { FcRightDown2 } from 'react-icons/fc';
 
 import { data } from '../../herbsArray.js';
 import { disease } from './disease';
+import { FeaturesTitle } from 'components/Features/Features/title';
 const HealthPage = () => {
   const [t] = useTranslation();
 
@@ -74,7 +74,7 @@ const HealthPage = () => {
             <ul>
               {disease.map(({ title, id }) => (
                 <li key={id}>
-                  <NameDisease> {title}</NameDisease>
+                  <FeaturesTitle> {title}</FeaturesTitle>
                 </li>
               ))}
             </ul>
