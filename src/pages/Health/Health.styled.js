@@ -4,10 +4,10 @@ export const InRightBlock = styled.div`
   position: sticky;
   aspect-ratio: square;
   background-color: ${p => p.theme.colors.accent};
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   border-radius: ${p => p.theme.radii.normal};
- /* transform: translateY(-50%);  */
+  /* transform: translateY(-50%);  */
 `;
 export const NameDisease = styled.p`
   font-size: ${p => p.theme.fontSizes[5]}px;
@@ -15,7 +15,6 @@ export const NameDisease = styled.p`
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
   margin-bottom: ${p => p.theme.space[5]}px;
-
 `;
 
 export const TwoColumns = styled.div`
@@ -27,18 +26,18 @@ export const TwoColumns = styled.div`
 `;
 
 export const LeftColumn = styled.div`
-  width: 50%;
-  padding: 50vh;
+  max-width: 50%;
+  padding: 40vh;
   /* padding: ${p => p.theme.space[5]}px; */
 `;
 export const RightColumn = styled.div`
-  width: 50%;
+  max-width: 50%;
   position: sticky;
   top: 0;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 `;
 
 export const LinkForSite = styled.span`
