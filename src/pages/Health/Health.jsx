@@ -23,7 +23,7 @@ import {
 import { FcRightDown2 } from 'react-icons/fc';
 
 import { data } from '../../herbsArray.js';
-import { disease } from './disease';
+import { diseases } from './disease';
 import { FeaturesTitle } from 'components/Features/Features/title';
 const HealthPage = () => {
   const [t] = useTranslation();
@@ -72,15 +72,19 @@ const HealthPage = () => {
         <TwoColumns>
           <LeftColumn>
             <ul>
-              {disease.map(({ title, id }) => (
+              {diseases.map(({ title, id }) => (
                 <li key={id}>
-                  <FeaturesTitle> {title}</FeaturesTitle>
+                  <FeaturesTitle id={id}> {title}</FeaturesTitle>
                 </li>
               ))}
             </ul>
           </LeftColumn>
           <RightColumn>
-            <InRightBlock>r</InRightBlock>
+            <InRightBlock>
+              {diseases.map(disease => (
+                <disease.card id={disease.id} key={disease.id} />
+              ))}
+            </InRightBlock>
           </RightColumn>
         </TwoColumns>
       </section>

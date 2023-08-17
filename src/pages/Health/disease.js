@@ -1,10 +1,11 @@
-export const disease = [
-  { title: 'Простудні захворювання', id: 1 },
-  { title: 'Високий тиск', id: 2 },
-  { title: 'Низький тиск', id: 3 },
-  { title: 'Безсоння', id: 4 },
-  { title: ' Діпресія', id: 5 },
-  { title: 'Алергія', id: 6 },
-  { title: 'Шкірні висипи', id: 7 },
-  
+import { Card, Fifthth, ForDisease, Fourth, One, Second, Third } from "components/Features/Features/cardForDisease";
+
+export const diseases = [
+  { title: 'Простудні захворювання', id: 'Card', card: Card },
+  { title: 'Високий тиск', id: 'ForDisease', card: ForDisease },
+  { title: 'Низький тиск', id: 'One', card: One },
+  { title: 'Безсоння', id: 'Second', card: Second },
+  { title: ' Діпресія', id: 'Third', card: Third },
+  { title: 'Алергія', id: 'Fourth', card: Fourth },
+  { title: 'Шкірні висипи', id:"Fifthth", card: Fifthth },
 ];

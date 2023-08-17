@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const InRightBlock = styled.div`
-  position: sticky;
+  /* position: sticky; */
+  position: relative;
   aspect-ratio: square;
-  background-color: ${p => p.theme.colors.accent};
+  background-color: ${p => p.theme.colors.secondary};
   width: 450px;
   height: 450px;
   border-radius: ${p => p.theme.radii.normal};
