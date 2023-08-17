@@ -1,11 +1,23 @@
-import { Card, Fifthth, ForDisease, Fourth, One, Second, Third } from "components/Features/Features/cardForDisease";
+import {
+  CommonСold,
+  SkinRashes,
+  HighPressure,
+  Allergy,
+  LowPressure,
+  Insomnia,
+  Depression,
+} from 'components/Features/Features/cardForDisease';
 
 export const diseases = [
-  { title: 'Простудні захворювання', id: 'Card', card: Card },
-  { title: 'Високий тиск', id: 'ForDisease', card: ForDisease },
-  { title: 'Низький тиск', id: 'One', card: One },
-  { title: 'Безсоння', id: 'Second', card: Second },
-  { title: ' Діпресія', id: 'Third', card: Third },
-  { title: 'Алергія', id: 'Fourth', card: Fourth },
-  { title: 'Шкірні висипи', id:"Fifthth", card: Fifthth },
+  { title: 'herbalPage.diseases.commonСold', id: 'Card', card: CommonСold },
+  {
+    title: 'herbalPage.diseases.highPressure',
+    id: 'ForDisease',
+    card: HighPressure,
+  },
+  { title: 'herbalPage.diseases.lowPressure', id: 'One', card: LowPressure },
+  { title: 'herbalPage.diseases.insomnia', id: 'Second', card: Insomnia },
+  { title: 'herbalPage.diseases.depression', id: 'Third', card: Depression },
+  { title: 'herbalPage.diseases.allergy', id: 'Fourth', card: Allergy },
+  { title: 'herbalPage.diseases.skinRashes', id: 'Fifthth', card: SkinRashes },
 ];

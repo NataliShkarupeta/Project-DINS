@@ -66,15 +66,13 @@ const HealthPage = () => {
         <Text>{t(`herbalPage.text.herbalTea`)}</Text>
       </WrapText>
       <section>
-        <span>
-          Трави які можна використати для лікування розповсюджених хвороб:{' '}
-        </span>
+        <span>{t(`herbalPage.diseases.description`)}</span>
         <TwoColumns>
           <LeftColumn>
             <ul>
               {diseases.map(({ title, id }) => (
                 <li key={id}>
-                  <FeaturesTitle id={id}> {title}</FeaturesTitle>
+                  <FeaturesTitle id={id}>{t(`${title}`)}</FeaturesTitle>
                 </li>
               ))}
             </ul>
@@ -88,32 +86,37 @@ const HealthPage = () => {
           </RightColumn>
         </TwoColumns>
       </section>
-
-      <Propose>
-        {t(`herbalPage.propose`)} <FcRightDown2 />
-      </Propose>
-      <Ul>
-        {data.map(({ title, image, about, description, siteFrom }) => (
-          <Li key={title}>
-            <CardWrap>
-              <img src={image} alt="" width="370" />
-              <Overlay>
-                <OverlayText>
-                  {t(`${description}`)}
-                  <br />
-                  <a href={siteFrom} target="_blank" rel="noopener noreferrer">
-                    <LinkForSite>{t(`herbalPage.siteFromInfo`)}</LinkForSite>
-                  </a>
-                </OverlayText>
-              </Overlay>
-            </CardWrap>
-            <InfoData>
-              <H3>{t(`${title}`)}</H3>
-              <p> {t(`${about}`)}</p>
-            </InfoData>
-          </Li>
-        ))}
-      </Ul>
+      <section>
+        <Propose>
+          {t(`herbalPage.propose`)} <FcRightDown2 />
+        </Propose>
+        <Ul>
+          {data.map(({ title, image, about, description, siteFrom }) => (
+            <Li key={title}>
+              <CardWrap>
+                <img src={image} alt="" width="370" />
+                <Overlay>
+                  <OverlayText>
+                    {t(`${description}`)}
+                    <br />
+                    <a
+                      href={siteFrom}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <LinkForSite>{t(`herbalPage.siteFromInfo`)}</LinkForSite>
+                    </a>
+                  </OverlayText>
+                </Overlay>
+              </CardWrap>
+              <InfoData>
+                <H3>{t(`${title}`)}</H3>
+                <p> {t(`${about}`)}</p>
+              </InfoData>
+            </Li>
+          ))}
+        </Ul>
+      </section>
     </>
   );
 };

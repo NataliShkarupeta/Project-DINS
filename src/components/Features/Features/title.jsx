@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { useFeatureStore } from './store';
 
 const container = {
-  color: 'red',
+  color: 'purple',
 };
 
 const containerOne = {

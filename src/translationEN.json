@@ -150,6 +150,16 @@
         "description": "Infusions and decoctions have diuretic, antimicrobial, capillary-strengthening, diaphoretic, anti-allergic, astringent and tonic properties and increase immunity. At the same time, infusions and decoctions are used for diseases of the kidneys, urinary tract, gastrointestinal tract, skin, cardiovascular system, as well as for atherosclerosis, rheumatism, gout, diabetes, hypertension, pulmonary tuberculosis."
       }
     },
-    "siteFromInfo": "More information here"
+    "siteFromInfo": "More information here",
+    "diseases": {
+      "description": "Herbs that can be used to treat common diseases: ",
+      "commonСold": "Сommon cold",
+      "highPressure": "High blood pressure",
+      "lowPressure": "low blood pressure",
+      "insomnia": "Insomnia",
+      "depression": "Depression",
+      "allergy": "Allergy",
+      "skinRashes": "Skin rashes"
+    }
   }
 }
