@@ -122,7 +122,7 @@
       "mint": {
         "title": "Mint",
         "about": "Infusions and decoctions of the aerial parts of field mint have antispasmodic, analgesic and antiseptic effects.",
-        "description": ""
+        "description": "Due to the high content of essential oil, peppermint leaves have a calming, hypotensive, antiseptic, analgesic and antiemetic effect. Preparations based on this plant material provide an antihypoxic and weak antispasmodic effect. Mint leaves stimulate the secretion of bile and have an antiemetic effect. Mint properties include thinning and removal of phlegm from the bronchi and lungs."
       },
       "plantain": {
         "title": "Plantain",
@@ -153,13 +153,21 @@
     "siteFromInfo": "More information here",
     "diseases": {
       "description": "Herbs that can be used to treat common diseases: ",
-      "commonСold": "Сommon cold",
+      "commonСold": {
+        "title": "Сommon cold",
+        "description": ""
+      },
+
       "highPressure": "High blood pressure",
       "lowPressure": "low blood pressure",
       "insomnia": "Insomnia",
       "depression": "Depression",
       "allergy": "Allergy",
-      "skinRashes": "Skin rashes"
+      "skinRashes": "Skin rashes",
+      "hysteria": {
+        "title": "Hysteria",
+        "description": ""
+      }
     }
   }
 }

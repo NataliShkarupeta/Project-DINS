@@ -8,37 +8,32 @@ export const InRightBlock = styled.div`
   width: 450px;
   height: 450px;
   border-radius: ${p => p.theme.radii.normal};
-  /* transform: translateY(-50%);  */
 `;
 export const NameDisease = styled.p`
+  padding: ${p => p.theme.space[5]}px;
   font-size: ${p => p.theme.fontSizes[5]}px;
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
-  margin-bottom: ${p => p.theme.space[5]}px;
 `;
 
 export const TwoColumns = styled.div`
   display: flex;
   align-items: start;
   gap: 20px;
-  /* margin-bottom: ${p => p.theme.space[4]}px;
-  margin-top: ${p => p.theme.space[4]}px; */
 `;
 
 export const LeftColumn = styled.div`
-  max-width: 50%;
+  width: 50%;
   padding: 40vh;
-  /* padding: ${p => p.theme.space[5]}px; */
 `;
 export const RightColumn = styled.div`
-  max-width: 50%;
+  width: 50%;
   position: sticky;
   top: 0;
   height: 100vh;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 `;
 
 export const LinkForSite = styled.span`

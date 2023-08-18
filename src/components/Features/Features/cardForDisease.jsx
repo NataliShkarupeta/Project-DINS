@@ -44,3 +44,6 @@ export const Allergy = ({ id }) => {
 export const SkinRashes = ({ id }) => {
   return <CardForDisease id={id} gradient="#dcedd5,#4ddaf0"></CardForDisease>;
 };
+export const Hysteria = ({ id }) => {
+  return <CardForDisease id={id} gradient="#f6dce0,#f04f85"></CardForDisease>;
+};
