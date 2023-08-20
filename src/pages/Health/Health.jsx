@@ -25,6 +25,7 @@ import { FcRightDown2 } from 'react-icons/fc';
 import { data } from '../../herbsArray.js';
 import { diseases } from './disease';
 import { FeaturesTitle } from 'components/Features/Features/title';
+import { CommonСoldVisual } from 'components/Features/Features/visual';
 const HealthPage = () => {
   const [t] = useTranslation();
 
@@ -65,8 +66,14 @@ const HealthPage = () => {
         <br />
         <Text>{t(`herbalPage.text.herbalTea`)}</Text>
       </WrapText>
+      <CommonСoldVisual />
       <section>
         <span>{t(`herbalPage.diseases.description`)}</span>
+
+        {diseases.map(disease => (
+          <disease.visual id={disease.id} key={disease.id} />
+        ))}
+
         <TwoColumns>
           <LeftColumn>
             <ul>
@@ -86,10 +93,12 @@ const HealthPage = () => {
           </RightColumn>
         </TwoColumns>
       </section>
+
       <section>
         <Propose>
           {t(`herbalPage.propose`)} <FcRightDown2 />
         </Propose>
+
         <Ul>
           {data.map(({ title, image, about, description, siteFrom }) => (
             <Li key={title}>

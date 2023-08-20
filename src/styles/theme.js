@@ -55,6 +55,7 @@ export const theme = {
   radii: {
     none: 'none',
     normal: '4px',
+    middle:'10px',
     round: '50%',
     forSlider: '30px',
   },
