@@ -11,6 +11,8 @@ const CardForDisease = ({ gradient, children, id }) => {
   const styles = {
     backgroundImage: `linear-gradient(to bottom right,${gradient})`,
     opacity: `${inViewFeature === id ? '100' : '0'}`,
+
+    pointerEvents: `${inViewFeature === id ? 'auto' : 'none'}`,
   };
 
   const viewTitleAndSetFullScreenFeature = id => {
@@ -24,7 +26,7 @@ const CardForDisease = ({ gradient, children, id }) => {
       <CardButtun
         onClick={
           // ()=>setFullScreenFeature(id)
-          () => viewTitleAndSetFullScreenFeature()
+          () => viewTitleAndSetFullScreenFeature(id)
         }
       >
         Розгорнути
@@ -35,21 +37,53 @@ const CardForDisease = ({ gradient, children, id }) => {
 };
 
 export const CommonСold = ({ id }) => {
+const fullScreenFeature = useFeatureStore(state => state.fullScreenFeature);
+
+const isFullScreen = fullScreenFeature === id;
+ console.log('isFullScreen', isFullScreen);
+
   return (
     <CardForDisease id={id} gradient="#f5fbff,#addeff">
       <ul>
         <li>
-          <El style={{ top: '10%', left: '5%', width: '40%', height: '24%' }}>
+          <El
+            style={{
+              top: '10%',
+              left: '5%',
+              width: '40%',
+              height: '24%',
+              transform: `${isFullScreen ? 'scale(0)' : 'scale(1)'}`,
+              transition: 'all 2s ease',
+            }}
+          >
             липа
           </El>
         </li>
         <li>
-          <El style={{ top: '20%', right: '5%', width: '30%', height: '24%' }}>
+          <El
+            style={{
+              top: '20%',
+              right: '5%',
+              width: '30%',
+              height: '24%',
+              transform: `${isFullScreen ? 'scale(0)' : 'scale(1)'}`,
+              transition: 'all 2s ease',
+            }}
+          >
             чабрець
           </El>
         </li>
         <li>
-          <El style={{ top: '60%', left: '10%', width: '25%', height: '24%' }}>
+          <El
+            style={{
+              top: '60%',
+              left: '10%',
+              width: '25%',
+              height: '24%',
+              transform: `${isFullScreen ? 'scale(0)' : 'scale(1)'}`,
+              transition: 'all 2s ease',
+            }}
+          >
             {' '}
             шавлія
           </El>

@@ -35,9 +35,7 @@ const HealthPage = () => {
   const setFullScreenFeature = useFeatureStore(
     state => state.setFullScreenFeature
   );
-  //  const lastFullScreenFeature = useFeatureStore(
-  //    state => state.lastFullScreenFeature
-  //  );
+  const fullScreenFeature = useFeatureStore(state => state.fullScreenFeature);
 
   const viewFullScreenFeatureAndHiddenTitle = id => {
     setInViewTitle(null);
@@ -49,6 +47,7 @@ const HealthPage = () => {
       <Link to={'/'}>
         <ButtonHome />
       </Link>
+
       <Title>{t(`herbalPage.word`)}</Title>
       <WrapPhotos>
         {/* <img
@@ -82,7 +81,10 @@ const HealthPage = () => {
         <Text>{t(`herbalPage.text.herbalTea`)}</Text>
       </WrapText>
       <CommonСoldVisual />
-      <section>
+
+      <section
+      // style={{ position: `${fullScreenFeature ? 'sticky' : 'relative'}` }}
+      >
         <span>{t(`herbalPage.diseases.description`)}</span>
         <div>
           {diseases.map(disease => (
@@ -113,7 +115,11 @@ const HealthPage = () => {
               </ul>
             </LeftColumn>
             <RightColumn>
-              <InRightBlock>
+              <InRightBlock
+                style={{
+                  opacity: `${fullScreenFeature ? '0' : '100 '}`,
+                }}
+              >
                 {diseases.map(disease => (
                   <disease.card id={disease.id} key={disease.id} />
                 ))}
@@ -123,38 +129,42 @@ const HealthPage = () => {
         </div>
       </section>
 
-      <section>
-        <Propose>
-          {t(`herbalPage.propose`)} <FcRightDown2 />
-        </Propose>
+      {!fullScreenFeature && (
+        <section>
+          <Propose>
+            {t(`herbalPage.propose`)} <FcRightDown2 />
+          </Propose>
 
-        <Ul>
-          {data.map(({ title, image, about, description, siteFrom }) => (
-            <Li key={title}>
-              <CardWrap>
-                <img src={image} alt="" width="370" />
-                <Overlay>
-                  <OverlayText>
-                    {t(`${description}`)}
-                    <br />
-                    <a
-                      href={siteFrom}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <LinkForSite>{t(`herbalPage.siteFromInfo`)}</LinkForSite>
-                    </a>
-                  </OverlayText>
-                </Overlay>
-              </CardWrap>
-              <InfoData>
-                <H3>{t(`${title}`)}</H3>
-                <p> {t(`${about}`)}</p>
-              </InfoData>
-            </Li>
-          ))}
-        </Ul>
-      </section>
+          <Ul>
+            {data.map(({ title, image, about, description, siteFrom }) => (
+              <Li key={title}>
+                <CardWrap>
+                  <img src={image} alt="" width="370" />
+                  <Overlay>
+                    <OverlayText>
+                      {t(`${description}`)}
+                      <br />
+                      <a
+                        href={siteFrom}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <LinkForSite>
+                          {t(`herbalPage.siteFromInfo`)}
+                        </LinkForSite>
+                      </a>
+                    </OverlayText>
+                  </Overlay>
+                </CardWrap>
+                <InfoData>
+                  <H3>{t(`${title}`)}</H3>
+                  <p> {t(`${about}`)}</p>
+                </InfoData>
+              </Li>
+            ))}
+          </Ul>
+        </section>
+      )}
     </>
   );
 };

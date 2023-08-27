@@ -2,7 +2,7 @@ import { useFeatureStore } from './store';
 
 export const Visual = ({ children, id }) => {
   const fullScreenFeature = useFeatureStore(state => state.fullScreenFeature);
-  console.log(fullScreenFeature);
+
   return (
     <div
       style={{
@@ -11,8 +11,9 @@ export const Visual = ({ children, id }) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        transition: 'all 3s ease',
+        transition: 'all 2s ease',
         opacity: `${fullScreenFeature === id ? '100' : '0 '}`,
+
         pointerEvents: `${fullScreenFeature === id ? 'auto' : 'none'}`,
       }}
     >
@@ -28,7 +29,8 @@ export const CommonСoldVisual = ({ id }) => {
       <img
         src={require('../../../images/healthy/herb2 (1).jpg')}
         alt=""
-        width="340"
+        width="100%"
+        // style={{zIndex:100}}
       />
     </Visual>
   );

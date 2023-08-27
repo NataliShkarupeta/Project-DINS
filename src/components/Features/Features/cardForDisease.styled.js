@@ -24,6 +24,7 @@ export const El = styled.div`
   border-radius: ${p => p.theme.radii.middle};
   box-shadow: 1px 1px 33px -5px rgba(91, 98, 92, 0.5);
   background-color: ${p => p.theme.colors.modes.dark.text};
+
 `;
 
 export const Div = styled.div`
