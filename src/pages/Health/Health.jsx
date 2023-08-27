@@ -26,8 +26,23 @@ import { data } from '../../herbsArray.js';
 import { diseases } from './disease';
 import { FeaturesTitle } from 'components/Features/Features/title';
 import { CommonСoldVisual } from 'components/Features/Features/visual';
+import { useFeatureStore } from 'components/Features/Features/store';
+
 const HealthPage = () => {
   const [t] = useTranslation();
+  const inViewTitle = useFeatureStore(state => state.inViewTitle);
+  const setInViewTitle = useFeatureStore(state => state.setInViewTitle);
+  const setFullScreenFeature = useFeatureStore(
+    state => state.setFullScreenFeature
+  );
+  //  const lastFullScreenFeature = useFeatureStore(
+  //    state => state.lastFullScreenFeature
+  //  );
+
+  const viewFullScreenFeatureAndHiddenTitle = id => {
+    setInViewTitle(null);
+    setFullScreenFeature(null);
+  };
 
   return (
     <>
@@ -69,29 +84,43 @@ const HealthPage = () => {
       <CommonСoldVisual />
       <section>
         <span>{t(`herbalPage.diseases.description`)}</span>
-
-        {diseases.map(disease => (
-          <disease.visual id={disease.id} key={disease.id} />
-        ))}
-
-        <TwoColumns>
-          <LeftColumn>
-            <ul>
-              {diseases.map(({ title, id }) => (
-                <li key={id}>
-                  <FeaturesTitle id={id}>{t(`${title}`)}</FeaturesTitle>
-                </li>
-              ))}
-            </ul>
-          </LeftColumn>
-          <RightColumn>
-            <InRightBlock>
-              {diseases.map(disease => (
-                <disease.card id={disease.id} key={disease.id} />
-              ))}
-            </InRightBlock>
-          </RightColumn>
-        </TwoColumns>
+        <div>
+          {diseases.map(disease => (
+            <disease.visual id={disease.id} key={disease.id} />
+          ))}
+          {inViewTitle && (
+            <button
+              onClick={() => viewFullScreenFeatureAndHiddenTitle()}
+              style={{
+                position: 'fixed',
+                bottom: 26,
+                left: '45%',
+                translateX: '-50%',
+                zIndex: 10,
+              }}
+            >
+              Назад до сайту
+            </button>
+          )}
+          <TwoColumns>
+            <LeftColumn>
+              <ul>
+                {diseases.map(({ title, id }) => (
+                  <li key={id}>
+                    <FeaturesTitle id={id}>{t(`${title}`)}</FeaturesTitle>
+                  </li>
+                ))}
+              </ul>
+            </LeftColumn>
+            <RightColumn>
+              <InRightBlock>
+                {diseases.map(disease => (
+                  <disease.card id={disease.id} key={disease.id} />
+                ))}
+              </InRightBlock>
+            </RightColumn>
+          </TwoColumns>
+        </div>
       </section>
 
       <section>

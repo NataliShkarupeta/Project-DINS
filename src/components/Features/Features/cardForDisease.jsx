@@ -1,23 +1,32 @@
-
-import { Div, El,CardButtun } from './cardForDisease.styled';
+import { Div, El, CardButtun } from './cardForDisease.styled';
 import { useFeatureStore } from './store';
-// import { diseases } from 'pages/Health/disease';
 
 const CardForDisease = ({ gradient, children, id }) => {
   const inViewFeature = useFeatureStore(state => state.inViewFeature);
-  const setFullScreenFeature = useFeatureStore(state=>state.setFullScreenFeature)
+  const setFullScreenFeature = useFeatureStore(
+    state => state.setFullScreenFeature
+  );
+  const setInViewTitle = useFeatureStore(state => state.setInViewTitle);
 
   const styles = {
     backgroundImage: `linear-gradient(to bottom right,${gradient})`,
     opacity: `${inViewFeature === id ? '100' : '0'}`,
   };
+
+  const viewTitleAndSetFullScreenFeature = id => {
+    setFullScreenFeature(id);
+    setInViewTitle('qwe');
+  };
+
   return (
     <Div style={styles}>
       {children}
-      <CardButtun onClick={
-        ()=>setFullScreenFeature(id)
-        // ()=>console.log("click")
-        }>
+      <CardButtun
+        onClick={
+          // ()=>setFullScreenFeature(id)
+          () => viewTitleAndSetFullScreenFeature()
+        }
+      >
         Розгорнути
         {/* <CommonButton text={'Розгорнути'} /> */}
       </CardButtun>
@@ -117,7 +126,6 @@ export const LowPressure = ({ id }) => {
 export const Insomnia = ({ id }) => {
   return (
     <CardForDisease id={id} gradient="#f7fff5,#adffd8">
-    
       <ul>
         <li>
           <El style={{ top: '10%', left: '5%', width: '40%', height: '24%' }}>
@@ -235,7 +243,6 @@ export const SkinRashes = ({ id }) => {
 export const Hysteria = ({ id }) => {
   return (
     <CardForDisease id={id} gradient="#f6dce0,#f04f85">
-      
       <ul>
         <li>
           <El style={{ top: '10%', left: '5%', width: '40%', height: '24%' }}>
