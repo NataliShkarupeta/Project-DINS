@@ -157,41 +157,85 @@
 
       "commonСold": {
         "title": "Простуда",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "липа",
+          "two": "чабрець",
+          "three": "шавлія"
+        }
       },
       "highPressure": {
         "title": "Високий тиск",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "шавлія",
+          "two": "шавлія",
+          "three": "чабрець",
+          "four": "липа"
+        }
       },
 
       "lowPressure": {
         "title": "Низький тиск",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "шавлія",
+          "two": "чабрець",
+          "three": "шавлія"
+        }
       },
 
       "insomnia": {
         "title": "Безсоння",
-        "description": "Перцева м'ята"
+        "description": "Перцева м'ята",
+        "herbs": {
+          "one": "шавлія",
+          "two": "шавлія",
+          "three": "чабрець",
+          "four": "липа"
+        }
       },
 
       "depression": {
         "title": "Діпресія",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "чабрець",
+          "two": "чабрець",
+          "three": "липа"
+        }
       },
 
       "allergy": {
         "title": "Алергія",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "липа",
+          "two": "чабрець",
+          "three": "чабрець"
+        }
       },
 
       "skinRashes": {
         "title": "Шкірні висипи",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "липа",
+          "two": "липа",
+          "three": "липа"
+        }
       },
       "hysteria": {
         "title": "Істерія",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "липа",
+          "two": "липа",
+          "three": "липа"
+        }
       }
-    }
+    },
+    "buttonVisible": "Розгорнути",
+    "buttonclose": "Назад до сайту"
   }
 }

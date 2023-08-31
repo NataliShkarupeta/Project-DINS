@@ -102,7 +102,7 @@ const HealthPage = () => {
                 zIndex: 10,
               }}
             >
-              Назад до сайту
+              {t(`herbalPage.buttonclose`)}
             </button>
           )}
           <TwoColumns>

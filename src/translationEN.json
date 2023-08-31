@@ -155,36 +155,80 @@
       "description": "Herbs that can be used to treat common diseases: ",
       "commonСold": {
         "title": "Сommon cold",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "Plantain",
+          "two": "Thyme",
+          "three": "Linden"
+        }
       },
       "highPressure": {
         "title": "High blood pressure",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "Linden",
+          "two": "Thyme",
+          "three": "Thyme",
+          "four": "qwe"
+        }
       },
       "lowPressure": {
         "title": "Low blood pressure",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "Linden",
+          "two": "Thyme",
+          "three": "Thyme"
+        }
       },
       "insomnia": {
         "title": "Insomnia",
-        "description": "Перцева м'ята"
+        "description": "Перцева м'ята",
+        "herbs": {
+          "one": "Linden",
+          "two": "Linden",
+          "three": "Thyme",
+          "four": "Thyme"
+        }
       },
       "depression": {
         "title": "Depression",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "Thyme",
+          "two": "Linden",
+          "three": "Linden"
+        }
       },
       "allergy": {
         "title": "Allergy",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "Thyme",
+          "two": "Thyme",
+          "three": "Thyme"
+        }
       },
       "skinRashes": {
         "title": "Skin rashes",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "Linden",
+          "two": "Thyme",
+          "three": "Thyme"
+        }
       },
       "hysteria": {
         "title": "Hysteria",
-        "description": ""
+        "description": "",
+        "herbs": {
+          "one": "Linden",
+          "two": "Linden",
+          "three": "Linden"
+        }
       }
-    }
+    },
+    "buttonVisible": "Unwrap",
+    "buttonclose": "Back to the site"
   }
 }
