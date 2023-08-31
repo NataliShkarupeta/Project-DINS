@@ -32,7 +32,6 @@ export const FeaturesTitle = ({ children, id }) => {
   const containerOne = {
     color: 'grey',
     opacity: `${inViewTitle ? '0' : '100'}`,
-    duration: 0.3,
     transition: 'all 2.5s ease',
   };
 
@@ -45,9 +44,5 @@ export const FeaturesTitle = ({ children, id }) => {
     <NameDisease ref={ref} style={isInView ? container : containerOne}>
       {children}
     </NameDisease>
-    // <p className="title" ref={ref} style={isInView ? container : containerOne}>
-
-    //   {children}
-    // </p>
   );
 };

@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const Span = styled.span`
+  text-align: center;
+  display: block;
+  font-size: ${p => p.theme.fontSizes[5]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
+  line-height: ${p => p.theme.lineHeights.heading};
+  font-family: ${p => p.theme.fonts.monospace};
+`;
 export const InRightBlock = styled.div`
   /* position: sticky; */
   position: relative;
@@ -26,6 +34,8 @@ export const TwoColumns = styled.div`
 export const LeftColumn = styled.div`
   width: 50%;
   padding: 40vh;
+  /* border: ${p => p.theme.borders.normal};
+  border-right: ${p => p.theme.colors.primary}; */
 `;
 export const RightColumn = styled.div`
   width: 50%;

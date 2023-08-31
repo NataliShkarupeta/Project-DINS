@@ -19,6 +19,7 @@ import {
   LeftColumn,
   RightColumn,
   InRightBlock,
+  Span,
 } from './Health.styled';
 import { FcRightDown2 } from 'react-icons/fc';
 
@@ -85,7 +86,7 @@ const HealthPage = () => {
       <section
       // style={{ position: `${fullScreenFeature ? 'sticky' : 'relative'}` }}
       >
-        <span>{t(`herbalPage.diseases.description`)}</span>
+        <Span>{t(`herbalPage.diseases.description`)}</Span>
         <div>
           {diseases.map(disease => (
             <disease.visual id={disease.id} key={disease.id} />
@@ -118,6 +119,7 @@ const HealthPage = () => {
               <InRightBlock
                 style={{
                   opacity: `${fullScreenFeature ? '0' : '100 '}`,
+                  transition: 'all 0.5s ease',
                 }}
               >
                 {diseases.map(disease => (

@@ -157,13 +157,30 @@
         "title": "Сommon cold",
         "description": ""
       },
-
-      "highPressure": "High blood pressure",
-      "lowPressure": "low blood pressure",
-      "insomnia": "Insomnia",
-      "depression": "Depression",
-      "allergy": "Allergy",
-      "skinRashes": "Skin rashes",
+      "highPressure": {
+        "title": "High blood pressure",
+        "description": ""
+      },
+      "lowPressure": {
+        "title": "Low blood pressure",
+        "description": ""
+      },
+      "insomnia": {
+        "title": "Insomnia",
+        "description": "Перцева м'ята"
+      },
+      "depression": {
+        "title": "Depression",
+        "description": ""
+      },
+      "allergy": {
+        "title": "Allergy",
+        "description": ""
+      },
+      "skinRashes": {
+        "title": "Skin rashes",
+        "description": ""
+      },
       "hysteria": {
         "title": "Hysteria",
         "description": ""
