@@ -1,6 +1,6 @@
 import { Overlay, ModalContainer, Title, Text } from './modal.styled';
 
-export const Modal = ({ text, descriptions, textButton, clickHandler }) => {
+export const ModalCommon = ({ text, descriptions, textButton, clickHandler }) => {
   return (
     <>
       <Overlay>

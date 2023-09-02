@@ -21,7 +21,6 @@ export const FeaturesTitle = ({ children, id }) => {
   const inViewFeature = useFeatureStore(state => state.inViewFeature);
   const inViewTitle = useFeatureStore(state => state.inViewTitle);
 
-  console.log(inViewTitle);
 
   const container = {
     color: 'purple',
