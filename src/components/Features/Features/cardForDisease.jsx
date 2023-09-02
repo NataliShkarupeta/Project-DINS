@@ -368,7 +368,7 @@ export const Allergy = ({ id }) => {
               transition: 'all 2s ease',
             }}
           >
-            <p> травa череди трироздільної</p>
+            <p> Травa череди трироздільної</p>
             {/* {t(`herbalPage.diseases.commonСold.herbs.two`)} */}
           </El>
         </li>
