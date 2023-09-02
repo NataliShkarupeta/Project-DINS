@@ -353,6 +353,7 @@ export const Allergy = ({ id }) => {
               transition: 'all 2s ease',
             }}
           >
+            листя смородини чороної
             {t(`herbalPage.diseases.allergy.herbs.one`)}
           </El>
         </li>
@@ -367,7 +368,8 @@ export const Allergy = ({ id }) => {
               transition: 'all 2s ease',
             }}
           >
-            {t(`herbalPage.diseases.commonСold.herbs.two`)}
+            <p> травa череди трироздільної</p>
+            {/* {t(`herbalPage.diseases.commonСold.herbs.two`)} */}
           </El>
         </li>
         <li>
@@ -381,6 +383,7 @@ export const Allergy = ({ id }) => {
               transition: 'all 2s ease',
             }}
           >
+            полин гіркий
             {t(`herbalPage.diseases.commonСold.herbs.three`)}
           </El>
         </li>

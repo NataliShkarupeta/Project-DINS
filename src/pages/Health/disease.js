@@ -17,7 +17,7 @@ import {
   InsomniaVisual,
   LowPressureVisual,
   SkinRashesVisual,
-} from 'components/Features/Features/visual';
+} from 'components/Features/visual/visual';
 
 export const diseases = [
   {

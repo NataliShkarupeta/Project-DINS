@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Overlay, ModalContainer, Title, Text } from './ModalForDelete.styled';
-import { Button, WrapButtonsModal } from 'components/common/modal/Modal.styled';
+import {
+  Button,
+  WrapButtonsModal,
+} from 'components/ModalForBlog/modalChangePost/Modal.styled';
 import { deletePost } from 'service/blogService';
 
 export const ModalForDeletePost = ({

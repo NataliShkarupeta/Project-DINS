@@ -26,7 +26,7 @@ import { FcRightDown2 } from 'react-icons/fc';
 import { data } from '../../herbsArray.js';
 import { diseases } from './disease';
 import { FeaturesTitle } from 'components/Features/Features/title';
-import { CommonСoldVisual } from 'components/Features/Features/visual';
+import { CommonСoldVisual } from 'components/Features/visual/visual';
 import { useFeatureStore } from 'components/Features/Features/store';
 
 const HealthPage = () => {

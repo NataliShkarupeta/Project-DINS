@@ -17,6 +17,8 @@ export const CardButtun = styled.button`
 ;
 
 export const El = styled.div`
+/* padding: ${p => p.theme.space[2]}px; */
+text-align: center;
   position: absolute;
   display: flex;
   justify-content: center;

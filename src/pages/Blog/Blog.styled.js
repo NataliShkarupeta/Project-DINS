@@ -33,6 +33,18 @@ export const WrapTitleAndDate = styled.div`
   margin-bottom: ${p => p.theme.space[4]}px;
 `;
 
+export const Section = styled.section`
+  padding: ${p => p.theme.space[4]}px;
+  background-image: 
+  /* linear-gradient(
+      to bottom,
+      rgba(255, 255, 0, 0.37),
+      rgba(83, 177, 226, 1)
+    ), */
+    /* linear-gradient(to bottom, rgba(47, 48, 58,0.2), rgba(47, 48, 58,0.2)), */ url('${img}');
+  background-size: cover;
+`;
+
 export const Li = styled.li`
   /* position: relative; */
   padding: ${p => p.theme.space[3]}px;
@@ -46,16 +58,10 @@ export const Li = styled.li`
     inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0);
   height: 400px;
   /* height: 30%; */
-  overflow-y: scroll;
-  background-image: 
-  linear-gradient(
-      to bottom,
-      rgba(255, 255, 0, 0.37),
-      rgba(83, 177, 226, 1)
-    ),
-    /* linear-gradient(to bottom, rgba(47, 48, 58,0.2), rgba(47, 48, 58,0.2)), */
-    url('${img}');
-  background-size: cover;
+  overflow: hidden;
+  /* overflow-y: scroll; */
+
+  background-color: rgba(255, 255, 255, 0.7);
 `;
 
 export const Title = styled.h2`

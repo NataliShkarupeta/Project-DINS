@@ -123,10 +123,15 @@ export const ContainerForSlider = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${p => p.theme.colors.primary};
-  background: linear-gradient(
+  background:
+   /* linear-gradient(
     360deg,
     rgb(170, 167, 171, 1),
     rgb(201, 195, 217, 1)
+  ); */ linear-gradient(
+    to bottom right,
+    #5d52f6 0%,
+    #e32190 100%
   );
 `;
 

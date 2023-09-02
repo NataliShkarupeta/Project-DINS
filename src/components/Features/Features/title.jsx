@@ -26,13 +26,13 @@ export const FeaturesTitle = ({ children, id }) => {
   const container = {
     color: 'purple',
     opacity: `${inViewTitle ? '0' : '100'}`,
-    transition: 'all 2.5s ease',
+    transition: 'all 2s ease',
   };
 
   const containerOne = {
     color: 'grey',
     opacity: `${inViewTitle ? '0' : '100'}`,
-    transition: 'all 2.5s ease',
+    transition: 'all 2s ease',
   };
 
   useEffect(() => {
