@@ -1,4 +1,4 @@
-import { Overlay } from 'components/common/modal/modal.styled';
+import { Overlay } from 'components/ModalForBlog/ModalForDelete/ModalForDelete.styled';
 import { useFeatureStore } from '../Features/store';
 import { BackgroundForVisual, H3 } from './visual.styled';
 import { GiVineLeaf } from 'react-icons/gi';
