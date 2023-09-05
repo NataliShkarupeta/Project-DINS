@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { Div, El, CardButtun } from './cardForDisease.styled';
+import { Div, El, CardButtun ,Img } from './cardForDisease.styled';
 import { useFeatureStore } from './store';
+import allergyImg from '../../../images/healthy/allergi (1).jpg';
 
 const CardForDisease = ({ gradient, children, id }) => {
-  const[ t ]= useTranslation();
+  const [t] = useTranslation();
   const inViewFeature = useFeatureStore(state => state.inViewFeature);
   const setFullScreenFeature = useFeatureStore(
     state => state.setFullScreenFeature
@@ -40,8 +41,8 @@ const CardForDisease = ({ gradient, children, id }) => {
 
 export const CommonСold = ({ id }) => {
   const [t] = useTranslation();
-const fullScreenFeature = useFeatureStore(state => state.fullScreenFeature);
-const isFullScreen = fullScreenFeature === id;
+  const fullScreenFeature = useFeatureStore(state => state.fullScreenFeature);
+  const isFullScreen = fullScreenFeature === id;
 
   return (
     <CardForDisease id={id} gradient="#f5fbff,#addeff">
@@ -353,7 +354,6 @@ export const Allergy = ({ id }) => {
               transition: 'all 2s ease',
             }}
           >
-            листя смородини чороної
             {t(`herbalPage.diseases.allergy.herbs.one`)}
           </El>
         </li>
@@ -368,8 +368,7 @@ export const Allergy = ({ id }) => {
               transition: 'all 2s ease',
             }}
           >
-            <p> Травa череди трироздільної</p>
-            {/* {t(`herbalPage.diseases.commonСold.herbs.two`)} */}
+            {t(`herbalPage.diseases.allergy.herbs.two`)}
           </El>
         </li>
         <li>
@@ -383,9 +382,14 @@ export const Allergy = ({ id }) => {
               transition: 'all 2s ease',
             }}
           >
-            полин гіркий
-            {t(`herbalPage.diseases.commonСold.herbs.three`)}
+            {t(`herbalPage.diseases.allergy.herbs.three`)}
           </El>
+        </li>
+        <li>
+          <Img
+            src={allergyImg}
+            alt=""
+          />
         </li>
       </ul>
     </CardForDisease>
@@ -496,10 +500,10 @@ export const Hysteria = ({ id }) => {
         <li>
           <El
             style={{
-              top: '10%',
-              left: '19%',
+              top: '6%',
+              left: '20%',
               width: '60%',
-              height: '18%',
+              height: '15%',
               transform: `${isFullScreen ? 'scale(0)' : 'scale(1)'}`,
               transition: 'all 2s ease',
             }}
@@ -510,7 +514,7 @@ export const Hysteria = ({ id }) => {
         <li>
           <El
             style={{
-              top: '60%',
+              top: '56%',
               left: '5%',
               width: '40%',
               height: '20%',
@@ -524,7 +528,7 @@ export const Hysteria = ({ id }) => {
         <li>
           <El
             style={{
-              top: '60%',
+              top: '56%',
               left: '55%',
               width: '40%',
               height: '20%',
@@ -533,6 +537,48 @@ export const Hysteria = ({ id }) => {
             }}
           >
             {t(`herbalPage.diseases.hysteria.herbs.three`)}
+          </El>
+        </li>
+        <li>
+          <El
+            style={{
+              top: '30%',
+              left: '55%',
+              width: '40%',
+              height: '20%',
+              transform: `${isFullScreen ? 'scale(0)' : 'scale(1)'}`,
+              transition: 'all 2s ease',
+            }}
+          >
+            {t(`herbalPage.diseases.hysteria.herbs.four`)}
+          </El>
+        </li>
+        <li>
+          <El
+            style={{
+              top: '30%',
+              left: '5%',
+              width: '40%',
+              height: '20%',
+              transform: `${isFullScreen ? 'scale(0)' : 'scale(1)'}`,
+              transition: 'all 2s ease',
+            }}
+          >
+            {t(`herbalPage.diseases.hysteria.herbs.fifth`)}
+          </El>
+        </li>
+        <li>
+          <El
+            style={{
+              top: '80%',
+              left: '30%',
+              width: '40%',
+              height: '15%',
+              transform: `${isFullScreen ? 'scale(0)' : 'scale(1)'}`,
+              transition: 'all 2s ease',
+            }}
+          >
+            {t(`herbalPage.diseases.hysteria.herbs.sixth`)}
           </El>
         </li>
       </ul>

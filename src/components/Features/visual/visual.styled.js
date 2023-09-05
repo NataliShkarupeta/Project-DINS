@@ -13,7 +13,7 @@ export const BackgroundForVisual = styled.div`
 
 export const H3 = styled.h3`
   font-size: ${p => p.theme.fontSizes[3]}px;
-  font-weight: ${p => p.theme.fontWeights.bold};
+  font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.heading};
   margin-bottom: ${p => p.theme.space[2]}px;
 `;

@@ -204,10 +204,14 @@
         "title": "Allergy",
         "description": "",
         "herbs": {
-          "one": "Thyme",
-          "two": "Thyme",
-          "three": "Thyme"
-        }
+          "one": "black currant leaves",
+          "two": "grass of the three-part series",
+          "three": "duckweed"
+        },
+        "forVisual": "No matter how much one would like to have a panacea for all diseases, mindlessly starting treatment is, of course, impossible! Be attentive to your condition. Start getting to know a new herb with small doses and observe the reaction of your body. If everything is fine, try another herb and so on. Then make collections. Yes, this is not a fast way, but you should do it once or twice in your life - and use it for your health)",
+        "forVisualOne": "As medicinal herbal preparations that have anti-allergic, anti-itching, and normalizing adrenal cortex function, the following medicinal plants can be recommended:hyacinth, valerian root, yarrow, strawberry leaves, trifoliate grass, tricolor violets, medicinal chamomile, black elder flowers, black currant leaves, bitter wormwood in the form of an infusion inside.",
+        "forVisualTwo": "Infusion or decoction of the herb (5 teaspoons per 200 ml of boiling water) drink 1 tablespoon three times a day.",
+        "forVisualThree": "Duckweed. It is considered one of the most effective plants against allergies. You can use for treatment both the powder of duckweed and its tincture. To prepare the tincture, it is necessary to take one teaspoon of the washed plant, pour it with fifty grams of vodka, insist for seven days, filter, and then squeeze. Fifteen-twenty drops of tincture dissolved in a quarter of a glass of water are taken three times a day. The powder is prepared very simply - dry duckweed is simply ground in a coffee grinder. Then the powder is mixed with honey in half, and balls of small diameter are prepared from the mixture. You need to take one ball three times a day."
       },
       "skinRashes": {
         "title": "Skin rashes",
@@ -222,9 +226,12 @@
         "title": "Hysteria",
         "description": "",
         "herbs": {
-          "one": "Linden",
-          "two": "Linden",
-          "three": "Linden"
+          "one": "valerian root and rhizome",
+          "two": "motherwort grass",
+          "three": "dog nettle",
+          "four": "yarrow",
+          "fifth": "hypericum",
+          "sixth": "mint leaves, lemon balm"
         }
       }
     },

@@ -2,6 +2,7 @@ import { Overlay } from 'components/ModalForBlog/ModalForDelete/ModalForDelete.s
 import { useFeatureStore } from '../Features/store';
 import { BackgroundForVisual, H3 } from './visual.styled';
 import { GiVineLeaf } from 'react-icons/gi';
+import { useTranslation } from 'react-i18next';
 
 export const Visual = ({ children, id }) => {
   const fullScreenFeature = useFeatureStore(state => state.fullScreenFeature);
@@ -90,16 +91,21 @@ export const Visual = ({ children, id }) => {
 };
 
 export const CommonСoldVisual = ({ id }) => {
+  const [t] = useTranslation();
   return (
     <Visual id={id}>
-     span
+      <H3>{t(`herbalPage.diseases.allergy.forVisual`)}</H3>
+      <br />
     </Visual>
   );
 };
 
 export const HighPressureVisual = ({ id }) => {
+  const [t] = useTranslation();
   return (
     <Visual id={id}>
+      <H3>{t(`herbalPage.diseases.allergy.forVisual`)}</H3>
+      <br />
       <img
         src={require('../../../images/healthy/herb3 (1).jpg')}
         alt=""
@@ -109,52 +115,61 @@ export const HighPressureVisual = ({ id }) => {
   );
 };
 export const LowPressureVisual = ({ id }) => {
+  const [t] = useTranslation();
   return (
     <Visual id={id}>
-     
+      <H3>{t(`herbalPage.diseases.allergy.forVisual`)}</H3>
+      <br />
     </Visual>
   );
 };
 export const InsomniaVisual = ({ id }) => {
+  const [t] = useTranslation();
   return (
     <Visual id={id}>
-      
+      <H3>{t(`herbalPage.diseases.allergy.forVisual`)}</H3>
+      <br />
     </Visual>
   );
 };
 export const DepressionVisual = ({ id }) => {
+  const [t] = useTranslation();
   return (
     <Visual id={id}>
-    
+      <H3>{t(`herbalPage.diseases.allergy.forVisual`)}</H3>
+      <br />
     </Visual>
   );
 };
 export const AllergyVisual = ({ id }) => {
+  const [t] = useTranslation();
   return (
     <Visual id={id}>
-   
-          <H3>Алергія це лдійсно проблема тисячоліття</H3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate,
-            consectetur veniam reiciendis aperiam architecto perspiciatis
-            laboriosam aut maiores incidunt? Corporis non accusamus quae
-            adipisci provident, culpa perferendis officia impedit fugit!
-          </p>
-        
+      <H3>{t(`herbalPage.diseases.allergy.forVisual`)}</H3>
+      <br />
+      <p>{t(`herbalPage.diseases.allergy.forVisualOne`)}</p>
+      <br />
+      <p>{t(`herbalPage.diseases.allergy.forVisualTwo`)}</p>
+      <br />
+      <p>{t(`herbalPage.diseases.allergy.forVisualThree`)}</p>
     </Visual>
   );
 };
 export const SkinRashesVisual = ({ id }) => {
+  const [t] = useTranslation();
   return (
     <Visual id={id}>
-     
+      <H3>{t(`herbalPage.diseases.allergy.forVisual`)}</H3>
+      <br />
     </Visual>
   );
 };
 export const HysteriaVisual = ({ id }) => {
+  const [t] = useTranslation();
   return (
     <Visual id={id}>
-      
+      <H3>{t(`herbalPage.diseases.allergy.forVisual`)}</H3>
+      <br />
     </Visual>
   );
 };
