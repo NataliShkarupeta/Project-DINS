@@ -7,16 +7,19 @@ export const theme = {
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: 'Noto Serif, sans-serif',
-    heading: 'Roboto , sans-serif',
-    monospace: 'monospace',
+    body: 'Raleway, sans-serif',
+    bodyI: 'ital, sans-serif',
+    heading: 'Noto Serif, sans-serif',
+    monospace: 'Mukta, sans-serif',
   },
 
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: {
     body: 400,
+    ital: 300,
+    middle: 500,
     heading: 900,
-    bold: 700,
+    bold: 600,
   },
   lineHeights: {
     body: 1.5,
@@ -55,7 +58,7 @@ export const theme = {
   radii: {
     none: 'none',
     normal: '4px',
-    middle:'10px',
+    middle: '10px',
     round: '50%',
     forSlider: '30px',
   },

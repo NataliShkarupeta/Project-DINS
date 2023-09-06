@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+ /* padding-left: ${p => p.theme.space[4]}px; */
+  /* padding-right: ${p => p.theme.space[4]}px; */
+  /* margin-bottom: ${p => p.theme.space[5]}px; */
+
 export const Span = styled.span`
   text-align: center;
   display: block;
@@ -7,6 +11,7 @@ export const Span = styled.span`
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;
 export const InRightBlock = styled.div`
   /* position: sticky; */
@@ -26,6 +31,12 @@ export const NameDisease = styled.p`
 `;
 
 export const TwoColumns = styled.div`
+  background-image: linear-gradient(
+    to bottom,
+    rgba(47, 48, 58, 0.97),
+    rgba(47, 48, 58, 0.2)
+  );
+  
   display: flex;
   align-items: start;
   gap: 20px;
@@ -159,6 +170,6 @@ export const Text = styled.span`
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.heading};
-  font-family: ${p => p.theme.fonts.monospace};
+  font-family: ${p => p.theme.fonts.body};
   margin-left: ${p => p.theme.space[3]}px;
 `;

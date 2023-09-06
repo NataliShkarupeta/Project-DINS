@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { Div, El, CardButtun ,Img } from './cardForDisease.styled';
+import { Div, El, CardButtun  } from './cardForDisease.styled';
 import { useFeatureStore } from './store';
-import allergyImg from '../../../images/healthy/allergi (1).jpg';
+// import allergyImg from '../../../images/healthy/allergi (1).jpg';
 
 const CardForDisease = ({ gradient, children, id }) => {
   const [t] = useTranslation();
@@ -385,12 +385,16 @@ export const Allergy = ({ id }) => {
             {t(`herbalPage.diseases.allergy.herbs.three`)}
           </El>
         </li>
-        <li>
+        {/* <li>
           <Img
             src={allergyImg}
             alt=""
+            style={{
+              transform: `${isFullScreen ? 'scale(0)' : 'scale(1)'}`,
+              transition: 'all 2s ease',
+            }}
           />
-        </li>
+        </li> */}
       </ul>
     </CardForDisease>
   );

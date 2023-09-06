@@ -5,14 +5,6 @@ import { useFeatureStore } from './store';
 
 console.log();
 
-// const container = {
-//   color: 'purple',
-
-// };
-
-// const containerOne = {
-//   color: 'grey',
-// };
 
 export const FeaturesTitle = ({ children, id }) => {
   const ref = useRef(null);
@@ -26,12 +18,14 @@ export const FeaturesTitle = ({ children, id }) => {
     color: 'purple',
     opacity: `${inViewTitle ? '0' : '100'}`,
     transition: 'all 2s ease',
+    textShadow: '1px 1px 1px rgba(246,  242,  242, 0.97)',
   };
 
   const containerOne = {
-    color: 'grey',
+    color: 'white',
     opacity: `${inViewTitle ? '0' : '100'}`,
     transition: 'all 2s ease',
+    textShadow: ' 1px 1px 11px rgba(0, 0, 0, 0.97)',
   };
 
   useEffect(() => {

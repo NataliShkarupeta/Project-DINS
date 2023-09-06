@@ -111,7 +111,7 @@ export const WrapTitleAndEye = styled.div`
 
 export const ContainerForSlider = styled.div`
   position: relative;
-  width: 95.5vw;
+  /* width: 95.5vw; */
   height: 80vh;
   /* width:95vw;
   height: 95vh; */

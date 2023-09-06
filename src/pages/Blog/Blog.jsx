@@ -70,64 +70,68 @@ const BlogPage = memo(() => {
           {posts &&
             Object.values(posts).map(
               ({ title, descriptions, _id, createdAt }) => (
-                <Li key={_id}>
-                  <WrapTitleAndDate>
-                    <Title>{title} </Title>
-                    <Date>{normalizedDate(createdAt)}</Date>
-                  </WrapTitleAndDate>
-                  <Text>{descriptions}</Text>
-                  <BlockButton>
-                    <WrapForTooltip>
-                      <p
-                        data-tooltip-id="my-tooltip"
-                        data-tooltip-content={t('button.commonButton.showMore')}
-                      >
-                        <CommonButton text={<RxFileText />}></CommonButton>
-                      </p>
-                      <Tooltip id="my-tooltip" />
-                    </WrapForTooltip>
-                    <WrapForTooltip>
-                      <p
-                        data-tooltip-id="my-tooltip"
-                        data-tooltip-content={t('button.commonButton.share')}
-                      >
-                        <CommonButton text={<RxShare1 />}></CommonButton>
-                      </p>
-                      <Tooltip id="my-tooltip" />
-                    </WrapForTooltip>
-                    <WrapForTooltip>
-                      <p
-                        data-tooltip-id="my-tooltip"
-                        data-tooltip-content={t('button.commonButton.edit')}
-                      >
-                        <CommonButton
-                          text={<RxPencil1 />}
-                          clickHandler={() => {
-                            setShowModal(true);
-                            saveIdPost(_id);
-                          }}
-                        ></CommonButton>
-                      </p>
-                      <Tooltip id="my-tooltip" />
-                    </WrapForTooltip>
+                <div style={{width:'100%'}}>
+                  <Li key={_id}>
+                    <WrapTitleAndDate>
+                      <Title>{title} </Title>
+                      <Date>{normalizedDate(createdAt)}</Date>
+                    </WrapTitleAndDate>
+                    <Text>{descriptions}</Text>
+                    <BlockButton>
+                      <WrapForTooltip>
+                        <p
+                          data-tooltip-id="my-tooltip"
+                          data-tooltip-content={t(
+                            'button.commonButton.showMore'
+                          )}
+                        >
+                          <CommonButton text={<RxFileText />}></CommonButton>
+                        </p>
+                        <Tooltip id="my-tooltip" />
+                      </WrapForTooltip>
+                      <WrapForTooltip>
+                        <p
+                          data-tooltip-id="my-tooltip"
+                          data-tooltip-content={t('button.commonButton.share')}
+                        >
+                          <CommonButton text={<RxShare1 />}></CommonButton>
+                        </p>
+                        <Tooltip id="my-tooltip" />
+                      </WrapForTooltip>
+                      <WrapForTooltip>
+                        <p
+                          data-tooltip-id="my-tooltip"
+                          data-tooltip-content={t('button.commonButton.edit')}
+                        >
+                          <CommonButton
+                            text={<RxPencil1 />}
+                            clickHandler={() => {
+                              setShowModal(true);
+                              saveIdPost(_id);
+                            }}
+                          ></CommonButton>
+                        </p>
+                        <Tooltip id="my-tooltip" />
+                      </WrapForTooltip>
 
-                    <WrapForTooltip>
-                      <p
-                        data-tooltip-id="my-tooltip"
-                        data-tooltip-content={t('button.commonButton.delete')}
-                      >
-                        <CommonButton
-                          text={<RxTrash />}
-                          clickHandler={() => {
-                            setCanDelete(true);
-                            saveIdPost(_id);
-                          }}
-                        ></CommonButton>
-                      </p>
-                      <Tooltip id="my-tooltip" />
-                    </WrapForTooltip>
-                  </BlockButton>
-                </Li>
+                      <WrapForTooltip>
+                        <p
+                          data-tooltip-id="my-tooltip"
+                          data-tooltip-content={t('button.commonButton.delete')}
+                        >
+                          <CommonButton
+                            text={<RxTrash />}
+                            clickHandler={() => {
+                              setCanDelete(true);
+                              saveIdPost(_id);
+                            }}
+                          ></CommonButton>
+                        </p>
+                        <Tooltip id="my-tooltip" />
+                      </WrapForTooltip>
+                    </BlockButton>
+                  </Li>
+                </div>
               )
             )}
         </ul>

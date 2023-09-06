@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const BlockUnderLine = styled.div`
+   padding-left: ${p => p.theme.space[3]}px; 
+  padding-right: ${p => p.theme.space[3]}px; 
   display: flex;
   justify-content: space-between;
   margin-bottom: ${p => p.theme.space[4]}px;
@@ -18,6 +20,8 @@ export const Blog = styled.div`
   padding: ${p => p.theme.space[2]}px;
   font-size: ${p => p.theme.fontSizes[3]}px;
   line-height: ${p => p.theme.lineHeights.heading};
+  font-family: ${p => p.theme.fonts.body};
+  font-weight: ${p => p.theme.fontWeights.middle};;
 `;
 
 export const WrapMoonAndSun = styled.div`
@@ -55,7 +59,7 @@ export const Background = styled.div`
 
 export const WrapMain = styled.main`
   padding: 20px 0 0;
-  padding-left: ${p => p.theme.space[4]}px;
-  padding-right: ${p => p.theme.space[4]}px;
+  /* padding-left: ${p => p.theme.space[4]}px; */
+  /* padding-right: ${p => p.theme.space[4]}px; */
   margin-bottom: ${p => p.theme.space[5]}px;
 `;
