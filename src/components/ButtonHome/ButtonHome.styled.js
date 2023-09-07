@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Button = styled.button`
   margin-bottom: ${p => p.theme.space[4]}px;
-margin-left:${p => p.theme.space[3]}px ;
+  margin-left: ${p => p.theme.space[3]}px;
   :hover,
   :focus {
     cursor: pointer;

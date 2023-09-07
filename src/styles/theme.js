@@ -8,22 +8,22 @@ export const theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'Raleway, sans-serif',
-    bodyI: 'ital, sans-serif',
-    heading: 'Noto Serif, sans-serif',
+    forName: 'Noto Sans Duployan, sans-serif',
     monospace: 'Mukta, sans-serif',
+    forBlog:'Dancing Script, cursive',
   },
 
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: {
-    body: 400,
-    ital: 300,
-    middle: 500,
-    heading: 900,
+    body: 300,
+    middle: 400,
+    middleOne:500,
+    heading: 700,
     bold: 600,
   },
   lineHeights: {
     body: 1.5,
-    normal: 1.25,
+    // normal: 1.25,
     heading: 1.125,
   },
 

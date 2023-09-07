@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import img from '../../images/healthy/backgroundHerbs (1).jpg'
 
  /* padding-left: ${p => p.theme.space[4]}px; */
   /* padding-right: ${p => p.theme.space[4]}px; */
@@ -31,12 +32,18 @@ export const NameDisease = styled.p`
 `;
 
 export const TwoColumns = styled.div`
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   background-image: linear-gradient(
     to bottom,
     rgba(47, 48, 58, 0.97),
     rgba(47, 48, 58, 0.2)
-  );
-  
+
+  )
+  /* url(${img}) */
+  ;
+
   display: flex;
   align-items: start;
   gap: 20px;
@@ -44,12 +51,12 @@ export const TwoColumns = styled.div`
 
 export const LeftColumn = styled.div`
   width: 50%;
-  padding: 40vh;
+  padding: 30vh;
   /* border: ${p => p.theme.borders.normal};
   border-right: ${p => p.theme.colors.primary}; */
 `;
 export const RightColumn = styled.div`
-  width: 50%;
+  /* width: 50%; */
   position: sticky;
   top: 0;
   height: 100vh;

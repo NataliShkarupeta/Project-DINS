@@ -24,14 +24,7 @@ export const HomePage = ({ setMore }) => {
           </Name>
         </WrapName>
 
-        <PhotoWrap>
-          <img
-            src={require('../../images/author/IMG_0043.jpg')}
-            width="340"
-            height="340"
-            alt="Фотографія автора"
-          />
-        </PhotoWrap>
+        <PhotoWrap></PhotoWrap>
       </NameAndPhoto>
       <div>
         <Article>

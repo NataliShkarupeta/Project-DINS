@@ -24,6 +24,7 @@ export const WrapDate = styled.div`
 
 export const TextConnect = styled.p`
   text-decoration: underline;
+  font-size:18px;
 `;
 const stylesBut = css`
   border: ${p => p.theme.borders.none};

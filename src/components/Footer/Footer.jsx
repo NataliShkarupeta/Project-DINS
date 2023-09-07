@@ -29,8 +29,6 @@ const getGreetingTime = (d = DateTime.now()) => {
 export const Footer = () => {
   const [t] = useTranslation();
 
-
-
   return (
     <FooterContainer>
       <WrapDate>
@@ -39,15 +37,7 @@ export const Footer = () => {
       <WrapConnect>
         <TextConnect>{t('footer.connect_me')}</TextConnect>
         <Ul>
-          <motion.li
-            // initial={{ opacity: 0.6 }}
-            // whileHover={{
-            //   scale: 1.2,
-            //   transition: { duration: 1 },
-            // }}
-            // whileTap={{ scale: 0.9 }}
-            // whileInView={{ opacity: 1 }}
-          >
+          <motion.li>
             <ButtonLin>
               <a
                 href="https://www.linkedin.com/in/natalia-shkarupeta-b1696023a/"
@@ -58,15 +48,7 @@ export const Footer = () => {
               </a>
             </ButtonLin>
           </motion.li>
-          <motion.li
-            // initial={{ opacity: 0.6 }}
-            // whileHover={{
-            //   scale: 1.2,
-            //   transition: { duration: 0.5 },
-            // }}
-            // whileTap={{ scale: 0.9 }}
-            // whileInView={{ opacity: 1 }}
-          >
+          <motion.li>
             <ButtonInst>
               <a
                 href="https://www.instagram.com/natali_nardi/"
@@ -77,15 +59,7 @@ export const Footer = () => {
               </a>
             </ButtonInst>
           </motion.li>
-          <motion.li
-            // initial={{ opacity: 0.6 }}
-            // whileHover={{
-            //   scale: 1.2,
-            //   transition: { duration: 1 },
-            // }}
-            // whileTap={{ scale: 0.9 }}
-            // whileInView={{ opacity: 1 }}
-          >
+          <motion.li>
             <ButtonTel initial={{}}>
               <a
                 href="https://t.me/NataliShkarupeta"

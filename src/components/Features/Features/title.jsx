@@ -19,9 +19,11 @@ export const FeaturesTitle = ({ children, id }) => {
     opacity: `${inViewTitle ? '0' : '100'}`,
     transition: 'all 2s ease',
     textShadow: '1px 1px 1px rgba(246,  242,  242, 0.97)',
+   
   };
 
   const containerOne = {
+     paddingLeft:"0px",
     color: 'white',
     opacity: `${inViewTitle ? '0' : '100'}`,
     transition: 'all 2s ease',

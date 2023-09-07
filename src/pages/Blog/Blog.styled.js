@@ -95,9 +95,10 @@ export const Text = styled.p`
   width: 800px;
   margin-left: auto;
   margin-right: auto;
-  font-family: ${p => p.theme.fonts.body};
+  font-family: ${p => p.theme.fonts.forBlog};
+  font-style: italic;
   font-size: 17px;
-  font-weight: ${p => p.theme.fontWeights.middle};
+  font-weight: ${p => p.theme.fontWeights.middleOne};
   line-height: 1.33;
 
   color: ${p => p.theme.colors.therd};
