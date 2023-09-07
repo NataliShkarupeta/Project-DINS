@@ -19,7 +19,7 @@ import {
   LeftColumn,
   RightColumn,
   InRightBlock,
-  Span,
+  Span,P
 } from './Health.styled';
 import { FcRightDown2 } from 'react-icons/fc';
 
@@ -160,7 +160,7 @@ const HealthPage = () => {
                 </CardWrap>
                 <InfoData>
                   <H3>{t(`${title}`)}</H3>
-                  <p> {t(`${about}`)}</p>
+                  <P> {t(`${about}`)}</P>
                 </InfoData>
               </Li>
             ))}

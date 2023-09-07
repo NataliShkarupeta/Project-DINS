@@ -7,6 +7,8 @@ export const Text = styled.div`
 `;
 
 export const WrapSections = styled.div`
+   padding-left: ${p => p.theme.space[4]}px; 
+   padding-right: ${p => p.theme.space[4]}px; 
   display: flex;
   gap: 10px;
 `;

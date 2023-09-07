@@ -1,9 +1,13 @@
 import styled from 'styled-components';
-import img from '../../images/healthy/backgroundHerbs (1).jpg'
+import img from '../../images/healthy/backgroundHerbs (1).jpg';
 
- /* padding-left: ${p => p.theme.space[4]}px; */
-  /* padding-right: ${p => p.theme.space[4]}px; */
-  /* margin-bottom: ${p => p.theme.space[5]}px; */
+/* padding-left: ${p => p.theme.space[4]}px; */
+/* padding-right: ${p => p.theme.space[4]}px; */
+/* margin-bottom: ${p => p.theme.space[5]}px; */
+export const P = styled.p`
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
+`;
 
 export const Span = styled.span`
   text-align: center;
@@ -36,13 +40,11 @@ export const TwoColumns = styled.div`
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(
-    to bottom,
-    rgba(47, 48, 58, 0.97),
-    rgba(47, 48, 58, 0.2)
-
-  )
-  /* url(${img}) */
-  ;
+      to bottom,
+      rgba(47, 48, 58, 0.97),
+      rgba(47, 48, 58, 0.2)
+    )
+    /* url(${img}) */;
 
   display: flex;
   align-items: start;
@@ -75,15 +77,16 @@ export const H3 = styled.h3`
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
   line-height: ${p => p.theme.lineHeights.heading};
-  font-family: ${p => p.theme.fonts.monospace};
   margin-bottom: ${p => p.theme.space[2]}px;
 `;
 
 export const OverlayText = styled.p`
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-weight: ${p => p.theme.fontWeights.middle};
   padding: 23px 15px;
   margin: 0;
   font-weight: 400;
-  font-size: 18px;
+  /* font-size: 18px; */
   line-height: 1.4;
   letter-spacing: 0.03em;
   color: #fff;
@@ -105,12 +108,10 @@ export const Overlay = styled.div`
 
 export const InfoData = styled.div`
   height: 130px;
-  padding: 10px 24px;
-  /* border: 1px solid #eee; */
+  padding: 8px 18px;
+margin-left: auto;
+margin-right: auto;
 
-  /* border: ${p => p.theme.borders.normal};
-  border-color: ${p => p.theme.colors.fourth};
-  border-top: none; */
 `;
 
 export const CardWrap = styled.div`
@@ -144,9 +145,13 @@ export const Ul = styled.ul`
 
 export const WrapText = styled.div`
   margin-bottom: ${p => p.theme.space[5]}px;
+  padding-left: ${p => p.theme.space[3]}px;
+  padding-right: ${p => p.theme.space[3]}px;
 `;
 
 export const Propose = styled.p`
+  padding-left: ${p => p.theme.space[3]}px;
+  padding-right: ${p => p.theme.space[3]}px;
   margin-bottom: ${p => p.theme.space[4]}px;
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.body};
@@ -175,7 +180,7 @@ export const Title = styled.h2`
 
 export const Text = styled.span`
   font-size: ${p => p.theme.fontSizes[3]}px;
-  font-weight: ${p => p.theme.fontWeights.body};
+  font-weight: ${p => p.theme.fontWeights.middle};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.body};
   margin-left: ${p => p.theme.space[3]}px;

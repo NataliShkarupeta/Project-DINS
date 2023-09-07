@@ -128,7 +128,10 @@ export const Ul = styled.ul`
   gap: 35px;
 `;
 export const Li = styled.li`
-  font-size: ${p => p.theme.fontSizes[1]}px;
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-family: ${p => p.theme.fonts.monospace};
+  font-weight: ${p => p.theme.fontWeights.middle};
+  line-height: ${p => p.theme.lineHeights.normal};
   :hover,
   :focus {
     color: ${p => p.theme.colors.modes.dark.primary};

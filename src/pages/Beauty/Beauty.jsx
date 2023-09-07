@@ -76,10 +76,10 @@ const BeautyPage = () => {
       <Description>{t('lashMakerPage.go')}</Description>
 
       <Ul>
-        <Li>
+        <Li key={1}>
           <p>{t('lashMakerPage.generalInformation.first')}</p>
         </Li>
-        <Li>
+        <Li key={2}>
           <p>{t('lashMakerPage.generalInformation.second')}</p>
         </Li>
       </Ul>

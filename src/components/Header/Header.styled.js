@@ -9,13 +9,8 @@ export const Head = styled.header`
   justify-content: space-between;
   border-bottom: ${p => p.theme.borders.normal};
   box-shadow: 0px 8px 21px rgba(61, 29, 29, 0.25);
-  /* position: fixed;
-  background-color: ${p => p.theme.colors.background}; */
-  /* margin-bottom: 100px; */
-  /* left: 0;
-  right: 0;
-  top: 0;
-  z-index: 9999; */
+  /* background: linear-gradient(to bottom, #fff 28%, #fff4e4cc 100%); */
+  /* background-color: #e32f21; */
 `;
 
 export const WrapSender = styled.div`

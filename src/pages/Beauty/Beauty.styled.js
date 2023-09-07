@@ -6,15 +6,16 @@ export const H3 = styled.h3`
   font-weight: ${p => p.theme.fontWeights.bold};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
-   /* border-bottom: ${p => p.theme.borders.normal};
-  border-color: ${p => p.theme.colors.primary};  */
+   padding-left: ${p => p.theme.space[3]}px; 
+   padding-right: ${p => p.theme.space[3]}px; 
 `;
 
 export const Text = styled.p`
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.body};
+  font-style: italic;
   line-height: ${p => p.theme.lineHeights.heading};
-  font-family: ${p => p.theme.fonts.monospace};
+  font-family: ${p => p.theme.fonts.forBlog};
   text-align: center;
 
   border-top: ${p => p.theme.borders.normal};
@@ -23,17 +24,20 @@ export const Text = styled.p`
 `;
 
 export const WrapAdvice = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   font-size: ${p => p.theme.fontSizes[3]}px;
   padding: ${p => p.theme.space[4]}px;
-  
 `;
 export const Advice = styled.p`
   border-left: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.primary};
-  padding-left:10px;
+  font-family: ${p => p.theme.fonts.body};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.middle};
+  line-height: ${p => p.theme.lineHeights.normal};
+  padding-left: 10px;
   width: 800px;
 
   &:nth-child(even) {
@@ -63,7 +67,6 @@ export const SvgEye4 = styled.div`
   left: 60%;
 `;
 
-
 export const H2 = styled.h2`
   font-size: ${p => p.theme.fontSizes[5]}px;
 `;
@@ -88,16 +91,18 @@ export const Li = styled.li`
   background: linear-gradient(
       270deg,
       ${p => p.theme.colors.accent},
-    rgb(125 5 209 / 7%) 50%
+      rgb(125 5 209 / 7%) 50%
     )
     0% 0% / 3.2em 100% rgb(34 34 34 / 0%);
 `;
 
 export const Description = styled.p`
-  font-size: ${p => p.theme.fontSizes[4]}px;
-  font-weight: ${p => p.theme.fontWeights.body};
-  line-height: ${p => p.theme.lineHeights.heading};
-  font-family: ${p => p.theme.fonts.monospace};
+  padding-left: ${p => p.theme.space[3]}px;
+  padding-right: ${p => p.theme.space[3]}px;
+  font-family: ${p => p.theme.fonts.body};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.middle};
+  line-height: ${p => p.theme.lineHeights.normal};
   margin-bottom: ${p => p.theme.space[2]}px;
 `;
 
