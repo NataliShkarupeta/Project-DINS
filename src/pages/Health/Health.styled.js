@@ -4,6 +4,15 @@ import img from '../../images/healthy/backgroundHerbs (1).jpg';
 /* padding-left: ${p => p.theme.space[4]}px; */
 /* padding-right: ${p => p.theme.space[4]}px; */
 /* margin-bottom: ${p => p.theme.space[5]}px; */
+// export const 
+
+export const BlockCards = styled.div`
+  /* width: ; */
+  height: 800px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-bottom: ${p => p.theme.space[4]}px;
+`;
 export const P = styled.p`
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
@@ -152,14 +161,17 @@ export const WrapText = styled.div`
 export const Propose = styled.p`
   padding-left: ${p => p.theme.space[3]}px;
   padding-right: ${p => p.theme.space[3]}px;
-  margin-bottom: ${p => p.theme.space[4]}px;
-  font-size: ${p => p.theme.fontSizes[4]}px;
+  margin-bottom: ${p => p.theme.space[3]}px;
+  font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body};
-  line-height: ${p => p.theme.lineHeights.normal};
+  line-height: ${p => p.theme.lineHeights.heading};
+  font-family: ${p => p.theme.fonts.forBlog};
+  font-style: italic;
   text-shadow: 0 11px 9px #8c928f, 0 80px 60px #8c928f;
-  text-decoration: overline;
-  display: flex;
-  align-items: center;
+  text-align: center;
+  /* text-decoration: overline; */
+  /* display: flex;
+  align-items: center; */
 `;
 
 export const WrapPhotos = styled.div`
@@ -180,7 +192,7 @@ export const Title = styled.h2`
 
 export const Text = styled.span`
   font-size: ${p => p.theme.fontSizes[3]}px;
-  font-weight: ${p => p.theme.fontWeights.middle};
+  font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.body};
   margin-left: ${p => p.theme.space[3]}px;

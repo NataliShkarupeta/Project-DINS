@@ -2,7 +2,6 @@ import { ButtonHome } from 'components/ButtonHome/ButtonHome';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import {
-  WrapPhotos,
   Title,
   Text,
   Propose,
@@ -19,7 +18,9 @@ import {
   LeftColumn,
   RightColumn,
   InRightBlock,
-  Span,P
+  Span,
+  P,
+  BlockCards,
 } from './Health.styled';
 import { FcRightDown2 } from 'react-icons/fc';
 
@@ -50,12 +51,8 @@ const HealthPage = () => {
       </Link>
 
       <Title>{t(`herbalPage.word`)}</Title>
-      <WrapPhotos>
-        {/* <img
-          src={require('../../images/healthy/herb1 (1).jpg')}
-          alt=""
-          width="340"
-        /> */}
+      {/* <WrapPhotos>
+       
         <img
           src={require('../../images/healthy/herb2 (1).jpg')}
           alt=""
@@ -71,8 +68,8 @@ const HealthPage = () => {
           alt=""
           width="340"
         />
-      </WrapPhotos>
-      <WrapText>
+      </WrapPhotos>  */}
+      {/* <WrapText>
         <Text>{t(`herbalPage.title`)}</Text>
         <br />
         <Text>{t(`herbalPage.text.bread`)}</Text>
@@ -80,8 +77,57 @@ const HealthPage = () => {
         <Text>{t(`herbalPage.text.nature`)}</Text>
         <br />
         <Text>{t(`herbalPage.text.herbalTea`)}</Text>
-      </WrapText>
+      </WrapText> */}
       <CommonСoldVisual />
+
+      <section style={{ display: 'flex', gap: '30px' }}>
+        <div>
+          <WrapText>
+            <Text>{t(`herbalPage.title`)}</Text>
+            <br />
+            <Text>{t(`herbalPage.text.bread`)}</Text>
+            <br />
+            <Text>{t(`herbalPage.text.nature`)}</Text>
+            <br />
+            <Text>{t(`herbalPage.text.herbalTea`)}</Text>
+          </WrapText>
+        </div>
+        <div>
+          <Propose>
+            {t(`herbalPage.propose`)} <FcRightDown2 size={30} />
+          </Propose>
+          <BlockCards>
+            <Ul>
+              {data.map(({ title, image, about, description, siteFrom }) => (
+                <Li key={title}>
+                  <CardWrap>
+                    <img src={image} alt="" width="370" />
+                    <Overlay>
+                      <OverlayText>
+                        {t(`${description}`)}
+                        <br />
+                        <a
+                          href={siteFrom}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <LinkForSite>
+                            {t(`herbalPage.siteFromInfo`)}
+                          </LinkForSite>
+                        </a>
+                      </OverlayText>
+                    </Overlay>
+                  </CardWrap>
+                  <InfoData>
+                    <H3>{t(`${title}`)}</H3>
+                    <P> {t(`${about}`)}</P>
+                  </InfoData>
+                </Li>
+              ))}
+            </Ul>
+          </BlockCards>
+        </div>
+      </section>
 
       <section
       // style={{ position: `${fullScreenFeature ? 'sticky' : 'relative'}` }}
@@ -130,43 +176,6 @@ const HealthPage = () => {
           </TwoColumns>
         </div>
       </section>
-
-      {!fullScreenFeature && (
-        <section>
-          <Propose>
-            {t(`herbalPage.propose`)} <FcRightDown2 />
-          </Propose>
-
-          <Ul>
-            {data.map(({ title, image, about, description, siteFrom }) => (
-              <Li key={title}>
-                <CardWrap>
-                  <img src={image} alt="" width="370" />
-                  <Overlay>
-                    <OverlayText>
-                      {t(`${description}`)}
-                      <br />
-                      <a
-                        href={siteFrom}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <LinkForSite>
-                          {t(`herbalPage.siteFromInfo`)}
-                        </LinkForSite>
-                      </a>
-                    </OverlayText>
-                  </Overlay>
-                </CardWrap>
-                <InfoData>
-                  <H3>{t(`${title}`)}</H3>
-                  <P> {t(`${about}`)}</P>
-                </InfoData>
-              </Li>
-            ))}
-          </Ul>
-        </section>
-      )}
     </>
   );
 };
