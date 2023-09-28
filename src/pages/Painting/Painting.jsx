@@ -16,12 +16,14 @@ const PaintingPage = () => {
       <Ul>
         <li>
           <NavigationLink to={'/painting'}>
-            <h3>{t('paintin_page.paintinTitle1')}</h3>
+            <h3>{t('paintin_page.paintinTitle2')}</h3>
+            {/* <h3>{t('paintin_page.paintinTitle1')}</h3> */}
           </NavigationLink>
         </li>
         <li>
-          <NavigationLink to={'/painting/my-gallary'}>
-            <h3>{t('paintin_page.paintinTitle2')}</h3>
+          <NavigationLink to={'/painting/social-project'}>
+            {/* <h3>{t('paintin_page.paintinTitle2')}</h3> */}
+            <h3>{t('paintin_page.paintinTitle1')}</h3>
           </NavigationLink>
         </li>
       </Ul>

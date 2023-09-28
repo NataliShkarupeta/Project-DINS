@@ -24,7 +24,7 @@ const SocialProject = () => {
       <SectionMain>
         <H2>{t('paintin_page.paintinTitle1')} </H2>
         <WrapPhoto>
-         <Img2
+          <Img2
             src={require('../../images/bgSocialProject/bg5 (1).jpg')}
             alt=""
             width="240"
@@ -68,7 +68,7 @@ const SocialProject = () => {
         </div>
       </SectionMain>
       <SectionSecond>
-        <NavLink to={'/painting/my-gallary'}>
+        <NavLink to={'/painting'}>
           <p>{t('paintin_page.paintinTitle2')}</p>
         </NavLink>
       </SectionSecond>

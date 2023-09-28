@@ -57,8 +57,8 @@ export const App = () => {
             />
             <Route path="developer" element={<FrontEndPage />}></Route>
             <Route path="painting" element={<PaintingPage />}>
-              <Route index element={<SocialProject />} />
-              <Route path="my-gallary" element={<Gallary />} />
+              <Route index element={<Gallary />} />
+              <Route path="social-project" element={<SocialProject />} />
             </Route>
             <Route path="blog" element={<BlogPage />}></Route>
             <Route path="astrology" element={<AstrologyPage />}></Route>
