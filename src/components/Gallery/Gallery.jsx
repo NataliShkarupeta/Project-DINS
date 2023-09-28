@@ -1,9 +1,9 @@
 import { normalizedDate } from 'pages/Blog/normalizeDate';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import {  getAllPictures } from 'service/gallertService';
 
-const URLPIC = 'http://localhost:3001'
+// const URLPIC = 'http://localhost:3001'
 // import { NavLink } from 'react-router-dom';
 // import {
 //   SectionMain,
@@ -14,7 +14,7 @@ const URLPIC = 'http://localhost:3001'
 
 const Gallary = () => {
   const [pictures, setPicures] = useState({});
-  const [t] = useTranslation();
+  // const [t] = useTranslation();
 
   useEffect(() => {
     getAllPictures().then(res => setPicures(res));
