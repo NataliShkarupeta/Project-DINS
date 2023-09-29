@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const URLPIC = 'http://localhost:3001/pictures';
 
+
 export const getAllPictures = async () => {
   try {
     const { data } = await axios.get(URLPIC);

@@ -14,24 +14,32 @@ import { useTranslation } from 'react-i18next';
 import { BsMoonFill, BsBrightnessHigh } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { NavigationLink } from 'pages/HomePage/HomePage.styled';
+import { useState } from 'react';
 
 export const Layout = ({ setMainThema }) => {
+  const[leng,setLang]=useState("");
   const [t, i18n] = useTranslation();
 
   const changeLanguage = language => {
     i18n.changeLanguage(language);
   };
-
+console.log(leng)
   return (
     <Background>
       <WrapMain>
         <Header />
         <BlockUnderLine>
           <WrapButton>
-            <ButtonTranslate onClick={() => changeLanguage('en')}>
+            <ButtonTranslate onClick={() => {
+              changeLanguage('en')
+              setLang("en")
+              }}>
               En
             </ButtonTranslate>
-            <ButtonTranslate onClick={() => changeLanguage('ua')}>
+            <ButtonTranslate onClick={() => {
+              changeLanguage('ua')
+              setLang("ua")
+              }}>
               Ua
             </ButtonTranslate>
           </WrapButton>

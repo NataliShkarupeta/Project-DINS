@@ -39,20 +39,20 @@ export const InRightBlock = styled.div`
 export const NameDisease = styled.p`
   padding: ${p => p.theme.space[5]}px;
   font-size: ${p => p.theme.fontSizes[5]}px;
-  font-weight: ${p => p.theme.fontWeights.body};
+  font-weight: ${p => p.theme.fontWeights.middle};
   line-height: ${p => p.theme.lineHeights.heading};
-  font-family: ${p => p.theme.fonts.monospace};
+  /* font-family: ${p => p.theme.fonts.monospace}; */
 `;
 
 export const TwoColumns = styled.div`
   width: 800px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       to bottom,
       rgba(47, 48, 58, 0.97),
       rgba(47, 48, 58, 0.2)
-    )
+    ) */
     /* url(${img}) */;
 
   display: flex;

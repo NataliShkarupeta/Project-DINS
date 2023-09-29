@@ -51,33 +51,8 @@ const HealthPage = () => {
       </Link>
 
       <Title>{t(`herbalPage.word`)}</Title>
-      {/* <WrapPhotos>
-       
-        <img
-          src={require('../../images/healthy/herb2 (1).jpg')}
-          alt=""
-          width="340"
-        />
-        <img
-          src={require('../../images/healthy/herb3 (1).jpg')}
-          alt=""
-          width="340"
-        />
-        <img
-          src={require('../../images/healthy/herbs10.jpg')}
-          alt=""
-          width="340"
-        />
-      </WrapPhotos>  */}
-      {/* <WrapText>
-        <Text>{t(`herbalPage.title`)}</Text>
-        <br />
-        <Text>{t(`herbalPage.text.bread`)}</Text>
-        <br />
-        <Text>{t(`herbalPage.text.nature`)}</Text>
-        <br />
-        <Text>{t(`herbalPage.text.herbalTea`)}</Text>
-      </WrapText> */}
+    
+ 
       <CommonСoldVisual />
 
       <section style={{ display: 'flex', gap: '30px' }}>

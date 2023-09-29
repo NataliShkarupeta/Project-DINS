@@ -17,17 +17,17 @@ export const FeaturesTitle = ({ children, id }) => {
   const container = {
     color: 'purple',
     opacity: `${inViewTitle ? '0' : '100'}`,
-    transition: 'all 2s ease',
-    textShadow: '1px 1px 1px rgba(246,  242,  242, 0.97)',
+    transition: 'all 1s ease',
+    // textShadow: '1px 1px 1px rgba(246,  242,  242, 0.97)',
    
   };
 
   const containerOne = {
      paddingLeft:"0px",
-    color: 'white',
+    color: 'grey',
     opacity: `${inViewTitle ? '0' : '100'}`,
-    transition: 'all 2s ease',
-    textShadow: ' 1px 1px 11px rgba(0, 0, 0, 0.97)',
+    transition: 'all 1s ease',
+    // textShadow: ' 1px 1px 11px rgba(0, 0, 0, 0.97)',
   };
 
   useEffect(() => {
