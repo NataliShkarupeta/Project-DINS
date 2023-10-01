@@ -1,7 +1,31 @@
 import styled, { css } from 'styled-components';
 
+export const AnimateBlock = styled.div`
+  
+    /* transform: translate(-90%);
+    transition-property: transform;
+    transition-duration: 9s;
+    transition-timing-function: linear; */
+
+`;
+
+export const BoxForThredRow = styled.div`
+  padding-left: ${p => p.theme.space[5]}px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ButtonScroll = styled.button`
+  width: 110px;
+  height: 110px;
+  border-color: ${p => p.theme.colors.muted};
+  border-radius: ${p => p.theme.radii.round};
+  background-color: ${p => p.theme.colors.modes.light.background};
+  cursor: pointer;
+`;
+
 export const LinkBlock = styled.div`
-  position: absolute;
   top: 30px;
   right: 100px;
   color: #2c9241;
@@ -17,17 +41,24 @@ const fontStyles = css`
 `;
 
 export const FirstV = styled.p`
-  padding-left: ${p => p.theme.space[5]}px;;
+  padding-left: ${p => p.theme.space[5]}px;
   ${fontStyles}
 `;
 export const SecondV = styled.p`
-  padding-left: ${p => p.theme.space[8]}px;;
+  padding-left: ${p => p.theme.space[8]}px;
+  margin-bottom: ${p => p.theme.space[4]}px;
   font-style: italic;
   ${fontStyles}
   line-height: ${p => p.theme.lineHeights.body};
+  /* transform: translate(-90%); */
+  transition-property: transform;
+  transition-duration: 9s;
+  transition-timing-function: linear;
+  animation-iteration-count: infinite;
+ 
 `;
 export const ThirdV = styled.p`
-  padding-left:${p => p.theme.space[10]}px; ;
+  padding-left: ${p => p.theme.space[6]}px;
   ${fontStyles}
 `;
 
@@ -37,7 +68,7 @@ export const MainSection = styled.div`
 `;
 
 export const Banner = styled.div`
-position: relative;
+  /* position: relative; */
 `;
 export const Presentation = styled.div`
   /* width: 100vw; */
