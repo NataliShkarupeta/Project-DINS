@@ -13,7 +13,7 @@ export const theme = {
     forBlog: 'Dancing Script, cursive',
   },
 
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 68, 72, 78, 106],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 68, 72, 78, 116],
   fontWeights: {
     body: 300,
     middle: 400,
