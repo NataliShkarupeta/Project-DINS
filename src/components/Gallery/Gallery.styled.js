@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const WhoAmI = styled.p`
   font-size: ${p => p.theme.fontSizes[3]}px;
 `;
 
 export const MainImageDiv = styled.div`
-margin-top: -200px;
+  margin-top: -200px;
   /* margin-top: ${p => p.theme.space[-7]}px; */
 `;
 
@@ -42,37 +42,42 @@ const fontStyles = css`
 `;
 
 export const FirstV = styled.p`
-  padding-left: ${p => p.theme.space[5]}px;
+  padding-left: 5%;
   ${fontStyles}
   margin-bottom: ${p => p.theme.space[5]}px;
 `;
 
 export const AnimateBlock = styled.div`
+  white-space: nowrap;
   position: relative;
   overflow: hidden;
   /* animation-play-state: running; */
+`;
 
- 
+const moveLeftToRight = keyframes`
+
+0%{
+    transform: translate3d(calc(-25%+10vw),0,0);
+    
+  }  
+100%{
+    transform: translate(-100%);
+    }
 `;
 
 export const SecondV = styled.p`
   position: relative;
-  padding-left: ${p => p.theme.space[8]}px;
-  margin-bottom: 80px;
+  padding-left: -10px;
+  width: fit-content;
+  display: flex;
+  gap: 200px;
+  margin-bottom: 65px;
   font-style: italic;
   ${fontStyles}
   line-height: ${p => p.theme.lineHeights.body};
-  width: fit-content;
-  display: flex;
-  gap: 50px;
-  transform: translate3d(calc(-25%), 0, 0);
-  /* transform: translate(-90%); */
-  
-  /* animation: 5s linear infinite; */
-  /* animation-play-state: paused; */
-  /* animation: infinite; */
-  transition-property: inherit;
-  transition-duration:9s;
+
+  animation: ${moveLeftToRight} 15s linear infinite;
+  animation-play-state: running;
 `;
 
 export const ThirdV = styled.p`

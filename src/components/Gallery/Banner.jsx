@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import {
-  AnimateBlock,
   Banner,
   BoxForThredRow,
   ButtonScroll,
@@ -72,16 +71,7 @@ const BannerComp = () => {
   );
 };
 const AnimatedLetters = ({ title, disabled }) => (
-  <motion.span
-    variants={
-      //   disabled ? null :
-      banner
-    }
-    initial="hidden"
-    animate="show"
-    // initial="initial"
-    // animate="animate"
-  >
+  <motion.span variants={banner} initial="hidden" animate="show">
     {[...title].map((letter, index) => (
       <motion.span key={index} variants={letterAnimation}>
         {letter}
@@ -121,16 +111,17 @@ const RowTop = ({ title }) => {
 
 const RowCenter = ({ title }) => {
   return (
-    <AnimateBlock>
+    // <AnimateBlock>
       <SecondV>
-        <AnimatedLetters title={title} disabled /> <br />
         <AnimatedLetters title={title} />
-        <br />
-        <AnimatedLetters title={title} disabled />
-        <br />
-        <AnimatedLetters title={title} disabled />
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
       </SecondV>
-    </AnimateBlock>
+      
+    // </AnimateBlock>
   );
 };
 
