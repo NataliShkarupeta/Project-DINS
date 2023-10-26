@@ -80,25 +80,26 @@ const Loader = ({ setLoading }) => {
       >
         {/* <img src={`${BASIC_URL}/imagesLoader/paintBaby1.jpg`} alt="" /> */}
         <WrapIm2>
-          <ImageBlock variants={item} id="2" />
+          <ImageBlock variants={item} id="phoenix" />
         </WrapIm2>
         <WrapIm3>
-          <ImageBlock variants={item} id="3" />
+          <ImageBlock variants={item} id="pleasure" />
         </WrapIm3>
         <WrapIm4>
-          <ImageBlock variants={item} id="4" />
+          <ImageBlock variants={item} id="secrets" />
         </WrapIm4>
         <WrapIm5>
           <motion.div variants={itemMain}>
             <motion.img
-              src={`${BASIC_URL}/imagesLoader/5.jpg`}
-              alt=""
+              src={`${BASIC_URL}/imagesLoader/lions.jpg`}
+              alt="phoenix"
               layoutId="main-image"
+              
             />
           </motion.div>
         </WrapIm5>
         <WrapIm1>
-          <ImageBlock variants={item} id="1" />
+          <ImageBlock variants={item} id="hot bread" />
         </WrapIm1>
       </motion.div>
     </MainLoaderBlock>

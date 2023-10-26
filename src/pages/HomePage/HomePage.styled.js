@@ -41,7 +41,7 @@ export const PhotoWrap = styled.div`
 
 export const WrapName = styled.div`
   margin-top: ${p => p.theme.space[5]}px;
-  max-width: 40%;
+  /* max-width: 40%; */
   position: sticky;
   /* position: sticky; */
   /* top: 0;

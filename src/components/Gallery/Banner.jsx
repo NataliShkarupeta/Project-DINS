@@ -1,10 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import {
   Banner,
+  BorderTop,
   BoxForThredRow,
   ButtonScroll,
   FirstV,
   LinkBlock,
+  MiddleLine,
   SecondV,
   ThirdV,
   WhoAmI,
@@ -33,6 +35,7 @@ const letterAnimation = {
 };
 
 const BannerComp = () => {
+  const [t]= useTranslation();
   const [play, setPlay] = useState(false);
 
   useEffect(() => {
@@ -47,6 +50,11 @@ const BannerComp = () => {
 
   return (
     <motion.div variants={banner}>
+      <BorderTop>
+        <div></div>
+        <MiddleLine></MiddleLine>
+        <div></div>
+      </BorderTop>
       <Banner>
         <div>
           <motion.div
@@ -58,14 +66,14 @@ const BannerComp = () => {
               dalay: 0.4,
             }}
           >
-            <WhoAmI> {'Українська художниця'} </WhoAmI>
+            <WhoAmI> {t('gallaryPage.banner.WhoAmI')} </WhoAmI>
           </motion.div>
 
-          <RowTop title={'НАТАЛІ'} />
+          <RowTop title={t('gallaryPage.banner.name')} />
         </div>
         {/* <RowTop title={'НАТАЛІ'} /> */}
         <RowCenter title={'gallery'} play={play} />
-        <RowBottom title={'ШКАРУПЕТА'} />
+        <RowBottom title={t('gallaryPage.banner.lastName')} />
       </Banner>
     </motion.div>
   );
@@ -83,7 +91,7 @@ const AnimatedLetters = ({ title, disabled }) => (
 const RowTop = ({ title }) => {
   const [t] = useTranslation();
   return (
-    <div style={{ display: 'flex', gap: '250px' }}>
+    <div style={{ display: 'flex', gap: '250px',justifyContent:"space-around" }}>
       <FirstV>
         <AnimatedLetters title={title} />
       </FirstV>
@@ -114,11 +122,11 @@ const RowCenter = ({ title }) => {
     // <AnimateBlock>
       <SecondV>
         <AnimatedLetters title={title} />
+        {/* <AnimatedLetters title={title} />
         <AnimatedLetters title={title} />
         <AnimatedLetters title={title} />
         <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} /> */}
       </SecondV>
       
     // </AnimateBlock>
@@ -126,6 +134,7 @@ const RowCenter = ({ title }) => {
 };
 
 const RowBottom = ({ title }) => {
+  const [t]=useTranslation();
   return (
     <BoxForThredRow>
       <motion.div
@@ -134,7 +143,7 @@ const RowBottom = ({ title }) => {
         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, dalay: 1 }}
         style={{ zIndex: 100 }}
       >
-        <ButtonScroll>Скрол до картин </ButtonScroll>
+        <ButtonScroll>{t('gallaryPage.banner.scroll')}</ButtonScroll>
       </motion.div>
 
       <ThirdV>
