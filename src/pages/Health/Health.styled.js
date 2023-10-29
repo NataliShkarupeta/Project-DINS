@@ -25,7 +25,7 @@ export const Span = styled.span`
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
-  margin-bottom: ${p => p.theme.space[3]}px;
+  text-shadow: 0 11px 9px #8c928f, 0 80px 60px #8c928f;
 `;
 export const InRightBlock = styled.div`
   /* position: sticky; */
