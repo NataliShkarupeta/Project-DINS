@@ -14,16 +14,15 @@ import { useTranslation } from 'react-i18next';
 import { BsMoonFill, BsBrightnessHigh } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { NavigationLink } from 'pages/HomePage/HomePage.styled';
-import { useState } from 'react';
+import { useFeatureStore } from 'components/Features/Features/store';
 
 export const Layout = ({ setMainThema }) => {
-  const[leng,setLang]=useState("");
+  const setLeng = useFeatureStore(store=>store.setLeng)
   const [t, i18n] = useTranslation();
 
   const changeLanguage = language => {
     i18n.changeLanguage(language);
   };
-console.log(leng)
   return (
     <Background>
       <WrapMain>
@@ -32,13 +31,13 @@ console.log(leng)
           <WrapButton>
             <ButtonTranslate onClick={() => {
               changeLanguage('en')
-              setLang("en")
+              setLeng("en")
               }}>
               En
             </ButtonTranslate>
             <ButtonTranslate onClick={() => {
               changeLanguage('ua')
-              setLang("ua")
+              setLeng("ua")
               }}>
               Ua
             </ButtonTranslate>

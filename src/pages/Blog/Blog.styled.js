@@ -11,8 +11,8 @@ export const WrapForTooltip = styled.div`
 `;
 
 export const BlockButton = styled.div`
- margin-left: auto;
- margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
   position: sticky;
   bottom: -10px;
   display: flex;
@@ -61,7 +61,7 @@ export const Li = styled.li`
   margin-bottom: ${p => p.theme.space[5]}px;
   margin-left: auto;
   margin-right: auto;
-  height: 400px;
+  /* height: 400px; */
   /* width: 500px; */
   text-align: center;
 
@@ -80,7 +80,8 @@ export const Li = styled.li`
 `;
 
 export const Title = styled.h2`
-  font-family: ${p => p.theme.fonts.heading};
+  font-family: ${p => p.theme.fonts.monospace};
+  font-style: italic;
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.therd};
@@ -91,15 +92,15 @@ export const Date = styled.span`
 `;
 
 export const Text = styled.p`
-  padding-bottom: ${p => p.theme.space[5]}px;
-  width: 800px;
   margin-left: auto;
   margin-right: auto;
-  font-family: ${p => p.theme.fonts.forBlog};
+  width: 800px;
+  /* padding-bottom: ${p => p.theme.space[5]}px; */
+  color: ${p => p.theme.colors.therd};
+
+  font-family: ${p => p.theme.fonts.monospace};
   font-style: italic;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: ${p => p.theme.fontWeights.middleOne};
   line-height: 1.33;
-
-  color: ${p => p.theme.colors.therd};
 `;

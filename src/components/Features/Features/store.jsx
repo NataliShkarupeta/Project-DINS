@@ -15,4 +15,7 @@ export const useFeatureStore = create(set => ({
   setLastFullScreenFeature: feature => set({ lastFullScreenFeature: feature }),
   inViewTitle: null,
   setInViewTitle: feature => set({ inViewTitle: feature }),
+
+  leng: 'ua',
+  setLeng: feature=>set({leng:feature})
 }));
