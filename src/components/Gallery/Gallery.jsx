@@ -31,6 +31,7 @@ const Gallary = () => {
           {!loader && (
             <MainImageDiv>
               <motion.img
+                
                 src={`${BASIC_URL}/imagesLoader/lions.jpg`}
                 alt={`picture 'Lions'`}
                 layoutId="main-image"
@@ -38,7 +39,7 @@ const Gallary = () => {
                   ease: [[0.6, 0.01, -0.05, 0.9]],
                   duration: 1.6,
                 }}
-                // width="100%"
+                width="100%"
               />
             </MainImageDiv>
           )}

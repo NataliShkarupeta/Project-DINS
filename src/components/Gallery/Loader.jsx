@@ -91,10 +91,10 @@ const Loader = ({ setLoading }) => {
         <WrapIm5>
           <motion.div variants={itemMain}>
             <motion.img
+              style={{ borderRadius: '5px' }}
               src={`${BASIC_URL}/imagesLoader/lions.jpg`}
               alt="phoenix"
               layoutId="main-image"
-              
             />
           </motion.div>
         </WrapIm5>
@@ -109,7 +109,13 @@ const Loader = ({ setLoading }) => {
 const ImageBlock = ({ id, variants }) => {
   return (
     <motion.div variants={variants}>
-      <img src={`${BASIC_URL}/imagesLoader/${id}.jpg`} alt={`${id}`} />
+      {/* <div style={{ border: '#d6d0d9 10px solid', borderRadius: '3px' }}> */}
+        <img
+          src={`${BASIC_URL}/imagesLoader/${id}.jpg`}
+          alt={`${id}`}
+          style={{ borderRadius: '5px' }}
+        />
+      {/* </div> */}
     </motion.div>
   );
 };

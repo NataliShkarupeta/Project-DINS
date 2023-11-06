@@ -246,5 +246,8 @@
     },
     "buttonVisible": "Unwrap",
     "buttonclose": "Back to the site"
+  },
+  "defaultComponent": {
+    "frontEndPage": " I`m alrady working to fill this page )"
   }
 }

@@ -1,10 +1,10 @@
 import styled, { css, keyframes } from 'styled-components';
 
 export const AboutArt = styled.p`
-  padding: ${p => p.theme.space[4]}px;
-  margin-top: -100px;
+  padding: ${p => p.theme.space[5]}px;
+  margin-top: -10%;
   text-align: center;
-  font-family: ${p => p.theme.fonts.forBlog};
+  font-family: ${p => p.theme.fonts.monospace};
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.middleOne};
   font-style: italic;
@@ -24,6 +24,19 @@ export const MainImageDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* box-shadow: rgba(255, 255, 240, 0.2) 0 0 200px 100px,
+    rgba(255, 255, 240, 0.3) 0 0 40px, inset rgba(0, 0, 0, 0.8) 0 0 20px;
+  border-radius: 30px; */
+
+  /* transform: scaleY(-1); */
+  
+    
+    
+/* filter: blur(2px); */
+    
+    /* opacity: .25; */
+
 `;
 
 export const BoxForThredRow = styled.div`
@@ -128,7 +141,7 @@ export const MiddleLine = styled.div`
   background-color: ${p => p.theme.colors.fourth};
 `;
 export const Banner = styled.div`
-  padding-top: ${p => p.theme.space[4]}px;
+  padding-top: ${p => p.theme.space[6]}px;
   padding-bottom: ${p => p.theme.space[5]}px;
   height: 100vh;
   

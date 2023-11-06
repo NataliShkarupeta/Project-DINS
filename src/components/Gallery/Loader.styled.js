@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-export const MainLoaderBlock= styled.div`
-height: 100vh;
-position: relative;
-display: flex;
-`
+
+
+export const MainLoaderBlock = styled.div`
+
+  height: 100vh;
+  position: relative;
+  display: flex;
+`;
 export const WrapIm1 =styled.div`
 position:absolute;
 width:350px;
@@ -16,6 +19,7 @@ position:absolute;
 width:400px;
 top:2%;
 left:1%;
+ 
 `
 export const WrapIm3 = styled.div`
   position: absolute;

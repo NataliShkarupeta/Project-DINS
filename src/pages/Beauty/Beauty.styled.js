@@ -20,6 +20,8 @@ export const Text = styled.p`
 
   border-top: ${p => p.theme.borders.normal};
   padding-top: ${p => p.theme.space[3]}px;
+  padding-left: ${p => p.theme.space[3]}px;
+  padding-right: ${p => p.theme.space[3]}px;
   border-color: ${p => p.theme.colors.fourth};
 `;
 

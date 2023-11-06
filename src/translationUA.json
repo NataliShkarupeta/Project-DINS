@@ -253,5 +253,9 @@
     },
     "buttonVisible": "Розгорнути",
     "buttonclose": "Назад до сайту"
+  },
+  "defaultComponent":{
+    "frontEndPage":" Я вже працюю над наповненням цієї сторінки )"
   }
+
 }
