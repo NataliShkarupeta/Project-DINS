@@ -8,7 +8,6 @@ export const ButtonHome = () => {
 
   return (
     <Button onClick={() => console.log(location)}>
-      {' '}
       {t('button.buttonHome')}
     </Button>
   );

@@ -27,15 +27,15 @@ export const SmallWrap = styled.div`
 `;
 
 export const ButtonEmail = styled.button`
-  background-color: ${p => p.theme.colors.secondary};
-  border-color: ${p => p.theme.colors.muted};
-  border-radius: ${p => p.theme.radii.normal};
+
   :hover,
   :focus {
     cursor: pointer;
     color: ${p => p.theme.colors.primary};
-    background-color: ${p => p.theme.colors.muted};
+    /* background-color: ${p => p.theme.colors.muted}; */
     border-color: ${p => p.theme.colors.primary};
+    border-radius: ${p => p.theme.radii.normal};
   }
   transition: ${p => p.theme.transitions};
+
 `;

@@ -4,15 +4,6 @@ export const CardButtun = styled.button`
   position: absolute;
   bottom: 6px;
   right: 6px;
-  /* box-shadow: -12px -10px 20px 1px rgba(186, 99, 243, 0.52) ; */
-  /* :hover,
-  :focus {
-    cursor: pointer;
-    color: ${p => p.theme.colors.modes.dark.text};
-    background-color: ${p => p.theme.colors.muted};
-    border-color: ${p => p.theme.colors.primary};
-    border-radius: ${p => p.theme.radii.middle};
-  } */
 `;
 export const Img = styled.img`
   position: absolute;

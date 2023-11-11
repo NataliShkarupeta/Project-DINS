@@ -71,6 +71,14 @@ export const ButtonUnderArticle = styled.button`
   position: absolute;
   right: 3.1%;
   cursor: pointer;
+    :hover,
+  :focus {
+    cursor: pointer;
+    color: ${p => p.theme.colors.primary};
+    border-color: ${p => p.theme.colors.primary};
+    border-radius: ${p => p.theme.radii.normal};
+  }
+  transition: ${p => p.theme.transitions};
 `;
 
 export const NavigationLink = styled(NavLink)`

@@ -93,6 +93,7 @@ export const themeSecond = {
     primary: 'black',
     therd: '#152313',
     secondary: '',
+    muted: 'transparent',
     fourth: '#800080',
     modes: {
       dark: {
@@ -140,7 +141,9 @@ export const themeSecond = {
   radii: {
     none: 'none',
     normal: '4px',
+    middle: '10px',
     round: '50%',
+    forSlider: '30px',
   },
   shadows: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   zIndices: [0, 2, 3],

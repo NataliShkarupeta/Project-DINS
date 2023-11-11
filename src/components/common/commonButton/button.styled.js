@@ -9,7 +9,7 @@ export const Button = styled.button`
   :focus {
     cursor: pointer;
     color: ${p => p.theme.colors.primary};
-    background-color: ${p => p.theme.colors.muted};
+    /* background-color: ${p => p.theme.colors.muted}; */
     border-color: ${p => p.theme.colors.primary};
     border-radius: ${p => p.theme.radii.middle};
   }

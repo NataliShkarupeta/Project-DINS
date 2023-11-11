@@ -38,12 +38,12 @@ export const LearnMore = ({ setMore }) => {
         <P>{t('learn_more1')}</P>
         <P>{t('learn_more5.step7')}</P>
         <Ul>
-          <li>{t('dalay_lama._1')}</li>
-          <li>{t('dalay_lama._2')}</li>
-          <li>{t('dalay_lama._3')}</li>
-          <li>{t('dalay_lama._4')}</li>
-          <li>{t('dalay_lama._5')}</li>
-          <li>{t('dalay_lama._7')}</li>
+          <li key={1}>{t('dalay_lama._1')}</li>
+          <li key={2}>{t('dalay_lama._2')}</li>
+          <li key={3}>{t('dalay_lama._3')}</li>
+          <li key={4}>{t('dalay_lama._4')}</li>
+          <li key={5}>{t('dalay_lama._5')}</li>
+          <li key={6}>{t('dalay_lama._7')}</li>
         </Ul>
         <Span>{t('dalay_lama.name')}</Span>
       </Section>
