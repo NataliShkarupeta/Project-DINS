@@ -30,6 +30,7 @@ import { FeaturesTitle } from 'components/Features/Features/title';
 import { CommonСoldVisual } from 'components/Features/visual/visual';
 import { useFeatureStore } from 'components/Features/Features/store';
 
+
 const HealthPage = () => {
   const [t] = useTranslation();
   const inViewTitle = useFeatureStore(state => state.inViewTitle);

@@ -1,17 +1,19 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  border-color: ${p => p.theme.colors.muted};
-  background-color: ${p => p.theme.colors.muted};
-  display: flex;
-  padding: ${p => p.theme.space[1]}px;
+  background-color: ${p => p.theme.colors.colForBg};
+  font-weight: ${p => p.theme.fontWeights.body};
+  border: ${p => p.theme.borders.normal};
+  border-radius: 5px;
+  border-color: ${p => p.theme.colors.forBut};
+  padding: 2px;
   :hover,
   :focus {
     cursor: pointer;
+
     color: ${p => p.theme.colors.primary};
-    /* background-color: ${p => p.theme.colors.muted}; */
+    border: ${p => p.theme.borders.normal};
     border-color: ${p => p.theme.colors.primary};
-    border-radius: ${p => p.theme.radii.middle};
   }
   transition: ${p => p.theme.transitions};
 `;

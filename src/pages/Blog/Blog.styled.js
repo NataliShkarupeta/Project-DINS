@@ -61,20 +61,8 @@ export const Li = styled.li`
   margin-bottom: ${p => p.theme.space[5]}px;
   margin-left: auto;
   margin-right: auto;
-  /* height: 400px; */
-  /* width: 500px; */
   text-align: center;
-
-  /* border: ${p => p.theme.borders.normal};
-  border-color: ${p => p.theme.colors.muted};
-  border-radius: ${p => p.theme.radii.normal}; */
-  /* box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 3px 7px rgba(0, 0, 0, 0.3),
-    inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0); */
-
-  /* height: 30%; */
   overflow: hidden;
-  /* overflow-y: scroll; */
-
   background-color: rgba(255, 255, 255, 0.7);
   background-size: 100%;
 `;
@@ -88,6 +76,7 @@ export const Title = styled.h2`
 `;
 
 export const Date = styled.span`
+  color: ${p => p.theme.colors.therd};
   font-size: ${p => p.theme.fontSizes[0]}px;
 `;
 
@@ -95,7 +84,6 @@ export const Text = styled.p`
   margin-left: auto;
   margin-right: auto;
   width: 800px;
-  /* padding-bottom: ${p => p.theme.space[5]}px; */
   color: ${p => p.theme.colors.therd};
 
   font-family: ${p => p.theme.fonts.monospace};

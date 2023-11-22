@@ -7,14 +7,21 @@ import {
   WrapForMargin,
   Section,
 } from './LearnMore.styled';
-import { Button } from 'components/ButtonHome/ButtonHome.styled';
+import { Button } from 'components/common/commonButton/button.styled';
+
 
 export const LearnMore = ({ setMore }) => {
   const [t] = useTranslation();
 
+   const styles = {
+     marginBottom: '32px',
+     marginLeft: '16px',
+     padding: '2px 5px',
+   };
+
   return (
     <>
-      <Button onClick={() => setMore(false)}>{t('button.back')}</Button>
+      <Button style={styles} onClick={() => setMore(false)}>{t('button.back')}</Button>
       <Section>
         <WrapForMargin>
           <P>{t('learn_more2')}</P>

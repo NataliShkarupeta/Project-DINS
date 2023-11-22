@@ -34,17 +34,7 @@ export const WrapButton = styled.div`
   margin-top: 5px;
 `;
 
-export const ButtonTranslate = styled.button`
-  :hover,
-  :focus {
-    cursor: pointer;
-    color: ${p => p.theme.colors.primary};
-    /* background-color: ${p => p.theme.colors.muted}; */
-    border-color: ${p => p.theme.colors.primary};
-    border-radius: ${p => p.theme.radii.normal};
-  }
-  transition: ${p => p.theme.transitions};
-`;
+
 
 export const Background = styled.div`
   color: ${p => p.theme.colors.text};

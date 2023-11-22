@@ -28,7 +28,7 @@ export const PhotoWrap = styled.div`
   height: 700px;
   /* padding: ${p => p.theme.space[4]}px; */
 
-  border: 50px solid;
+  /* border: 0px solid; */
   border-color: ${p => p.theme.colors.secondary};
   /* background-color: ${p => p.theme.colors.secondary}; */
   background-image: url('${img}');
@@ -67,19 +67,6 @@ export const Article = styled.article`
   position: relative;
 `;
 
-export const ButtonUnderArticle = styled.button`
-  position: absolute;
-  right: 3.1%;
-  cursor: pointer;
-    :hover,
-  :focus {
-    cursor: pointer;
-    color: ${p => p.theme.colors.primary};
-    border-color: ${p => p.theme.colors.primary};
-    border-radius: ${p => p.theme.radii.normal};
-  }
-  transition: ${p => p.theme.transitions};
-`;
 
 export const NavigationLink = styled(NavLink)`
   text-transform: uppercase;
@@ -98,28 +85,9 @@ export const Name = styled.span`
   font-size: 120px;
   line-height: 1.09;
   transform: rotateX(35deg) rotateZ(1deg);
-  text-shadow: white 0.006em 0.006em 0.007em, #9c9c9c 1px 1px 1px,
-    #9c9c9c 1px 2px 1px, #9c9c9c 1px 3px 1px, #9c9c9c 1px 4px 1px,
-    #9c9c9c 1px 5px 1px, #9c9c9c 1px 6px 1px, #9c9c9c 1px 7px 1px,
-    #9c9c9c 1px 8px 1px, #9c9c9c 1px 9px 1px, #9c9c9c 1px 10px 1px,
-    #9c9c9c 1px 11px 1px, #9c9c9c 1px 12px 1px,
-    rgba(16, 16, 16, 0.4) 1px 18px 6px, rgba(16, 16, 16, 0.2) 1px 22px 10px,
-    rgba(16, 16, 16, 0.2) 1px 26px 35px, rgba(16, 16, 16, 0.4) 1px 30px 65px,
-    white -0.15em -0.1em 100px;
-  transition: 0.3s linear;
 
-  :hover {
-    margin-top: -20px;
-    text-shadow: white 0.006em 0.006em 0.007em, #9c9c9c 1px 1px 1px,
-      #9c9c9c 1px 2px 1px, #9c9c9c 1px 3px 1px, #9c9c9c 1px 4px 1px,
-      #9c9c9c 1px 5px 1px, #9c9c9c 1px 6px 1px, #9c9c9c 1px 7px 1px,
-      #9c9c9c 1px 8px 1px, #9c9c9c 1px 9px 1px, #9c9c9c 1px 10px 1px,
-      #9c9c9c 1px 11px 1px, #9c9c9c 1px 12px 1px,
-      rgba(16, 16, 16, 0.4) 1px 38px 26px, rgba(16, 16, 16, 0.2) 1px 42px 30px,
-      rgba(16, 16, 16, 0.2) 1px 46px 65px, rgba(16, 16, 16, 0.4) 1px 50px 95px,
-      white -0.15em -0.1em 100px;
-  }
-  font-family: ${p => p.theme.fonts.forName};
+  font-family: ${p => p.theme.fonts.forBlog};
+  font-style: italic;
   color: ${p => p.theme.colors.modes.dark.primary};
   position: sticky;
   top: 0;
@@ -138,15 +106,12 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-family: ${p => p.theme.fonts.monospace};
-  font-weight: ${p => p.theme.fontWeights.middle};
+  font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.normal};
   :hover,
   :focus {
-    color: ${p => p.theme.colors.modes.dark.primary};
-    text-shadow: -0.5px 1px 0.1px rgba(0, 0, 0, 0.72);
-    /* background-color: ${p => p.theme.colors.secondary}; */
+    color: ${p => p.theme.colors.secondary};
 
-    transform: scale(1.3);
   }
 
   transition: 0.3s linear;

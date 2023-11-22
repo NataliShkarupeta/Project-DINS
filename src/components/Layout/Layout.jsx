@@ -4,7 +4,6 @@ import { Footer } from 'components/Footer/Footer';
 import {
   WrapMain,
   WrapButton,
-  ButtonTranslate,
   WrapMoonAndSun,
   BlockUnderLine,
   Background,
@@ -15,32 +14,43 @@ import { BsMoonFill, BsBrightnessHigh } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { NavigationLink } from 'pages/HomePage/HomePage.styled';
 import { useFeatureStore } from 'components/Features/Features/store';
+import { Button } from 'components/common/commonButton/button.styled';
 
 export const Layout = ({ setMainThema }) => {
-  const setLeng = useFeatureStore(store=>store.setLeng)
+  const setLeng = useFeatureStore(store => store.setLeng);
   const [t, i18n] = useTranslation();
 
   const changeLanguage = language => {
     i18n.changeLanguage(language);
   };
+  const styles = {
+    padding: '3px 6px',
+  };
+
   return (
     <Background>
       <WrapMain>
         <Header />
         <BlockUnderLine>
           <WrapButton>
-            <ButtonTranslate onClick={() => {
-              changeLanguage('en')
-              setLeng("en")
-              }}>
+            <Button
+              style={styles}
+              onClick={() => {
+                changeLanguage('en');
+                setLeng('en');
+              }}
+            >
               En
-            </ButtonTranslate>
-            <ButtonTranslate onClick={() => {
-              changeLanguage('ua')
-              setLeng("ua")
-              }}>
+            </Button>
+            <Button
+              style={styles}
+              onClick={() => {
+                changeLanguage('ua');
+                setLeng('ua');
+              }}
+            >
               Ua
-            </ButtonTranslate>
+            </Button>
           </WrapButton>
           <WrapMoonAndSun>
             <BsBrightnessHigh
@@ -58,7 +68,7 @@ export const Layout = ({ setMainThema }) => {
             />
           </WrapMoonAndSun>
         </BlockUnderLine>
-        <NavigationLink to='/blog'>
+        <NavigationLink to="/blog">
           <motion.div
             whileHover={{ scale: 1.2, color: 'purple' }}
             whileTap={{ scale: 0.8, y: 0 }}

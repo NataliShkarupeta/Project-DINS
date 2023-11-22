@@ -1,4 +1,4 @@
-import { Head, WrapSender, SmallWrap, ButtonEmail } from './Header.styled';
+import { Head, WrapSender, SmallWrap} from './Header.styled';
 import { FaEnvelope } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import {
@@ -10,6 +10,7 @@ import {
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import img from '../../images/free-icon-space-8657325 (1).png';
+import { Button } from 'components/common/commonButton/button.styled';
 
 export const Header = () => {
   const [t] = useTranslation();
@@ -82,14 +83,14 @@ export const Header = () => {
           <p>{t('name')}</p>
         </SmallWrap>
         <>
-          <ButtonEmail
+          <Button
             onClick={e => {
               window.location.href = 'mailto:natalinardi.kh@gmail.com';
               e.preventDefault();
             }}
           >
             {t('button.email')}
-          </ButtonEmail>
+          </Button>
         </>
       </WrapSender>
     </Head>

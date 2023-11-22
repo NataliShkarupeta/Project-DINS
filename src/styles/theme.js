@@ -36,6 +36,8 @@ export const theme = {
     secondary: '#d6d0d9',
     muted: 'transparent',
     fourth: '#800080',
+    forBut: '#000000',
+    colForBg: 'transparent',
     modes: {
       dark: {
         text: '#fff',
@@ -90,9 +92,11 @@ export const themeSecond = {
     text: '#2c9241',
     background: 'black',
     accent: '',
-    primary: 'black',
+    // primary: 'black',
+    primary: '#8c3b19',
     therd: '#152313',
-    secondary: '',
+    forBut: '#d6d0d9',
+    colForBg: '#d7e6da',
     muted: 'transparent',
     fourth: '#800080',
     modes: {

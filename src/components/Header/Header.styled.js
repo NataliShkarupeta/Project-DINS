@@ -26,16 +26,4 @@ export const SmallWrap = styled.div`
   gap: 5px;
 `;
 
-export const ButtonEmail = styled.button`
 
-  :hover,
-  :focus {
-    cursor: pointer;
-    color: ${p => p.theme.colors.primary};
-    /* background-color: ${p => p.theme.colors.muted}; */
-    border-color: ${p => p.theme.colors.primary};
-    border-radius: ${p => p.theme.radii.normal};
-  }
-  transition: ${p => p.theme.transitions};
-
-`;

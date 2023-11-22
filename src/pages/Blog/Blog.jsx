@@ -39,7 +39,7 @@ const BlogPage = memo(() => {
   const [t] = useTranslation();
 
   const leng = useFeatureStore(state => state.leng);
-  console.log("lang",leng)
+  console.log('lang', leng);
 
   useEffect(() => {
     getAllPosts().then(res => setPosts(res));
@@ -48,6 +48,14 @@ const BlogPage = memo(() => {
   const saveIdPost = id => {
     const post = Object.values(posts).find(post => post._id === id);
     setTodoId(post);
+  };
+
+  const styles = {
+    backgroundColor:'transparent',
+    padding:'4px 4px',
+    border: 'none',
+   display:'flex',
+   jastifyContext:'center',
   };
 
   return (
@@ -107,7 +115,8 @@ const BlogPage = memo(() => {
                           )}
                         >
                           <CommonButton
-                            text={<RxFileText />}
+                            styled={styles}
+                            text={<RxFileText size={'16px'}/>}
                             clickHandler={() => setShow(!show)}
                           ></CommonButton>
                         </p>
@@ -119,7 +128,10 @@ const BlogPage = memo(() => {
                           data-tooltip-id="my-tooltip"
                           data-tooltip-content={t('button.commonButton.share')}
                         >
-                          <CommonButton text={<RxShare1 />}></CommonButton>
+                          <CommonButton
+                            styled={styles}
+                            text={<RxShare1 size={'16px'}/>}
+                          ></CommonButton>
                         </p>
                         <Tooltip id="my-tooltip" />
                       </WrapForTooltip>
@@ -129,7 +141,8 @@ const BlogPage = memo(() => {
                           data-tooltip-content={t('button.commonButton.edit')}
                         >
                           <CommonButton
-                            text={<RxPencil1 />}
+                            styled={styles}
+                            text={<RxPencil1 size={'16px'}/>}
                             clickHandler={() => {
                               setShowModal(true);
                               saveIdPost(_id);
@@ -145,7 +158,8 @@ const BlogPage = memo(() => {
                           data-tooltip-content={t('button.commonButton.delete')}
                         >
                           <CommonButton
-                            text={<RxTrash />}
+                            styled={styles}
+                            text={<RxTrash size={'16px'}/>}
                             clickHandler={() => {
                               setCanDelete(true);
                               saveIdPost(_id);
