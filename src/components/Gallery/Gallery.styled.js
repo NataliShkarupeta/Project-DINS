@@ -61,7 +61,6 @@ export const AnimateBlock = styled.div`
   /* animation-play-state: running; */
 `;
 
-
 const fontStyles = css`
   font-family: ${p => p.theme.fonts.forBlog};
   font-size: ${p => p.theme.fontSizes[6]}px;
@@ -70,7 +69,6 @@ const fontStyles = css`
   font-weight: ${p => p.theme.fontWeights.middleOne};
 `;
 export const WhoAmI = styled.p`
- 
   /* padding-left: 2%; */
   font-size: ${p => p.theme.fontSizes[3]}px;
 `;
@@ -99,6 +97,24 @@ export const ThirdV = styled.p`
 export const MainSection = styled.div`
   padding-left: ${p => p.theme.space[4]}px;
   padding-right: ${p => p.theme.space[4]}px;
+`;
+
+export const RedBallBefore = styled.div`
+  &:before {
+    position: absolute;
+    right: 6%;
+    /* content: '🦄'; */
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: ${p => p.theme.colors.muted};
+    border-radius: ${p => p.theme.radii.round};
+
+    z-index: 2;
+   
+  }
 `;
 
 export const BorderTop = styled.div`

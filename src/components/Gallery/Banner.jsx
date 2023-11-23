@@ -6,11 +6,14 @@ import {
   FirstV,
   LinkBlock,
   MiddleLine,
+  RedBallBefore,
   ThirdV,
   WhoAmI,
 } from './Gallery.styled';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { CommonButton } from 'components/common/commonButton/button';
+
 // import { NavigationLink } from 'pages/Painting/Painting.styled';
 
 const banner = {
@@ -46,8 +49,26 @@ const BannerComp = () => {
   //   }, 2000);
   // }, []);
 
+  const styles = {
+    position: 'absolute',
+    right: '2%',
+    padding: '2px 15px',
+    backgroundColor: 'grey',
+    color: 'white',
+    fontSize: '20px',
+    cursor:'pointer'
+  };
+
   return (
     <motion.div variants={banner}>
+      <RedBallBefore>
+        <CommonButton
+          styled={styles}
+          text="Info"
+          clickHandler={() => console.log('qwe')}
+        />
+      </RedBallBefore>
+
       <BorderTop>
         <div></div>
         <MiddleLine></MiddleLine>
@@ -69,7 +90,9 @@ const BannerComp = () => {
 
         <RowTop title={t('gallaryPage.banner.name')} />
         <RowBottom title={t('gallaryPage.banner.lastName')} />
-        <ButtonScroll>{t('gallaryPage.banner.scroll')}</ButtonScroll>
+        <ButtonScroll onClick={() => console.log('qwe')}>
+          {t('gallaryPage.banner.scroll')}
+        </ButtonScroll>
 
         {/* <RowCenter title={'gallery'}  /> */}
       </Banner>
@@ -106,6 +129,7 @@ const RowTop = ({ title }) => {
         <FirstV>
           <AnimatedLetters title={title} />
         </FirstV>
+
         <LinkBlock>
           {/* <NavigationLink to={'/painting/social-project'}> */}
           {/* <h3>{t('paintin_page.paintinTitle2')}</h3> */}
