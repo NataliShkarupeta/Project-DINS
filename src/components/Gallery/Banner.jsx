@@ -50,17 +50,19 @@ const BannerComp = () => {
   // }, []);
 
   const styles = {
-    position: 'absolute',
-    right: '2%',
     padding: '2px 15px',
     backgroundColor: 'grey',
     color: 'white',
     fontSize: '20px',
-    cursor:'pointer'
   };
 
   return (
     <motion.div variants={banner}>
+      <BorderTop>
+        <div></div>
+        <MiddleLine></MiddleLine>
+        <div></div>
+      </BorderTop>
       <RedBallBefore>
         <CommonButton
           styled={styles}
@@ -68,12 +70,6 @@ const BannerComp = () => {
           clickHandler={() => console.log('qwe')}
         />
       </RedBallBefore>
-
-      <BorderTop>
-        <div></div>
-        <MiddleLine></MiddleLine>
-        <div></div>
-      </BorderTop>
 
       <Banner>
         <motion.div

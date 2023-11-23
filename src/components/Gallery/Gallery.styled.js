@@ -12,7 +12,7 @@ export const AboutArt = styled.p`
 `;
 
 export const MainImageDiv = styled.div`
-  margin-top: -200px;
+  margin-top: -18%;
   width: 100%;
   height: 750px;
   overflow: hidden;
@@ -23,7 +23,6 @@ export const MainImageDiv = styled.div`
 `;
 
 export const Banner = styled.div`
-  /* background-color: white; */
 
   position: relative;
   padding-top: ${p => p.theme.space[7]}px;
@@ -36,7 +35,7 @@ export const Banner = styled.div`
 
 export const ButtonScroll = styled.button`
   position: absolute;
-  bottom: 50px;
+  bottom: 15%;
   left: 45%;
   width: 110px;
   height: 110px;
@@ -100,9 +99,12 @@ export const MainSection = styled.div`
 `;
 
 export const RedBallBefore = styled.div`
+  position: relative;
+  text-align: right;
   &:before {
     position: absolute;
-    right: 6%;
+    right: 4%;
+    top: -3px;
     /* content: '🦄'; */
     content: '';
     width: 15px;
@@ -113,7 +115,6 @@ export const RedBallBefore = styled.div`
     border-radius: ${p => p.theme.radii.round};
 
     z-index: 2;
-   
   }
 `;
 
