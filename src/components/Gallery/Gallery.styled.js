@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const AboutArt = styled.p`
   padding: ${p => p.theme.space[5]}px;
@@ -11,11 +11,6 @@ export const AboutArt = styled.p`
   color: ${p => p.theme.colors.background};
 `;
 
-export const WhoAmI = styled.p`
-padding-left: 2%;
-  font-size: ${p => p.theme.fontSizes[3]}px;
-`;
-
 export const MainImageDiv = styled.div`
   margin-top: -200px;
   width: 100%;
@@ -24,30 +19,25 @@ export const MainImageDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* box-shadow: rgba(255, 255, 240, 0.2) 0 0 200px 100px,
-    rgba(255, 255, 240, 0.3) 0 0 40px, inset rgba(0, 0, 0, 0.8) 0 0 20px;
-  border-radius: 30px; */
-
-  /* transform: scaleY(-1); */
-  
-    
-    
-/* filter: blur(2px); */
-    
-    /* opacity: .25; */
-
+  z-index: 100;
 `;
 
-export const BoxForThredRow = styled.div`
-  padding-left: 15%;
+export const Banner = styled.div`
+  /* background-color: white; */
+
+  position: relative;
+  padding-top: ${p => p.theme.space[7]}px;
+  height: 100vh;
   display: flex;
-  gap: 100px;
-  align-items: center;
-  /* justify-content: space-between; */
+  gap: 10px;
+  align-items: baseline;
+  justify-content: center;
 `;
 
 export const ButtonScroll = styled.button`
+  position: absolute;
+  bottom: 50px;
+  left: 45%;
   width: 110px;
   height: 110px;
   border-color: ${p => p.theme.colors.muted};
@@ -61,20 +51,7 @@ export const LinkBlock = styled.div`
   right: 100px;
   color: #2c9241;
   font-size: ${p => p.theme.fontSizes[5]}px;
-  padding: ${p => p.theme.space[3]}px;
-`;
-
-const fontStyles = css`
-  font-family: ${p => p.theme.fonts.forBlog};
-  font-size: ${p => p.theme.fontSizes[11]}px;
-  line-height: ${p => p.theme.lineHeights.heading};
-  font-weight: ${p => p.theme.fontWeights.middleOne};
-`;
-
-export const FirstV = styled.p`
-  padding-left: 7%;
-  ${fontStyles}
-  margin-bottom: ${p => p.theme.space[5]}px;
+  /* padding: ${p => p.theme.space[3]}px; */
 `;
 
 export const AnimateBlock = styled.div`
@@ -84,51 +61,45 @@ export const AnimateBlock = styled.div`
   /* animation-play-state: running; */
 `;
 
-const moveLeftToRight = keyframes`
-0%{
-    transform: translateX(100%);
-    
-  }  
-100%{
-    transform: translateX(-100%);
-    }
 
-/* 0%{
-    transform: translate3d(calc(-25%),0,0);
-    
-  }  
-100%{
-    transform: translate(-100%);
-    } */
+const fontStyles = css`
+  font-family: ${p => p.theme.fonts.forBlog};
+  font-size: ${p => p.theme.fontSizes[6]}px;
+  /* font-size: ${p => p.theme.fontSizes[11]}px; */
+  line-height: ${p => p.theme.lineHeights.heading};
+  font-weight: ${p => p.theme.fontWeights.middleOne};
+`;
+export const WhoAmI = styled.p`
+ 
+  /* padding-left: 2%; */
+  font-size: ${p => p.theme.fontSizes[3]}px;
+`;
+
+export const FirstV = styled.p`
+  ${fontStyles}
 `;
 
 export const SecondV = styled.p`
-  position: relative;
-  padding-left: 35%;
-  width: fit-content;
-  display: flex;
-  gap: 200px;
-  margin-bottom: 65px;
+  /* position: relative; */
+  /* padding-left: 35%; */
+  /* width: fit-content; */
+  /* display: flex; */
+  /* gap: 200px; */
+  /* margin-bottom: 65px; */
   font-style: italic;
-  ${fontStyles}
-  line-height: ${p => p.theme.lineHeights.body};
-  /* font-size:150px ; */
-
-  /* animation: ${moveLeftToRight} 15s linear infinite; */
+  ${fontStyles}/* line-height: ${p => p.theme.lineHeights.body}; */
 `;
 
 export const ThirdV = styled.p`
-  padding-left: ${p => p.theme.space[5]}px;
-  ${fontStyles}
-  z-index: 100;
-  color: ${p => p.theme.colors.background};
+  /* padding-left: ${p => p.theme.space[5]}px; */
+  ${fontStyles}/* z-index: 100; */
+  /* color: ${p => p.theme.colors.background}; */
 `;
 
 export const MainSection = styled.div`
   padding-left: ${p => p.theme.space[4]}px;
   padding-right: ${p => p.theme.space[4]}px;
 `;
-
 
 export const BorderTop = styled.div`
   display: flex;
@@ -140,13 +111,7 @@ export const MiddleLine = styled.div`
   width: 65%;
   background-color: ${p => p.theme.colors.fourth};
 `;
-export const Banner = styled.div`
-  padding-top: ${p => p.theme.space[6]}px;
-  padding-bottom: ${p => p.theme.space[5]}px;
-  height: 100vh;
-  
-  /* border-top: ${p => p.theme.borders.normal}; */
-`;
+
 export const Presentation = styled.div`
   /* width: 100vw; */
   height: 110px;

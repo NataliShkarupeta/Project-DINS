@@ -2,18 +2,16 @@ import { useTranslation } from 'react-i18next';
 import {
   Banner,
   BorderTop,
-  BoxForThredRow,
   ButtonScroll,
   FirstV,
   LinkBlock,
   MiddleLine,
-  SecondV,
   ThirdV,
   WhoAmI,
 } from './Gallery.styled';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { NavigationLink } from 'pages/Painting/Painting.styled';
+import { useEffect } from 'react';
+// import { NavigationLink } from 'pages/Painting/Painting.styled';
 
 const banner = {
   hidden: {},
@@ -35,18 +33,18 @@ const letterAnimation = {
 };
 
 const BannerComp = () => {
-  const [t]= useTranslation();
-  const [play, setPlay] = useState(false);
+  const [t] = useTranslation();
+  // const [play, setPlay] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 250);
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setPlay(true);
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setPlay(true);
+  //   }, 2000);
+  // }, []);
 
   return (
     <motion.div variants={banner}>
@@ -55,25 +53,25 @@ const BannerComp = () => {
         <MiddleLine></MiddleLine>
         <div></div>
       </BorderTop>
-      <Banner>
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              ease: 'easeInOut',
-              duration: 1,
-              dalay: 0.4,
-            }}
-          >
-            <WhoAmI> {t('gallaryPage.banner.WhoAmI')} </WhoAmI>
-          </motion.div>
 
-          <RowTop title={t('gallaryPage.banner.name')} />
-        </div>
-        {/* <RowTop title={'НАТАЛІ'} /> */}
-        <RowCenter title={'gallery'} play={play} />
+      <Banner>
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            ease: 'easeInOut',
+            duration: 1,
+            dalay: 0.4,
+          }}
+        >
+          <WhoAmI> {t('gallaryPage.banner.WhoAmI')} </WhoAmI>
+        </motion.div>
+
+        <RowTop title={t('gallaryPage.banner.name')} />
         <RowBottom title={t('gallaryPage.banner.lastName')} />
+        <ButtonScroll>{t('gallaryPage.banner.scroll')}</ButtonScroll>
+
+        {/* <RowCenter title={'gallery'}  /> */}
       </Banner>
     </motion.div>
   );
@@ -89,67 +87,58 @@ const AnimatedLetters = ({ title, disabled }) => (
 );
 
 const RowTop = ({ title }) => {
-  const [t] = useTranslation();
+  // const [t] = useTranslation();
   return (
-    <div style={{ display: 'flex', gap: '250px',justifyContent:"space-around" }}>
-      <FirstV>
-        <AnimatedLetters title={title} />
-      </FirstV>
+    <>
       <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          ease: 'easeInOut',
-          duration: 1,
-          dalay: 0.4,
-        }}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, dalay: 1 }}
+        style={{ zIndex: 100 }}
+        // initial={{ opacity: 0, y: 80 }}
+        // animate={{ opacity: 1, y: 0 }}
+        // transition={{
+        //   ease: 'easeInOut',
+        //   duration: 1,
+        //   dalay: 0.4,
+        // }}
       >
+        <FirstV>
+          <AnimatedLetters title={title} />
+        </FirstV>
         <LinkBlock>
-          <NavigationLink to={'/painting/social-project'}>
-            {/* <h3>{t('paintin_page.paintinTitle2')}</h3> */}
-            <h3>{t('paintin_page.paintinTitle1')}</h3>
-          </NavigationLink>
+          {/* <NavigationLink to={'/painting/social-project'}> */}
+          {/* <h3>{t('paintin_page.paintinTitle2')}</h3> */}
+          {/* <h3>{t('paintin_page.paintinTitle1')}</h3> */}
+          {/* </NavigationLink> */}
         </LinkBlock>
       </motion.div>
-    </div>
+    </>
   );
 };
 
-// const animate = {};
-
-const RowCenter = ({ title }) => {
-  return (
-    // <AnimateBlock>
-      <SecondV>
-        <AnimatedLetters title={title} />
-        {/* <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} /> */}
-      </SecondV>
-      
-    // </AnimateBlock>
-  );
-};
+// const RowCenter = ({ title }) => {
+//   return (
+//     <SecondV>
+//       <AnimatedLetters title={title} />
+//     </SecondV>
+//   );
+// };
 
 const RowBottom = ({ title }) => {
-  const [t]=useTranslation();
   return (
-    <BoxForThredRow>
+    <>
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, dalay: 1 }}
         style={{ zIndex: 100 }}
       >
-        <ButtonScroll>{t('gallaryPage.banner.scroll')}</ButtonScroll>
+        <ThirdV>
+          <AnimatedLetters title={title} />
+        </ThirdV>
       </motion.div>
-
-      <ThirdV>
-        <AnimatedLetters title={title} />
-      </ThirdV>
-    </BoxForThredRow>
+    </>
   );
 };
 
