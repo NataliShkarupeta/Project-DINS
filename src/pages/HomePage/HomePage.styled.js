@@ -60,7 +60,7 @@ export const Article = styled.article`
   font-weight: ${p => p.theme.fontWeights.middle};
   line-height: ${p => p.theme.lineHeights.normal};
   font-family: ${p => p.theme.fonts.body};
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 3px 7px rgba(0, 0, 0, 0.3),
     inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0);
   margin-bottom: ${p => p.theme.space[3]}px;

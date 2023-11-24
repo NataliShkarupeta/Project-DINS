@@ -1,14 +1,31 @@
 import styled, { css } from 'styled-components';
 
+export const SectionBeforPictures = styled.section`
+  margin-top: -10%;
+`;
+
+export const AboutOrder = styled.p`
+  padding: ${p => p.theme.space[4]}px;
+  /* padding-left: ${p => p.theme.space[5]}px; */
+  color: ${p => p.theme.colors.text};
+  /* background-color: ${p => p.theme.colors.modes.dark.text}; */
+  font-family: ${p => p.theme.fonts.monospace};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
+  margin-bottom: ${p => p.theme.space[6]}px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
 export const AboutArt = styled.p`
   padding: ${p => p.theme.space[5]}px;
-  margin-top: -10%;
   text-align: center;
   font-family: ${p => p.theme.fonts.monospace};
   font-size: ${p => p.theme.fontSizes[4]}px;
-  font-weight: ${p => p.theme.fontWeights.middleOne};
+  font-weight: ${p => p.theme.fontWeights.body};
   font-style: italic;
-  color: ${p => p.theme.colors.background};
+  color: ${p => p.theme.colors.modes.dark.text};
+  margin-bottom: ${p => p.theme.space[5]}px;
+  /* text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 `;
 
 export const MainImageDiv = styled.div`
@@ -23,7 +40,6 @@ export const MainImageDiv = styled.div`
 `;
 
 export const Banner = styled.div`
-
   position: relative;
   padding-top: ${p => p.theme.space[7]}px;
   height: 100vh;
@@ -43,6 +59,11 @@ export const ButtonScroll = styled.button`
   border-radius: ${p => p.theme.radii.round};
   background-color: ${p => p.theme.colors.modes.light.background};
   cursor: pointer;
+  :hover,
+  :focus {
+    scale: 1.2;
+  }
+  transition: ${p => p.theme.transitions};
 `;
 
 export const LinkBlock = styled.div`
@@ -94,13 +115,14 @@ export const ThirdV = styled.p`
 `;
 
 export const MainSection = styled.div`
-  padding-left: ${p => p.theme.space[4]}px;
-  padding-right: ${p => p.theme.space[4]}px;
+  /* padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[4]}px; */
 `;
 
 export const RedBallBefore = styled.div`
   position: relative;
   text-align: right;
+  margin-right: 32px;
   &:before {
     position: absolute;
     right: 4%;
@@ -133,4 +155,31 @@ export const Presentation = styled.div`
   /* width: 100vw; */
   height: 110px;
   /* background-color:${p => p.theme.colors.modes.light.background} ; */
+`;
+
+///////////////////// design the painting/////////////////////////////////
+
+export const Ul = styled.ul`
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+export const Li = styled.li`
+  /* width: 400px; */
+  width: calc(100% / 4);
+  text-align: center;
+  align-items: center;
+  margin-bottom: ${p => p.theme.space[7]}px;
+  scale: 1;
+`;
+
+export const WrapPicture = styled.div`
+  :hover,
+  :focus {
+    scale: 1.2;
+  }
+  transition: ${p => p.theme.transitions};
 `;

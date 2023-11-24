@@ -1,13 +1,14 @@
-import { normalizedDate } from 'pages/Blog/normalizeDate';
-import { useEffect, useState } from 'react';
+// import { normalizedDate } from 'pages/Blog/normalizeDate';
+import { useEffect, useRef, useState } from 'react';
 import { getAllPictures } from 'service/gallertService';
-import { AboutArt, MainImageDiv, MainSection } from './Gallery.styled';
+import { AboutArt, AboutOrder, Li, MainImageDiv, MainSection, SectionBeforPictures, Ul, WrapPicture } from './Gallery.styled';
 // import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import BannerComp from './Banner';
 import Loader from './Loader';
 import { BASIC_URL } from 'service/basicUrl';
 import { useTranslation } from 'react-i18next';
+import { FaStarOfLife } from 'react-icons/fa';
 
 const Gallary = () => {
   const [pictures, setPicures] = useState({});
@@ -18,6 +19,9 @@ const Gallary = () => {
     getAllPictures().then(res => setPicures(res));
   }, []);
 
+  const rref=useRef();
+
+
   return (
     <MainSection>
       {/* <Loader /> */}
@@ -27,11 +31,10 @@ const Gallary = () => {
         </motion.div>
       ) : (
         <>
-          <BannerComp />
+          <BannerComp refToPict={rref} />
           {!loader && (
             <MainImageDiv>
               <motion.img
-                
                 src={`${BASIC_URL}/imagesLoader/lions.jpg`}
                 alt={`picture 'Lions'`}
                 layoutId="main-image"
@@ -43,27 +46,29 @@ const Gallary = () => {
               />
             </MainImageDiv>
           )}
-          <section>
+          <SectionBeforPictures>
             <AboutArt>{t('gallaryPage.art')}</AboutArt>
-          </section>
+            <AboutOrder ref={rref}>
+              <FaStarOfLife size={'10px'} /> <br />
+              {t('gallaryPage.aboutOrder')}
+            </AboutOrder>
+          </SectionBeforPictures>
           <section>
-            <ul style={{ display: 'flex', gap: '30px' }}>
+            <Ul>
               {pictures &&
                 Object.values(pictures).map(
                   ({ title1, descriptions, image, createdAt, _id }) => (
-                    <li key={_id}>
-                      <h3>{title1}</h3>
+                    <Li key={_id}>
+                      {/* <h3>{title1}</h3>
                       <p>{normalizedDate(createdAt)}</p>
-                      <p>{descriptions}</p>
-                      <img
-                        src={`${BASIC_URL}/${image}`}
-                        alt={title1}
-                        width={'300px'}
-                      />
-                    </li>
+                      <p>{descriptions}</p> */}
+                      <WrapPicture>
+                        <img src={`${BASIC_URL}/${image}`} alt={title1} />
+                      </WrapPicture>
+                    </Li>
                   )
                 )}
-            </ul>
+            </Ul>
           </section>
         </>
       )}

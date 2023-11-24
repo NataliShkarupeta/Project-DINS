@@ -35,13 +35,15 @@ const letterAnimation = {
   },
 };
 
-const BannerComp = () => {
+const BannerComp = ({refToPict}) => {
   const [t] = useTranslation();
   // const [play, setPlay] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 250);
   }, []);
+
+
 
   // useEffect(() => {
   //   setTimeout(() => {
@@ -86,7 +88,10 @@ const BannerComp = () => {
 
         <RowTop title={t('gallaryPage.banner.name')} />
         <RowBottom title={t('gallaryPage.banner.lastName')} />
-        <ButtonScroll onClick={() => console.log('qwe')}>
+        <ButtonScroll
+        onClick={()=>refToPict.current.scrollIntoView({behavior: "smooth" })}
+          // onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           {t('gallaryPage.banner.scroll')}
         </ButtonScroll>
 
