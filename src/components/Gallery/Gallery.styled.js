@@ -174,6 +174,7 @@ export const Li = styled.li`
   align-items: center;
   margin-bottom: ${p => p.theme.space[7]}px;
   scale: 1;
+  cursor: pointer;
 `;
 
 export const WrapPicture = styled.div`

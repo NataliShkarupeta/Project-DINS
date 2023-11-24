@@ -1,7 +1,16 @@
 // import { normalizedDate } from 'pages/Blog/normalizeDate';
 import { useEffect, useRef, useState } from 'react';
 import { getAllPictures } from 'service/gallertService';
-import { AboutArt, AboutOrder, Li, MainImageDiv, MainSection, SectionBeforPictures, Ul, WrapPicture } from './Gallery.styled';
+import {
+  AboutArt,
+  AboutOrder,
+  Li,
+  MainImageDiv,
+  MainSection,
+  SectionBeforPictures,
+  Ul,
+  WrapPicture,
+} from './Gallery.styled';
 // import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import BannerComp from './Banner';
@@ -9,9 +18,11 @@ import Loader from './Loader';
 import { BASIC_URL } from 'service/basicUrl';
 import { useTranslation } from 'react-i18next';
 import { FaStarOfLife } from 'react-icons/fa';
+import { PictureInfo } from 'components/PictureInfo/PictureInfo';
 
 const Gallary = () => {
   const [pictures, setPicures] = useState({});
+  const [picture, setPicture] = useState(null);
   const [loader, setLoading] = useState(true);
   const [t] = useTranslation();
 
@@ -19,8 +30,13 @@ const Gallary = () => {
     getAllPictures().then(res => setPicures(res));
   }, []);
 
-  const rref=useRef();
+  const rref = useRef();
 
+  const savePictueres = _id => {
+    const image = Object.values(pictures).find(image => image._id === _id);
+    setPicture(image);
+    // console.log(picture);
+  };
 
   return (
     <MainSection>
@@ -54,15 +70,13 @@ const Gallary = () => {
             </AboutOrder>
           </SectionBeforPictures>
           <section>
+            {picture && <PictureInfo pict={picture} />}
             <Ul>
               {pictures &&
                 Object.values(pictures).map(
                   ({ title1, descriptions, image, createdAt, _id }) => (
                     <Li key={_id}>
-                      {/* <h3>{title1}</h3>
-                      <p>{normalizedDate(createdAt)}</p>
-                      <p>{descriptions}</p> */}
-                      <WrapPicture>
+                      <WrapPicture onClick={() => savePictueres(_id)}>
                         <img src={`${BASIC_URL}/${image}`} alt={title1} />
                       </WrapPicture>
                     </Li>
