@@ -17,5 +17,8 @@ export const useFeatureStore = create(set => ({
   setInViewTitle: feature => set({ inViewTitle: feature }),
 
   leng: 'ua',
-  setLeng: feature=>set({leng:feature})
+  setLeng: feature => set({ leng: feature }),
+
+  pict: null,
+  setPict: feature => set({ pict: feature }),
 }));

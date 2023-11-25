@@ -109,7 +109,7 @@ export const themeSecond = {
       },
       light: {
         text: '#d6d0d9',
-        background: '',
+        background: '#000',
       },
     },
   },

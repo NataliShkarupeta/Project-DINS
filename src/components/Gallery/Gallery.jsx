@@ -17,11 +17,11 @@ import Loader from './Loader';
 import { BASIC_URL } from 'service/basicUrl';
 import { useTranslation } from 'react-i18next';
 import { FaStarOfLife } from 'react-icons/fa';
-import { PictureInfo } from 'components/PictureInfo/PictureInfo';
+import { Link, useLocation } from 'react-router-dom';
+import { useFeatureStore } from 'components/Features/Features/store';
 
 const Gallary = () => {
   const [pictures, setPicures] = useState({});
-  const [picture, setPicture] = useState(null);
   const [loader, setLoading] = useState(true);
   const [t] = useTranslation();
 
@@ -29,12 +29,14 @@ const Gallary = () => {
     getAllPictures().then(res => setPicures(res));
   }, []);
 
+   const setPict = useFeatureStore(store => store.setPict);
+
   const rref = useRef();
+    const location = useLocation();
 
   const savePictueres = _id => {
     const image = Object.values(pictures).find(image => image._id === _id);
-    setPicture(image);
-    // console.log(picture);
+    setPict(image);
   };
 
   return (
@@ -69,15 +71,16 @@ const Gallary = () => {
             </AboutOrder>
           </SectionBeforPictures>
           <section>
-            {picture && <PictureInfo pict={picture} />}
             <Ul>
               {pictures &&
                 Object.values(pictures).map(
-                  ({ title1, descriptions, image, createdAt, _id }) => (
+                  ({ title1, image, _id }) => (
                     <Li key={_id}>
-                      <WrapPicture onClick={() => savePictueres(_id)}>
+                      <Link to={`/painting/${_id}`} state={{ from: location }}>
+                        <WrapPicture onClick={() => savePictueres(_id)}>
                         <img src={`${BASIC_URL}/${image}`} alt={title1} />
                       </WrapPicture>
+                      </Link>
                     </Li>
                   )
                 )}

@@ -39,7 +39,7 @@ const BlogPage = memo(() => {
   const [t] = useTranslation();
 
   const leng = useFeatureStore(state => state.leng);
-  console.log('lang', leng);
+  // console.log('lang', leng);
 
   useEffect(() => {
     getAllPosts().then(res => setPosts(res));

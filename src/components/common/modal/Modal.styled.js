@@ -6,9 +6,11 @@ export const Overlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
+  padding: ${p => p.theme.space[5]}px;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
   background-color: rgba(0, 0, 0, 0.25);
   z-index: 1200;
 `;

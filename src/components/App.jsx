@@ -7,6 +7,8 @@ import { theme, themeSecond } from '../styles/theme';
 import { lazy, useState } from 'react';
 import { LearnMore } from './LearnMore/LearnMore';
 import { motion, AnimatePresence } from 'framer-motion';
+import { PictureInfo } from './PictureInfo/PictureInfo';
+import { useFeatureStore } from './Features/Features/store';
 
 const FrontEndPage = lazy(() => import('pages/FrontEndPage/FrontEndPage'));
 const PaintingPage = lazy(() => import('pages/Painting/Painting'));
@@ -23,6 +25,8 @@ const BlogPage = lazy(() => import('pages/Blog/Blog'));
 export const App = () => {
   const [mainThema, setMainThema] = useState(true);
   const [more, setMore] = useState(false);
+
+  const pict = useFeatureStore(state => state.pict);
 
   return (
     <>
@@ -60,6 +64,10 @@ export const App = () => {
               <Route index element={<Gallary />} />
               <Route path="social-project" element={<SocialProject />} />
             </Route>
+            <Route
+              path="/painting/:paintingId"
+              element={<PictureInfo picture={pict } />}
+            ></Route>
             <Route path="blog" element={<BlogPage />}></Route>
             <Route path="astrology" element={<AstrologyPage />}></Route>
             <Route path="beauty" element={<BeautyPage />}></Route>
