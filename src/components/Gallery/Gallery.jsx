@@ -1,4 +1,4 @@
-// import { normalizedDate } from 'pages/Blog/normalizeDate';
+
 import { useEffect, useRef, useState } from 'react';
 import { getAllPictures } from 'service/gallertService';
 import {
@@ -11,7 +11,6 @@ import {
   Ul,
   WrapPicture,
 } from './Gallery.styled';
-// import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import BannerComp from './Banner';
 import Loader from './Loader';

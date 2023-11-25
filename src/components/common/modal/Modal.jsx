@@ -1,26 +1,9 @@
+import { Overlay } from './modal.styled';
 
-import { Overlay} from './modal.styled';
-
-export const ModalCommon = ({
-  children,
-  childrentext,
-  descriptions,
-  textButton,
-  clickHandler,
-}) => {
+export const ModalCommon = ({ children }) => {
   return (
     <>
-      <Overlay>
-        {children}
-        {/* <ModalContainer> */}
-        {/* <Title>{text}</Title> */}
-        {/* <Text> */}
-        {/* {descriptions} */}
-        {/* <input /> */}
-        {/* </Text> */}
-        {/* <button onClick={clickHandler}>{textButton}</button> */}
-        {/* </ModalContainer> */}
-      </Overlay>
+      <Overlay>{children}</Overlay>
     </>
   );
 };

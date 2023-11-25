@@ -24,7 +24,7 @@ export const AboutArt = styled.p`
   font-weight: ${p => p.theme.fontWeights.body};
   font-style: italic;
   color: ${p => p.theme.colors.modes.dark.text};
-  margin-bottom: ${p => p.theme.space[5]}px;
+  margin-bottom: ${p => p.theme.space[3]}px;
   /* text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 `;
 
