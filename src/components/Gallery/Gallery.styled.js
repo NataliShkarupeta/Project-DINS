@@ -120,12 +120,13 @@ export const MainSection = styled.div`
 `;
 
 export const RedBallBefore = styled.div`
+
   position: relative;
   text-align: right;
   margin-right: 32px;
   &:before {
     position: absolute;
-    right: 4%;
+    right: 8%;
     top: -3px;
     /* content: '🦄'; */
     content: '';

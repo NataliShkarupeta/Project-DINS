@@ -2,47 +2,69 @@
 import { normalizedDate } from 'pages/Blog/normalizeDate';
 import { BASIC_URL } from 'service/basicUrl';
 import { H2, Span, Wrap, WrapInfo, WrapInfoFromMe } from './PictureInfo.styled';
-import { useFeatureStore } from 'components/Features/Features/store';
 import { useTranslation } from 'react-i18next';
 import { FaStarOfLife } from 'react-icons/fa';
-// import { useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
+import { CommonButton } from 'components/common/commonButton/button';
+import { useEffect, useState } from 'react';
+import { getPictureById } from 'service/gallertService';
+import { useFeatureStore } from 'components/Features/Features/store';
 
-export const PictureInfo = ({ picture }) => {
-  // const { paintingId } = useParams();
+export const PictureInfo = () => {
+  const [picture, setPicure] = useState(null);
+  const { paintingId } = useParams();
   const leng = useFeatureStore(state => state.leng);
-  console.log(picture);
+  const location = useLocation();
+  const [t] = useTranslation();
+
+console.log('paintingId', paintingId);
+
+  useEffect(() => {
+    getPictureById(paintingId).then(res => setPicure(res));
+  }, [paintingId]);
+
+  
+    if (!picture) {
+      return null;
+    }
   const { title1, descriptions, image, createdAt, TitleEn, descriptionsEn } =
     picture;
   return (
-    // <ModalCommon>
-    <Wrap>
-      <WrapInfo>
-        <ImageBlock
-          img={image}
-          title={leng === 'ua' ? title1 : TitleEn}
-          date={createdAt}
-        />
-        <DescriptionsBlock
-          title={leng === 'ua' ? title1 : TitleEn}
-          text={leng === 'ua' ? descriptions : descriptionsEn}
-        />
-      </WrapInfo>
+    <>
+      <Link to={location.state?.from ?? '/'}>
+        <CommonButton text={t('button.back')} />
+      </Link>
+      {/* <ModalCommon> */}
+      <Wrap>
+        <WrapInfo>
+          <ImageBlock
+            img={image}
+            title={leng === 'ua' ? title1 : TitleEn}
+            date={createdAt}
+          />
+          <DescriptionsBlock
+            title={leng === 'ua' ? title1 : TitleEn}
+            text={leng === 'ua' ? descriptions : descriptionsEn}
+          />
+        </WrapInfo>
 
-      <OrderBlock />
-    </Wrap>
-    // </ModalCommon>
+        <OrderBlock />
+      </Wrap>
+
+      {/* </ModalCommon> */}
+    </>
   );
 };
 
-const InfoBlock=()=>{
-      const [t] = useTranslation();
-    return (
-      <WrapInfoFromMe>
-        <FaStarOfLife size={'10px'} />
-        <p> {t('gallaryPage.pictureInfo.info')}</p>
-      </WrapInfoFromMe>
-    );
-}
+const InfoBlock = () => {
+  const [t] = useTranslation();
+  return (
+    <WrapInfoFromMe>
+      <FaStarOfLife size={'10px'} />
+      <p> {t('gallaryPage.pictureInfo.info')}</p>
+    </WrapInfoFromMe>
+  );
+};
 
 const OrderBlock = () => {
   return (
@@ -56,8 +78,15 @@ const OrderBlock = () => {
 
 const ImageBlock = ({ img, title, date }) => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center' ,flexDirection:'column',justifyContent: 'center'}}>
-      <div >
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}
+    >
+      <div>
         <img src={`${BASIC_URL}/${img}`} alt={title} />
       </div>
       <p>Дата додавання картини {normalizedDate(date)}</p>
@@ -65,14 +94,13 @@ const ImageBlock = ({ img, title, date }) => {
   );
 };
 
-const DescriptionsBlock = ({ title, text}) => {
+const DescriptionsBlock = ({ title, text }) => {
   return (
     <div>
       <H2>{title}</H2>
 
       <Span>{text}</Span>
       <InfoBlock />
-      
     </div>
   );
 };

@@ -19,3 +19,16 @@ export const getAllPictures = async () => {
     return error.massage;
   }
 };
+
+export const getPictureById=async(id)=>{
+    try {
+      const { data } = await axios.get(`${URLPIC}/${id}`);
+
+     
+      console.log('data', data);
+     
+      return data;
+    } catch (error) {
+      return error.massage;
+    }
+}

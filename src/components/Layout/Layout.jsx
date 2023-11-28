@@ -15,6 +15,7 @@ import { motion } from 'framer-motion';
 import { NavigationLink } from 'pages/HomePage/HomePage.styled';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { Button } from 'components/common/commonButton/button.styled';
+import { Suspense } from 'react';
 
 export const Layout = ({ setMainThema }) => {
   const setLeng = useFeatureStore(store => store.setLeng);
@@ -76,8 +77,9 @@ export const Layout = ({ setMainThema }) => {
             <Blog>{t('blog')}</Blog>
           </motion.div>
         </NavigationLink>
-
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </WrapMain>
 
       <Footer />

@@ -13,6 +13,7 @@ import {
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { CommonButton } from 'components/common/commonButton/button';
+import { Link, useLocation } from 'react-router-dom';
 
 // import { NavigationLink } from 'pages/Painting/Painting.styled';
 
@@ -39,6 +40,8 @@ const BannerComp = ({refToPict}) => {
   const [t] = useTranslation();
   // const [play, setPlay] = useState(false);
 
+
+  const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 250);
   }, []);
@@ -52,6 +55,7 @@ const BannerComp = ({refToPict}) => {
   // }, []);
 
   const styles = {
+    width: '120px',
     padding: '2px 15px',
     backgroundColor: 'grey',
     color: 'white',
@@ -65,13 +69,15 @@ const BannerComp = ({refToPict}) => {
         <MiddleLine></MiddleLine>
         <div></div>
       </BorderTop>
-      <RedBallBefore>
-        <CommonButton
-          styled={styles}
-          text="Info"
-          clickHandler={() => console.log('qwe')}
-        />
-      </RedBallBefore>
+      <Link to={'/painting/list_pictures'} state={{ from: location }}>
+        <RedBallBefore>
+          <CommonButton
+            styled={styles}
+            text={t('gallaryPage.buttonListPicture')}
+            // clickHandler={() =>}
+          />
+        </RedBallBefore>
+      </Link>
 
       <Banner>
         <motion.div
@@ -89,7 +95,9 @@ const BannerComp = ({refToPict}) => {
         <RowTop title={t('gallaryPage.banner.name')} />
         <RowBottom title={t('gallaryPage.banner.lastName')} />
         <ButtonScroll
-        onClick={()=>refToPict.current.scrollIntoView({behavior: "smooth" })}
+          onClick={() =>
+            refToPict.current.scrollIntoView({ behavior: 'smooth' })
+          }
           // onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           {t('gallaryPage.banner.scroll')}

@@ -8,7 +8,8 @@ import { lazy, useState } from 'react';
 import { LearnMore } from './LearnMore/LearnMore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PictureInfo } from './PictureInfo/PictureInfo';
-import { useFeatureStore } from './Features/Features/store';
+// import { useFeatureStore } from './Features/Features/store';
+import { ListPictures } from 'pages/ListPictures/ListPictures';
 
 const FrontEndPage = lazy(() => import('pages/FrontEndPage/FrontEndPage'));
 const PaintingPage = lazy(() => import('pages/Painting/Painting'));
@@ -26,7 +27,7 @@ export const App = () => {
   const [mainThema, setMainThema] = useState(true);
   const [more, setMore] = useState(false);
 
-  const pict = useFeatureStore(state => state.pict);
+  // const pict = useFeatureStore(state => state.pict);
 
   return (
     <>
@@ -64,10 +65,11 @@ export const App = () => {
               <Route index element={<Gallary />} />
               <Route path="social-project" element={<SocialProject />} />
             </Route>
+            <Route path="/painting/list_pictures" element={<ListPictures />} />
             <Route
-              path="/painting/:paintingId"
-              element={<PictureInfo picture={pict } />}
-            ></Route>
+              path="/painting/list_pictures/:paintingId"
+              element={<PictureInfo />}
+            />
             <Route path="blog" element={<BlogPage />}></Route>
             <Route path="astrology" element={<AstrologyPage />}></Route>
             <Route path="beauty" element={<BeautyPage />}></Route>
