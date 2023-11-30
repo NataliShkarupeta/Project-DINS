@@ -4,11 +4,12 @@ import { BASIC_URL } from 'service/basicUrl';
 import { H2, Span, Wrap, WrapInfo, WrapInfoFromMe } from './PictureInfo.styled';
 import { useTranslation } from 'react-i18next';
 import { FaStarOfLife } from 'react-icons/fa';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import {  useLocation, useParams } from 'react-router-dom';
 import { CommonButton } from 'components/common/commonButton/button';
 import { useEffect, useState } from 'react';
 import { getPictureById } from 'service/gallertService';
 import { useFeatureStore } from 'components/Features/Features/store';
+import { NavLinkButton } from 'pages/ListPictures/ListPictures.styled';
 
 export const PictureInfo = () => {
   const [picture, setPicure] = useState(null);
@@ -17,23 +18,20 @@ export const PictureInfo = () => {
   const location = useLocation();
   const [t] = useTranslation();
 
-console.log('paintingId', paintingId);
-
   useEffect(() => {
     getPictureById(paintingId).then(res => setPicure(res));
   }, [paintingId]);
 
-  
-    if (!picture) {
-      return null;
-    }
+  if (!picture) {
+    return null;
+  }
   const { title1, descriptions, image, createdAt, TitleEn, descriptionsEn } =
     picture;
   return (
     <>
-      <Link to={location.state?.from ?? '/'}>
+      <NavLinkButton to={location.state?.from ?? '/'}>
         <CommonButton text={t('button.back')} />
-      </Link>
+      </NavLinkButton>
       {/* <ModalCommon> */}
       <Wrap>
         <WrapInfo>

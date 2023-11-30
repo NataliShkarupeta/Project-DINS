@@ -1,19 +1,56 @@
 import styled, { css } from 'styled-components';
 
+export const WrapButton=styled.div`
+display: flex;
+justify-content: center;
+`
+
 export const SectionBeforPictures = styled.section`
   margin-top: -10%;
 `;
-
-export const AboutOrder = styled.p`
-  padding: ${p => p.theme.space[4]}px;
-  /* padding-left: ${p => p.theme.space[5]}px; */
-  color: ${p => p.theme.colors.text};
-  /* background-color: ${p => p.theme.colors.modes.dark.text}; */
-  font-family: ${p => p.theme.fonts.monospace};
+export const AboutOrder=styled.div`
+ color: ${p => p.theme.colors.text};
+  font-family: ${p => p.theme.fonts.forBlog};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body};
   margin-bottom: ${p => p.theme.space[6]}px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: ${p => p.theme.space[4]}px;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  `
+
+export const AboutMe = styled.div`
+  color: ${p => p.theme.colors.text};
+  /* background-color: ${p => p.theme.colors.modes.dark.text}; */
+  font-family: ${p => p.theme.fonts.body};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
+
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+`;
+
+export const BgFirst = styled.div`
+  width: 100%;
+  background-color: ${p => p.theme.colors.modes.dark.text};
+`;
+
+export const BgSecond = styled.div`
+  /* width: 100%; */
+  /* background-color: blueviolet; */
+`;
+export const BgThirt = styled.div`
+  width: 100%;
+  background-color: ${p => p.theme.colors.modes.dark.text};
+`;
+export const P = styled.p`
+  text-align: center;
+  padding-top: ${p => p.theme.space[4]}px;
+  padding-bottom: ${p => p.theme.space[4]}px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
 `;
 
 export const AboutArt = styled.p`
@@ -120,13 +157,12 @@ export const MainSection = styled.div`
 `;
 
 export const RedBallBefore = styled.div`
-
   position: relative;
   text-align: right;
   margin-right: 32px;
   &:before {
     position: absolute;
-    right: 8%;
+    right: 9%;
     top: -3px;
     /* content: '🦄'; */
     content: '';

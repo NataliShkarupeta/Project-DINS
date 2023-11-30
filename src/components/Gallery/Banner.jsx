@@ -59,7 +59,7 @@ const BannerComp = ({refToPict}) => {
     padding: '2px 15px',
     backgroundColor: 'grey',
     color: 'white',
-    fontSize: '20px',
+    fontSize: '18px',
   };
 
   return (

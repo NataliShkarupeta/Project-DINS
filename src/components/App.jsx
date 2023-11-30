@@ -4,12 +4,13 @@ import { HomePage } from 'pages/HomePage/HomePage';
 import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 import { theme, themeSecond } from '../styles/theme';
-import { lazy, useState } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import { LearnMore } from './LearnMore/LearnMore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PictureInfo } from './PictureInfo/PictureInfo';
 // import { useFeatureStore } from './Features/Features/store';
-import { ListPictures } from 'pages/ListPictures/ListPictures';
+// import { ListPictures } from 'pages/ListPictures/ListPictures';
+// import { useFeatureStore } from './Features/Features/store';
 
 const FrontEndPage = lazy(() => import('pages/FrontEndPage/FrontEndPage'));
 const PaintingPage = lazy(() => import('pages/Painting/Painting'));
@@ -22,12 +23,19 @@ const SocialProject = lazy(() =>
 );
 const Gallary = lazy(() => import('components/Gallery/Gallery'));
 const BlogPage = lazy(() => import('pages/Blog/Blog'));
+const ListPictures = lazy(() => import('pages/ListPictures/ListPictures'));
 
 export const App = () => {
-  const [mainThema, setMainThema] = useState(true);
+  const [mainThema, setMainThema] = useState(
+    JSON.parse(localStorage.getItem('thema')) || true
+  );
   const [more, setMore] = useState(false);
 
-  // const pict = useFeatureStore(state => state.pict);
+  // const leng = useFeatureStore(state => state.leng);
+  //
+  useEffect(() => {
+    localStorage.setItem('thema', JSON.stringify(mainThema));
+  }, [mainThema]);
 
   return (
     <>
