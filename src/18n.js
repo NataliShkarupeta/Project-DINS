@@ -25,18 +25,15 @@ i18n
     resources,
     fallbackLng: 'ua',
     debug: true,
-    lng: 'ua',
-    detection: {
-      order: ['querystring', 'cookie'],
-      cache: ['cookie', 'localStorage'],
-      lookupLocalStorage: 'i18nextLng',
-    },
+    lng: localStorage.getItem('leng')||'ua',
+    // detection: {
+    //   order: ['querystring', 'cookie'],
+    //   cache: ['cookie', 'localStorage'],
+    //   lookupLocalStorage: 'i18nextLng',
+    // },
     interpolation: {
       escapeValue: false,
     },
-    // backend:{
-    //     loadPath:"/.json"
-    // }
     react: {
       wait: true,
     },

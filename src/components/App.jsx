@@ -27,7 +27,7 @@ const ListPictures = lazy(() => import('pages/ListPictures/ListPictures'));
 
 export const App = () => {
   const [mainThema, setMainThema] = useState(
-    JSON.parse(localStorage.getItem('thema')) || true
+    JSON.parse(localStorage.getItem('thema')) 
   );
   const [more, setMore] = useState(false);
 

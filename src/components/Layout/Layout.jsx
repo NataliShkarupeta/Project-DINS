@@ -23,6 +23,7 @@ export const Layout = ({ setMainThema }) => {
 
   const changeLanguage = language => {
     i18n.changeLanguage(language);
+    localStorage.setItem('leng',language)
   };
   const styles = {
     padding: '3px 6px',
