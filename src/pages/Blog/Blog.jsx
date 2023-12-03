@@ -1,6 +1,6 @@
 import { ButtonHome } from 'components/ButtonHome/ButtonHome';
 import { memo, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { getAllPosts } from 'service/blogService';
 import { CommonButton } from 'components/common/commonButton/button';
 import {
@@ -21,6 +21,8 @@ import { normalizedDate } from './normalizeDate';
 import { Tooltip } from 'react-tooltip';
 import { ModalForDeletePost } from 'components/ModalForBlog/ModalForDelete/ModalForDelete';
 import { useFeatureStore } from 'components/Features/Features/store';
+import { DefaultComponent } from 'components/common/default/defaultComponent';
+import { NavLinkButton } from 'pages/ListPictures/ListPictures.styled';
 
 const styleDefoult = {
   height: '400px',
@@ -37,7 +39,7 @@ const BlogPage = memo(() => {
   const [postId, setTodoId] = useState('');
   const [show, setShow] = useState(false);
   const [t] = useTranslation();
-
+  const location = useLocation();
   const leng = useFeatureStore(state => state.leng);
   // console.log('lang', leng);
 
@@ -51,12 +53,23 @@ const BlogPage = memo(() => {
   };
 
   const styles = {
-    backgroundColor:'transparent',
-    padding:'4px 4px',
+    backgroundColor: 'transparent',
+    padding: '4px 4px',
     border: 'none',
-   display:'flex',
-   jastifyContext:'center',
+    display: 'flex',
+    jastifyContext: 'center',
   };
+
+  if (!posts) {
+    return (
+      <>
+        <NavLinkButton to={location.state?.from ?? '/'}>
+          <CommonButton text={t('button.back')} />
+        </NavLinkButton>
+        <DefaultComponent></DefaultComponent>
+      </>
+    );
+  }
 
   return (
     <>
@@ -116,7 +129,7 @@ const BlogPage = memo(() => {
                         >
                           <CommonButton
                             styled={styles}
-                            text={<RxFileText size={'16px'}/>}
+                            text={<RxFileText size={'16px'} />}
                             clickHandler={() => setShow(!show)}
                           ></CommonButton>
                         </p>
@@ -130,7 +143,7 @@ const BlogPage = memo(() => {
                         >
                           <CommonButton
                             styled={styles}
-                            text={<RxShare1 size={'16px'}/>}
+                            text={<RxShare1 size={'16px'} />}
                           ></CommonButton>
                         </p>
                         <Tooltip id="my-tooltip" />
@@ -142,7 +155,7 @@ const BlogPage = memo(() => {
                         >
                           <CommonButton
                             styled={styles}
-                            text={<RxPencil1 size={'16px'}/>}
+                            text={<RxPencil1 size={'16px'} />}
                             clickHandler={() => {
                               setShowModal(true);
                               saveIdPost(_id);
@@ -159,7 +172,7 @@ const BlogPage = memo(() => {
                         >
                           <CommonButton
                             styled={styles}
-                            text={<RxTrash size={'16px'}/>}
+                            text={<RxTrash size={'16px'} />}
                             clickHandler={() => {
                               setCanDelete(true);
                               saveIdPost(_id);

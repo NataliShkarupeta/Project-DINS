@@ -44,3 +44,31 @@ export const WrapInfoFromMe = styled.div`
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: 1.33;
 `;
+///////////// imageBlock////////////////////
+
+export const WrapImageAndDateCreate = styled.div`
+  margin-bottom: ${p => p.theme.space[4]}px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+export const WrapImage = styled.div`
+  width: 45%;
+ 
+`;
+
+////////////// descriptionBlock//////////
+
+export const WrapDescription= styled.div`
+width: 45%;
+overflow-y: scroll;
+`
+
+
+///////////////// orderBlock/////////////
+
+export const WrapOrderBlock= styled.div`
+
+`

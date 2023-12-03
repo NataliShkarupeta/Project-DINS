@@ -2,7 +2,6 @@ import axios from 'axios';
 
 export const URLPIC = 'http://localhost:3001/pictures';
 
-
 export const getAllPictures = async () => {
   try {
     const { data } = await axios.get(URLPIC);
@@ -12,7 +11,9 @@ export const getAllPictures = async () => {
       createdAt: Date.parse(obj.createdAt),
     }));
     // console.log(sortDate);
-    const sortPictures = [...sortDate].sort((a, b) => b.createdAt - a.createdAt);
+    const sortPictures = [...sortDate].sort(
+      (a, b) => b.createdAt - a.createdAt
+    );
 
     return sortPictures;
   } catch (error) {
@@ -20,15 +21,11 @@ export const getAllPictures = async () => {
   }
 };
 
-export const getPictureById=async(id)=>{
-    try {
-      const { data } = await axios.get(`${URLPIC}/${id}`);
-
-     
-      console.log('data', data);
-     
-      return data;
-    } catch (error) {
-      return error.massage;
-    }
-}
+export const getPictureById = async id => {
+  try {
+    const { data } = await axios.get(`${URLPIC}/${id}`);
+    return data;
+  } catch (error) {
+    return error.massage;
+  }
+};
