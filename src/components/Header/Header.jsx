@@ -45,8 +45,8 @@ export const Header = () => {
       <WrapLinks>
         <Ul>
           <Li>
-            <NavigationLink to="/developer" state={{ from: location }}>
-              front-end {t('professions.dev')}
+            <NavigationLink to="/" state={{ from: location }}>
+              {t('professions.dev')}
             </NavigationLink>
           </Li>
           <Li>
