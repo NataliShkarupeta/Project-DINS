@@ -29,3 +29,23 @@ export const getPictureById = async id => {
     return error.massage;
   }
 };
+
+export const getInStockPictures=async()=>{
+   try {
+    console.log('Ми в наявності!')
+    //  const { data } = await axios.get(URLPIC);
+
+    //  const sortDate = data.data.result.map(obj => ({
+    //    ...obj,
+    //    createdAt: Date.parse(obj.createdAt),
+    //  }));
+    //  // console.log(sortDate);
+    //  const sortPictures = [...sortDate].sort(
+    //    (a, b) => b.createdAt - a.createdAt
+    //  );
+
+    //  return sortPictures;
+   } catch (error) {
+     return error.massage;
+   }
+}

@@ -74,6 +74,8 @@ const InfoBlock = () => {
   const [t] = useTranslation();
   return (
     <WrapInfoFromMe>
+      <p>В наявності: </p>
+      <p>Розмір : </p>
       <p> {t('gallaryPage.pictureInfo.info')}</p>
     </WrapInfoFromMe>
   );

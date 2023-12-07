@@ -11,18 +11,35 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { BASIC_URL } from 'service/basicUrl';
-import { getAllPictures } from 'service/gallertService';
+import { getAllPictures, getInStockPictures } from 'service/gallertService';
 import { Input, NavLinkButton, WrapCheckBlok } from './ListPictures.styled';
 
 const ListPictures = () => {
   const [pictures, setPicures] = useState({});
+  const [inStock, setInStock] = useState({});
+  const [selectedItem, setSelectedItem] = useState('Всі');
   const location = useLocation();
   const [t] = useTranslation();
 
-  useEffect(() => {
-    getAllPictures().then(res => setPicures(res));
-  }, []);
+  // useEffect(() => {
+  //   getAllPictures().then(res => setPicures(res));
+  // }, []);
 
+  useEffect(() => {
+    if (selectedItem === 'Всі') {
+      getAllPictures().then(res => setPicures(res));
+    }
+    if (selectedItem === 'В наявності') {
+      getInStockPictures().then(res => setInStock(res));
+    }
+  }, [selectedItem]);
+
+  const onChangeHandler = event => {
+    setSelectedItem(event.target.name);
+  };
+
+  console.log(pictures);
+  console.log(inStock);
   if (!pictures) {
     return (
       <>
@@ -42,39 +59,73 @@ const ListPictures = () => {
       </NavLinkButton>
       <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
       <WrapCheckBlok>
-        <lable>
-          Всі 
-          <Input type="checkbox"  defaultValue={true}/>
-        </lable>
         <label>
-          В наявності
-          <Input type="checkbox" />
+          <Input
+            name="Всі"
+            type="checkbox"
+            onChange={onChangeHandler}
+            checked={selectedItem === 'Всі'}
+          />
+          <span>Всі</span>
+        </label>
+        <label>
+          <Input
+            name="В наявності"
+            type="checkbox"
+            onChange={onChangeHandler}
+            checked={selectedItem === 'В наявності'}
+          />
+          <span>В наявності</span>
         </label>
       </WrapCheckBlok>
       <section>
-        {Object.keys(pictures).length === 0 ? (
+        {selectedItem === 'В наявності' && !inStock && (
           <DefaultComponent>
-            <p>
-              От халепа, щось пішло не так!Спробуйте перезавантажити сторінку
-              або зайдіть пізніше.
-            </p>
+            <p> От халепа, щось пішло не так!</p>
           </DefaultComponent>
-        ) : (
+        )}
+        {inStock && Object.keys(inStock).length !== 0 ? (
           <Ul>
-            {pictures &&
-              Object.values(pictures).map(({ title1, image, _id }) => (
-                <Li key={_id}>
-                  <Link
-                    to={`/painting/list_pictures/${_id}`}
-                    state={{ from: location }}
-                  >
-                    <WrapPicture>
-                      <img src={`${BASIC_URL}/${image}`} alt={title1} />
-                    </WrapPicture>
-                  </Link>
-                </Li>
-              ))}
+            {Object.values(inStock).map(({ title1, image, _id }) => (
+              <Li key={_id}>
+                <Link
+                  to={`/painting/list_pictures/${_id}`}
+                  state={{ from: location }}
+                >
+                  <WrapPicture>
+                    <img src={`${BASIC_URL}/${image}`} alt={title1} />
+                  </WrapPicture>
+                </Link>
+              </Li>
+            ))}
           </Ul>
+        ) : (
+          <>
+            {Object.keys(pictures).length === 0 ? (
+              <DefaultComponent>
+                <p>
+                  От халепа, щось пішло не так!Спробуйте перезавантажити
+                  сторінку або зайдіть пізніше.
+                </p>
+              </DefaultComponent>
+            ) : (
+              <Ul>
+                {pictures &&
+                  Object.values(pictures).map(({ title1, image, _id }) => (
+                    <Li key={_id}>
+                      <Link
+                        to={`/painting/list_pictures/${_id}`}
+                        state={{ from: location }}
+                      >
+                        <WrapPicture>
+                          <img src={`${BASIC_URL}/${image}`} alt={title1} />
+                        </WrapPicture>
+                      </Link>
+                    </Li>
+                  ))}
+              </Ul>
+            )}
+          </>
         )}
       </section>
     </>
