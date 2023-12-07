@@ -66,7 +66,9 @@ const BlogPage = memo(() => {
         <NavLinkButton to={location.state?.from ?? '/'}>
           <CommonButton text={t('button.back')} />
         </NavLinkButton>
-        <DefaultComponent></DefaultComponent>
+        <DefaultComponent>
+          <p> От халепа, щось пішло не так!</p>
+        </DefaultComponent>
       </>
     );
   }

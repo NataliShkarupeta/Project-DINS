@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { BASIC_URL } from 'service/basicUrl';
 import { getAllPictures } from 'service/gallertService';
-import { NavLinkButton } from './ListPictures.styled';
+import { Input, NavLinkButton, WrapCheckBlok } from './ListPictures.styled';
 
 const ListPictures = () => {
   const [pictures, setPicures] = useState({});
@@ -41,12 +41,22 @@ const ListPictures = () => {
         <CommonButton text={t('button.back')} />
       </NavLinkButton>
       <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
+      <WrapCheckBlok>
+        <lable>
+          Всі 
+          <Input type="checkbox"  defaultValue={true}/>
+        </lable>
+        <label>
+          В наявності
+          <Input type="checkbox" />
+        </label>
+      </WrapCheckBlok>
       <section>
         {Object.keys(pictures).length === 0 ? (
           <DefaultComponent>
             <p>
-              Ой-йой,з якихось причин сховище зображень моїх картин не хоче їх
-              віддавати. Спробуйте перезавантажити сторінку або зайдіть пізніше.
+              От халепа, щось пішло не так!Спробуйте перезавантажити сторінку
+              або зайдіть пізніше.
             </p>
           </DefaultComponent>
         ) : (

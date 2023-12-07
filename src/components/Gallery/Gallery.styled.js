@@ -13,7 +13,7 @@ export const AboutOrder=styled.div`
   font-family: ${p => p.theme.fonts.forBlog};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body};
-  margin-bottom: ${p => p.theme.space[6]}px;
+  margin-bottom: ${p => p.theme.space[4]}px;
   margin-top: ${p => p.theme.space[4]}px;
   width: 700px;
   margin-left: auto;
@@ -87,6 +87,7 @@ export const Banner = styled.div`
 `;
 
 export const ButtonScroll = styled.button`
+  color: ${p => p.theme.colors.text};
   position: absolute;
   bottom: 15%;
   left: 45%;

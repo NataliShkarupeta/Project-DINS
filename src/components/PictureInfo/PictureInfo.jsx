@@ -19,6 +19,7 @@ import { getPictureById } from 'service/gallertService';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { NavLinkButton } from 'pages/ListPictures/ListPictures.styled';
 import { OrderBlock } from './Order';
+import { DefaultComponent } from 'components/common/default/defaultComponent';
 
 export const PictureInfo = () => {
   const [picture, setPicure] = useState(null);
@@ -32,7 +33,16 @@ export const PictureInfo = () => {
   }, [paintingId]);
 
   if (!picture) {
-    return null;
+      return (
+        <>
+          <NavLinkButton to={location.state?.from ?? '/'}>
+            <CommonButton text={t('button.back')} />
+          </NavLinkButton>
+          <DefaultComponent>
+            <p> От халепа, щось пішло не так!</p>
+          </DefaultComponent>
+        </>
+      );
   }
   const { title1, descriptions, image, createdAt, TitleEn, descriptionsEn } =
     picture;
