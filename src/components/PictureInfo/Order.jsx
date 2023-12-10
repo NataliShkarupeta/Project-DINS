@@ -17,6 +17,7 @@ import { CommonButton } from 'components/common/commonButton/button';
 import { useState } from 'react';
 import { HiCursorClick } from 'react-icons/hi';
 import { BorderTop, MiddleLine } from 'components/Gallery/Gallery.styled';
+import { BGPriceBlock } from 'pages/ListPictures/ListPictures.styled';
 
 const styles={
     width:'100px',
@@ -30,7 +31,7 @@ const pricesBlock = {
  
 };
 const pricesBlockVisible = {
-  backgroundColor: '#fff4e4',
+  // backgroundColor: '#fff4e4',
   marginTop: '30px',
   padding: '10px 20px',
   position: 'absolute',
@@ -90,13 +91,13 @@ export const OrderBlock = ({ tit }) => {
           <PricePicture onClick={() => setVis(!vis)}>
             <HiCursorClick /> Ознайомитись з вартістю картин{' '}
           </PricePicture>
-          <div style={vis ? pricesBlockVisible : pricesBlock}>
+          <BGPriceBlock style={vis ? pricesBlockVisible : pricesBlock}>
             <ul>
               {list.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
-          </div>
+          </BGPriceBlock>
         </Price>
       </Desctiption>
       <BorderTop>

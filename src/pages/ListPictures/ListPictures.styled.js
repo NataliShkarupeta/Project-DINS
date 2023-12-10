@@ -16,3 +16,8 @@ export const WrapCheckBlok = styled.div`
 export const Input = styled.input`
   margin-left: ${p => p.theme.space[2]}px;
 `;
+
+export const BGPriceBlock = styled.div`
+  background-color: ${p => p.theme.colors.background};
+  color: ${p => p.theme.colors.text};
+`;

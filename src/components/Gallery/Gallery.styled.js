@@ -199,7 +199,7 @@ export const Presentation = styled.div`
 
 export const Ul = styled.ul`
   display: flex;
-  gap: 10px;
+  gap: 5px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;

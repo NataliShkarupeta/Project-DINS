@@ -55,7 +55,10 @@ export const WrapImageAndDateCreate = styled.div`
 `;
 
 export const WrapImage = styled.div`
-  width: 45%;
+
+  margin-top: ${p => p.theme.space[4]}px;
+  /* width: 600px; */
+
 `;
 
 ////////////// descriptionBlock//////////

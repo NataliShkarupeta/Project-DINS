@@ -33,19 +33,28 @@ export const PictureInfo = () => {
   }, [paintingId]);
 
   if (!picture) {
-      return (
-        <>
-          <NavLinkButton to={location.state?.from ?? '/'}>
-            <CommonButton text={t('button.back')} />
-          </NavLinkButton>
-          <DefaultComponent>
-            <p> От халепа, щось пішло не так!</p>
-          </DefaultComponent>
-        </>
-      );
+    return (
+      <>
+        <NavLinkButton to={location.state?.from ?? '/'}>
+          <CommonButton text={t('button.back')} />
+        </NavLinkButton>
+        <DefaultComponent>
+          <p> От халепа, щось пішло не так!</p>
+        </DefaultComponent>
+      </>
+    );
   }
-  const { title1, descriptions, image, createdAt, TitleEn, descriptionsEn } =
-    picture;
+  const {
+    title1,
+    descriptions,
+    image,
+    createdAt,
+    TitleEn,
+    descriptionsEn,
+    inStock,
+    inStockEn,
+    size,
+  } = picture;
   return (
     <>
       <NavLinkButton to={location.state?.from ?? '/'}>
@@ -61,6 +70,8 @@ export const PictureInfo = () => {
           <DescriptionsBlock
             title={leng === 'ua' ? title1 : TitleEn}
             text={leng === 'ua' ? descriptions : descriptionsEn}
+            inStock={leng === 'ua' ? inStock : inStockEn}
+            size={size}
           />
         </WrapInfo>
 
@@ -70,36 +81,53 @@ export const PictureInfo = () => {
   );
 };
 
-const InfoBlock = () => {
+const InfoBlock = ({ isit, size }) => {
   const [t] = useTranslation();
   return (
     <WrapInfoFromMe>
-      <p>В наявності: </p>
-      <p>Розмір : </p>
+      <p>В наявності: {isit}</p>
+      <p>Розмір: {size}</p>
       <p> {t('gallaryPage.pictureInfo.info')}</p>
     </WrapInfoFromMe>
   );
 };
 
-
-
 const ImageBlock = ({ img, title, date }) => {
+  let imG = `${BASIC_URL}/${img}`;
+  console.log(imG)
   return (
     <WrapImageAndDateCreate>
-      <WrapImage>
-        <img src={`${BASIC_URL}/${img}`} alt={title} />
+      <WrapImage
+        style={{
+          position: 'relative',
+          backgroundImage: `url(${imG})`,
+          backgroundPosition: 'center',
+          filter: 'blur(6px)',
+
+          width: '35vw',
+          height: '600px',
+        }}
+      >
+        {/* <img style={{position:'absolute',top:'100px',left:'300px'}} src={imG} alt="" width={'200px'} /> */}
+        {/* <img src={`${BASIC_URL}/${img}`} alt={title} width={"200px"}/> */}
       </WrapImage>
+      <img
+        style={{ position: 'absolute' }}
+        src={imG}
+        alt=""
+        width={'370px'}
+      />
       <p>Дата додавання зображення {normalizedDate(date)}</p>
     </WrapImageAndDateCreate>
   );
 };
 
-const DescriptionsBlock = ({ title, text }) => {
+const DescriptionsBlock = ({ title, text, inStock, size }) => {
   return (
     <WrapDescription>
       <H2>{title}</H2>
       <Span>{text}</Span>
-      <InfoBlock />
+      <InfoBlock isit={inStock} size={size} />
     </WrapDescription>
   );
 };
