@@ -47,6 +47,7 @@ export const WrapInfoFromMe = styled.div`
 ///////////// imageBlock////////////////////
 
 export const WrapImageAndDateCreate = styled.div`
+  width: 50%;
   margin-bottom: ${p => p.theme.space[4]}px;
   display: flex;
   align-items: center;
@@ -55,11 +56,16 @@ export const WrapImageAndDateCreate = styled.div`
 `;
 
 export const WrapImage = styled.div`
-
+position: relative;
   margin-top: ${p => p.theme.space[4]}px;
-  /* width: 600px; */
-
+  width: 450px;
+height: 600px;
 `;
+
+export const Img=styled.img`
+position: absolute;
+width: 370px;
+`
 
 ////////////// descriptionBlock//////////
 
@@ -70,6 +76,10 @@ export const WrapDescription = styled.div`
 `;
 
 ///////////////// orderBlock/////////////
+export const Text= styled.p`
+width: 50%;
+`
+
 
 export const WrapOrderBlock = styled.div`
   color: ${p => p.theme.colors.modes.dark.background};
@@ -119,8 +129,9 @@ export const PricePicture = styled.p`
 `;
 
 export const Form = styled.form`
+  padding: ${p => p.theme.space[4]}px;
   color: ${p => p.theme.colors.modes.dark.background};
-  margin-top: ${p => p.theme.space[4]}px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,7 +139,9 @@ export const Form = styled.form`
 `;
 
 export const WrapInputFields = styled.div`
-  padding: 0px;
+  /* padding: ${p => p.theme.space[4]}px; */
+  /* margin-top: ${p => p.theme.space[4]}px; */
+  /* padding: 0px; */
   display: flex;
 
   gap: 120px;
@@ -136,6 +149,7 @@ export const WrapInputFields = styled.div`
 `;
 
 export const Label = styled.label`
+
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
@@ -143,20 +157,22 @@ export const Label = styled.label`
 
 export const LableText = styled.span`
   margin-right: ${p => p.theme.space[3]}px;
-
+  
+  /* display: flex;
+  flex-direction: row; */
 `;
 
 export const Select = styled.select`
   outline: none;
   cursor: pointer;
   width: 100px;
+  /* margin-left: ${p => p.theme.space[4]}px; */
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
   :hover {
     border-color: ${p => p.theme.colors.primary};
     border-radius: ${p => p.theme.radii.normal};
-    
   }
 `;
 
@@ -173,6 +189,34 @@ export const TextArea = styled.textarea`
   :hover,
   :active {
     border-color: ${p => p.theme.colors.primary};
-    border-radius:${p => p.theme.radii.normal};
+    border-radius: ${p => p.theme.radii.normal};
   }
+`
+export const WrapIfBuy = styled.div`
+width: 50%;
+  font-family: ${p => p.theme.fonts.body};
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
+`;
+
+export const H4 = styled.h4`
+  font-family: ${p => p.theme.fonts.forName};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.bold};
+`;
+
+export const Size = styled.span`
+  font-weight: ${p => p.theme.fontWeights.bold};
+  margin-left:${p => p.theme.space[2]}px;;
+  margin-right:${p => p.theme.space[2]}px; ;
+`;
+
+export const WrapSizes=styled.div`
+display: flex;
+gap: 5px;
+`
+export const TextExplanation = styled.span`
+  font-family: ${p => p.theme.fonts.body};
+  font-size: ${p => p.theme.fontSizes[1]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
 `;

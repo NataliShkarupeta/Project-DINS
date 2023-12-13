@@ -3,6 +3,7 @@ import { normalizedDate } from 'pages/Blog/normalizeDate';
 import { BASIC_URL } from 'service/basicUrl';
 import {
   H2,
+  Img,
   Span,
   Wrap,
   WrapDescription,
@@ -74,8 +75,11 @@ export const PictureInfo = () => {
             size={size}
           />
         </WrapInfo>
-
-        <OrderBlock tit={leng === 'ua' ? title1 : TitleEn} />
+        <OrderBlock
+          tit={leng === 'ua' ? title1 : TitleEn}
+          size={size ? size : '50*70'}
+          inStock={inStock}
+        />
       </Wrap>
     </>
   );
@@ -94,29 +98,21 @@ const InfoBlock = ({ isit, size }) => {
 
 const ImageBlock = ({ img, title, date }) => {
   let imG = `${BASIC_URL}/${img}`;
-  console.log(imG)
+  console.log(imG);
   return (
     <WrapImageAndDateCreate>
       <WrapImage
         style={{
-          position: 'relative',
+          // position: 'relative',
           backgroundImage: `url(${imG})`,
           backgroundPosition: 'center',
           filter: 'blur(6px)',
 
-          width: '35vw',
-          height: '600px',
+          // width: '450px',
+          // height: '600px',
         }}
-      >
-        {/* <img style={{position:'absolute',top:'100px',left:'300px'}} src={imG} alt="" width={'200px'} /> */}
-        {/* <img src={`${BASIC_URL}/${img}`} alt={title} width={"200px"}/> */}
-      </WrapImage>
-      <img
-        style={{ position: 'absolute' }}
-        src={imG}
-        alt=""
-        width={'370px'}
-      />
+      ></WrapImage>
+      <Img src={imG} alt={title} />
       <p>Дата додавання зображення {normalizedDate(date)}</p>
     </WrapImageAndDateCreate>
   );
