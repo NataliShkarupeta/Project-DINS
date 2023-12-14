@@ -13,19 +13,28 @@ import { Link, useLocation } from 'react-router-dom';
 import { BASIC_URL } from 'service/basicUrl';
 import { getAllPictures, getInStockPictures } from 'service/gallertService';
 import { Input, NavLinkButton, WrapCheckBlok } from './ListPictures.styled';
+import { ThreeDots } from 'react-loader-spinner';
+import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
 
 const ListPictures = memo(() => {
   const [pictures, setPicures] = useState({});
   const [inStock, setInStock] = useState({});
   const [selectedItem, setSelectedItem] = useState('Всі');
+  const [loading, setLoading] = useState(false);
   const location = useLocation();
   const [t] = useTranslation();
 
   useEffect(() => {
-    getAllPictures().then(res => setPicures(res));
+    setLoading(true);
+    getAllPictures()
+      .then(res => setPicures(res))
+      .finally(() => setLoading(false));
   }, []);
   useEffect(() => {
-    getInStockPictures().then(res => setInStock(res));
+    setLoading(true);
+    getInStockPictures()
+      .then(res => setInStock(res))
+      .finally(() => setLoading(false));
   }, []);
 
   // useEffect(() => {
@@ -48,11 +57,8 @@ const ListPictures = memo(() => {
           <CommonButton text={t('button.back')} />
         </NavLinkButton>
         <DefaultComponent>
-          <p>
-            {' '}
-            От халепа, щось пішло не так! Спробуйте перезавантажити сторінку або
-            зайдіть пізніше.
-          </p>
+          <ThreeDots />
+          <p>{t('defoultText')} </p>
         </DefaultComponent>
       </>
     );
@@ -60,6 +66,11 @@ const ListPictures = memo(() => {
 
   return (
     <>
+      {loading && (
+        <WrapDots>
+          <ThreeDots />
+        </WrapDots>
+      )}
       <NavLinkButton to={'/painting'}>
         <CommonButton text={t('button.back')} />
       </NavLinkButton>
@@ -72,7 +83,7 @@ const ListPictures = memo(() => {
             onChange={onChangeHandler}
             checked={selectedItem === 'Всі'}
           />
-          <span>Всі</span>
+          <span>{t('gallaryPage.listPictures.all')}</span>
         </label>
         <label>
           <Input
@@ -81,7 +92,7 @@ const ListPictures = memo(() => {
             onChange={onChangeHandler}
             checked={selectedItem === 'В наявності'}
           />
-          <span>В наявності</span>
+          <span>{t('gallaryPage.listPictures.inStock')}</span>
         </label>
       </WrapCheckBlok>
       {selectedItem === 'Всі' ? (
@@ -102,10 +113,7 @@ const ListPictures = memo(() => {
         </Ul>
       ) : Object.keys(inStock).length === 0 ? (
         <DefaultComponent>
-          <p>
-            Схоже всі картини розпродані!!! Натисніть на кнопку "Всі" і замовте для себе 
-            ту, яка сподобалась найбільше!
-          </p>
+          <p>{t('gallaryPage.listPictures.ifNotAvailable')}</p>
         </DefaultComponent>
       ) : (
         <Ul>

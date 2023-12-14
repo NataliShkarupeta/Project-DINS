@@ -23,6 +23,8 @@ import { ModalForDeletePost } from 'components/ModalForBlog/ModalForDelete/Modal
 import { useFeatureStore } from 'components/Features/Features/store';
 import { DefaultComponent } from 'components/common/default/defaultComponent';
 import { NavLinkButton } from 'pages/ListPictures/ListPictures.styled';
+import { ThreeDots } from 'react-loader-spinner';
+import { Wrap } from 'components/common/default/defaultComponent.styled';
 
 const styleDefoult = {
   height: '400px',
@@ -38,13 +40,17 @@ const BlogPage = memo(() => {
   const [showModal, setShowModal] = useState(false);
   const [postId, setTodoId] = useState('');
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [t] = useTranslation();
   const location = useLocation();
   const leng = useFeatureStore(state => state.leng);
   // console.log('lang', leng);
 
   useEffect(() => {
-    getAllPosts().then(res => setPosts(res));
+    setLoading(true);
+    getAllPosts()
+      .then(res => setPosts(res))
+      .finally(() => setLoading(false));
   }, []);
 
   const saveIdPost = id => {
@@ -64,10 +70,12 @@ const BlogPage = memo(() => {
     return (
       <>
         <NavLinkButton to={location.state?.from ?? '/'}>
-          <CommonButton text={t('button.back')} />
+          <ButtonHome />
+          {/* <CommonButton text={t('button.back')} /> */}
         </NavLinkButton>
         <DefaultComponent>
-          <p> От халепа, щось пішло не так!</p>
+          <ThreeDots />
+          <p>{t('defoultText')}</p>
         </DefaultComponent>
       </>
     );
@@ -79,6 +87,11 @@ const BlogPage = memo(() => {
         <ButtonHome />
       </Link>
 
+      {loading && (
+        <Wrap>
+          <ThreeDots />
+        </Wrap>
+      )}
       {canDelet && (
         <ModalForDeletePost
           text={t('pageBlog.modal.attention')}

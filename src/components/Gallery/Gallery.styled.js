@@ -33,7 +33,8 @@ export const AboutMe = styled.div`
 
 export const BgFirst = styled.div`
   width: 100%;
-  background-color: ${p => p.theme.colors.modes.dark.text};
+   color: ${p => p.theme.colors.therd};
+  background-color: rgba(255, 255, 255, 0.7);
 `;
 
 export const BgSecond = styled.div`
@@ -42,7 +43,8 @@ export const BgSecond = styled.div`
 `;
 export const BgThirt = styled.div`
   width: 100%;
-  background-color: ${p => p.theme.colors.modes.dark.text};
+   color: ${p => p.theme.colors.therd};
+  background-color: rgba(255, 255, 255, 0.7);
 `;
 export const P = styled.p`
   text-align: center;

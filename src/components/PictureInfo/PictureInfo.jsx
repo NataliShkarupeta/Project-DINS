@@ -7,6 +7,7 @@ import {
   Span,
   Wrap,
   WrapDescription,
+  WrapDots,
   WrapImage,
   WrapImageAndDateCreate,
   WrapInfo,
@@ -21,16 +22,24 @@ import { useFeatureStore } from 'components/Features/Features/store';
 import { NavLinkButton } from 'pages/ListPictures/ListPictures.styled';
 import { OrderBlock } from './Order';
 import { DefaultComponent } from 'components/common/default/defaultComponent';
+import { ThreeDots } from 'react-loader-spinner';
 
 export const PictureInfo = () => {
   const [picture, setPicure] = useState(null);
+  const [loading, setLoading] = useState(false);
   const { paintingId } = useParams();
   const leng = useFeatureStore(state => state.leng);
   const location = useLocation();
   const [t] = useTranslation();
 
   useEffect(() => {
-    getPictureById(paintingId).then(res => setPicure(res));
+    window.scrollTo(0, 220);
+  }, []);
+  useEffect(() => {
+    setLoading(true);
+    getPictureById(paintingId)
+      .then(res => setPicure(res))
+      .finally(() => setLoading(false));
   }, [paintingId]);
 
   if (!picture) {
@@ -40,7 +49,8 @@ export const PictureInfo = () => {
           <CommonButton text={t('button.back')} />
         </NavLinkButton>
         <DefaultComponent>
-          <p> От халепа, щось пішло не так!</p>
+          <ThreeDots />
+          <p>{t('defoultText')} </p>
         </DefaultComponent>
       </>
     );
@@ -58,6 +68,11 @@ export const PictureInfo = () => {
   } = picture;
   return (
     <>
+      {loading && (
+        <WrapDots>
+          <ThreeDots />
+        </WrapDots>
+      )}
       <NavLinkButton to={location.state?.from ?? '/'}>
         <CommonButton text={t('button.back')} />
       </NavLinkButton>
@@ -89,14 +104,19 @@ const InfoBlock = ({ isit, size }) => {
   const [t] = useTranslation();
   return (
     <WrapInfoFromMe>
-      <p>В наявності: {isit}</p>
-      <p>Розмір: {size}</p>
-      <p> {t('gallaryPage.pictureInfo.info')}</p>
+      <p>
+        {t('gallaryPage.listPictures.inStock')}: {isit}
+      </p>
+      <p>
+        {t('gallaryPage.pictureInfo.size')}: {size}
+      </p>
+      {/* <p> {t('gallaryPage.pictureInfo.info')}</p> */}
     </WrapInfoFromMe>
   );
 };
 
 const ImageBlock = ({ img, title, date }) => {
+  const [t] = useTranslation();
   let imG = `${BASIC_URL}/${img}`;
   console.log(imG);
   return (
@@ -113,7 +133,9 @@ const ImageBlock = ({ img, title, date }) => {
         }}
       ></WrapImage>
       <Img src={imG} alt={title} />
-      <p>Дата додавання зображення {normalizedDate(date)}</p>
+      <p>
+        {t('gallaryPage.pictureInfo.dateOfAdd')}: {normalizedDate(date)}
+      </p>
     </WrapImageAndDateCreate>
   );
 };
@@ -121,8 +143,10 @@ const ImageBlock = ({ img, title, date }) => {
 const DescriptionsBlock = ({ title, text, inStock, size }) => {
   return (
     <WrapDescription>
-      <H2>{title}</H2>
-      <Span>{text}</Span>
+      <div style={{ height: '80%', overflow: 'hidden' }}>
+        <H2>{title}</H2>
+        <Span>{text}</Span>
+      </div>
       <InfoBlock isit={inStock} size={size} />
     </WrapDescription>
   );

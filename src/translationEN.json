@@ -1,4 +1,5 @@
 {
+  "defoultText": "It's a mess, something went wrong! Try reloading the page or check back later.",
   "blog": "My blog",
   "pageBlog": {
     "modal": {
@@ -57,8 +58,48 @@
       "scroll": "Info"
     },
     "aboutOrder": " You can look at the picture, familiarize yourself with the terms of order or purchase by clicking on the image of the picture. Enjoy )",
+   
+    "gallaryText": {
+      "first": "Just as the physical body needs food to exist, so the body of emotions and feelings needs support. Motivation, inspiration, energy for work, creativity and just joy in one's life are determined by the fullness of the soul.",
+      "second": "I know many people who say that they have no energy, just endless, constant fatigue, apathy. It tells about the feeling as if you give energy to everyone around you, but you don't have enough of it yourself... there is nowhere to take it. All possible ways of self-deception are being used. Someone thinks that it is because there is not enough money, someone - because they are already 30, and there are no children yet, someone - because the parents are sick, or the children are unruly... and so on, without stopping. There is always a reason to be unhappy, a reason to justify one's condition.",
+      "third": "I think the feeling of lack of vital energy is so widespread because the conditions of modern life orient us to work that feeds us. Few people have time to understand that a person cannot be happy without something that fills us emotionally. Spiritual and physical are like two legs of one person, no matter how strong one is, if there is no other - you are crippled.",
+      "fourth": "Everything we eat, in the end, becomes us, that is, our bodies. And there is a difference whether we eat a ripe apple or a hot dog from a street cafe. Both will be embedded in our tissues and become our bodies; giving or not giving strength, power and beauty. The energy we absorb similarly becomes us. Our reactions, mood and ultimately, intentions. There is a difference whether we watch a horror movie or go for a walk in the forest and dream. The quality of energy is different, and it becomes us.",
+      "fifth": "Whether we like it or not, it works. This is easy to check. Each person has something different. Someone freezes from listening to music, someone loses track of time while reading, someone needs to get out into the woods or mountains to recharge. I do not mean any activities that cause the release of hormones, to which a person becomes addicted - this has nothing to do with vital energy - it is addiction.",
+      "sixth": "When I am surrounded by paintings, of course when there is an opportunity to be alone with them, I say - this is my temple. Painting is a language without words.",
+      "seventh": "I started painting in 2018. I claim that I have become happier. Ever since paints and canvases appeared in my life, I look at the world in a different way, and it's not because something has changed around me - it's changed inside. That's why I don't just draw, I write exactly what, in my opinion, fills.",
+      "eighth": "Taking on the picture, I think that it will carry, radiate. Where will there be a place for her, is it a bedroom, a kitchen or an office? What will it add to the space of the room, calm or cause a smile? How much time will the observer spend near her? It will pass saying - ``beautiful'', or stop and think - ``Wow, how deep''! I don't write when I feel bad or sad. Paintings, like all things created by one's own hands, are a kind of teraphim, their power depends only on how energetically strong the author is. (Everyone knows stories about mysterious fires in houses where a certain picture appeared, or success in marriage and the birth of children with the appearance of a picture.)",
+      "ninth": "Everything that surrounds us has meaning, has some influence on us. Sometimes we stop noticing parts of our environment, but if you remove them, you immediately feel the emptiness. The surrounding simply creates an atmosphere. It is about the mood with which we wake up and what we feel when we return home after a working day or vacation.",
+      "tenth": "I share my perception and my creativity.",
+      "eleventh": "I invite you to view the pictures"
+    },
+    "listPictures": {
+      "all": "All",
+      "inStock": "In stock",
+      "ifNotAvailable": "Looks like all paintings are sold out!!! Click the `All` button and order the one you like the most!"
+    },
     "pictureInfo": {
-      "info": ""
+      "size": "Size",
+      "dateOfAdd": "The date the image was added",
+      "order": {
+        "title": "Order or buy a painting",
+        "setAdress": "Enter your: name and surname; local phone number; email. I will be able to form the shipment and find out the approximate cost of delivery for you.",
+        "delivery": "Delivery services are paid by the customer",
+        "placeholder": "Silviya Vetska; VetskaSil@gmail.com; 787496417; Warszawa, InPost Słowicza 1  05-500  Mysiadło",
+        "buttonSubmit": "Send order",
+        "IfBuyText": "You have selected a painting to purchase",
+        "size": "its size",
+        "ifAnother": "If you want to buy this painting in a different size, click on the `Order` button and choose the desired canvas size.",
+        "order": "Order",
+        "buy": "Buy",
+        "selectSize": "Choose the canvas size that best suits your interior",
+        "attention": "Please note that the order fulfillment period can take from 2 weeks to 2 months. It depends on the workload of the artist and the size of the canvas you choose. The deadline for the order will be specified in the return confirmation letter.",
+        "desctiption": "This site is not an online store, so requests to purchase or order paintings are sent directly to the author. After processing the order (within 24 hours), you will receive an e-mail with confirmation and details for prepayment.",
+        "prepayment": "The advance payment is 20% of the cost of the paintings, and is NOT refundable in case of rejection of the order.",
+        "afterPrepayment": "As soon as the prepayment is credited, the painting will begin to be created, or will be sent to the specified address.",
+        "findPrice": "Get acquainted with the cost of paintings",
+        "cm": "dimensions are in centimeters"
+      
+      }
     }
   },
   "socialProject_page": {

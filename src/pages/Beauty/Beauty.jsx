@@ -45,6 +45,7 @@ const styles = {
 const BeautyPage = () => {
   const [position, positionSet] = useState(0);
   const [t] = useTranslation();
+
   const photoArr = [l4, l3, l6, l8, l9];
 
   const onRight = () => {
@@ -63,6 +64,11 @@ const BeautyPage = () => {
       <Link to={'/'}>
         <ButtonHome />
       </Link>
+      {/* {loading && (
+        <WrapDots>
+          <ThreeDots />
+        </WrapDots>
+      )} */}
 
       <WrapTitleAndEye>
         <H2>

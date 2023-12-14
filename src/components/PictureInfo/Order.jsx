@@ -25,6 +25,8 @@ import { HiCursorClick } from 'react-icons/hi';
 import { BsExclamation } from 'react-icons/bs';
 import { BorderTop, MiddleLine } from 'components/Gallery/Gallery.styled';
 import { BGPriceBlock, Input } from 'pages/ListPictures/ListPictures.styled';
+import { useTranslation } from 'react-i18next';
+import { useFeatureStore } from 'components/Features/Features/store';
 
 const styles = {
   width: '100px',
@@ -48,6 +50,8 @@ export const OrderBlock = ({ tit, size, inStock }) => {
   const [selectedItem, setSelectedItem] = useState(
     inStock === 'так' ? 'Купляю' : 'Замовляю'
   );
+
+  const [t] = useTranslation();
   //   const handleCheck = e => {
   //     console.log('e', e.target.value);
   //     let updatedList = [...selected];
@@ -71,7 +75,7 @@ export const OrderBlock = ({ tit, size, inStock }) => {
 
   return (
     <WrapOrderBlock>
-      <H3>Замовити або придбати картину</H3>
+      <H3>{t('gallaryPage.pictureInfo.order.title')}</H3>
       <DescriptionPreOrder />
 
       <BorderTop>
@@ -95,15 +99,14 @@ export const OrderBlock = ({ tit, size, inStock }) => {
 
           <div>
             <Label>
-              Зазначте свою адресу, я зможу сформувати відправлення і дізнатись
-              для Вас орієнтовну вартість доставки.
+              {t('gallaryPage.pictureInfo.order.setAdress')}
               <Prepayment>
                 <FaStarOfLife size={'10px'} color="purple" />
-                <p> Послуги доставки оплачуються замовником</p>
+                <p> {t('gallaryPage.pictureInfo.order.delivery')}</p>
               </Prepayment>
               <TextArea
                 name="adress"
-                placeholder="Україна,м.Київ,Дарницький район"
+                placeholder={t('gallaryPage.pictureInfo.order.placeholder')}
               ></TextArea>
             </Label>
           </div>
@@ -111,7 +114,7 @@ export const OrderBlock = ({ tit, size, inStock }) => {
         <CommonButton
           styled={styles}
           type="submit"
-          text={'Відправити замовлення'}
+          text={t('gallaryPage.pictureInfo.order.buttonSubmit')}
         />
       </Form>
     </WrapOrderBlock>
@@ -119,19 +122,19 @@ export const OrderBlock = ({ tit, size, inStock }) => {
 };
 
 const IfBuy = ({ name, size }) => {
+  const [t] = useTranslation();
   return (
     <WrapIfBuy>
-      Ви обрали для придбання картину <H4>"{name}"</H4>, її розмір
+      {t('gallaryPage.pictureInfo.order.IfBuyText')} <H4>"{name}"</H4>,{' '}
+      {t('gallaryPage.pictureInfo.order.size')}
       <Size>{size} </Size>.
-      <p>
-        Якщо Ви бажаєте придбати цю картину іншого розміру, тисніть на кнопочку
-        "Замовляю", і оберіть для себе бажаний розмір полотна.
-      </p>
+      <p>{t('gallaryPage.pictureInfo.order.ifAnother')} </p>
     </WrapIfBuy>
   );
 };
 
 const SelectOrderOrBuy = ({ setSelectedItem, selectedItem }) => {
+  const [t] = useTranslation();
   const onChangeHandler = event => {
     setSelectedItem(event.target.name);
   };
@@ -144,7 +147,7 @@ const SelectOrderOrBuy = ({ setSelectedItem, selectedItem }) => {
           onChange={onChangeHandler}
           checked={selectedItem === 'Купляю'}
         />
-        <span>Купляю</span>
+        <span>{t('gallaryPage.pictureInfo.order.buy')}</span>
       </label>
       <label>
         <Input
@@ -153,40 +156,39 @@ const SelectOrderOrBuy = ({ setSelectedItem, selectedItem }) => {
           onChange={onChangeHandler}
           checked={selectedItem === 'Замовляю'}
         />
-        <span>Замовляю</span>
+        <span>{t('gallaryPage.pictureInfo.order.order')}</span>
       </label>
     </div>
   );
 };
 
 const IfOrder = ({ size }) => {
+  const [t] = useTranslation();
   const checkList = ['30*40', '40*40', '40*50', '40*60', '50*70', '100*110'];
   return (
     <div style={{ width: '50%' }}>
       <Label>
-        <LableText>
-          Оберіть розмір полотна яке найкраще підійде Вашому інтерʼєру
-        </LableText>
+        <LableText>{t('gallaryPage.pictureInfo.order.selectSize')}</LableText>
         <Select name="selectedSize" defaultValue={size}>
           {checkList.map((item, index) => (
             <option key={index}>{item}</option>
           ))}
         </Select>
       </Label>
-<br />
+      <br />
       <TextExplanation>
         <BsExclamation />
-        Прошу зауважити, що термін виконання замовлення може зайняти від 2
-        тижнів до 2 місяців. Це залежить від загруженості митця і розміру
-        обраного Вами полотна. Строк виконання замовлення буде зазначений у
-        зворотньому листі-підтверджені.
+        {t('gallaryPage.pictureInfo.order.attention')}
       </TextExplanation>
     </div>
   );
 };
 
 const DescriptionPreOrder = () => {
+  const [t] = useTranslation();
   const [vis, setVis] = useState(false);
+
+   const leng = useFeatureStore(state => state.leng);
 
   const list = [
     'до 40*60 - 70 y.e',
@@ -194,36 +196,36 @@ const DescriptionPreOrder = () => {
     'до 100*110 - 250 y.e',
     'від 100*110 - договірна(в приватному листуванні)',
   ];
+
+  const listEn = [
+    'up to 40*60 - 70 y.e',
+    'up to 70*80 -120 y.e',
+    'up to 100*110 - 250 y.e',
+    'from 100*110 - contractual (in private correspondence)',
+  ];
   return (
     <Desctiption>
-      Цей сайт не є інтернет магазином, тому запити на придбання, або замовлення
-      картин відправляються безпосередньо автору. Після опрацювання замовлення
-      (протягом доби), Ви отримаєте електронний лист з підтвердженням і
-      реквізитами для внесення предоплати.
+      {t('gallaryPage.pictureInfo.order.desctiption')}
       <Prepayment>
         <FaStarOfLife size={'10px'} color="purple" />
-        Предоплата складає 20% від вартості картин, і !НЕ повертається у випадку
-        відхилення замовлення.
+        {t('gallaryPage.pictureInfo.order.prepayment')}
       </Prepayment>
       <Price>
-        <Text>
-          Як тільки предоплата буде зарахована, замовлення буде відправлено на
-          зазначену Вами адресу; у випадку замовлення картини - перейде до
-          створення )
-        </Text>
+        <Text>{t('gallaryPage.pictureInfo.order.afterPrepayment')}</Text>
         <PricePicture onClick={() => setVis(!vis)}>
-          <HiCursorClick /> Ознайомитись з вартістю картин{' '}
+          <HiCursorClick />
+          {t('gallaryPage.pictureInfo.order.findPrice')}
         </PricePicture>
         <BGPriceBlock style={vis ? pricesBlockVisible : pricesBlock}>
-          <WrapSizes >
+          <WrapSizes>
             <FaStarOfLife size={'5px'} />
-            <p> розміри зазначені у сантиметрах</p>
+            <p> {t('gallaryPage.pictureInfo.order.cm')}</p>
           </WrapSizes>
 
           <ul>
-            {list.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
+            {leng === 'ua'
+              ? list.map((item, index) => <li key={index}>{item}</li>)
+              : listEn.map((item, index) => <li key={index}>{item}</li>)}
           </ul>
         </BGPriceBlock>
       </Price>

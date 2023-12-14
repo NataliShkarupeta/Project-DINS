@@ -1,4 +1,14 @@
 import styled from 'styled-components';
+export const WrapDots = styled.div`
+  transition: transform 0.8 ease-in-out;
+  padding: ${p => p.theme.space[5]}px;
+
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+`;
 
 export const Wrap = styled.div`
   /* background-color: ${p => p.theme.colors.modes.light.background}; */
@@ -7,6 +17,7 @@ export const Wrap = styled.div`
 `;
 
 export const WrapInfo = styled.div`
+  margin-bottom: ${p => p.theme.space[4]}px;
   display: flex;
   justify-content: space-evenly;
   gap: 50px;
@@ -34,9 +45,9 @@ export const Span = styled.span`
 
 export const WrapInfoFromMe = styled.div`
   width: 45%;
-  height: 350px;
+  /* height: 350px; */
   overflow: hidden;
-  text-align: right;
+  /* text-align: right; */
   color: ${p => p.theme.colors.therd};
 
   font-family: ${p => p.theme.fonts.monospace};
@@ -56,35 +67,39 @@ export const WrapImageAndDateCreate = styled.div`
 `;
 
 export const WrapImage = styled.div`
-position: relative;
+  position: relative;
   margin-top: ${p => p.theme.space[4]}px;
   width: 450px;
-height: 600px;
+  height: 600px;
 `;
 
-export const Img=styled.img`
-position: absolute;
-width: 370px;
-`
+export const Img = styled.img`
+  position: absolute;
+  width: 370px;
+`;
 
 ////////////// descriptionBlock//////////
 
 export const WrapDescription = styled.div`
+  padding: ${p => p.theme.space[3]}px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 45%;
   margin-top: ${p => p.theme.space[3]}px;
   overflow-y: scroll;
 `;
 
 ///////////////// orderBlock/////////////
-export const Text= styled.p`
-width: 50%;
-`
-
+export const Text = styled.p`
+  width: 50%;
+`;
 
 export const WrapOrderBlock = styled.div`
   color: ${p => p.theme.colors.modes.dark.background};
+
   padding: ${p => p.theme.space[3]}px;
-  background-color: ${p => p.theme.colors.modes.dark.text};
+  background-color: rgba(255, 255, 255, 0.7);
 `;
 
 export const H3 = styled.h3`
@@ -149,7 +164,6 @@ export const WrapInputFields = styled.div`
 `;
 
 export const Label = styled.label`
-
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
@@ -157,12 +171,13 @@ export const Label = styled.label`
 
 export const LableText = styled.span`
   margin-right: ${p => p.theme.space[3]}px;
-  
+
   /* display: flex;
   flex-direction: row; */
 `;
 
 export const Select = styled.select`
+  background-color: rgba(255, 255, 255, 0.7);
   outline: none;
   cursor: pointer;
   width: 100px;
@@ -177,6 +192,7 @@ export const Select = styled.select`
 `;
 
 export const TextArea = styled.textarea`
+  background-color: rgba(255, 255, 255, 0.7);
   outline: none;
   resize: none;
   cursor: pointer;
@@ -191,9 +207,9 @@ export const TextArea = styled.textarea`
     border-color: ${p => p.theme.colors.primary};
     border-radius: ${p => p.theme.radii.normal};
   }
-`
+`;
 export const WrapIfBuy = styled.div`
-width: 50%;
+  width: 50%;
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
@@ -207,14 +223,14 @@ export const H4 = styled.h4`
 
 export const Size = styled.span`
   font-weight: ${p => p.theme.fontWeights.bold};
-  margin-left:${p => p.theme.space[2]}px;;
-  margin-right:${p => p.theme.space[2]}px; ;
+  margin-left: ${p => p.theme.space[2]}px;
+  margin-right: ${p => p.theme.space[2]}px;
 `;
 
-export const WrapSizes=styled.div`
-display: flex;
-gap: 5px;
-`
+export const WrapSizes = styled.div`
+  display: flex;
+  gap: 5px;
+`;
 export const TextExplanation = styled.span`
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[1]}px;
