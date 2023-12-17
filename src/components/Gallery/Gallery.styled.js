@@ -58,13 +58,12 @@ export const P = styled.p`
 export const AboutArt = styled.p`
   padding: ${p => p.theme.space[5]}px;
   text-align: center;
-  font-family: ${p => p.theme.fonts.monospace};
+  font-family: ${p => p.theme.fonts.forName};
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.body};
   font-style: italic;
-  color: ${p => p.theme.colors.modes.dark.text};
   margin-bottom: ${p => p.theme.space[3]}px;
-  /* text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  color: #fff4e4cc;
 `;
 
 export const MainImageDiv = styled.div`

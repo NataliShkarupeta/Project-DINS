@@ -21,4 +21,7 @@ export const useFeatureStore = create(set => ({
 
   pict: null,
   setPict: feature => set({ pict: feature }),
+
+  name: null,
+  setName: feature => set({ name: feature }),
 }));

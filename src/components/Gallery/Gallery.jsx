@@ -16,20 +16,28 @@ import Loader from './Loader';
 import { BASIC_URL } from 'service/basicUrl';
 import { useTranslation } from 'react-i18next';
 // import { FaStarOfLife } from 'react-icons/fa';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CommonButton } from 'components/common/commonButton/button';
+import { useFeatureStore } from 'components/Features/Features/store';
 
 const Gallary = () => {
   const [loader, setLoading] = useState(true);
   const [t] = useTranslation();
-
+  const setName = useFeatureStore(store => store.setName);
   const location = useLocation();
   const rref = useRef();
 
+  useEffect(() => {
+    setName(true);
+
+    return () => {
+      setName(null);
+    };
+  }, [setName]);
+
   const styles = {
     padding: '2px 10px',
-
   };
 
   return (

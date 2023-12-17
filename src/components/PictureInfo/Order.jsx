@@ -125,10 +125,25 @@ const IfBuy = ({ name, size }) => {
   const [t] = useTranslation();
   return (
     <WrapIfBuy>
-      {t('gallaryPage.pictureInfo.order.IfBuyText')} <H4>"{name}"</H4>,{' '}
-      {t('gallaryPage.pictureInfo.order.size')}
-      <Size>{size} </Size>.
-      <p>{t('gallaryPage.pictureInfo.order.ifAnother')} </p>
+      <div style={{display:'flex',justifyContent: 'space-between'}}>
+        <div>
+          <p>{t('gallaryPage.pictureInfo.order.IfBuyText')} </p>
+          <p> {t('gallaryPage.pictureInfo.order.size')}</p>
+        </div>
+        <div>
+          <span>
+            <H4>"{name}"</H4>
+          </span>
+          <span>
+            {' '}
+            <Size>{size} </Size>
+          </span>
+        </div>
+      </div>
+
+      <TextExplanation>
+        {t('gallaryPage.pictureInfo.order.ifAnother')}{' '}
+      </TextExplanation>
     </WrapIfBuy>
   );
 };

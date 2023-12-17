@@ -29,7 +29,8 @@ export const theme = {
 
   colors: {
     text: '#000000',
-    background: '#fff4e4cc',
+    background: '#fff4e4',
+    
     therd: '#23033e',
     accent: '#d7e6da',
     primary: '#8c3b19',

@@ -87,7 +87,7 @@
         "placeholder": "Silviya Vetska; VetskaSil@gmail.com; 787496417; Warszawa, InPost Słowicza 1  05-500  Mysiadło",
         "buttonSubmit": "Send order",
         "IfBuyText": "You have selected a painting to purchase",
-        "size": "its size",
+        "size": "its size (in sentiments)",
         "ifAnother": "If you want to buy this painting in a different size, click on the `Order` button and choose the desired canvas size.",
         "order": "Order",
         "buy": "Buy",

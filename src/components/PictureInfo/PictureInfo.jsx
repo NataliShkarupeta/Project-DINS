@@ -33,7 +33,7 @@ export const PictureInfo = () => {
   const [t] = useTranslation();
 
   useEffect(() => {
-    window.scrollTo(0, 220);
+    window.scrollTo(0, 120);
   }, []);
   useEffect(() => {
     setLoading(true);
@@ -48,6 +48,11 @@ export const PictureInfo = () => {
         <NavLinkButton to={location.state?.from ?? '/'}>
           <CommonButton text={t('button.back')} />
         </NavLinkButton>
+        {loading && (
+          <WrapDots>
+            <ThreeDots />
+          </WrapDots>
+        )}
         <DefaultComponent>
           <ThreeDots />
           <p>{t('defoultText')} </p>
@@ -55,6 +60,7 @@ export const PictureInfo = () => {
       </>
     );
   }
+
   const {
     title1,
     descriptions,
@@ -68,14 +74,14 @@ export const PictureInfo = () => {
   } = picture;
   return (
     <>
+      <NavLinkButton to={location.state?.from ?? '/'}>
+        <CommonButton text={t('button.back')} />
+      </NavLinkButton>
       {loading && (
         <WrapDots>
           <ThreeDots />
         </WrapDots>
       )}
-      <NavLinkButton to={location.state?.from ?? '/'}>
-        <CommonButton text={t('button.back')} />
-      </NavLinkButton>
       <Wrap>
         <WrapInfo>
           <ImageBlock

@@ -8,6 +8,7 @@ import {
   BlockUnderLine,
   Background,
   Blog,
+  WrapName,
 } from './Layout.styled';
 import { useTranslation } from 'react-i18next';
 import { BsMoonFill, BsBrightnessHigh } from 'react-icons/bs';
@@ -16,15 +17,19 @@ import { NavigationLink } from 'pages/HomePage/HomePage.styled';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { Button } from 'components/common/commonButton/button.styled';
 import { Suspense } from 'react';
+import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
+import { ThreeDots } from 'react-loader-spinner';
 
 export const Layout = ({ setMainThema }) => {
+  const name = useFeatureStore(store => store.name);
   const setLeng = useFeatureStore(store => store.setLeng);
   const [t, i18n] = useTranslation();
 
   const changeLanguage = language => {
     i18n.changeLanguage(language);
-    localStorage.setItem('leng',language)
+    localStorage.setItem('leng', language);
   };
+  console.log(name)
   const styles = {
     padding: '3px 6px',
   };
@@ -54,6 +59,12 @@ export const Layout = ({ setMainThema }) => {
               Ua
             </Button>
           </WrapButton>
+          {!name && (
+            <WrapName>
+              <p>Natali</p>
+              <p>Shkarupeta</p>
+            </WrapName>
+          )}
           <WrapMoonAndSun>
             <BsBrightnessHigh
               onClick={() => {
@@ -72,13 +83,19 @@ export const Layout = ({ setMainThema }) => {
         </BlockUnderLine>
         <NavigationLink to="/blog">
           <motion.div
-            whileHover={{ scale: 1.2, color: 'purple' }}
+            whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8, y: 0 }}
           >
             <Blog>{t('blog')}</Blog>
           </motion.div>
         </NavigationLink>
-        <Suspense>
+        <Suspense
+          fallback={
+            <WrapDots>
+              <ThreeDots />
+            </WrapDots>
+          }
+        >
           <Outlet />
         </Suspense>
       </WrapMain>

@@ -1,11 +1,24 @@
 import styled from 'styled-components';
 
+export const WrapName = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  font-size: ${p => p.theme.fontSizes[5]}px;
+  line-height: ${p => p.theme.lineHeights.heading};
+  font-family: ${p => p.theme.fonts.forBlog};
+  font-weight: ${p => p.theme.fontWeights.body};
+  margin-top: ${p => p.theme.space[2]}px;
+`;
+
 export const BlockUnderLine = styled.div`
-   padding-left: ${p => p.theme.space[3]}px; 
-  padding-right: ${p => p.theme.space[3]}px; 
+  padding-left: ${p => p.theme.space[3]}px;
+  padding-right: ${p => p.theme.space[3]}px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: ${p => p.theme.space[4]}px;
+  margin-bottom: ${p => p.theme.space[3]}px;
+  /* position: sticky;
+  top: 0; */
 `;
 
 export const Blog = styled.div`
@@ -21,7 +34,7 @@ export const Blog = styled.div`
   font-size: ${p => p.theme.fontSizes[3]}px;
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.body};
-  font-weight: ${p => p.theme.fontWeights.middle};;
+  font-weight: ${p => p.theme.fontWeights.middle};
 `;
 
 export const WrapMoonAndSun = styled.div`
@@ -34,11 +47,9 @@ export const WrapButton = styled.div`
   margin-top: 5px;
 `;
 
-
-
 export const Background = styled.div`
   color: ${p => p.theme.colors.text};
- 
+
   background-color: ${p => p.theme.colors.background};
 `;
 

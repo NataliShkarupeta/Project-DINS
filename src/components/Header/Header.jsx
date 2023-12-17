@@ -8,7 +8,7 @@ import {
   NavigationLink,
 } from 'pages/HomePage/HomePage.styled';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import img from '../../images/free-icon-space-8657325 (1).png';
 import { Button } from 'components/common/commonButton/button.styled';
 
@@ -25,22 +25,27 @@ export const Header = () => {
   //.map((el,i)=>( <motion.li key={} variants={pVariantsList} initial ='hidden' animate="visible" custom={i}
   return (
     <Head>
-      <motion.p
-        animate={{
-          scale: [1, 1.1, 1.1, 1, 1],
-          rotate: [0, 0, 10, 10, 0],
-          borderRadius: ['0%', '0%', '20%', '20%', '0%'],
-        }}
-        transition={{
-          duration: 2,
-          ease: 'easeInOut',
-          times: [0, 0.2, 0.5, 0.8, 1],
-          repeat: Infinity,
-          repeatDelay: 1,
-        }}
-      >
-        <img src={img} alt="Logo" width="70" />
-      </motion.p>
+      <div style={{ cursor: 'pointer' }}>
+        <Link to={`/`}>
+          <motion.p
+            animate={{
+              scale: [1, 1.1, 1.1, 1, 1],
+              rotate: [0, 0, 10, 10, 0],
+              borderRadius: ['0%', '0%', '20%', '20%', '0%'],
+            }}
+            transition={{
+              duration: 2,
+              ease: 'easeInOut',
+              times: [0, 0.2, 0.5, 0.8, 1],
+              repeat: Infinity,
+              repeatDelay: 1,
+            }}
+          >
+            <img src={img} alt="Logo" width="70" />
+          </motion.p>
+        </Link>
+      </div>
+
 
       <WrapLinks>
         <Ul>
@@ -64,16 +69,16 @@ export const Header = () => {
               {t('professions.lash')}
             </NavigationLink>
           </Li>
-          <Li>
+          {/* <Li>
             <NavigationLink to="/educator" state={{ from: location }}>
               {t('professions.teacher')}
             </NavigationLink>
-          </Li>
-          <Li>
+          </Li> */}
+          {/* <Li>
             <NavigationLink to="/health" state={{ from: location }}>
               {t('professions.herb')}
             </NavigationLink>
-          </Li>
+          </Li> */}
         </Ul>
       </WrapLinks>
 

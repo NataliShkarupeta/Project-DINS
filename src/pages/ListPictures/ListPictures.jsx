@@ -66,14 +66,14 @@ const ListPictures = memo(() => {
 
   return (
     <>
+      <NavLinkButton to={'/painting'}>
+        <CommonButton text={t('button.back')} />
+      </NavLinkButton>
       {loading && (
         <WrapDots>
           <ThreeDots />
         </WrapDots>
       )}
-      <NavLinkButton to={'/painting'}>
-        <CommonButton text={t('button.back')} />
-      </NavLinkButton>
       <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
       <WrapCheckBlok>
         <label>
@@ -134,96 +134,6 @@ const ListPictures = memo(() => {
     </>
   );
 
-  // if (!pictures) {
-  //   return (
-  //     <>
-  //       <NavLinkButton to={location.state?.from ?? '/'}>
-  //         <CommonButton text={t('button.back')} />
-  //       </NavLinkButton>
-  //       <DefaultComponent>
-  //         <p> От халепа, щось пішло не так!</p>
-  //       </DefaultComponent>
-  //     </>
-  //   );
-  // }
-  // return (
-  //   <>
-  //     <NavLinkButton to={'/painting'}>
-  //       <CommonButton text={t('button.back')} />
-  //     </NavLinkButton>
-  //     <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
-  //     <WrapCheckBlok>
-  //       <label>
-  //         <Input
-  //           name="Всі"
-  //           type="checkbox"
-  //           onChange={onChangeHandler}
-  //           checked={selectedItem === 'Всі'}
-  //         />
-  //         <span>Всі</span>
-  //       </label>
-  //       <label>
-  //         <Input
-  //           name="В наявності"
-  //           type="checkbox"
-  //           onChange={onChangeHandler}
-  //           checked={selectedItem === 'В наявності'}
-  //         />
-  //         <span>В наявності</span>
-  //       </label>
-  //     </WrapCheckBlok>
-  //     <section>
-  //       {selectedItem === 'В наявності' && !inStock && (
-  //         <DefaultComponent>
-  //           <p> От халепа, щось пішло не так!</p>
-  //         </DefaultComponent>
-  //       )}
-  //       {inStock && Object.keys(inStock).length !== 0 ? (
-  //         <Ul>
-  //           {Object.values(inStock).map(({ title1, image, _id }) => (
-  //             <Li key={_id}>
-  //               <Link
-  //                 to={`/painting/list_pictures/${_id}`}
-  //                 state={{ from: location }}
-  //               >
-  //                 <WrapPicture>
-  //                   <img src={`${BASIC_URL}/${image}`} alt={title1} />
-  //                 </WrapPicture>
-  //               </Link>
-  //             </Li>
-  //           ))}
-  //         </Ul>
-  //       ) : (
-  //         <>
-  //           {Object.keys(pictures).length === 0 ? (
-  //             <DefaultComponent>
-  //               <p>
-  //                 От халепа, щось пішло не так!Спробуйте перезавантажити
-  //                 сторінку або зайдіть пізніше.
-  //               </p>
-  //             </DefaultComponent>
-  //           ) : (
-  //             <Ul>
-  //               {pictures &&
-  //                 Object.values(pictures).map(({ title1, image, _id }) => (
-  //                   <Li key={_id}>
-  //                     <Link
-  //                       to={`/painting/list_pictures/${_id}`}
-  //                       state={{ from: location }}
-  //                     >
-  //                       <WrapPicture>
-  //                         <img src={`${BASIC_URL}/${image}`} alt={title1} />
-  //                       </WrapPicture>
-  //                     </Link>
-  //                   </Li>
-  //                 ))}
-  //             </Ul>
-  //           )}
-  //         </>
-  //       )}
-  //     </section>
-  //   </>
-  // );
-});
+},[]);
 
 export default ListPictures;

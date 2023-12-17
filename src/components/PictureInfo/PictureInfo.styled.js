@@ -21,6 +21,8 @@ export const WrapInfo = styled.div`
   display: flex;
   justify-content: space-evenly;
   gap: 50px;
+  /* box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 3px 7px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0); */
 `;
 export const H2 = styled.h2`
   font-family: ${p => p.theme.fonts.monospace};
@@ -88,6 +90,7 @@ export const WrapDescription = styled.div`
   width: 45%;
   margin-top: ${p => p.theme.space[3]}px;
   overflow-y: scroll;
+  
 `;
 
 ///////////////// orderBlock/////////////
@@ -218,7 +221,7 @@ export const WrapIfBuy = styled.div`
 export const H4 = styled.h4`
   font-family: ${p => p.theme.fonts.forName};
   font-size: ${p => p.theme.fontSizes[3]}px;
-  font-weight: ${p => p.theme.fontWeights.bold};
+  font-weight: ${p => p.theme.fontWeights.middleOne};
 `;
 
 export const Size = styled.span`

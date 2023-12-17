@@ -8,14 +8,23 @@ import {
   Motto,
 } from './HomePage.styled';
 import { useTranslation } from 'react-i18next';
+import { useFeatureStore } from 'components/Features/Features/store';
+import { useEffect } from 'react';
 
 export const HomePage = ({ setMore }) => {
   const [t] = useTranslation();
+  const setName = useFeatureStore(store => store.setName);
+
+  useEffect(() => {
+    setName(true);
+
+    return ()=>{setName(null)}
+  }, [setName]);
 
   const styles = {
     position: 'absolute',
     right: '3.1%',
-    padding:'3px 8px'
+    padding: '3px 8px',
   };
 
   return (
@@ -36,7 +45,9 @@ export const HomePage = ({ setMore }) => {
         <Article>
           {t('aboutMe')} <br /> {t('aboutMe1')}
         </Article>
-        <Button style={styles} onClick={() => setMore(true)}>{t('button.textBut')}</Button>
+        <Button style={styles} onClick={() => setMore(true)}>
+          {t('button.textBut')}
+        </Button>
       </div>
     </>
   );
