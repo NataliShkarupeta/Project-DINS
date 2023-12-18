@@ -37,15 +37,6 @@ const ListPictures = memo(() => {
       .finally(() => setLoading(false));
   }, []);
 
-  // useEffect(() => {
-  //   if (selectedItem === 'Всі') {
-  //     getAllPictures().then(res => setPicures(res));
-  //   }
-  //   if (selectedItem === 'В наявності') {
-  //     getInStockPictures().then(res => setInStock(res));
-  //   }
-  // }, [selectedItem]);
-
   const onChangeHandler = event => {
     setSelectedItem(event.target.name);
   };
@@ -64,6 +55,12 @@ const ListPictures = memo(() => {
     );
   }
 
+  // const checked = {
+  //   backgroundColor: '#007a7e',
+  //   position: 'relative',
+   
+  // };
+
   return (
     <>
       <NavLinkButton to={'/painting'}>
@@ -78,6 +75,7 @@ const ListPictures = memo(() => {
       <WrapCheckBlok>
         <label>
           <Input
+            // style={selectedItem === 'Всі' ? checked : {}}
             name="Всі"
             type="checkbox"
             onChange={onChangeHandler}
@@ -87,6 +85,7 @@ const ListPictures = memo(() => {
         </label>
         <label>
           <Input
+            // style={selectedItem === 'В наявності' ? checked : {}}
             name="В наявності"
             type="checkbox"
             onChange={onChangeHandler}
@@ -133,7 +132,6 @@ const ListPictures = memo(() => {
       )}
     </>
   );
-
-},[]);
+});
 
 export default ListPictures;

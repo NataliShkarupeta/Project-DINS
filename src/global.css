@@ -55,6 +55,12 @@ html {
 *::after {
   box-sizing: inherit;
 }
+/* *:hover, */
+*:focus {
+  outline: none;
+
+  border: 1px solid #007a7e;
+}
 
 img,
 video {

@@ -9,6 +9,12 @@
   },
   "info": "Since ancient times, life has been called a river, every next meter it is not the same as it was before, due to the new composition of the soil, tributaries, etc. Every new day of life is filled with something new - thoughts, feelings, knowledge. And if this stops, just as the river turns into a swamp, so life will begin to sour, rot and die. Development and prosperity is the duty of every person.",
   "name": "Natali Shkarupeta",
+  "nameText": {
+    "nameText": "",
+    "nameAstro": "",
+    "nameArt": "",
+    "nameBeauty": ""
+  },
 
   "firstName": "Natali",
   "secondName": "Shkarupeta",
@@ -58,7 +64,7 @@
       "scroll": "Info"
     },
     "aboutOrder": " You can look at the picture, familiarize yourself with the terms of order or purchase by clicking on the image of the picture. Enjoy )",
-   
+
     "gallaryText": {
       "first": "Just as the physical body needs food to exist, so the body of emotions and feelings needs support. Motivation, inspiration, energy for work, creativity and just joy in one's life are determined by the fullness of the soul.",
       "second": "I know many people who say that they have no energy, just endless, constant fatigue, apathy. It tells about the feeling as if you give energy to everyone around you, but you don't have enough of it yourself... there is nowhere to take it. All possible ways of self-deception are being used. Someone thinks that it is because there is not enough money, someone - because they are already 30, and there are no children yet, someone - because the parents are sick, or the children are unruly... and so on, without stopping. There is always a reason to be unhappy, a reason to justify one's condition.",
@@ -98,7 +104,6 @@
         "afterPrepayment": "As soon as the prepayment is credited, the painting will begin to be created, or will be sent to the specified address.",
         "findPrice": "Get acquainted with the cost of paintings",
         "cm": "dimensions are in centimeters"
-      
       }
     }
   },
