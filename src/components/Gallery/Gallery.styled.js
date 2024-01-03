@@ -35,6 +35,7 @@ export const BgFirst = styled.div`
   width: 100%;
    color: ${p => p.theme.colors.therd};
   background-color: rgba(255, 255, 255, 0.7);
+  
 `;
 
 export const BgSecond = styled.div`
@@ -164,7 +165,7 @@ export const RedBallBefore = styled.div`
   margin-right: 32px;
   &:before {
     position: absolute;
-    right: 9%;
+    right: 8%;
     top: -3px;
     /* content: '🦄'; */
     content: '';

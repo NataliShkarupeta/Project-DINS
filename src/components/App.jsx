@@ -8,6 +8,7 @@ import { lazy, useEffect, useState } from 'react';
 import { LearnMore } from './LearnMore/LearnMore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PictureInfo } from './PictureInfo/PictureInfo';
+import { PostInfo } from 'pages/Blog/PostInfo/PostInfo';
 // import { useFeatureStore } from './Features/Features/store';
 // import { ListPictures } from 'pages/ListPictures/ListPictures';
 // import { useFeatureStore } from './Features/Features/store';
@@ -82,6 +83,7 @@ export const App = () => {
               element={<PictureInfo />}
             />
             <Route path="blog" element={<BlogPage />}></Route>
+            <Route path="/blog/:postId" element={<PostInfo />} />
             <Route path="astrology" element={<AstrologyPage />}></Route>
             <Route path="beauty" element={<BeautyPage />}></Route>
             <Route path="educator" element={<EducatorPage />}></Route>

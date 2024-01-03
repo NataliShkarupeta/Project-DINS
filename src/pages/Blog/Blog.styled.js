@@ -11,9 +11,9 @@ export const WrapForTooltip = styled.div`
 `;
 
 export const BlockButton = styled.div`
-  margin-left: auto;
+  /* margin-left: auto;
   margin-right: auto;
-  position: sticky;
+  position: sticky; */
   bottom: -10px;
   display: flex;
   justify-content: center;
@@ -84,6 +84,7 @@ export const Text = styled.p`
   margin-left: auto;
   margin-right: auto;
   width: 800px;
+  height: 400px;
   color: ${p => p.theme.colors.therd};
 
   font-family: ${p => p.theme.fonts.monospace};
@@ -91,4 +92,35 @@ export const Text = styled.p`
   font-size: 20px;
   font-weight: ${p => p.theme.fontWeights.middleOne};
   line-height: 1.33;
+`;
+
+////////////////////postInfo//////////////////////
+
+export const Wrap = styled.div`
+  padding: ${p => p.theme.space[3]}px;
+  margin: ${p => p.theme.space[3]}px;
+  margin-bottom: ${p => p.theme.space[5]}px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+`;
+
+export const TextPost = styled.p`
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  /* font-family: ${p => p.theme.fonts.forBlog};
+  font-style: italic; */
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
+  line-height: 1.33;
+`;
+
+export const TitlePost = styled.h2`
+  /* font-family: ${p => p.theme.fonts.forBlog}; */
+  /* font-style: italic; */
+  font-size: ${p => p.theme.fontSizes[4]}px;
+  font-weight: ${p => p.theme.fontWeights.heading};
+  color: ${p => p.theme.colors.therd};
 `;

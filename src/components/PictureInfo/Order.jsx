@@ -88,6 +88,7 @@ export const OrderBlock = ({ tit, size, inStock }) => {
           <SelectOrderOrBuy
             setSelectedItem={setSelectedItem}
             selectedItem={selectedItem}
+            inStock={inStock}
           />
         </div>
         <WrapInputFields>
@@ -125,7 +126,7 @@ const IfBuy = ({ name, size }) => {
   const [t] = useTranslation();
   return (
     <WrapIfBuy>
-      <div style={{display:'flex',justifyContent: 'space-between'}}>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div>
           <p>{t('gallaryPage.pictureInfo.order.IfBuyText')} </p>
           <p> {t('gallaryPage.pictureInfo.order.size')}</p>
@@ -148,21 +149,36 @@ const IfBuy = ({ name, size }) => {
   );
 };
 
-const SelectOrderOrBuy = ({ setSelectedItem, selectedItem }) => {
+const SelectOrderOrBuy = ({ setSelectedItem, selectedItem, inStock }) => {
   const [t] = useTranslation();
   const onChangeHandler = event => {
     setSelectedItem(event.target.name);
   };
+
+  const disStyles = {
+    color: 'grey',
+    cursor: 'default',
+  };
+
+  const styles = {
+    color: 'black',
+    cursor: 'pointer',
+  };
+
   return (
     <div>
       <label>
         <Input
+          disabled={inStock === 'ні' ? true : null}
+          style={inStock === 'ні' ? disStyles : styles}
           name="Купляю"
           type="checkbox"
           onChange={onChangeHandler}
           checked={selectedItem === 'Купляю'}
         />
-        <span>{t('gallaryPage.pictureInfo.order.buy')}</span>
+        <span style={inStock === 'ні' ? disStyles : styles}>
+          {t('gallaryPage.pictureInfo.order.buy')}
+        </span>
       </label>
       <label>
         <Input
@@ -203,7 +219,7 @@ const DescriptionPreOrder = () => {
   const [t] = useTranslation();
   const [vis, setVis] = useState(false);
 
-   const leng = useFeatureStore(state => state.leng);
+  const leng = useFeatureStore(state => state.leng);
 
   const list = [
     'до 40*60 - 70 y.e',
