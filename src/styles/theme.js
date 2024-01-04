@@ -23,7 +23,6 @@ export const theme = {
   },
   lineHeights: {
     body: 1.5,
-    // normal: 1.25,
     heading: 1.125,
   },
 

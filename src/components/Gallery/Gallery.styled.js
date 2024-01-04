@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 export const WrapButton=styled.div`
 display: flex;
 justify-content: center;
+/* margin-bottom: ${p => p.theme.space[4]}px; */
 `
 
 export const SectionBeforPictures = styled.section`
@@ -23,29 +24,55 @@ export const AboutOrder=styled.div`
 
 export const AboutMe = styled.div`
   color: ${p => p.theme.colors.text};
-  /* background-color: ${p => p.theme.colors.modes.dark.text}; */
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body};
-
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  position: relative;
 `;
+
+
 
 export const BgFirst = styled.div`
   width: 100%;
-   color: ${p => p.theme.colors.therd};
+  color: ${p => p.theme.colors.therd};
   background-color: rgba(255, 255, 255, 0.7);
-  
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(14, 174, 87, 1) 0%,
+    rgba(12, 116, 117, 1) 90%
+  ); */
+
 `;
 
 export const BgSecond = styled.div`
   /* width: 100%; */
   /* background-color: blueviolet; */
+  /* color: ${p => p.theme.colors.therd}; */
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(12, 116, 117, 1) 0%,
+    rgba(14, 174, 87, 1) 90%
+  ); */
 `;
 export const BgThirt = styled.div`
   width: 100%;
-   color: ${p => p.theme.colors.therd};
+  color: ${p => p.theme.colors.therd};
   background-color: rgba(255, 255, 255, 0.7);
+  
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(14, 174, 87, 1) 0%,
+    rgba(12, 116, 117, 1) 90%
+  ); */
+`;
+
+export const BgFourth = styled.div`
+  /* color: ${p => p.theme.colors.therd}; */
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(12, 116, 117, 1) 0%,
+    rgba(14, 174, 87, 1) 90%
+  ); */
 `;
 export const P = styled.p`
   text-align: center;
@@ -65,6 +92,8 @@ export const AboutArt = styled.p`
   font-style: italic;
   margin-bottom: ${p => p.theme.space[3]}px;
   color: #fff4e4cc;
+  /* color: ${p => p.theme.colors.text};
+  text-shadow: -7px 2px 8px rgba(24, 21, 21, 0.76); */
 `;
 
 export const MainImageDiv = styled.div`
@@ -197,7 +226,7 @@ export const Presentation = styled.div`
   /* background-color:${p => p.theme.colors.modes.light.background} ; */
 `;
 
-///////////////////// design the painting/////////////////////////////////
+///////////////////// slyles the painting/////////////////////////////////
 
 export const Ul = styled.ul`
   display: flex;

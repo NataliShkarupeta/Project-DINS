@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { BASIC_URL } from 'service/basicUrl';
 import { getAllPictures, getInStockPictures } from 'service/gallertService';
-import { Input, NavLinkButton, WrapCheckBlok } from './ListPictures.styled';
+import { Input, LabPlaces, LiPlaces, NavLinkButton, NavPlaces, PlacesContent, PlacesInput, TextPlace, UlPlaces, WrapCheckBlok, WrapPlaces } from './ListPictures.styled';
 import { ThreeDots } from 'react-loader-spinner';
 import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
 
@@ -55,11 +55,7 @@ const ListPictures = memo(() => {
     );
   }
 
-  // const checked = {
-  //   backgroundColor: '#007a7e',
-  //   position: 'relative',
-   
-  // };
+  const places = [ 'Вітальня','Кухня','Спальня','Дитяча','Офіс/Кабінет' ]
 
   return (
     <>
@@ -72,28 +68,45 @@ const ListPictures = memo(() => {
         </WrapDots>
       )}
       <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
-      <WrapCheckBlok>
-        <label>
-          <Input
-            // style={selectedItem === 'Всі' ? checked : {}}
-            name="Всі"
-            type="checkbox"
-            onChange={onChangeHandler}
-            checked={selectedItem === 'Всі'}
-          />
-          <span>{t('gallaryPage.listPictures.all')}</span>
-        </label>
-        <label>
-          <Input
-            // style={selectedItem === 'В наявності' ? checked : {}}
-            name="В наявності"
-            type="checkbox"
-            onChange={onChangeHandler}
-            checked={selectedItem === 'В наявності'}
-          />
-          <span>{t('gallaryPage.listPictures.inStock')}</span>
-        </label>
-      </WrapCheckBlok>
+
+      <div>
+        <WrapPlaces>
+          <NavPlaces>
+            <PlacesInput id="menu-cb" type="checkbox"></PlacesInput>
+            <LabPlaces htmlFor="menu-cb">Фільтри</LabPlaces>
+            <PlacesContent>
+              <UlPlaces>
+                {places.map(place => (
+                  <LiPlaces key={place}>
+                    <TextPlace>{place}</TextPlace>
+                  </LiPlaces>
+                ))}
+              </UlPlaces>
+            </PlacesContent>
+          </NavPlaces>
+        </WrapPlaces>
+
+        <WrapCheckBlok>
+          <label>
+            <Input
+              name="Всі"
+              type="checkbox"
+              onChange={onChangeHandler}
+              checked={selectedItem === 'Всі'}
+            />
+            <span>{t('gallaryPage.listPictures.all')}</span>
+          </label>
+          <label>
+            <Input
+              name="В наявності"
+              type="checkbox"
+              onChange={onChangeHandler}
+              checked={selectedItem === 'В наявності'}
+            />
+            <span>{t('gallaryPage.listPictures.inStock')}</span>
+          </label>
+        </WrapCheckBlok>
+      </div>
       {selectedItem === 'Всі' ? (
         <Ul>
           {pictures &&

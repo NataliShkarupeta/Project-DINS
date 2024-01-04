@@ -2,6 +2,7 @@ import {
   AboutArt,
   AboutMe,
   BgFirst,
+  BgFourth,
   BgSecond,
   BgThirt,
   MainImageDiv,
@@ -38,6 +39,7 @@ const Gallary = () => {
 
   const styles = {
     padding: '2px 10px',
+    marginBottom:'32px'
   };
 
   return (
@@ -81,17 +83,19 @@ const Gallary = () => {
                 <P>{t('gallaryPage.gallaryText.seventh')}</P>
                 <P>{t('gallaryPage.gallaryText.eighth')}</P>
               </BgThirt>
-              <P>{t('gallaryPage.gallaryText.ninth')}</P>
-              <P>{t('gallaryPage.gallaryText.tenth')}</P>
-              <P>{t('gallaryPage.gallaryText.eleventh')}</P>
-              <Link to={'/painting/list_pictures'} state={{ from: location }}>
-                <WrapButton>
-                  <CommonButton
-                    styled={styles}
-                    text={t('gallaryPage.buttonListPicture')}
-                  />
-                </WrapButton>
-              </Link>
+              <BgFourth>
+                <P>{t('gallaryPage.gallaryText.ninth')}</P>
+                <P>{t('gallaryPage.gallaryText.tenth')}</P>
+                <P>{t('gallaryPage.gallaryText.eleventh')}</P>
+                <Link to={'/painting/list_pictures'} state={{ from: location }}>
+                  <WrapButton>
+                    <CommonButton
+                      styled={styles}
+                      text={t('gallaryPage.buttonListPicture')}
+                    />
+                  </WrapButton>
+                </Link>
+              </BgFourth>
             </AboutMe>
           </SectionBeforPictures>
         </>
