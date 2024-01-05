@@ -47,3 +47,24 @@ export const getInStockPictures = async () => {
     return error.massage;
   }
 };
+export const getPlacePictures = async(spot) => {
+  const req = {
+    spot
+  };
+
+  try {
+    const { data } = await axios.post(`${URLPIC}/place`, req);
+
+    const sortDate = data.data.result.map(obj => ({
+      ...obj,
+      createdAt: Date.parse(obj.createdAt),
+    }));
+    const sortPictures = [...sortDate].sort(
+      (a, b) => b.createdAt - a.createdAt
+    );
+    console.log(sortPictures);
+    return sortPictures;
+  } catch (error) {
+    return error.massage;
+  }
+};

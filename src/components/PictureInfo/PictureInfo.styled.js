@@ -103,6 +103,7 @@ export const WrapOrderBlock = styled.div`
 
   padding: ${p => p.theme.space[3]}px;
   background-color: rgba(255, 255, 255, 0.7);
+  background-color: ${p => p.theme.colors.modes.dark.text};
 `;
 
 export const H3 = styled.h3`

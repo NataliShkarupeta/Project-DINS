@@ -11,13 +11,32 @@ import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { BASIC_URL } from 'service/basicUrl';
-import { getAllPictures, getInStockPictures } from 'service/gallertService';
-import { Input, LabPlaces, LiPlaces, NavLinkButton, NavPlaces, PlacesContent, PlacesInput, TextPlace, UlPlaces, WrapCheckBlok, WrapPlaces } from './ListPictures.styled';
+import {
+  getAllPictures,
+  getInStockPictures,
+  getPlacePictures,
+} from 'service/gallertService';
+import {
+  AllAndStockWords,
+  Input,
+  LabPlaces,
+  LiPlaces,
+  NavLinkButton,
+  NavPlaces,
+  PlacesContent,
+  PlacesInput,
+  TextPlace,
+  UlPlaces,
+  WrapCheckBlok,
+  WrapCheckboxes,
+  WrapPlaces,
+} from './ListPictures.styled';
 import { ThreeDots } from 'react-loader-spinner';
 import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
 
 const ListPictures = memo(() => {
   const [pictures, setPicures] = useState({});
+  const [pictByPlace, setPictByPlace] = useState({});
   const [inStock, setInStock] = useState({});
   const [selectedItem, setSelectedItem] = useState('Всі');
   const [loading, setLoading] = useState(false);
@@ -35,10 +54,30 @@ const ListPictures = memo(() => {
     getInStockPictures()
       .then(res => setInStock(res))
       .finally(() => setLoading(false));
+     
   }, []);
 
   const onChangeHandler = event => {
     setSelectedItem(event.target.name);
+  };
+
+  const places = [
+    t('gallaryPage.listPictures.livingRoom'),
+    t('gallaryPage.listPictures.kitchen'),
+    t('gallaryPage.listPictures.bedroom'),
+    t('gallaryPage.listPictures.childrenRoom'),
+    t('gallaryPage.listPictures.office'),
+  ];
+
+  const getPicturesByPlaces = place => {
+
+    setLoading(true);
+    getPlacePictures(place)
+      .then(res => setPictByPlace(res))
+      .finally(() => setLoading(false));
+
+   ;
+   console.log(pictByPlace)
   };
 
   if ((!pictures, !inStock)) {
@@ -55,8 +94,6 @@ const ListPictures = memo(() => {
     );
   }
 
-  const places = [ 'Вітальня','Кухня','Спальня','Дитяча','Офіс/Кабінет' ]
-
   return (
     <>
       <NavLinkButton to={'/painting'}>
@@ -69,16 +106,20 @@ const ListPictures = memo(() => {
       )}
       <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
 
-      <div>
+      <WrapCheckboxes>
         <WrapPlaces>
           <NavPlaces>
             <PlacesInput id="menu-cb" type="checkbox"></PlacesInput>
-            <LabPlaces htmlFor="menu-cb">Фільтри</LabPlaces>
+            <LabPlaces htmlFor="menu-cb">
+              {t('gallaryPage.listPictures.filters')}
+            </LabPlaces>
             <PlacesContent>
               <UlPlaces>
                 {places.map(place => (
                   <LiPlaces key={place}>
-                    <TextPlace>{place}</TextPlace>
+                    <TextPlace onClick={()=>getPicturesByPlaces(place)}>
+                      {place}
+                    </TextPlace>
                   </LiPlaces>
                 ))}
               </UlPlaces>
@@ -94,7 +135,9 @@ const ListPictures = memo(() => {
               onChange={onChangeHandler}
               checked={selectedItem === 'Всі'}
             />
-            <span>{t('gallaryPage.listPictures.all')}</span>
+            <AllAndStockWords>
+              {t('gallaryPage.listPictures.all')}
+            </AllAndStockWords>
           </label>
           <label>
             <Input
@@ -103,10 +146,12 @@ const ListPictures = memo(() => {
               onChange={onChangeHandler}
               checked={selectedItem === 'В наявності'}
             />
-            <span>{t('gallaryPage.listPictures.inStock')}</span>
+            <AllAndStockWords>
+              {t('gallaryPage.listPictures.inStock')}
+            </AllAndStockWords>
           </label>
         </WrapCheckBlok>
-      </div>
+      </WrapCheckboxes>
       {selectedItem === 'Всі' ? (
         <Ul>
           {pictures &&

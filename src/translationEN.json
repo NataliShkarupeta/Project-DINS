@@ -81,7 +81,13 @@
     "listPictures": {
       "all": "All",
       "inStock": "In stock",
-      "ifNotAvailable": "Looks like all paintings are sold out!!! Click the `All` button and order the one you like the most!"
+      "ifNotAvailable": "Looks like all paintings are sold out!!! Click the `All` button and order the one you like the most!",
+      "filters": "Filters",
+      "livingRoom": "Living room",
+      "kitchen": "Kitchen",
+      "bedroom": "Bedroom",
+      "childrenRoom": "Children room",
+      "office": "Office"
     },
     "pictureInfo": {
       "size": "Size",

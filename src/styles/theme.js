@@ -44,7 +44,7 @@ export const theme = {
         background: '#000',
         primary: '#d6d0d9',
         secondary: '#d6d0d9',
-        muted: '',
+        muted: '#000',
       },
       light: {
         text: '#8c3b19',
@@ -105,7 +105,7 @@ export const themeSecond = {
         background: '#000',
         primary: '#d6d0d9',
         secondary: '#215711',
-        muted: '',
+        muted: '#6c7784',
       },
       light: {
         text: '#d6d0d9',

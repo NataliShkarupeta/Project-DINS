@@ -11,9 +11,13 @@ export const SectionBeforPictures = styled.section`
 `;
 export const AboutOrder=styled.div`
  color: ${p => p.theme.colors.text};
-  font-family: ${p => p.theme.fonts.forBlog};
+  /* font-family: ${p => p.theme.fonts.forBlog};
   font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.body}; */
+  font-family: ${p => p.theme.fonts.forName};
+  font-style: italic;
   font-weight: ${p => p.theme.fontWeights.body};
+  font-size: ${p => p.theme.fontSizes[3]}px;
   margin-bottom: ${p => p.theme.space[4]}px;
   margin-top: ${p => p.theme.space[4]}px;
   width: 700px;
@@ -230,26 +234,28 @@ export const Presentation = styled.div`
 
 export const Ul = styled.ul`
   display: flex;
-  gap: 5px;
+  gap: 25px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
 `;
 
 export const Li = styled.li`
-  /* width: 400px; */
-  width: calc(100% / 4);
+  width: 450px;
+  /* width: calc(100% / 4); */
   text-align: center;
   align-items: center;
-  margin-bottom: ${p => p.theme.space[7]}px;
+  margin-bottom: ${p => p.theme.space[6]}px;
   scale: 1;
   cursor: pointer;
 `;
 
 export const WrapPicture = styled.div`
+/* box-shadow: 0 0 10px 20px #fff; */
+  /* box-shadow: 0 0 83px 10px #24aafd; */
   :hover,
   :focus {
-    scale: 1.2;
+    scale: 1.1;
   }
   transition: ${p => p.theme.transitions};
 `;

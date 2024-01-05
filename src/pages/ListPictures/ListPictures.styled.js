@@ -1,6 +1,19 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const WrapCheckboxes = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: ${p => p.theme.space[4]}px;
+`;
+
+export const AllAndStockWords = styled.span`
+  font-family: ${p => p.theme.fonts.forName};
+  font-style: italic;
+  font-weight: ${p => p.theme.fontWeights.body};
+  font-size: ${p => p.theme.fontSizes[2]}px;
+`;
+
 export const WrapPlaces = styled.div`
   position: relative;
 `;
@@ -11,14 +24,18 @@ export const LiPlaces = styled.li`
   width: 90px;
   text-align: center;
   color: #6c7784;
-  font-size: 14px;
+
   line-height: 50px;
   perspective: 1000px;
   transition: color 0.3s;
   cursor: pointer;
+  font-family: ${p => p.theme.fonts.forName};
+  font-style: italic;
+  font-weight: ${p => p.theme.fontWeights.body};
+  font-size: ${p => p.theme.fontSizes[2]}px;
 
   &:hover {
-    color: #bc52f6;
+    color: black;
   }
 `;
 
@@ -32,15 +49,11 @@ export const UlPlaces = styled.ul`
   font-size: 0;
 `;
 
-// ${p=>p.theme.transitions}
-
 export const NavPlaces = styled.nav`
   overflow: hidden;
-  /* position: absolute; */
   left: 1.5%;
   top: 10px;
   width: auto;
-  /* width: 100px; */
   height: 50px;
   border-radius: 5px;
 `;
@@ -60,11 +73,11 @@ export const PlacesContent = styled.div`
   height: 100%;
   border-radius: ${p => p.theme.radii.normal};
   transition: width 1s cubic-bezier(0.49, -0.3, 0.68, 1.23);
-  background-color: ${p => p.theme.colors.modes.dark.primary};
+  background-color: ${p => p.theme.colors.modes.dark.text};
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
 
   ${PlacesInput}:checked ~ & {
-    transition: width 1.5s cubic-bezier(0.48, 0.43, 0.29, 1.3);
+    transition: width 1.5 cubic-bezier(0.48, 0.43, 0.29, 1.3);
     width: 500px;
     background-color: white;
   }
@@ -86,23 +99,27 @@ export const TextPlace = styled.span`
 export const LabPlaces = styled.label`
   z-index: 1;
   position: absolute;
-
-  /* right: 500px; */
-  top: 6px;
+  top: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  transform: translateX(0);
-  transition: transform 1s ${p=>p.theme.transitions};
+  transform: translateX(0) scale(1);
+
+  color: ${p => p.theme.colors.modes.dark.muted};
+  font-family: ${p => p.theme.fonts.forName};
+  font-style: italic;
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
 
   ${PlacesInput}:checked ~ & {
-    transform: translateX(500px);
-    transition: transform 1s ${p=>p.theme.transitions};
+    transform: translateX(500px) scale(0.85);
+    transition: transform 1s ${p => p.theme.transitions};
   }
 
   &:hover,
   &:focus {
-    color: #bc52f6;
+    color: purple;
   }
+  transition: transform 1s ${p => p.theme.transitions};
 `;
 
 //////////////////////////////////////////
