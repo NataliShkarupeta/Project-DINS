@@ -20,10 +20,11 @@ export const BlockButton = styled.div`
   gap: 2px;
   margin-left: 90%;
   border: ${p => p.theme.borders.normal};
-  border-color: black;
+  border-color: ${p => p.theme.buttons.primary.bordCol};
   :hover,
   :focus {
     border-color: ${p => p.theme.colors.muted};
+    background-color: ${p => p.theme.buttons.primary.bordCol};
   }
 `;
 
@@ -96,31 +97,41 @@ export const Text = styled.p`
 
 ////////////////////postInfo//////////////////////
 
+export const WrapForLine = styled.div`
+  /* margin-left: 50px;
+
+  border-left: 3px solid purple; */
+`;
+
 export const Wrap = styled.div`
+  width: 1000px;
   padding: ${p => p.theme.space[3]}px;
   margin: ${p => p.theme.space[3]}px;
   margin-bottom: ${p => p.theme.space[5]}px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  background-color: blue;
 
+  background-color: ${p => p.theme.colors.modes.light.background};
 `;
 
 export const TextPost = styled.p`
   margin-left: auto;
   margin-right: auto;
   width: 800px;
-  /* font-family: ${p => p.theme.fonts.forBlog};
-  font-style: italic; */
+  /* font-family: ${p => p.theme.fonts.forBlog}; */
+  font-style: italic;
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: 1.33;
+  color: grey;
 `;
 
 export const TitlePost = styled.h2`
   /* font-family: ${p => p.theme.fonts.forBlog}; */
-  /* font-style: italic; */
+  font-style: italic;
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.heading};
-  color: ${p => p.theme.colors.therd};
+  color: grey;
 `;

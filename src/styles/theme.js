@@ -29,7 +29,6 @@ export const theme = {
   colors: {
     text: '#000000',
     background: '#fff4e4',
-    
     therd: '#23033e',
     accent: '#d7e6da',
     primary: '#8c3b19',
@@ -78,6 +77,7 @@ export const theme = {
     primary: {
       color: 'white',
       bg: 'primary',
+      bordCol: '#d6d0d9',
     },
     secondary: {
       color: 'text',
@@ -164,6 +164,7 @@ export const themeSecond = {
     primary: {
       color: 'white',
       bg: 'primary',
+      bordCol: 'grey',
     },
     secondary: {
       color: 'text',

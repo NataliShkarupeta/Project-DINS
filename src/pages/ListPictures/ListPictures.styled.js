@@ -16,6 +16,7 @@ export const AllAndStockWords = styled.span`
 
 export const WrapPlaces = styled.div`
   position: relative;
+  
 `;
 
 export const LiPlaces = styled.li`
@@ -47,6 +48,7 @@ export const UlPlaces = styled.ul`
   padding-right: 30px;
   list-style-type: none;
   font-size: 0;
+  
 `;
 
 export const NavPlaces = styled.nav`
@@ -56,6 +58,7 @@ export const NavPlaces = styled.nav`
   width: auto;
   height: 50px;
   border-radius: 5px;
+  box-shadow: 23px 0px 37px 0px rgba(0, 0, 0, 0.23);
 `;
 
 export const PlacesInput = styled.input`
@@ -74,7 +77,6 @@ export const PlacesContent = styled.div`
   border-radius: ${p => p.theme.radii.normal};
   transition: width 1s cubic-bezier(0.49, -0.3, 0.68, 1.23);
   background-color: ${p => p.theme.colors.modes.dark.text};
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
 
   ${PlacesInput}:checked ~ & {
     transition: width 1.5 cubic-bezier(0.48, 0.43, 0.29, 1.3);
@@ -118,6 +120,7 @@ export const LabPlaces = styled.label`
   &:hover,
   &:focus {
     color: purple;
+   
   }
   transition: transform 1s ${p => p.theme.transitions};
 `;

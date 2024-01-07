@@ -32,22 +32,13 @@ export const PhotoWrap = styled.div`
   border-color: ${p => p.theme.colors.secondary};
   /* background-color: ${p => p.theme.colors.secondary}; */
   background-image: url('${img}');
-
-  /* background-size: fit-content; */
-  /* background-size: contain; */
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
 export const WrapName = styled.div`
   margin-top: ${p => p.theme.space[5]}px;
-  /* max-width: 40%; */
   position: sticky;
-  /* position: sticky; */
-  /* top: 0;
-  height: 100vh; */
-  /* display: flex; */
-  /* align-items: center;  */
 `;
 
 export const Article = styled.article`

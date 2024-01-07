@@ -13,6 +13,7 @@ import {
   TextPost,
   TitlePost,
   Wrap,
+  WrapForLine,
   WrapForTooltip,
 } from '../Blog.styled';
 import { Tooltip } from 'react-tooltip';
@@ -31,8 +32,6 @@ export const PostInfo = () => {
   const location = useLocation();
   const leng = useFeatureStore(state => state.leng);
 
-
-  console.log('postId', postId);
   useEffect(() => {
     window.scrollTo(0, 120);
   }, []);
@@ -102,11 +101,14 @@ export const PostInfo = () => {
           postForChange={post}
         />
       )}
-      <Wrap>
-        <TitlePost>{leng === 'ua' ? title : titleEn}</TitlePost>
-        <TextPost> {leng === 'ua' ? descriptions : descriptionsEn}</TextPost>
-      </Wrap>
-      <BlockButton style={{marginRight:'16px'}}>
+      <WrapForLine>
+        <Wrap>
+          <TitlePost>{leng === 'ua' ? title : titleEn}</TitlePost>
+          <TextPost> {leng === 'ua' ? descriptions : descriptionsEn}</TextPost>
+        </Wrap>
+      </WrapForLine>
+
+      <BlockButton style={{ marginRight: '16px' }}>
         <WrapForTooltip>
           <p
             data-tooltip-id="my-tooltip"

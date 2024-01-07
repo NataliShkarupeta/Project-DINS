@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export const URLPIC = 'http://localhost:3001/pictures';
 
 export const getAllPictures = async () => {
@@ -47,9 +46,9 @@ export const getInStockPictures = async () => {
     return error.massage;
   }
 };
-export const getPlacePictures = async(spot) => {
+export const getPlacePictures = async spot => {
   const req = {
-    spot
+    spot,
   };
 
   try {
@@ -62,7 +61,7 @@ export const getPlacePictures = async(spot) => {
     const sortPictures = [...sortDate].sort(
       (a, b) => b.createdAt - a.createdAt
     );
-    console.log(sortPictures);
+    // console.log(sortPictures)
     return sortPictures;
   } catch (error) {
     return error.massage;

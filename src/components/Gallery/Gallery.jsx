@@ -38,8 +38,15 @@ const Gallary = () => {
   }, [setName]);
 
   const styles = {
-    padding: '2px 10px',
-    marginBottom:'32px'
+    // padding: '2px 10px',
+    // marginBottom:'32px'
+  
+    width: '120px',
+    padding: '2px 15px',
+    backgroundColor: 'grey',
+    color: 'white',
+    fontSize: '18px',
+  
   };
 
   return (

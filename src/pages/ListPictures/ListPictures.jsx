@@ -11,11 +11,7 @@ import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { BASIC_URL } from 'service/basicUrl';
-import {
-  getAllPictures,
-  getInStockPictures,
-  getPlacePictures,
-} from 'service/gallertService';
+import { getAllPictures, getPlacePictures } from 'service/gallertService';
 import {
   AllAndStockWords,
   Input,
@@ -36,7 +32,6 @@ import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
 
 const ListPictures = memo(() => {
   const [pictures, setPicures] = useState({});
-  const [pictByPlace, setPictByPlace] = useState({});
   const [inStock, setInStock] = useState({});
   const [selectedItem, setSelectedItem] = useState('Всі');
   const [loading, setLoading] = useState(false);
@@ -49,13 +44,11 @@ const ListPictures = memo(() => {
       .then(res => setPicures(res))
       .finally(() => setLoading(false));
   }, []);
-  useEffect(() => {
-    setLoading(true);
-    getInStockPictures()
-      .then(res => setInStock(res))
-      .finally(() => setLoading(false));
-     
-  }, []);
+
+  const onChangeHandlerInStock = event => {
+    setSelectedItem(event.target.name);
+    findInStockPict();
+  };
 
   const onChangeHandler = event => {
     setSelectedItem(event.target.name);
@@ -69,15 +62,30 @@ const ListPictures = memo(() => {
     t('gallaryPage.listPictures.office'),
   ];
 
-  const getPicturesByPlaces = place => {
+  const findInStockPict = () => {
+    let inStockPict = Object.values(pictures).filter(
+      item => item.inStock === 'так'
+    );
+    setInStock(inStockPict);
+  };
 
+  const getPicturesByPlaces = place => {
+    setPicures({});
+    setSelectedItem('Всі');
     setLoading(true);
     getPlacePictures(place)
-      .then(res => setPictByPlace(res))
+      .then(res => setPicures(res))
       .finally(() => setLoading(false));
+  };
 
-   ;
-   console.log(pictByPlace)
+  const getPictures = event => {
+    if (event.target.checked === false) {
+      setSelectedItem('Всі');
+      setLoading(true);
+      getAllPictures()
+        .then(res => setPicures(res))
+        .finally(() => setLoading(false));
+    }
   };
 
   if ((!pictures, !inStock)) {
@@ -99,17 +107,22 @@ const ListPictures = memo(() => {
       <NavLinkButton to={'/painting'}>
         <CommonButton text={t('button.back')} />
       </NavLinkButton>
+
+      <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
       {loading && (
         <WrapDots>
           <ThreeDots />
         </WrapDots>
       )}
-      <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
 
       <WrapCheckboxes>
         <WrapPlaces>
           <NavPlaces>
-            <PlacesInput id="menu-cb" type="checkbox"></PlacesInput>
+            <PlacesInput
+              id="menu-cb"
+              type="checkbox"
+              onChange={getPictures}
+            ></PlacesInput>
             <LabPlaces htmlFor="menu-cb">
               {t('gallaryPage.listPictures.filters')}
             </LabPlaces>
@@ -117,7 +130,9 @@ const ListPictures = memo(() => {
               <UlPlaces>
                 {places.map(place => (
                   <LiPlaces key={place}>
-                    <TextPlace onClick={()=>getPicturesByPlaces(place)}>
+                    <TextPlace
+                      onClick={() => getPicturesByPlaces(place.toLowerCase())}
+                    >
                       {place}
                     </TextPlace>
                   </LiPlaces>
@@ -143,7 +158,7 @@ const ListPictures = memo(() => {
             <Input
               name="В наявності"
               type="checkbox"
-              onChange={onChangeHandler}
+              onChange={onChangeHandlerInStock}
               checked={selectedItem === 'В наявності'}
             />
             <AllAndStockWords>
@@ -152,6 +167,11 @@ const ListPictures = memo(() => {
           </label>
         </WrapCheckBlok>
       </WrapCheckboxes>
+      {selectedItem === 'Всі' && pictures.length === 0 && (
+        <DefaultComponent>
+          <p>{t('gallaryPage.listPictures.notForPlace')}</p>
+        </DefaultComponent>
+      )}
       {selectedItem === 'Всі' ? (
         <Ul>
           {pictures &&

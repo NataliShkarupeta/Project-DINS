@@ -40,14 +40,10 @@ const BannerComp = ({refToPict}) => {
   const [t] = useTranslation();
   // const [play, setPlay] = useState(false);
 
-
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 250);
   }, []);
-
-
-
   // useEffect(() => {
   //   setTimeout(() => {
   //     setPlay(true);
