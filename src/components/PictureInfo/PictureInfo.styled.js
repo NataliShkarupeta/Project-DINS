@@ -29,28 +29,26 @@ export const H2 = styled.h2`
   font-style: italic;
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
-  color: ${p => p.theme.colors.therd};
-  /* margin-bottom: ${p => p.theme.space[6]}px; */
+  color: ${p => p.theme.colors.text};
 `;
 
 export const Span = styled.span`
   display: block;
   margin-bottom: ${p => p.theme.space[4]}px;
-  color: ${p => p.theme.colors.therd};
-
-  font-family: ${p => p.theme.fonts.forBlog};
-  font-style: italic;
+  color: ${p => p.theme.colors.text};
   font-size: ${p => p.theme.fontSizes[3]}px;
-  font-weight: ${p => p.theme.fontWeights.middle};
-  /* line-height: 1.33; */
+  font-style: italic;
+  font-weight: ${p => p.theme.fontWeights.body}; 
 `;
 
 export const WrapInfoFromMe = styled.div`
-  width: 45%;
+  /* width: 45%; */
   /* height: 350px; */
   overflow: hidden;
-  /* text-align: right; */
+  text-align: right;
   color: ${p => p.theme.colors.therd};
+  padding-right: ${p => p.theme.space[5]}px;
+
 
   font-family: ${p => p.theme.fonts.monospace};
 
@@ -71,13 +69,14 @@ export const WrapImageAndDateCreate = styled.div`
 export const WrapImage = styled.div`
   position: relative;
   margin-top: ${p => p.theme.space[4]}px;
-  width: 450px;
+  /* width: 450px; */
+  width: 70%;
   height: 600px;
 `;
 
 export const Img = styled.img`
   position: absolute;
-  width: 370px;
+  width: 450px;
 `;
 
 ////////////// descriptionBlock//////////
@@ -89,7 +88,9 @@ export const WrapDescription = styled.div`
   justify-content: space-between;
   width: 45%;
   margin-top: ${p => p.theme.space[3]}px;
+  margin-bottom: ${p => p.theme.space[3]}px;
   overflow-y: scroll;
+   
   
 `;
 

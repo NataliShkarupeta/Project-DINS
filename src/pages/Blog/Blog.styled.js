@@ -126,6 +126,7 @@ export const TextPost = styled.p`
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: 1.33;
   color: grey;
+  /* color: #585454; */
 `;
 
 export const TitlePost = styled.h2`
@@ -134,4 +135,5 @@ export const TitlePost = styled.h2`
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.heading};
   color: grey;
+  color: #585454;
 `;

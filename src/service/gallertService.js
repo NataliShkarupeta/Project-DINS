@@ -15,6 +15,7 @@ export const getAllPictures = async () => {
     );
 
     return sortPictures;
+    // return data.data.result;
   } catch (error) {
     return error.massage;
   }

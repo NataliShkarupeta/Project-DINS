@@ -51,6 +51,8 @@ export const PostInfo = () => {
     jastifyContext: 'center',
   };
 
+
+
   if (!post) {
     return (
       <>
@@ -70,6 +72,7 @@ export const PostInfo = () => {
     );
   }
   const { title, descriptions, titleEn, descriptionsEn } = post;
+  console.log('canDelet', canDelet);
   return (
     <>
       <NavLinkButton to={location.state?.from ?? '/'}>
@@ -82,10 +85,10 @@ export const PostInfo = () => {
       )}
       {canDelet && (
         <ModalForDeletePost
-          text={t('pageBlog.modal.attention')}
-          textButton={<RxCheck />}
+          text={t('pageBlog.modal.attentionDelete')}
+          textButton={<RxCheck size={'20px'} color="grey" />}
           descriptions={t('pageBlog.modal.key')}
-          textButton1={<RxCross2 />}
+          textButton1={<RxCross2 size={'20px'} color="grey" />}
           close={setCanDelete}
           postForDelete={post}
           closeAskModal={setCanDelete}
@@ -95,8 +98,8 @@ export const PostInfo = () => {
         <Modal
           text={t('pageBlog.modal.attention')}
           descriptions={t('pageBlog.modal.key')}
-          textButton={<RxCheck />}
-          textButton1={<RxCross2 />}
+          textButton={<RxCheck size={'20px'} color="grey" />}
+          textButton1={<RxCross2 size={'20px'} color="grey" />}
           close={setShowModal}
           postForChange={post}
         />

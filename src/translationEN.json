@@ -4,6 +4,7 @@
   "pageBlog": {
     "modal": {
       "attention": "Attention! This action is only available to the author.",
+      "attentionDelete": "Attention! This action is only available to the author (delete post).",
       "key": "Enter key"
     }
   },

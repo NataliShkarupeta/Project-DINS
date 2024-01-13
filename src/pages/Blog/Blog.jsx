@@ -34,7 +34,6 @@ const BlogPage = memo(() => {
   const [t] = useTranslation();
   const location = useLocation();
   const leng = useFeatureStore(state => state.leng);
-  console.log('posts', posts);
 
   useEffect(() => {
     setLoading(true);

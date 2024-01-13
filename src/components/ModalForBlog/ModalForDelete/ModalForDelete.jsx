@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Overlay, ModalContainer, Title, Text } from './ModalForDelete.styled';
+import { useEffect, useState } from 'react';
+import { Overlay, Title, Text } from './ModalForDelete.styled';
 import {
   Button,
+  ModalContainer,
   WrapButtonsModal,
 } from 'components/ModalForBlog/modalChangePost/Modal.styled';
 import { deletePost } from 'service/blogService';
@@ -17,15 +18,29 @@ export const ModalForDeletePost = ({
 }) => {
   const [changepost, setchangePost] = useState(false);
 
-  const onClose = evt => {
-    if (evt.code === 'Escape' || evt.currentTarget === evt.target) {
+  useEffect(() => {
+    const closeEsc = e => {
+     
+      if (e.keyCode === 27) {
+        close(false);
+      }
+    };
+    window.addEventListener('keydown', closeEsc);
+    return () => window.removeEventListener('keydown', closeEsc);
+  }, [close]);
+
+  const onClose = e => {
+    if ( e.currentTarget === e.target) {
       close(false);
     }
   };
 
   const handelSubmit = e => {
+
     e.preventDefault();
-    const formData = new FormData(e.target);
+
+    const form = document.querySelector('#formElement');
+    const formData = new FormData(form);
     const secret = formData.get('text');
 
     if (secret.toUpperCase() === 'MOYAVERA25') {
@@ -33,7 +48,7 @@ export const ModalForDeletePost = ({
     } else {
       alert('secret key is not correct');
     }
-    e.target.reset();
+    form.reset();
   };
 
   const deletePostById = e => {
@@ -49,12 +64,16 @@ export const ModalForDeletePost = ({
         <Overlay onClick={onClose}>
           <ModalContainer>
             <Title>{text}</Title>
-            <form onSubmit={handelSubmit}>
+            <form id="formElement" onSubmit={handelSubmit}>
               <Text>{descriptions}</Text>
               <input type="password" name="text" required />
               <WrapButtonsModal>
-                <Button type="submit">{textButton}</Button>
-                <Button onClick={onClose}>{textButton1}</Button>
+                <Button type="submit" onClick={handelSubmit}>
+                  {textButton}
+                </Button>
+                <Button type="button" onClick={() => close(false)}>
+                  {textButton1}
+                </Button>
               </WrapButtonsModal>
             </form>
           </ModalContainer>

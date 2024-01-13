@@ -195,7 +195,7 @@ const SelectOrderOrBuy = ({ setSelectedItem, selectedItem, inStock }) => {
 
 const IfOrder = ({ size }) => {
   const [t] = useTranslation();
-  const checkList = ['30*40', '40*40', '40*50', '40*60', '50*70', '100*110'];
+  const checkList = ['40*40', '40*50', '40*60', '50*70','80*70', '100*110'];
   return (
     <div style={{ width: '50%' }}>
       <Label>

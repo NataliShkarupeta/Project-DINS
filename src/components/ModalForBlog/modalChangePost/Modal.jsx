@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Overlay,
   ModalContainer,
@@ -20,16 +20,27 @@ export const Modal = ({
   postForChange,
 }) => {
   const [changepost, setchangePost] = useState(false);
+  useEffect(() => {
+    const closeEsc = e => {
+      if (e.keyCode === 27) {
+        close(false);
+      }
+    };
+    window.addEventListener('keydown', closeEsc);
+    return () => window.removeEventListener('keydown', closeEsc);
+  }, [close]);
 
   const onClose = evt => {
-    if (evt.code === 'Escape' || evt.currentTarget === evt.target) {
+    if ( evt.currentTarget === evt.target) {
       close(false);
     }
   };
 
   const handelSubmit = e => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+
+     const form = document.querySelector('#formElement');
+    const formData = new FormData(form);
     const secret = formData.get('text');
 
     if (secret.toUpperCase() === 'MOYAVERA25') {
@@ -37,7 +48,7 @@ export const Modal = ({
     } else {
       alert('secret key is not correct');
     }
-    e.target.reset();
+    form.reset();
   };
   
   const submitChange = e => {
@@ -54,12 +65,16 @@ export const Modal = ({
         <Overlay onClick={onClose}>
           <ModalContainer>
             <Title>{text}</Title>
-            <form onSubmit={handelSubmit}>
+            <form id="formElement" onSubmit={handelSubmit}>
               <Text>{descriptions}</Text>
               <input type="password" name="text" required />
               <WrapButtonsModal>
-                <Button type="submit">{textButton}</Button>
-                <Button onClick={onClose}>{textButton1}</Button>
+                <Button type="submit" onClick={handelSubmit}>
+                  {textButton}
+                </Button>
+                <Button type="button" onClick={() => close(false)}>
+                  {textButton1}
+                </Button>
               </WrapButtonsModal>
             </form>
           </ModalContainer>

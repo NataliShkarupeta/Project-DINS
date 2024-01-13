@@ -13,14 +13,7 @@ export const Overlay = styled.div`
   z-index: 1200;
 `;
 
-export const ModalContainer = styled.div`
-  max-width: 320px;
-  width: 320px;
-  height: 280px;
-  background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
-`;
+
 export const Button = styled.button`
   padding: 10px;
 `;
@@ -28,7 +21,16 @@ export const Button = styled.button`
 export const Title = styled.h3`
   font-size: 30px;
   margin-bottom: 20px;
+
+  text-align: center;
+  font-family: ${p => p.theme.fonts.monospace};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.middle};
 `;
 export const Text = styled.p`
-  font-size: 24px;
+    text-align: center;
+  font-family: ${p => p.theme.fonts.forName};
+  font-style: italic;
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-weight: ${p => p.theme.fontWeights.body};
 `;

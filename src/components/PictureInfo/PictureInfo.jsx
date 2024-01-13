@@ -124,7 +124,7 @@ const InfoBlock = ({ isit, size }) => {
 const ImageBlock = ({ img, title, date }) => {
   const [t] = useTranslation();
   let imG = `${BASIC_URL}/${img}`;
-  console.log(imG);
+ 
   return (
     <WrapImageAndDateCreate>
       <WrapImage

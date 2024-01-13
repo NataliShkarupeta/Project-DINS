@@ -80,8 +80,8 @@ export const BgFourth = styled.div`
 `;
 export const P = styled.p`
   text-align: center;
-  padding-top: ${p => p.theme.space[4]}px;
-  padding-bottom: ${p => p.theme.space[4]}px;
+  padding-top: ${p => p.theme.space[3]}px;
+  padding-bottom: ${p => p.theme.space[3]}px;
   margin-left: auto;
   margin-right: auto;
   width: 700px;
