@@ -1,9 +1,10 @@
 export const theme = {
   media: {
-    extraLarge: '(max-width: 1140px)',
-    large: '(max-width: 960px)',
-    medium: '(max-width: 720px)',
-    small: '(max-width: 540px)',
+    xxl: '(min-width: 1141px)',
+    xl: 'min-width: 961px',
+    l: '(min-width: 721px)',
+    m: '(min-width: 541px)',
+    s: '(max-width: 540px)',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 388, 512, 634],
   fonts: {
@@ -88,6 +89,13 @@ export const theme = {
 };
 
 export const themeSecond = {
+  media: {
+    xxl: '(min-width: 1141px)',
+    xl: 'min-width: 961px',
+    l: '(min-width: 721px)',
+    m: '(min-width: 541px)',
+    s: '(max-width: 540px)',
+  },
   colors: {
     text: '#2c9241',
     background: 'black',
@@ -113,12 +121,7 @@ export const themeSecond = {
       },
     },
   },
-  media: {
-    extraLarge: '(max-width: 1140px)',
-    large: '(max-width: 960px)',
-    medium: '(max-width: 720px)',
-    small: '(max-width: 540px)',
-  },
+
   space: [0, 4, 8, 16, 32, 64, 128, 256, 388, 512, 634],
   fonts: {
     body: 'Raleway, sans-serif',

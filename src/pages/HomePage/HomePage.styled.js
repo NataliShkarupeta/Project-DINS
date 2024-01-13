@@ -26,19 +26,21 @@ export const NameAndPhoto = styled.div`
 export const PhotoWrap = styled.div`
   width: 500px;
   height: 700px;
-  /* padding: ${p => p.theme.space[4]}px; */
-
-  /* border: 0px solid; */
   border-color: ${p => p.theme.colors.secondary};
-  /* background-color: ${p => p.theme.colors.secondary}; */
   background-image: url('${img}');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  @media screen and (${p => p.theme.media.s}) {
+    width: 100%;
+    height: 500px;
+  }
 `;
 
 export const WrapName = styled.div`
   margin-top: ${p => p.theme.space[5]}px;
   position: sticky;
+
 `;
 
 export const Article = styled.article`
@@ -82,6 +84,9 @@ export const Name = styled.span`
   color: ${p => p.theme.colors.modes.dark.primary};
   position: sticky;
   top: 0;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
 `;
 
 export const WrapLinks = styled.div``;
@@ -93,6 +98,7 @@ export const Ul = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 35px;
+ 
 `;
 export const Li = styled.li`
   font-size: ${p => p.theme.fontSizes[2]}px;
@@ -102,8 +108,8 @@ export const Li = styled.li`
   :hover,
   :focus {
     color: ${p => p.theme.colors.secondary};
-
   }
 
   transition: 0.3s linear;
+ 
 `;

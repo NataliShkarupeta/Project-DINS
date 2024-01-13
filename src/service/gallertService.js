@@ -62,7 +62,7 @@ export const getPlacePictures = async spot => {
     const sortPictures = [...sortDate].sort(
       (a, b) => b.createdAt - a.createdAt
     );
-    // console.log(sortPictures)
+    console.log(sortPictures)
     return sortPictures;
   } catch (error) {
     return error.massage;

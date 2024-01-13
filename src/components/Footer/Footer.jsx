@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { DateTime } from 'luxon';
 import { ImLinkedin2, ImTelegram, ImInstagram } from 'react-icons/im';
 import { motion } from 'framer-motion';
+import { useMedia } from 'react-use';
 
 const getGreetingTime = (d = DateTime.now()) => {
   const split_afternoon = 12; // 24hr time to split the afternoon
@@ -28,12 +29,14 @@ const getGreetingTime = (d = DateTime.now()) => {
 
 export const Footer = () => {
   const [t] = useTranslation();
+  const isMobile = useMedia('(max-width: 541px)');
 
   return (
     <FooterContainer>
+      {!isMobile &&
       <WrapDate>
         {t('footer.date', { date: new Date(), context: getGreetingTime() })}
-      </WrapDate>
+      </WrapDate>}
       <WrapConnect>
         <TextConnect>{t('footer.connect_me')}</TextConnect>
         <Ul>

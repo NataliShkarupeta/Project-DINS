@@ -25,6 +25,9 @@ export const WrapDate = styled.div`
 export const TextConnect = styled.p`
   text-decoration: underline;
   font-size:18px;
+    @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
 `;
 const stylesBut = css`
   border: ${p => p.theme.borders.none};
@@ -39,6 +42,10 @@ const stylesBut = css`
   :focus {
     transform: scale(1.2);
     transition: 0.3s linear;
+  }
+  @media screen and (${p => p.theme.media.s}) {
+    /* width: 30px;
+    height: 30px; */
   }
 `;
 

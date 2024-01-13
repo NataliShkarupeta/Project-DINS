@@ -57,3 +57,42 @@ export const WrapMain = styled.main`
   padding: 20px 0 0;
   margin-bottom: ${p => p.theme.space[5]}px;
 `;
+/////////////// LayoutMobile////////////
+export const WrapLogo= styled.div`
+cursor: pointer;
+width: 50px;
+height: 50px;
+`
+export const HeaderMobile = styled.header`
+  padding: 10px 16px;
+  display: flex;
+
+  justify-content: space-between;
+
+  border-bottom: ${p => p.theme.borders.normal};
+  box-shadow: 0px 8px 21px rgba(61, 29, 29, 0.25);
+`;
+
+export const WrapNameNobile = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: ${p => p.theme.fontSizes[5]}px;
+  line-height: ${p => p.theme.lineHeights.heading};
+  font-family: ${p => p.theme.fonts.forBlog};
+  font-weight: ${p => p.theme.fontWeights.body};
+  margin-top: ${p => p.theme.space[2]}px;
+`;
+export const TextMobile = styled.p`
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-family: ${p => p.theme.fonts.forBlog};
+  font-style: italic;
+  font-weight: ${p => p.theme.fontWeights.body};
+`;
+
+export const WrapNameText= styled.div`
+display: flex;
+flex-direction: column;
+gap: 10px;
+align-items: center;
+`

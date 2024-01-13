@@ -109,11 +109,6 @@ const ListPictures = memo(() => {
       </NavLinkButton>
 
       <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
-      {loading && (
-        <WrapDots>
-          <ThreeDots />
-        </WrapDots>
-      )}
 
       <WrapCheckboxes>
         <WrapPlaces>
@@ -167,6 +162,12 @@ const ListPictures = memo(() => {
           </label>
         </WrapCheckBlok>
       </WrapCheckboxes>
+
+      {loading && (
+        <WrapDots>
+          <ThreeDots />
+        </WrapDots>
+      )}
       {selectedItem === 'Всі' && pictures.length === 0 && (
         <DefaultComponent>
           <p>{t('gallaryPage.listPictures.notForPlace')}</p>
