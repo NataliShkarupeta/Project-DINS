@@ -35,6 +35,11 @@ const BlogPage = memo(() => {
   const location = useLocation();
   const leng = useFeatureStore(state => state.leng);
 
+  const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
+  useEffect(() => {
+    setSelectedMenu(false);
+  }, [setSelectedMenu]);
+
   useEffect(() => {
     setLoading(true);
     getAllPosts()

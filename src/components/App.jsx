@@ -11,6 +11,7 @@ import { PictureInfo } from './PictureInfo/PictureInfo';
 import { PostInfo } from 'pages/Blog/PostInfo/PostInfo';
 import { useMedia } from 'react-use';
 import { LayoutMobile } from './Layout/LayoutMobile';
+import { HomePageMobile } from 'pages/HomePage/HomePageMobile';
 // import { useFeatureStore } from './Features/Features/store';
 // import { ListPictures } from 'pages/ListPictures/ListPictures';
 // import { useFeatureStore } from './Features/Features/store';
@@ -67,6 +68,7 @@ export const App = () => {
             <Route
               index
               element={
+                isMobile? <HomePageMobile />:
                 <AnimatePresence>
                   {!more ? (
                     <HomePage setMore={setMore} />
@@ -82,7 +84,8 @@ export const App = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              }
+              
+            }
             />
             <Route path="developer" element={<FrontEndPage />}></Route>
             <Route path="painting" element={<PaintingPage />}>

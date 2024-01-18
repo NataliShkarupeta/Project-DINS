@@ -99,24 +99,18 @@ export const WrapNameText = styled.div`
   align-items: center;
 `;
 
-export const MenuBody = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(14, 174, 87, 0.85) 0%,
-    rgba(12, 116, 117, 0.85) 90%
-  );
-  background-image: url('${img}');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: translateX(-100%);
-  transition: ${p => p.theme.transitions};
-  background-size: cover;
-  overflow: hidden;
-  /* &:after {
+export  const MenuBody = styled.div`
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+ 
+   background-image: url('${img}');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   overflow: hidden;
+   /* &:after {
     content: '';
     position: absolute;
     left: 0;
@@ -125,18 +119,16 @@ export const MenuBody = styled.div`
     bottom: 0;
     background: rgba(0, 0, 0, 0.35);
   } */
-  z-index: 1;
-`;
+   z-index: 1;
+ `;
 
-export const Nav = styled.nav`
-  position: relative;
-  height: 100%;
+ export const Nav = styled.nav`
+   position: relative;
+   height: 100%;
 
-  background: rgba(0, 0, 0, 0.8);
-  transform: translateX(-100%);
-  transition: ${p => p.theme.transitions};
-  z-index: 4;
-`;
+   background: rgba(0, 0, 0, 0.8);
+   z-index: 4;
+ `;
 
 export const UlMobile = styled.ul`
   display: flex;
@@ -160,7 +152,7 @@ export const MenuBtn = styled.button`
 background: none;
 border: none;
 cursor: pointer;
-  transition: ${p => p.theme.transitions};
+  /* transition: ${p => p.theme.transitions}; */
 `;
 
 const lines = css`
@@ -168,24 +160,24 @@ const lines = css`
   background: ${p => p.theme.colors.text};
   height: 2px;
   margin: 3px 0;
-  transition: all 250ms cubic-bezier(0.9, 0, 0.33, 1);
+  /* transition: all 250ms cubic-bezier(0.9, 0, 0.33, 1); */
   margin-bottom: 5px;
 `;
 
 export const MenuL1 = styled.div`
   ${lines}
   width: 30px;
-  transform-origin: left;
+  /* transform-origin: left; */
 `;
 export const MenuL2 = styled.div`
   ${lines}
   width: 30px;
-  transform-origin: center;
+  /* transform-origin: center; */
 `;
 export const MenuL3 = styled.div`
   ${lines}
   width: 30px;
-  transform-origin: right;
+  /* transform-origin: right; */
 `;
 
 export const SubMenuBtn = styled.button`
@@ -198,7 +190,7 @@ export const SubMenuBtn = styled.button`
   margin: 12px 10px;
   border-radius: 5px;
   transform: translateX(-100%);
-  transition: all 250ms cubic-bezier(0.8, 0, 0.33, 1.25);
+  /* transition: all 250ms cubic-bezier(0.8, 0, 0.33, 1.25); */
   cursor: pointer;
   z-index: 8;
 `;

@@ -32,6 +32,8 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { SiApachecassandra } from 'react-icons/si';
 import { GiDeadHead, GiGems, GiTwoShadows, GiBullseye } from 'react-icons/gi';
 import { useTranslation } from 'react-i18next';
+import { useFeatureStore } from 'components/Features/Features/store';
+import { useEffectOnce } from 'react-use';
 
 const styles = {
   position: 'absolute',
@@ -58,6 +60,11 @@ const BeautyPage = () => {
       positionSet(position - 1);
     }
   };
+
+  const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
+  useEffectOnce(() => {
+    setSelectedMenu(false);
+  }, [setSelectedMenu]);
 
   return (
     <>

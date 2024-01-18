@@ -24,4 +24,7 @@ export const useFeatureStore = create(set => ({
 
   name: null,
   setName: feature => set({ name: feature }),
+
+  selectedMenu: false,
+  setSelectedMenu: feature => set({ selectedMenu: feature }),
 }));
