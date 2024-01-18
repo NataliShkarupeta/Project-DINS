@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import img from '../../images/author/IMG_0043.jpg';
 
 export const WrapName = styled.div`
   display: flex;
@@ -55,17 +56,18 @@ export const Background = styled.div`
 
 export const WrapMain = styled.main`
   padding: 20px 0 0;
-  margin-bottom: ${p => p.theme.space[5]}px;
+  margin-bottom: ${p => p.theme.space[4]}px;
 `;
 /////////////// LayoutMobile////////////
-export const WrapLogo= styled.div`
-cursor: pointer;
-width: 50px;
-height: 50px;
-`
+export const WrapLogo = styled.div`
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+`;
 export const HeaderMobile = styled.header`
   padding: 10px 16px;
   display: flex;
+  align-items: center;
 
   justify-content: space-between;
 
@@ -90,9 +92,133 @@ export const TextMobile = styled.p`
   font-weight: ${p => p.theme.fontWeights.body};
 `;
 
-export const WrapNameText= styled.div`
-display: flex;
-flex-direction: column;
-gap: 10px;
-align-items: center;
-`
+export const WrapNameText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+`;
+
+export const MenuBody = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(14, 174, 87, 0.85) 0%,
+    rgba(12, 116, 117, 0.85) 90%
+  );
+  background-image: url('${img}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateX(-100%);
+  transition: ${p => p.theme.transitions};
+  background-size: cover;
+  overflow: hidden;
+  /* &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+  } */
+  z-index: 1;
+`;
+
+export const Nav = styled.nav`
+  position: relative;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateX(-100%);
+  transition: ${p => p.theme.transitions};
+  z-index: 4;
+`;
+
+export const UlMobile = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-content: flex-start;
+  padding: 60px 50px;
+`;
+
+export const LiMobile = styled.li`
+  color: ${p => p.theme.colors.secondary};
+
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+`;
+
+export const MenuBtn = styled.button`
+background: none;
+border: none;
+cursor: pointer;
+  transition: ${p => p.theme.transitions};
+`;
+
+const lines = css`
+  width: 30px;
+  background: ${p => p.theme.colors.text};
+  height: 2px;
+  margin: 3px 0;
+  transition: all 250ms cubic-bezier(0.9, 0, 0.33, 1);
+  margin-bottom: 5px;
+`;
+
+export const MenuL1 = styled.div`
+  ${lines}
+  width: 30px;
+  transform-origin: left;
+`;
+export const MenuL2 = styled.div`
+  ${lines}
+  width: 30px;
+  transform-origin: center;
+`;
+export const MenuL3 = styled.div`
+  ${lines}
+  width: 30px;
+  transform-origin: right;
+`;
+
+export const SubMenuBtn = styled.button`
+  background: none;
+  border: none;
+  position: absolute;
+
+  top: 3%;
+  right: -5%;
+  margin: 12px 10px;
+  border-radius: 5px;
+  transform: translateX(-100%);
+  transition: all 250ms cubic-bezier(0.8, 0, 0.33, 1.25);
+  cursor: pointer;
+  z-index: 8;
+`;
+
+const linesM = css`
+  width: 30px;
+  height: 2px;
+  background: ${p => p.theme.colors.secondary};
+  display: flex;
+  flex-direction: column;
+`;
+export const SubL1 = styled.div`
+  ${linesM}
+
+  transform-origin: left;
+  transform: rotate(-35deg) translate(-5px, 8px);
+`;
+export const SubL2 = styled.div`
+  ${linesM}
+
+  transform-origin: left;
+  transform: rotate(35deg) translate(-5px, -8px);
+`;

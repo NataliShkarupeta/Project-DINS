@@ -9,6 +9,8 @@ import { LearnMore } from './LearnMore/LearnMore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PictureInfo } from './PictureInfo/PictureInfo';
 import { PostInfo } from 'pages/Blog/PostInfo/PostInfo';
+import { useMedia } from 'react-use';
+import { LayoutMobile } from './Layout/LayoutMobile';
 // import { useFeatureStore } from './Features/Features/store';
 // import { ListPictures } from 'pages/ListPictures/ListPictures';
 // import { useFeatureStore } from './Features/Features/store';
@@ -34,6 +36,7 @@ export const App = () => {
       : false
   );
   const [more, setMore] = useState(false);
+  const isMobile = useMedia('(max-width: 541px)');
 
   // const leng = useFeatureStore(state => state.leng);
   //
@@ -51,7 +54,16 @@ export const App = () => {
           <meta name="description" content="Natali Shkarupera" />
         </Helmet>
         <Routes>
-          <Route path="/" element={<Layout setMainThema={setMainThema} />}>
+          <Route
+            path="/"
+            element={
+              isMobile ? (
+                <LayoutMobile setMainThema={setMainThema} />
+              ) : (
+                <Layout setMainThema={setMainThema} />
+              )
+            }
+          >
             <Route
               index
               element={

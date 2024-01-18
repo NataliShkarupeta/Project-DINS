@@ -17,6 +17,14 @@
     "nameBeauty": ""
   },
 
+  "mobile": {
+    "layout": {
+      "menu": "Menu",
+      "text": "welcome to my site"
+    },
+    "": ""
+  },
+
   "firstName": "Natali",
   "secondName": "Shkarupeta",
   "footer": {
