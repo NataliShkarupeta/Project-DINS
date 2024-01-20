@@ -45,6 +45,7 @@ export const theme = {
         primary: '#d6d0d9',
         secondary: '#d6d0d9',
         muted: '#000',
+        btEmail: '#d6d0d9',
       },
       light: {
         text: '#8c3b19',
@@ -67,13 +68,6 @@ export const theme = {
   zIndices: [0, 2, 3],
   sizes: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 
-  text: {
-    heading: {
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
-  },
   buttons: {
     primary: {
       color: 'white',
@@ -114,6 +108,7 @@ export const themeSecond = {
         primary: '#d6d0d9',
         secondary: '#215711',
         muted: '#6c7784',
+        btEmail: '#2c9241',
       },
       light: {
         text: '#d6d0d9',
@@ -156,13 +151,6 @@ export const themeSecond = {
   zIndices: [0, 2, 3],
   sizes: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 
-  text: {
-    heading: {
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
-  },
   buttons: {
     primary: {
       color: 'white',

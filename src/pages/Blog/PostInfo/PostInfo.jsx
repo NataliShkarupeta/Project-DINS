@@ -10,6 +10,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { getPostById } from 'service/blogService';
 import {
   BlockButton,
+  BtbackMobile,
   TextPost,
   TitlePost,
   Wrap,
@@ -21,6 +22,7 @@ import { RxPencil1, RxTrash, RxShare1 } from 'react-icons/rx';
 import { RxCheck, RxCross2 } from 'react-icons/rx';
 import { ModalForDeletePost } from 'components/ModalForBlog/ModalForDelete/ModalForDelete';
 import { Modal } from 'components/ModalForBlog/modalChangePost/Modal';
+import { useMedia } from 'react-use';
 
 export const PostInfo = () => {
   const [showModal, setShowModal] = useState(false);
@@ -31,6 +33,8 @@ export const PostInfo = () => {
   const [t] = useTranslation();
   const location = useLocation();
   const leng = useFeatureStore(state => state.leng);
+
+  const isMobile = useMedia('(max-width:541px)');
 
   useEffect(() => {
     window.scrollTo(0, 120);
@@ -51,8 +55,6 @@ export const PostInfo = () => {
     jastifyContext: 'center',
   };
 
-
-
   if (!post) {
     return (
       <>
@@ -72,12 +74,18 @@ export const PostInfo = () => {
     );
   }
   const { title, descriptions, titleEn, descriptionsEn } = post;
-  console.log('canDelet', canDelet);
+
   return (
     <>
-      <NavLinkButton to={location.state?.from ?? '/'}>
-        <CommonButton text={t('button.back')} />
-      </NavLinkButton>
+      {isMobile ? (
+        <NavLinkButton to={location.state?.from ?? '/'}>
+          <BtbackMobile>{t('button.back')}</BtbackMobile>
+        </NavLinkButton>
+      ) : (
+        <NavLinkButton to={location.state?.from ?? '/'}>
+          <CommonButton text={t('button.back')} />
+        </NavLinkButton>
+      )}
       {loading && (
         <WrapDots>
           <ThreeDots />
@@ -111,7 +119,7 @@ export const PostInfo = () => {
         </Wrap>
       </WrapForLine>
 
-      <BlockButton style={{ marginRight: '16px' }}>
+      <BlockButton>
         <WrapForTooltip>
           <p
             data-tooltip-id="my-tooltip"
@@ -119,7 +127,13 @@ export const PostInfo = () => {
           >
             <CommonButton
               styled={styles}
-              text={<RxShare1 size={'16px'} />}
+              text={
+                isMobile ? (
+                  <RxShare1 size={'16px'} color="white" />
+                ) : (
+                  <RxShare1 size={'16px'} color="black" />
+                )
+              }
             ></CommonButton>
           </p>
           <Tooltip id="my-tooltip" />
@@ -131,7 +145,13 @@ export const PostInfo = () => {
           >
             <CommonButton
               styled={styles}
-              text={<RxPencil1 size={'16px'} />}
+              text={
+                isMobile ? (
+                  <RxPencil1 size={'16px'} color="white" />
+                ) : (
+                  <RxPencil1 size={'16px'} color="black" />
+                )
+              }
               clickHandler={() => {
                 setShowModal(true);
               }}
@@ -147,7 +167,13 @@ export const PostInfo = () => {
           >
             <CommonButton
               styled={styles}
-              text={<RxTrash size={'16px'} />}
+              text={
+                isMobile ? (
+                  <RxTrash size={'16px'} color="white" />
+                ) : (
+                  <RxTrash size={'16px'} color="black" />
+                )
+              }
               clickHandler={() => {
                 setCanDelete(true);
               }}

@@ -10,6 +10,9 @@ export const WrapName = styled.div`
   font-family: ${p => p.theme.fonts.forBlog};
   font-weight: ${p => p.theme.fontWeights.body};
   margin-top: ${p => p.theme.space[2]}px;
+   @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
 `;
 
 export const BlockUnderLine = styled.div`
@@ -36,6 +39,10 @@ export const Blog = styled.div`
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.body};
   font-weight: ${p => p.theme.fontWeights.middle};
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    padding: ${p => p.theme.space[1]}px;
+  }
 `;
 
 export const WrapMoonAndSun = styled.div`
@@ -73,6 +80,7 @@ export const HeaderMobile = styled.header`
 
   border-bottom: ${p => p.theme.borders.normal};
   box-shadow: 0px 8px 21px rgba(61, 29, 29, 0.25);
+ 
 `;
 
 export const WrapNameNobile = styled.div`
@@ -100,17 +108,17 @@ export const WrapNameText = styled.div`
 `;
 
 export  const MenuBody = styled.div`
-   position: absolute;
-   width: 100%;
-   height: 100vh;
- 
-   background-image: url('${img}');
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   overflow: hidden;
-   /* &:after {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+
+  background-image: url('${img}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  /* &:after {
     content: '';
     position: absolute;
     left: 0;
@@ -119,8 +127,9 @@ export  const MenuBody = styled.div`
     bottom: 0;
     background: rgba(0, 0, 0, 0.35);
   } */
-   z-index: 1;
- `;
+  z-index: 1;
+
+`;
 
  export const Nav = styled.nav`
    position: relative;
@@ -186,7 +195,7 @@ export const SubMenuBtn = styled.button`
   position: absolute;
 
   top: 3%;
-  right: -5%;
+  right: -30px;
   margin: 12px 10px;
   border-radius: 5px;
   transform: translateX(-100%);
@@ -198,7 +207,7 @@ export const SubMenuBtn = styled.button`
 const linesM = css`
   width: 30px;
   height: 2px;
-  background: ${p => p.theme.colors.secondary};
+  background: ${p => p.theme.buttons.primary.color};
   display: flex;
   flex-direction: column;
 `;
@@ -213,4 +222,11 @@ export const SubL2 = styled.div`
 
   transform-origin: left;
   transform: rotate(35deg) translate(-5px, -8px);
+`;
+
+
+export const ButEmailMobile = styled.button`
+  border: none;
+  background-color: transparent;
+  color: ${p => p.theme.colors.modes.dark.btEmail};
 `;

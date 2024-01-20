@@ -3,6 +3,7 @@ import {
   Background,
   BlockUnderLine,
   Blog,
+  ButEmailMobile,
   HeaderMobile,
   LiMobile,
   MenuBody,
@@ -19,6 +20,7 @@ import {
   WrapLogo,
   WrapMain,
   WrapMoonAndSun,
+  WrapName,
 } from './Layout.styled';
 import { motion } from 'framer-motion';
 
@@ -29,11 +31,10 @@ import { useFeatureStore } from 'components/Features/Features/store';
 import { useTranslation } from 'react-i18next';
 import { BsBrightnessHigh, BsMoonFill } from 'react-icons/bs';
 
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
 import { ThreeDots } from 'react-loader-spinner';
 import { Footer } from 'components/Footer/Footer';
-
 
 const styles = {
   padding: '3px 6px',
@@ -50,9 +51,9 @@ const stylesClose = {
 };
 
 export const LayoutMobile = ({ setMainThema }) => {
-const selectedMenu = useFeatureStore(store => store.selectedMenu);
-const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
-   
+  const selectedMenu = useFeatureStore(store => store.selectedMenu);
+  const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
+
   const changeLanguage = language => {
     i18n.changeLanguage(language);
     localStorage.setItem('leng', language);
@@ -63,11 +64,18 @@ const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
   const [t] = useTranslation();
 
   const location = useLocation();
-
+  const name = useFeatureStore(store => store.name);
   const handelTranslate = () => {
     setSelectedMenu(!selectedMenu);
-
   };
+
+  useEffect(() => {
+    if (selectedMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [selectedMenu]);
 
   return (
     <Background>
@@ -102,7 +110,16 @@ const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
                   {t('professions.lash')}
                 </NavigationLink>
               </LiMobile>
-              <LiMobile> </LiMobile>
+              <LiMobile>
+                <ButEmailMobile
+                  onClick={e => {
+                    window.location.href = 'mailto:natalinardi.kh@gmail.com';
+                    e.preventDefault();
+                  }}
+                >
+                  EMAIL
+                </ButEmailMobile>{' '}
+              </LiMobile>
 
               {/* <li class="link">
                 <a href="#">Work</a>
@@ -150,6 +167,12 @@ const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
               </motion.div>
             </Link>
           </WrapLogo>
+          {!name && (
+            <WrapName>
+              <p>Natali</p>
+              <p>Shkarupeta</p>
+            </WrapName>
+          )}
           <MenuBtn onClick={handelTranslate}>
             <MenuL1></MenuL1>
             <MenuL2></MenuL2>

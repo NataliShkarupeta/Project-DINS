@@ -9,11 +9,21 @@ import { useFeatureStore } from 'components/Features/Features/store';
 import { useEffect } from 'react';
 
 export const HomePageMobile = () => {
-
+  const setName = useFeatureStore(store => store.setName);
   const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
+  
   useEffect(() => {
     setSelectedMenu(false);
   }, [setSelectedMenu]);
+
+
+   useEffect(() => {
+     setName(true);
+
+     return () => {
+       setName(null);
+     };
+   }, [setName]);
 
   const [t] = useTranslation();
   return (

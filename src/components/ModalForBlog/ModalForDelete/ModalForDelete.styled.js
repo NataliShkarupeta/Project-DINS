@@ -26,6 +26,9 @@ export const Title = styled.h3`
   font-family: ${p => p.theme.fonts.monospace};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.middle};
+     @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
 `;
 export const Text = styled.p`
     text-align: center;
@@ -33,4 +36,7 @@ export const Text = styled.p`
   font-style: italic;
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
+     @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
 `;

@@ -22,6 +22,8 @@ import { DefaultComponent } from 'components/common/default/defaultComponent';
 import { NavLinkButton } from 'pages/ListPictures/ListPictures.styled';
 import { ThreeDots } from 'react-loader-spinner';
 import { Wrap } from 'components/common/default/defaultComponent.styled';
+import { useMedia } from 'react-use';
+import { Blog } from 'components/Layout/Layout.styled';
 
 // const styleDefoult = {
 //   height: '400px',
@@ -36,6 +38,8 @@ const BlogPage = memo(() => {
   const leng = useFeatureStore(state => state.leng);
 
   const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
+const isMobile = useMedia('(max-width: 541px)');
+
   useEffect(() => {
     setSelectedMenu(false);
   }, [setSelectedMenu]);
@@ -72,15 +76,18 @@ const BlogPage = memo(() => {
 
   return (
     <>
-      <Link to={'/'}>
-        <ButtonHome />
-      </Link>
+      {!isMobile && (
+        <Link to={'/'}>
+          <ButtonHome />
+        </Link>
+      )}
 
       {loading && (
         <Wrap>
           <ThreeDots />
         </Wrap>
       )}
+      {isMobile && <Blog>{t('blog')}</Blog>}
       <Section>
         <ul>
           {posts &&
@@ -93,8 +100,8 @@ const BlogPage = memo(() => {
                 titleEn,
                 descriptionsEn,
               }) => (
-                <div style={{ width: '100%' }}>
-                  <Li key={_id}>
+                <div key={_id}>
+                  <Li>
                     <WrapTitleAndDate>
                       <Title>{leng === 'ua' ? title : titleEn} </Title>
                       <Date>{normalizedDate(createdAt)}</Date>
@@ -111,7 +118,13 @@ const BlogPage = memo(() => {
                           <Link to={`/blog/${_id}`} state={{ from: location }}>
                             <CommonButton
                               styled={styles}
-                              text={<RxFileText size={'16px'} />}
+                              text={
+                                isMobile ? (
+                                  <RxFileText size={'16px'} color="white" />
+                                ) : (
+                                  <RxFileText size={'16px'} color="black" />
+                                )
+                              }
                             ></CommonButton>
                           </Link>
                         </p>
