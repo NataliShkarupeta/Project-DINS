@@ -6,8 +6,12 @@ export const H3 = styled.h3`
   font-weight: ${p => p.theme.fontWeights.bold};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
-   padding-left: ${p => p.theme.space[3]}px; 
-   padding-right: ${p => p.theme.space[3]}px; 
+  padding-left: ${p => p.theme.space[3]}px;
+  padding-right: ${p => p.theme.space[3]}px;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+    color: ${p => p.theme.colors.forBut};
+  }
 `;
 
 export const Text = styled.p`
@@ -15,7 +19,7 @@ export const Text = styled.p`
   font-weight: ${p => p.theme.fontWeights.body};
   font-style: italic;
   line-height: ${p => p.theme.lineHeights.heading};
-  font-family: ${p => p.theme.fonts.forBlog};
+
   text-align: center;
 
   border-top: ${p => p.theme.borders.normal};
@@ -23,6 +27,10 @@ export const Text = styled.p`
   padding-left: ${p => p.theme.space[3]}px;
   padding-right: ${p => p.theme.space[3]}px;
   border-color: ${p => p.theme.colors.fourth};
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+    color: ${p => p.theme.colors.forBut};
+  }
 `;
 
 export const WrapAdvice = styled.div`
@@ -46,6 +54,13 @@ export const Advice = styled.p`
     margin-left: 50%;
     margin-top: ${p => p.theme.space[3]}px;
     margin-bottom: ${p => p.theme.space[3]}px;
+  }
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    &:nth-child(even) {
+      margin-left: 30%;
+      line-height: ${p => p.theme.lineHeights.heading};
+    }
   }
 `;
 
@@ -71,20 +86,34 @@ export const SvgEye4 = styled.div`
 
 export const H2 = styled.h2`
   font-size: ${p => p.theme.fontSizes[5]}px;
+  @media screen and (${p => p.theme.media.s}) {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
 `;
 export const WordLashMaker = styled.span`
   font-family: ${p => p.theme.fonts.monospace};
   font-size: 40px;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[4]}px;
+    /* padding: ${p => p.theme.space[2]}px; */
+  }
 `;
 
 export const Ul = styled.ul`
   list-style: inside;
   padding: ${p => p.theme.space[4]}px;
+  @media screen and (${p => p.theme.media.s}) {
+    padding: ${p => p.theme.space[3]}px;
+      
+  /* flexDirection: 'colum' */
+  }
 `;
 
 export const Li = styled.li`
   font-size: ${p => p.theme.fontSizes[3]}px;
-  line-height: ${p => p.theme.lineHeights.normal};
   margin-bottom: ${p => p.theme.space[3]}px;
 
   padding: ${p => p.theme.space[2]}px;
@@ -96,6 +125,12 @@ export const Li = styled.li`
       rgb(125 5 209 / 7%) 50%
     )
     0% 0% / 3.2em 100% rgb(34 34 34 / 0%);
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    line-height: ${p => p.theme.lineHeights.heading};
+    font-weight: ${p => p.theme.fontWeights.middle};
+    color: ${p => p.theme.colors.forBut};
+  }
 `;
 
 export const Description = styled.p`
@@ -106,6 +141,9 @@ export const Description = styled.p`
   font-weight: ${p => p.theme.fontWeights.middle};
   line-height: ${p => p.theme.lineHeights.normal};
   margin-bottom: ${p => p.theme.space[2]}px;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
 `;
 
 export const WrapTitleAndEye = styled.div`
@@ -114,48 +152,63 @@ export const WrapTitleAndEye = styled.div`
   align-items: center;
   gap: 20px;
   margin-bottom: ${p => p.theme.space[3]}px;
+  @media screen and (${p => p.theme.media.s}) {
+    justify-content: space-evenly;
+  }
 `;
 
 export const ContainerForSlider = styled.div`
   position: relative;
-  /* width: 95.5vw; */
   height: 80vh;
-  /* width:95vw;
-  height: 95vh; */
   overflow: hidden;
   padding: 0;
   margin: 0;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: ${p => p.theme.colors.primary};
-  background:
-   /* linear-gradient(
-    360deg,
-    rgb(170, 167, 171, 1),
-    rgb(201, 195, 217, 1)
-  ); */ linear-gradient(
-    to bottom right,
-    #5d52f6 0%,
-    #e32190 100%
-  );
+  background: linear-gradient(to bottom right, #5d52f6 0%, #e32190 100%);
+  @media screen and (${p => p.theme.media.s}) {
+   
+    /* height: 40vh;
+    margin-left: auto;
+    margin-right: auto; */
+  }
+  /* @media screen and ((min-width: 430px)) {
+    height: 50vh;
+   
+    margin-left: auto;
+    margin-right: auto;
+  } */
 `;
 
 export const Row = styled.div`
   position: relative;
+  @media screen and (${p => p.theme.media.s}) {
+    /* margin-right: 7%; */
+  }
 `;
 
 export const Img = styled.img`
   width: 100%;
   height: 100%;
   background-size: cover;
+  @media screen and (${p => p.theme.media.s}) {
+  
+  }
 `;
 
 export const WrapBottonTurn = styled.div`
   position: absolute;
   top: 15px;
   left: 15px;
+  @media screen and (${p => p.theme.media.s}) {
+    transform: rotate(90deg);
+    top:30px;
+    left:-3%;
+    z-index: 2;
+  }
 `;
 
 export const ButtonTurn = styled.button`

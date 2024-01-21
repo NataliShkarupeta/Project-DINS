@@ -135,9 +135,6 @@ export const Text = styled.p`
 ////////////////////postInfo//////////////////////
 
 export const WrapForLine = styled.div`
-  /* margin-left: 50px;
-
-  border-left: 3px solid purple; */
 `;
 
 export const Wrap = styled.div`

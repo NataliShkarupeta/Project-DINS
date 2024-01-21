@@ -38,7 +38,7 @@ const BlogPage = memo(() => {
   const leng = useFeatureStore(state => state.leng);
 
   const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
-const isMobile = useMedia('(max-width: 541px)');
+  const isMobile = useMedia('(max-width: 541px)');
 
   useEffect(() => {
     setSelectedMenu(false);
@@ -63,7 +63,6 @@ const isMobile = useMedia('(max-width: 541px)');
     return (
       <>
         <NavLinkButton to={location.state?.from ?? '/'}>
-      
           <CommonButton text={t('button.back')} />
         </NavLinkButton>
         <DefaultComponent>

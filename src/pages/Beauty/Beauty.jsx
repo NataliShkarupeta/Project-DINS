@@ -33,7 +33,7 @@ import { SiApachecassandra } from 'react-icons/si';
 import { GiDeadHead, GiGems, GiTwoShadows, GiBullseye } from 'react-icons/gi';
 import { useTranslation } from 'react-i18next';
 import { useFeatureStore } from 'components/Features/Features/store';
-import { useEffectOnce } from 'react-use';
+import { useEffectOnce, useMedia } from 'react-use';
 
 const styles = {
   position: 'absolute',
@@ -44,11 +44,22 @@ const styles = {
   top: '-37.5vh',
 };
 
+const styleMobile = {
+
+  // position: 'absolute',
+  // width: '80%',
+  // // height: '75vh',
+  // overflow: 'hidden',
+  // borderRadius: '30px',
+  // top: '-12vh',
+};
+
 const BeautyPage = () => {
   const [position, positionSet] = useState(0);
   const [t] = useTranslation();
 
   const photoArr = [l4, l3, l6, l8, l9];
+  const isMobile= useMedia('(max-width:541px)')
 
   const onRight = () => {
     if (position < photoArr.length - 1) {
@@ -68,14 +79,11 @@ const BeautyPage = () => {
 
   return (
     <>
-      <Link to={'/'}>
-        <ButtonHome />
-      </Link>
-      {/* {loading && (
-        <WrapDots>
-          <ThreeDots />
-        </WrapDots>
-      )} */}
+      {!isMobile && (
+        <Link to={'/'}>
+          <ButtonHome />
+        </Link>
+      )}
 
       <WrapTitleAndEye>
         <H2>
@@ -109,7 +117,7 @@ const BeautyPage = () => {
         <Row>
           {photoArr.map((photo, index) => (
             <motion.div
-              style={styles}
+              style={isMobile ? styleMobile : styles}
               key={index}
               initial={{ scale: 0, rotation: -180 }}
               animate={{

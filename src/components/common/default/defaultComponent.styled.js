@@ -1,5 +1,4 @@
-import styled from "styled-components";
-
+import styled from 'styled-components';
 
 export const TextFrontEndPage = styled.p`
   font-size: ${p => p.theme.fontSizes[5]}px;
@@ -20,7 +19,7 @@ export const WrapIcon = styled.div`
 `;
 
 export const Wrap = styled.div`
-  transition: transform .8 ease-in-out;
+  transition: transform 0.8 ease-in-out;
   padding: ${p => p.theme.space[5]}px;
 
   height: 80vh;
@@ -28,4 +27,12 @@ export const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
+  @media screen and (${p => p.theme.media.s}) {
+    padding: ${p => p.theme.space[3]}px;
+    flex-direction: column;
+
+    justify-content: normal;
+    text-align: center;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
 `;
