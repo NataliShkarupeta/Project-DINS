@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/Project-DINS/static/css/main.a92cd995.css",
-    "main.js": "/Project-DINS/static/js/main.adb857b5.js",
+    "main.js": "/Project-DINS/static/js/main.24442748.js",
     "static/js/606.eaf6b933.chunk.js": "/Project-DINS/static/js/606.eaf6b933.chunk.js",
     "static/js/274.2ffb60c4.chunk.js": "/Project-DINS/static/js/274.2ffb60c4.chunk.js",
     "static/js/422.20c1e6c5.chunk.js": "/Project-DINS/static/js/422.20c1e6c5.chunk.js",
-    "static/js/996.7480b728.chunk.js": "/Project-DINS/static/js/996.7480b728.chunk.js",
+    "static/js/996.cd821065.chunk.js": "/Project-DINS/static/js/996.cd821065.chunk.js",
     "static/js/439.70dde6a7.chunk.js": "/Project-DINS/static/js/439.70dde6a7.chunk.js",
     "static/js/191.adfda5d4.chunk.js": "/Project-DINS/static/js/191.adfda5d4.chunk.js",
     "static/js/665.7f8ac305.chunk.js": "/Project-DINS/static/js/665.7f8ac305.chunk.js",
@@ -28,6 +28,7 @@
     "static/media/herbs6 (1).jpg": "/Project-DINS/static/media/herbs6 (1).8c714c1167cfb86dd8d3.jpg",
     "static/media/herb4 (1).jpg": "/Project-DINS/static/media/herb4 (1).03cc33e5886232f9b66d.jpg",
     "static/media/free-icon-space-8657325 (1).png": "/Project-DINS/static/media/free-icon-space-8657325 (1).7020772ee1fc5c04d53a.png",
+    "static/media/lenaLash.jpg": "/Project-DINS/static/media/lenaLash.e48914f5307c8ef8d20d.jpg",
     "static/media/lash6 (1).jpg": "/Project-DINS/static/media/lash6 (1).bca5179c47091214795c.jpg",
     "static/media/lash8 (1).jpg": "/Project-DINS/static/media/lash8 (1).54a3d21d81a0c1af2961.jpg",
     "static/media/lash9 (1).jpg": "/Project-DINS/static/media/lash9 (1).7ec49366650cad1773ed.jpg",
@@ -36,11 +37,11 @@
     "index.html": "/Project-DINS/index.html",
     "static/media/getFetch.cjs": "/Project-DINS/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.a92cd995.css.map": "/Project-DINS/static/css/main.a92cd995.css.map",
-    "main.adb857b5.js.map": "/Project-DINS/static/js/main.adb857b5.js.map",
+    "main.24442748.js.map": "/Project-DINS/static/js/main.24442748.js.map",
     "606.eaf6b933.chunk.js.map": "/Project-DINS/static/js/606.eaf6b933.chunk.js.map",
     "274.2ffb60c4.chunk.js.map": "/Project-DINS/static/js/274.2ffb60c4.chunk.js.map",
     "422.20c1e6c5.chunk.js.map": "/Project-DINS/static/js/422.20c1e6c5.chunk.js.map",
-    "996.7480b728.chunk.js.map": "/Project-DINS/static/js/996.7480b728.chunk.js.map",
+    "996.cd821065.chunk.js.map": "/Project-DINS/static/js/996.cd821065.chunk.js.map",
     "439.70dde6a7.chunk.js.map": "/Project-DINS/static/js/439.70dde6a7.chunk.js.map",
     "191.adfda5d4.chunk.js.map": "/Project-DINS/static/js/191.adfda5d4.chunk.js.map",
     "665.7f8ac305.chunk.js.map": "/Project-DINS/static/js/665.7f8ac305.chunk.js.map",
@@ -53,6 +54,6 @@
   },
   "entrypoints": [
     "static/css/main.a92cd995.css",
-    "static/js/main.adb857b5.js"
+    "static/js/main.24442748.js"
   ]
 }
