@@ -5,9 +5,12 @@ import { TextFrontEndPage } from 'components/common/default/defaultComponent.sty
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useMedia } from 'react-use';
 
 const AstrologyPage = () => {
   const [t] = useTranslation();
+
+  const isMobile= useMedia('(max-width:541px)')
 
   const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
   useEffect(() => {
@@ -16,9 +19,11 @@ const AstrologyPage = () => {
 
   return (
     <>
-      <Link to={'/'}>
-        <ButtonHome />
-      </Link>
+      {!isMobile && (
+        <Link to={'/'}>
+          <ButtonHome />
+        </Link>
+      )}
       <DefaultComponent>
         <TextFrontEndPage>
           {t('defaultComponent.frontEndPage')}

@@ -117,6 +117,7 @@ export  const MenuBody = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  z-index: 10;
   overflow: hidden;
   /* &:after {
     content: '';
@@ -127,7 +128,7 @@ export  const MenuBody = styled.div`
     bottom: 0;
     background: rgba(0, 0, 0, 0.35);
   } */
-  z-index: 1;
+  /* z-index: 1; */
 
 `;
 

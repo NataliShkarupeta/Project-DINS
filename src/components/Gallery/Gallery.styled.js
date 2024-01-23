@@ -1,16 +1,16 @@
 import styled, { css } from 'styled-components';
 
-export const WrapButton=styled.div`
-display: flex;
-justify-content: center;
-/* margin-bottom: ${p => p.theme.space[4]}px; */
-`
+export const WrapButton = styled.div`
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: ${p => p.theme.space[4]}px; */
+`;
 
 export const SectionBeforPictures = styled.section`
   margin-top: -10%;
 `;
-export const AboutOrder=styled.div`
- color: ${p => p.theme.colors.text};
+export const AboutOrder = styled.div`
+  color: ${p => p.theme.colors.text};
   /* font-family: ${p => p.theme.fonts.forBlog};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body}; */
@@ -24,7 +24,7 @@ export const AboutOrder=styled.div`
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  `
+`;
 
 export const AboutMe = styled.div`
   color: ${p => p.theme.colors.text};
@@ -32,9 +32,10 @@ export const AboutMe = styled.div`
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.body};
   position: relative;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
 `;
-
-
 
 export const BgFirst = styled.div`
   width: 100%;
@@ -45,7 +46,6 @@ export const BgFirst = styled.div`
     rgba(14, 174, 87, 1) 0%,
     rgba(12, 116, 117, 1) 90%
   ); */
-
 `;
 
 export const BgSecond = styled.div`
@@ -62,7 +62,7 @@ export const BgThirt = styled.div`
   width: 100%;
   color: ${p => p.theme.colors.therd};
   background-color: rgba(255, 255, 255, 0.7);
-  
+
   /* background-image: radial-gradient(
     circle farthest-corner at 10% 20%,
     rgba(14, 174, 87, 1) 0%,
@@ -85,6 +85,9 @@ export const P = styled.p`
   margin-left: auto;
   margin-right: auto;
   width: 700px;
+  @media screen and (${p => p.theme.media.s}) {
+    width: 90vw;
+  }
 `;
 
 export const AboutArt = styled.p`
@@ -109,6 +112,10 @@ export const MainImageDiv = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 100;
+  @media screen and (${p => p.theme.media.s}) {
+    width: 100%;
+    height: 550px;
+  }
 `;
 
 export const Banner = styled.div`
@@ -119,6 +126,12 @@ export const Banner = styled.div`
   gap: 10px;
   align-items: baseline;
   justify-content: center;
+  @media screen and (${p => p.theme.media.s}) {
+    padding-top: ${p => p.theme.space[3]}px;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ButtonScroll = styled.button`
@@ -137,6 +150,12 @@ export const ButtonScroll = styled.button`
     scale: 1.2;
   }
   transition: ${p => p.theme.transitions};
+  @media screen and (${p => p.theme.media.s}) {
+    position: static;
+  
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 export const LinkBlock = styled.div`
@@ -160,10 +179,17 @@ const fontStyles = css`
   /* font-size: ${p => p.theme.fontSizes[11]}px; */
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.middleOne};
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[4]}px;
+    /* padding: ${p => p.theme.space[2]}px; */
+  }
 `;
 export const WhoAmI = styled.p`
   /* padding-left: 2%; */
   font-size: ${p => p.theme.fontSizes[3]}px;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
 `;
 
 export const FirstV = styled.p`
@@ -209,7 +235,7 @@ export const RedBallBefore = styled.div`
     border-color: ${p => p.theme.colors.muted};
     border-radius: ${p => p.theme.radii.round};
 
-    z-index: 2;
+    /* z-index: ; */
   }
 `;
 
@@ -251,7 +277,7 @@ export const Li = styled.li`
 `;
 
 export const WrapPicture = styled.div`
-/* box-shadow: 0 0 10px 20px #fff; */
+  /* box-shadow: 0 0 10px 20px #fff; */
   /* box-shadow: 0 0 83px 10px #24aafd; */
   :hover,
   :focus {

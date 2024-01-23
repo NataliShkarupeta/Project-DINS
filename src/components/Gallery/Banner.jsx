@@ -14,6 +14,7 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { CommonButton } from 'components/common/commonButton/button';
 import { Link, useLocation } from 'react-router-dom';
+import { useMedia } from 'react-use';
 
 // import { NavigationLink } from 'pages/Painting/Painting.styled';
 
@@ -36,14 +37,14 @@ const letterAnimation = {
   },
 };
 
-const BannerComp = ({refToPict}) => {
+const BannerComp = ({ refToPict }) => {
   const [t] = useTranslation();
   // const [play, setPlay] = useState(false);
-
+  const isMobile = useMedia('(max-width:541px');
   const location = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 250);
-  }, []);
+    isMobile ? window.scrollTo(0, 125) : window.scrollTo(0, 250);
+  }, [isMobile]);
   // useEffect(() => {
   //   setTimeout(() => {
   //     setPlay(true);
@@ -90,14 +91,35 @@ const BannerComp = ({refToPict}) => {
 
         <RowTop title={t('gallaryPage.banner.name')} />
         <RowBottom title={t('gallaryPage.banner.lastName')} />
-        <ButtonScroll
-          onClick={() =>
-            refToPict.current.scrollIntoView({ behavior: 'smooth' })
-          }
-          // onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          {t('gallaryPage.banner.scroll')}
-        </ButtonScroll>
+        {isMobile ? (
+          <motion.div
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              ease: 'easeInOut',
+              duration: 1,
+              dalay: 0.4,
+            }}
+          >
+            <ButtonScroll
+              onClick={() =>
+                refToPict.current.scrollIntoView({ behavior: 'smooth' })
+              }
+              // onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              {t('gallaryPage.banner.scroll')}
+            </ButtonScroll>
+          </motion.div>
+        ) : (
+          <ButtonScroll
+            onClick={() =>
+              refToPict.current.scrollIntoView({ behavior: 'smooth' })
+            }
+            // onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            {t('gallaryPage.banner.scroll')}
+          </ButtonScroll>
+        )}
 
         {/* <RowCenter title={'gallery'}  /> */}
       </Banner>

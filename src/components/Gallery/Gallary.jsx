@@ -16,7 +16,6 @@ import BannerComp from './Banner';
 import Loader from './Loader';
 import { BASIC_URL } from 'service/basicUrl';
 import { useTranslation } from 'react-i18next';
-// import { FaStarOfLife } from 'react-icons/fa';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CommonButton } from 'components/common/commonButton/button';
@@ -24,14 +23,14 @@ import { useFeatureStore } from 'components/Features/Features/store';
 import { useMedia } from 'react-use';
 import { LoaderMobile } from './LoaderMobile';
 
-const Gallary = () => {
+export const Gallary = () => {
   const [loader, setLoading] = useState(true);
   const [t] = useTranslation();
   const setName = useFeatureStore(store => store.setName);
   const location = useLocation();
   const rref = useRef();
 
-    const isMobile = useMedia('(max-width:541px)');
+  const isMobile = useMedia('(max-width:541px)');
 
   useEffect(() => {
     setName(true);
@@ -44,13 +43,11 @@ const Gallary = () => {
   const styles = {
     // padding: '2px 10px',
     // marginBottom:'32px'
-  
     width: '120px',
     padding: '2px 15px',
     backgroundColor: 'grey',
     color: 'white',
     fontSize: '18px',
-  
   };
 
   return (
@@ -95,7 +92,7 @@ const Gallary = () => {
               </MainImageDiv>
             ))}
           <SectionBeforPictures>
-          {!isMobile &&  <AboutArt>{t('gallaryPage.art')}</AboutArt>}
+            <AboutArt>{t('gallaryPage.art')}</AboutArt>
             <AboutMe ref={rref}>
               <BgFirst>
                 <P>{t('gallaryPage.gallaryText.first')}</P>
@@ -131,5 +128,3 @@ const Gallary = () => {
     </MainSection>
   );
 };
-
-export default Gallary;

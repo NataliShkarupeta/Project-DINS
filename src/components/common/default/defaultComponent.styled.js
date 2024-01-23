@@ -7,6 +7,9 @@ export const TextFrontEndPage = styled.p`
   font-family: ${p => p.theme.fonts.forBlog};
   font-style: italic;
   text-shadow: 0 10px 9px #8c928f, 0 80px 60px #8c928f;
+   @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
 `;
 
 export const WrapIcon = styled.div`
@@ -22,7 +25,7 @@ export const Wrap = styled.div`
   transition: transform 0.8 ease-in-out;
   padding: ${p => p.theme.space[5]}px;
 
-  height: 80vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;

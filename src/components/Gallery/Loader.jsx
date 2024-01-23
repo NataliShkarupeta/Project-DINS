@@ -58,6 +58,8 @@ const itemMain = {
   },
 };
 
+  
+
 const Loader = ({ setLoading }) => {
   useEffect(() => {
     window.scrollTo(0, 250);
@@ -69,6 +71,8 @@ const Loader = ({ setLoading }) => {
     return () => clearTimeout(timer);
   });
 
+
+
   return (
     <MainLoaderBlock>
       <motion.div
@@ -76,9 +80,7 @@ const Loader = ({ setLoading }) => {
         initial="hidden"
         animate="show"
         exit="exit"
-        // onAnimationComplete={()=>setLoading(false)}
       >
-        {/* <img src={`${BASIC_URL}/imagesLoader/paintBaby1.jpg`} alt="" /> */}
         <WrapIm2>
           <ImageBlock variants={item} id="phoenix" />
         </WrapIm2>
