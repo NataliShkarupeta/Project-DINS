@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import img from '../../images/beauty/lenaLash.jpg';
 
 export const H3 = styled.h3`
   margin-top: ${p => p.theme.space[4]}px;
@@ -87,10 +88,12 @@ export const SvgEye4 = styled.div`
 export const H2 = styled.h2`
   font-size: ${p => p.theme.fontSizes[5]}px;
   @media screen and (${p => p.theme.media.s}) {
-    width: 50%;
+    margin-bottom: ${p => p.theme.space[3]}px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     font-size: ${p => p.theme.fontSizes[2]}px;
+    color: purple;
   }
 `;
 export const WordLashMaker = styled.span`
@@ -107,8 +110,8 @@ export const Ul = styled.ul`
   padding: ${p => p.theme.space[4]}px;
   @media screen and (${p => p.theme.media.s}) {
     padding: ${p => p.theme.space[3]}px;
-      
-  /* flexDirection: 'colum' */
+
+    /* flexDirection: 'colum' */
   }
 `;
 
@@ -154,6 +157,11 @@ export const WrapTitleAndEye = styled.div`
   margin-bottom: ${p => p.theme.space[3]}px;
   @media screen and (${p => p.theme.media.s}) {
     justify-content: space-evenly;
+    background-image: url('${img}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* filter: blur(2px); */
   }
 `;
 
@@ -167,26 +175,13 @@ export const ContainerForSlider = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: ${p => p.theme.colors.primary};
   background: linear-gradient(to bottom right, #5d52f6 0%, #e32190 100%);
-  @media screen and (${p => p.theme.media.s}) {
-   
-    /* height: 40vh;
-    margin-left: auto;
-    margin-right: auto; */
-  }
-  /* @media screen and ((min-width: 430px)) {
-    height: 50vh;
-   
-    margin-left: auto;
-    margin-right: auto;
-  } */
 `;
 
 export const Row = styled.div`
   position: relative;
   @media screen and (${p => p.theme.media.s}) {
-    /* margin-right: 7%; */
+    margin-right: 67%;
   }
 `;
 
@@ -195,7 +190,6 @@ export const Img = styled.img`
   height: 100%;
   background-size: cover;
   @media screen and (${p => p.theme.media.s}) {
-  
   }
 `;
 
@@ -205,8 +199,8 @@ export const WrapBottonTurn = styled.div`
   left: 15px;
   @media screen and (${p => p.theme.media.s}) {
     transform: rotate(90deg);
-    top:30px;
-    left:-3%;
+    top: 40px;
+    left: 80%;
     z-index: 2;
   }
 `;

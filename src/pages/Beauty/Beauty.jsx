@@ -45,27 +45,27 @@ const styles = {
 };
 
 const styleMobile = {
-
-  // position: 'absolute',
-  // width: '80%',
-  // // height: '75vh',
-  // overflow: 'hidden',
-  // borderRadius: '30px',
+  position: 'absolute',
+  width: '65vw',
+  // height: '75vh',
+  overflow: 'hidden',
+  borderRadius: '30px',
   // top: '-12vh',
 };
 
 const BeautyPage = () => {
-  const [position, positionSet] = useState(0);
+  const [position, positionSet] = useState(2);
   const [t] = useTranslation();
 
   const photoArr = [l4, l3, l6, l8, l9];
-  const isMobile= useMedia('(max-width:541px)')
+  const isMobile = useMedia('(max-width:541px)');
 
   const onRight = () => {
     if (position < photoArr.length - 1) {
       positionSet(position + 1);
     }
   };
+
   const onLeft = () => {
     if (position > 0) {
       positionSet(position - 1);
@@ -84,14 +84,25 @@ const BeautyPage = () => {
           <ButtonHome />
         </Link>
       )}
-
-      <WrapTitleAndEye>
-        <H2>
-          <WordLashMaker>{t('lashMakerPage.title')}</WordLashMaker>
-          {t('lashMakerPage.titleCompl')}
-        </H2>
-        <SiApachecassandra size={60} color="purple" />
-      </WrapTitleAndEye>
+      {isMobile ? (
+        <>
+          <WrapTitleAndEye>
+            <div style={{ width: '100%', height: '85px' }}></div>
+          </WrapTitleAndEye>
+          <H2>
+            <WordLashMaker>{t('lashMakerPage.title')}</WordLashMaker>
+            {t('lashMakerPage.titleCompl')}
+          </H2>
+        </>
+      ) : (
+        <WrapTitleAndEye>
+          <H2>
+            <WordLashMaker>{t('lashMakerPage.title')}</WordLashMaker>
+            {t('lashMakerPage.titleCompl')}
+          </H2>
+          <SiApachecassandra size={60} color="purple" />
+        </WrapTitleAndEye>
+      )}
 
       <Description> {t('lashMakerPage.description')}</Description>
       <Description>{t('lashMakerPage.go')}</Description>
@@ -120,11 +131,24 @@ const BeautyPage = () => {
               style={isMobile ? styleMobile : styles}
               key={index}
               initial={{ scale: 0, rotation: -180 }}
-              animate={{
-                rotate: 0,
-                left: `${(index - position) * 60 - 26}vw`,
-                scale: index === position ? 1 : 0.8,
-              }}
+              // animate={{
+              //   rotate: 0,
+              //   left: `${(index - position) * 60 - 26}vw`,
+              //   scale: index === position ? 1 : 0.8,
+              // }}
+              animate={
+                !isMobile
+                  ? {
+                      rotate: 0,
+                      left: `${(index - position) * 60 - 26}vw`,
+                      scale: index === position ? 1 : 0.8,
+                    }
+                  : {
+                      rotate: 0,
+                      top: `${(index - position) * 60 - 26}vw`,
+                      scale: index === position ? 1 : 0.8,
+                    }
+              }
               transition={{
                 duration: 1,
                 type: 'tween',
