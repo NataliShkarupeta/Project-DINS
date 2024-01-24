@@ -11,9 +11,6 @@ export const SectionBeforPictures = styled.section`
 `;
 export const AboutOrder = styled.div`
   color: ${p => p.theme.colors.text};
-  /* font-family: ${p => p.theme.fonts.forBlog};
-  font-size: ${p => p.theme.fontSizes[3]}px;
-  font-weight: ${p => p.theme.fontWeights.body}; */
   font-family: ${p => p.theme.fonts.forName};
   font-style: italic;
   font-weight: ${p => p.theme.fontWeights.body};
@@ -24,6 +21,10 @@ export const AboutOrder = styled.div`
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    width: 80vw;
+  }
 `;
 
 export const AboutMe = styled.div`
@@ -41,42 +42,21 @@ export const BgFirst = styled.div`
   width: 100%;
   color: ${p => p.theme.colors.therd};
   background-color: rgba(255, 255, 255, 0.7);
-  /* background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(14, 174, 87, 1) 0%,
-    rgba(12, 116, 117, 1) 90%
-  ); */
+ 
 `;
 
 export const BgSecond = styled.div`
-  /* width: 100%; */
-  /* background-color: blueviolet; */
-  /* color: ${p => p.theme.colors.therd}; */
-  /* background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(12, 116, 117, 1) 0%,
-    rgba(14, 174, 87, 1) 90%
-  ); */
+
 `;
 export const BgThirt = styled.div`
   width: 100%;
   color: ${p => p.theme.colors.therd};
   background-color: rgba(255, 255, 255, 0.7);
 
-  /* background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(14, 174, 87, 1) 0%,
-    rgba(12, 116, 117, 1) 90%
-  ); */
 `;
 
 export const BgFourth = styled.div`
-  /* color: ${p => p.theme.colors.therd}; */
-  /* background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(12, 116, 117, 1) 0%,
-    rgba(14, 174, 87, 1) 90%
-  ); */
+ 
 `;
 export const P = styled.p`
   text-align: center;
@@ -152,9 +132,10 @@ export const ButtonScroll = styled.button`
   transition: ${p => p.theme.transitions};
   @media screen and (${p => p.theme.media.s}) {
     position: static;
-  
     width: 60px;
     height: 60px;
+    background-color:red;
+    color: black;
   }
 `;
 
@@ -163,25 +144,21 @@ export const LinkBlock = styled.div`
   right: 100px;
   color: #2c9241;
   font-size: ${p => p.theme.fontSizes[5]}px;
-  /* padding: ${p => p.theme.space[3]}px; */
 `;
 
 export const AnimateBlock = styled.div`
   white-space: nowrap;
   position: relative;
   overflow: hidden;
-  /* animation-play-state: running; */
 `;
 
 const fontStyles = css`
   font-family: ${p => p.theme.fonts.forBlog};
   font-size: ${p => p.theme.fontSizes[6]}px;
-  /* font-size: ${p => p.theme.fontSizes[11]}px; */
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.middleOne};
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[4]}px;
-    /* padding: ${p => p.theme.space[2]}px; */
   }
 `;
 export const WhoAmI = styled.p`
@@ -197,25 +174,16 @@ export const FirstV = styled.p`
 `;
 
 export const SecondV = styled.p`
-  /* position: relative; */
-  /* padding-left: 35%; */
-  /* width: fit-content; */
-  /* display: flex; */
-  /* gap: 200px; */
-  /* margin-bottom: 65px; */
   font-style: italic;
-  ${fontStyles}/* line-height: ${p => p.theme.lineHeights.body}; */
+  ${fontStyles}
 `;
 
 export const ThirdV = styled.p`
-  /* padding-left: ${p => p.theme.space[5]}px; */
   ${fontStyles}/* z-index: 100; */
   /* color: ${p => p.theme.colors.background}; */
 `;
 
 export const MainSection = styled.div`
-  /* padding-left: ${p => p.theme.space[4]}px;
-  padding-right: ${p => p.theme.space[4]}px; */
 `;
 
 export const RedBallBefore = styled.div`
@@ -236,24 +204,36 @@ export const RedBallBefore = styled.div`
     border-radius: ${p => p.theme.radii.round};
 
     /* z-index: ; */
+    @media screen and (${p => p.theme.media.s}) {
+      width: 12px;
+      height: 12px;
+      right: -1%;
+      top: 6px;
+    }
+  }
+  @media screen and (${p => p.theme.media.s}) {
+    margin-right: 16px;
   }
 `;
 
 export const BorderTop = styled.div`
   display: flex;
   justify-content: space-between;
+
 `;
 
 export const MiddleLine = styled.div`
   height: 2px;
   width: 65%;
   background-color: ${p => p.theme.colors.fourth};
+  @media screen and (${p => p.theme.media.s}) {
+  width: 0;
+  height: 0;
+  }
 `;
 
 export const Presentation = styled.div`
-  /* width: 100vw; */
   height: 110px;
-  /* background-color:${p => p.theme.colors.modes.light.background} ; */
 `;
 
 ///////////////////// slyles the painting/////////////////////////////////
@@ -264,6 +244,9 @@ export const Ul = styled.ul`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
+  @media screen and (${p => p.theme.media.s}) {
+   gap: 20px;
+  }
 `;
 
 export const Li = styled.li`
@@ -274,6 +257,10 @@ export const Li = styled.li`
   margin-bottom: ${p => p.theme.space[6]}px;
   scale: 1;
   cursor: pointer;
+  @media screen and (${p => p.theme.media.s}) {
+    width: 140px;
+    margin-bottom: ${p => p.theme.space[0]}px;
+  }
 `;
 
 export const WrapPicture = styled.div`

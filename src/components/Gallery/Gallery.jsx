@@ -31,7 +31,7 @@ const Gallary = () => {
   const location = useLocation();
   const rref = useRef();
 
-    const isMobile = useMedia('(max-width:541px)');
+  const isMobile = useMedia('(max-width:541px)');
 
   useEffect(() => {
     setName(true);
@@ -42,15 +42,18 @@ const Gallary = () => {
   }, [setName]);
 
   const styles = {
-    // padding: '2px 10px',
-    // marginBottom:'32px'
-  
     width: '120px',
     padding: '2px 15px',
     backgroundColor: 'grey',
     color: 'white',
     fontSize: '18px',
-  
+  };
+  const stylesMobile = {
+    width: '60px',
+    fontSize: '14px',
+    lineHeight: '0.9',
+    marginTop: '10px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
   };
 
   return (
@@ -95,7 +98,7 @@ const Gallary = () => {
               </MainImageDiv>
             ))}
           <SectionBeforPictures>
-          {!isMobile &&  <AboutArt>{t('gallaryPage.art')}</AboutArt>}
+            {!isMobile && <AboutArt>{t('gallaryPage.art')}</AboutArt>}
             <AboutMe ref={rref}>
               <BgFirst>
                 <P>{t('gallaryPage.gallaryText.first')}</P>
@@ -118,7 +121,7 @@ const Gallary = () => {
                 <Link to={'/painting/list_pictures'} state={{ from: location }}>
                   <WrapButton>
                     <CommonButton
-                      styled={styles}
+                      styled={isMobile ? stylesMobile : styles}
                       text={t('gallaryPage.buttonListPicture')}
                     />
                   </WrapButton>

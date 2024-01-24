@@ -35,6 +35,9 @@ const ListPictures = memo(() => {
   const [inStock, setInStock] = useState({});
   const [selectedItem, setSelectedItem] = useState('Всі');
   const [loading, setLoading] = useState(false);
+
+
+
   const location = useLocation();
   const [t] = useTranslation();
 
@@ -134,6 +137,7 @@ const ListPictures = memo(() => {
                 ))}
               </UlPlaces>
             </PlacesContent>
+            
           </NavPlaces>
         </WrapPlaces>
 

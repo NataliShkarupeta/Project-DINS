@@ -43,7 +43,7 @@ const BannerComp = ({ refToPict }) => {
   const isMobile = useMedia('(max-width:541px');
   const location = useLocation();
   useEffect(() => {
-    isMobile ? window.scrollTo(0, 125) : window.scrollTo(0, 250);
+    isMobile ? window.scrollTo(0, 0) : window.scrollTo(0, 250);
   }, [isMobile]);
   // useEffect(() => {
   //   setTimeout(() => {
@@ -59,6 +59,14 @@ const BannerComp = ({ refToPict }) => {
     fontSize: '18px',
   };
 
+   const stylesMobile = {
+     width: '60px',
+     fontSize: '14px',
+     lineHeight:'0.9',
+      marginTop:'10px',
+
+   };
+
   return (
     <motion.div variants={banner}>
       <BorderTop>
@@ -69,9 +77,8 @@ const BannerComp = ({ refToPict }) => {
       <Link to={'/painting/list_pictures'} state={{ from: location }}>
         <RedBallBefore>
           <CommonButton
-            styled={styles}
+            styled={isMobile ? stylesMobile : styles}
             text={t('gallaryPage.buttonListPicture')}
-            // clickHandler={() =>}
           />
         </RedBallBefore>
       </Link>
@@ -144,14 +151,8 @@ const RowTop = ({ title }) => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, dalay: 1 }}
-        style={{ zIndex: 100 }}
-        // initial={{ opacity: 0, y: 80 }}
-        // animate={{ opacity: 1, y: 0 }}
-        // transition={{
-        //   ease: 'easeInOut',
-        //   duration: 1,
-        //   dalay: 0.4,
-        // }}
+        // style={{ zIndex: 100 }}
+     
       >
         <FirstV>
           <AnimatedLetters title={title} />
@@ -183,7 +184,7 @@ const RowBottom = ({ title }) => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, dalay: 1 }}
-        style={{ zIndex: 100 }}
+        // style={{ zIndex: 100 }}
       >
         <ThirdV>
           <AnimatedLetters title={title} />

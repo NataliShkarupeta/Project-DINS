@@ -16,4 +16,8 @@ export const Button = styled.button`
     border-color: ${p => p.theme.colors.primary};
   }
   transition: ${p => p.theme.transitions};
+   @media screen and (${p => p.theme.media.s}) {
+     
+     font-size: ${p => p.theme.fontSizes[0]}px;
+  }
 `;
