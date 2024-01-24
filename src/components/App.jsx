@@ -12,6 +12,7 @@ import { PostInfo } from 'pages/Blog/PostInfo/PostInfo';
 import { useMedia } from 'react-use';
 import { LayoutMobile } from './Layout/LayoutMobile';
 import { HomePageMobile } from 'pages/HomePage/HomePageMobile';
+import { PictureInfoMobile } from './PictureInfo/PictureInfoMobile';
 // import { useFeatureStore } from './Features/Features/store';
 // import { ListPictures } from 'pages/ListPictures/ListPictures';
 // import { useFeatureStore } from './Features/Features/store';
@@ -68,24 +69,26 @@ export const App = () => {
             <Route
               index
               element={
-                isMobile? <HomePageMobile />:
-                <AnimatePresence>
-                  {!more ? (
-                    <HomePage setMore={setMore} />
-                  ) : (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      style={{ overflow: 'hidden' }}
-                      transition={{ duration: 2 }}
-                    >
-                      <LearnMore setMore={setMore} />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              
-            }
+                isMobile ? (
+                  <HomePageMobile />
+                ) : (
+                  <AnimatePresence>
+                    {!more ? (
+                      <HomePage setMore={setMore} />
+                    ) : (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        style={{ overflow: 'hidden' }}
+                        transition={{ duration: 2 }}
+                      >
+                        <LearnMore setMore={setMore} />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )
+              }
             />
             <Route path="developer" element={<FrontEndPage />}></Route>
             <Route path="painting" element={<PaintingPage />}>
@@ -95,7 +98,7 @@ export const App = () => {
             <Route path="/painting/list_pictures" element={<ListPictures />} />
             <Route
               path="/painting/list_pictures/:paintingId"
-              element={<PictureInfo />}
+              element={isMobile ? <PictureInfoMobile /> : <PictureInfo />}
             />
             <Route path="blog" element={<BlogPage />}></Route>
             <Route path="/blog/:postId" element={<PostInfo />} />

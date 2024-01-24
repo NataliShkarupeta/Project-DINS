@@ -24,7 +24,7 @@ import { OrderBlock } from './Order';
 import { DefaultComponent } from 'components/common/default/defaultComponent';
 import { ThreeDots } from 'react-loader-spinner';
 
-export const PictureInfo = () => {
+export const PictureInfoMobile = () => {
   const [picture, setPicure] = useState(null);
   const [loading, setLoading] = useState(false);
   const { paintingId } = useParams();
@@ -32,9 +32,9 @@ export const PictureInfo = () => {
   const location = useLocation();
   const [t] = useTranslation();
 
-  useEffect(() => {
-    window.scrollTo(0, 120);
-  }, []);
+  //   useEffect(() => {
+  //     window.scrollTo(0, 120);
+  //   }, []);
   useEffect(() => {
     setLoading(true);
     getPictureById(paintingId)
@@ -84,13 +84,13 @@ export const PictureInfo = () => {
       )}
       <Wrap>
         <WrapInfo>
+          <H2>" {leng === 'ua' ? title1 : TitleEn} "</H2>
           <ImageBlock
             img={image}
             title={leng === 'ua' ? title1 : TitleEn}
             date={createdAt}
           />
           <DescriptionsBlock
-            title={leng === 'ua' ? title1 : TitleEn}
             text={leng === 'ua' ? descriptions : descriptionsEn}
             inStock={leng === 'ua' ? inStock : inStockEn}
             size={size}
@@ -116,7 +116,6 @@ const InfoBlock = ({ isit, size }) => {
       <p>
         {t('gallaryPage.pictureInfo.size')}: {size}
       </p>
-      {/* <p> {t('gallaryPage.pictureInfo.info')}</p> */}
     </WrapInfoFromMe>
   );
 };
@@ -124,7 +123,7 @@ const InfoBlock = ({ isit, size }) => {
 const ImageBlock = ({ img, title, date }) => {
   const [t] = useTranslation();
   let imG = `${BASIC_URL}/${img}`;
- 
+
   return (
     <WrapImageAndDateCreate>
       <WrapImage
@@ -132,7 +131,6 @@ const ImageBlock = ({ img, title, date }) => {
           backgroundImage: `url(${imG})`,
           backgroundPosition: 'center',
           filter: 'blur(6px)',
-
         }}
       ></WrapImage>
       <Img src={imG} alt={title} />
@@ -143,13 +141,10 @@ const ImageBlock = ({ img, title, date }) => {
   );
 };
 
-const DescriptionsBlock = ({ title, text, inStock, size }) => {
+const DescriptionsBlock = ({ text, inStock, size }) => {
   return (
     <WrapDescription>
-      <div style={{ height: '80%', overflow: 'hidden' }}>
-        <H2>{title}</H2>
-        <Span>{text}</Span>
-      </div>
+      <Span>{text}</Span>
       <InfoBlock isit={inStock} size={size} />
     </WrapDescription>
   );

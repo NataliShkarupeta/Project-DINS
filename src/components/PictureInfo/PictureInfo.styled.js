@@ -11,7 +11,6 @@ export const WrapDots = styled.div`
 `;
 
 export const Wrap = styled.div`
-  /* background-color: ${p => p.theme.colors.modes.light.background}; */
   width: 100%;
   height: 100%;
 `;
@@ -21,8 +20,12 @@ export const WrapInfo = styled.div`
   display: flex;
   justify-content: space-evenly;
   gap: 50px;
-  /* box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 3px 7px rgba(0, 0, 0, 0.3),
-    inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0); */
+  @media screen and (${p => p.theme.media.s}) {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0px;
+    margin-bottom: ${p => p.theme.space[1]}px;
+  }
 `;
 export const H2 = styled.h2`
   font-family: ${p => p.theme.fonts.monospace};
@@ -30,6 +33,10 @@ export const H2 = styled.h2`
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.text};
+  @media screen and (${p => p.theme.media.s}) {
+    margin-top: ${p => p.theme.space[2]}px;
+    text-align: center;
+  }
 `;
 
 export const Span = styled.span`
@@ -38,7 +45,13 @@ export const Span = styled.span`
   color: ${p => p.theme.colors.text};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-style: italic;
-  font-weight: ${p => p.theme.fontWeights.body}; 
+  font-weight: ${p => p.theme.fontWeights.body};
+  @media screen and (${p => p.theme.media.s}) {
+    margin-bottom: ${p => p.theme.space[0]}px;
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    line-height: 1.12;
+    font-style: italic;
+  }
 `;
 
 export const WrapInfoFromMe = styled.div`
@@ -49,11 +62,16 @@ export const WrapInfoFromMe = styled.div`
   color: ${p => p.theme.colors.therd};
   padding-right: ${p => p.theme.space[5]}px;
 
-
   font-family: ${p => p.theme.fonts.monospace};
 
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: 1.33;
+  @media screen and (${p => p.theme.media.s}) {
+   padding-right: ${p => p.theme.space[2]}px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    line-height: 1.12;
+    font-style: italic;
+  }
 `;
 ///////////// imageBlock////////////////////
 
@@ -64,6 +82,13 @@ export const WrapImageAndDateCreate = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  @media screen and (${p => p.theme.media.s}) {
+    gap: 10px;
+    position: relative;
+    width: 100%;
+    font-size: ${p => p.theme.fontSizes[0]}px;
+    margin: 0;
+  }
 `;
 
 export const WrapImage = styled.div`
@@ -72,11 +97,21 @@ export const WrapImage = styled.div`
   /* width: 450px; */
   width: 70%;
   height: 600px;
+  @media screen and (${p => p.theme.media.s}) {
+    min-width: 300px;
+   max-width: 60vw;
+    height: 50vh;
+  }
 `;
 
 export const Img = styled.img`
   position: absolute;
   width: 450px;
+  @media screen and (${p => p.theme.media.s}) {
+    height: auto;
+    width: 250px;
+    top: 60px;
+  }
 `;
 
 ////////////// descriptionBlock//////////
@@ -90,8 +125,14 @@ export const WrapDescription = styled.div`
   margin-top: ${p => p.theme.space[3]}px;
   margin-bottom: ${p => p.theme.space[3]}px;
   overflow-y: scroll;
-   
-  
+  @media screen and (${p => p.theme.media.s}) {
+    padding: ${p => p.theme.space[3]}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    overflow-y: scroll;
+  }
 `;
 
 ///////////////// orderBlock/////////////
