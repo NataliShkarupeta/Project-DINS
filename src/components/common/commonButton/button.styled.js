@@ -6,7 +6,7 @@ export const Button = styled.button`
   border: ${p => p.theme.borders.normal};
   border-radius: 5px;
   border-color: ${p => p.theme.colors.forBut};
-  padding: 2px;
+  padding: 2px 10px;
   :hover,
   :focus {
     cursor: pointer;

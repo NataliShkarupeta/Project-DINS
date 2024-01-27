@@ -1,4 +1,4 @@
-import { Head, WrapSender, SmallWrap} from './Header.styled';
+import { Head, WrapSender, SmallWrap } from './Header.styled';
 import { FaEnvelope } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import {
@@ -11,10 +11,13 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import img from '../../images/free-icon-space-8657325 (1).png';
 import { Button } from 'components/common/commonButton/button.styled';
+import { useMedia } from 'react-use';
 
 export const Header = () => {
   const [t] = useTranslation();
   const location = useLocation();
+
+  const isTabletM = useMedia('(max-width: 721px)');
 
 
   // елементи виїжджають знизу, за рахунок у, буде круто якщо стовбецем
@@ -46,7 +49,6 @@ export const Header = () => {
         </Link>
       </div>
 
-
       <WrapLinks>
         <Ul>
           <Li>
@@ -54,7 +56,7 @@ export const Header = () => {
               {t('professions.dev')}
             </NavigationLink>
           </Li>
-          <Li>
+          <Li >
             <NavigationLink to="/painting" state={{ from: location }}>
               {t('professions.art')}
             </NavigationLink>
@@ -82,22 +84,25 @@ export const Header = () => {
         </Ul>
       </WrapLinks>
 
-      <WrapSender>
-        <SmallWrap>
-          <FaEnvelope />
-          <p>{t('name')}</p>
-        </SmallWrap>
-        <>
-          <Button
-            onClick={e => {
-              window.location.href = 'mailto:natalinardi.kh@gmail.com';
-              e.preventDefault();
-            }}
-          >
-            {t('button.email')}
-          </Button>
-        </>
-      </WrapSender>
+      {!isTabletM && (
+        <WrapSender>
+          <SmallWrap>
+            <FaEnvelope />
+            <p>{t('name')}</p>
+          </SmallWrap>
+          <>
+            <Button
+             
+              onClick={e => {
+                window.location.href = 'mailto:natalinardi.kh@gmail.com';
+                e.preventDefault();
+              }}
+            >
+              {t('button.email')}
+            </Button>
+          </>
+        </WrapSender>
+      )}
     </Head>
   );
 };

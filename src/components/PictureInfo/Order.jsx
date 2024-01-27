@@ -17,6 +17,7 @@ import {
   Size,
   WrapSizes,
   TextExplanation,
+  WrapIfOrder,
 } from './PictureInfo.styled';
 import { FaStarOfLife } from 'react-icons/fa';
 import { CommonButton } from 'components/common/commonButton/button';
@@ -27,29 +28,18 @@ import { BorderTop, MiddleLine } from 'components/Gallery/Gallery.styled';
 import { BGPriceBlock, Input } from 'pages/ListPictures/ListPictures.styled';
 import { useTranslation } from 'react-i18next';
 import { useFeatureStore } from 'components/Features/Features/store';
+import { useMedia } from 'react-use';
 
 const styles = {
   width: '100px',
   backgroundColor: 'transparent',
 };
 
-const pricesBlock = {
-  position: 'absolute',
-  visibility: 'hidden',
-};
-const pricesBlockVisible = {
-  // backgroundColor: '#fff4e4',
-  marginTop: '30px',
-  padding: '10px 20px',
-  position: 'absolute',
-  visibility: 'visible',
-  right: '-20px',
-};
-
 export const OrderBlock = ({ tit, size, inStock }) => {
   const [selectedItem, setSelectedItem] = useState(
     inStock === 'так' ? 'Купляю' : 'Замовляю'
   );
+  const isMobile = useMedia('(max-width:541px)');
 
   const [t] = useTranslation();
   //   const handleCheck = e => {
@@ -100,7 +90,13 @@ export const OrderBlock = ({ tit, size, inStock }) => {
 
           <div>
             <Label>
-              {t('gallaryPage.pictureInfo.order.setAdress')}
+              <span
+                style={
+                  isMobile ? { lineHeight: '1.12' } : { lineHeight: '1.22' }
+                }
+              >
+                {t('gallaryPage.pictureInfo.order.setAdress')}
+              </span>
               <Prepayment>
                 <FaStarOfLife size={'10px'} color="purple" />
                 <p> {t('gallaryPage.pictureInfo.order.delivery')}</p>
@@ -123,6 +119,7 @@ export const OrderBlock = ({ tit, size, inStock }) => {
 };
 
 const IfBuy = ({ name, size }) => {
+  const isMobile = useMedia('(max-width:541px)');
   const [t] = useTranslation();
   return (
     <WrapIfBuy>
@@ -142,9 +139,11 @@ const IfBuy = ({ name, size }) => {
         </div>
       </div>
 
-      <TextExplanation>
-        {t('gallaryPage.pictureInfo.order.ifAnother')}{' '}
-      </TextExplanation>
+      {!isMobile && (
+        <TextExplanation>
+          {t('gallaryPage.pictureInfo.order.ifAnother')}{' '}
+        </TextExplanation>
+      )}
     </WrapIfBuy>
   );
 };
@@ -195,9 +194,10 @@ const SelectOrderOrBuy = ({ setSelectedItem, selectedItem, inStock }) => {
 
 const IfOrder = ({ size }) => {
   const [t] = useTranslation();
+    const isMobile = useMedia('(max-width:541px)');
   const checkList = ['40*40', '40*50', '40*60', '50*70', '80*70', '100*110'];
   return (
-    <div style={{ width: '50%' }}>
+    <WrapIfOrder>
       <Label>
         <LableText>{t('gallaryPage.pictureInfo.order.selectSize')}</LableText>
         <Select name="selectedSize" defaultValue={size}>
@@ -206,12 +206,17 @@ const IfOrder = ({ size }) => {
           ))}
         </Select>
       </Label>
-      <br />
-      <TextExplanation>
-        <BsExclamation />
-        {t('gallaryPage.pictureInfo.order.attention')}
-      </TextExplanation>
-    </div>
+
+      {!isMobile && (
+        <>
+          <br />
+          <TextExplanation>
+            <BsExclamation />
+            {t('gallaryPage.pictureInfo.order.attention')}
+          </TextExplanation>
+        </>
+      )}
+    </WrapIfOrder>
   );
 };
 
@@ -220,6 +225,7 @@ const DescriptionPreOrder = () => {
   const [vis, setVis] = useState(false);
 
   const leng = useFeatureStore(state => state.leng);
+  const isMobile = useMedia('(max-width:541px)');
 
   const list = [
     'до 40*60 - 70 y.e',
@@ -234,6 +240,26 @@ const DescriptionPreOrder = () => {
     'up to 100*110 - 250 y.e',
     'from 100*110 - contractual (in private correspondence)',
   ];
+  const pricesBlock = {
+    position: 'absolute',
+    visibility: 'hidden',
+  };
+  const pricesBlockVisible = {
+    // backgroundColor: '#fff4e4',
+    marginTop: '30px',
+    padding: '10px 20px',
+    position: 'absolute',
+    visibility: 'visible',
+    right: '-20px',
+  };
+  const pricesBlockVisibleMobile = {
+    padding: '5px 10px',
+    position: 'absolute',
+    visibility: 'visible',
+    bottom: '20px',
+    fontSize: '10px',
+  };
+
   return (
     <Desctiption>
       {t('gallaryPage.pictureInfo.order.desctiption')}
@@ -247,7 +273,15 @@ const DescriptionPreOrder = () => {
           <HiCursorClick />
           {t('gallaryPage.pictureInfo.order.findPrice')}
         </PricePicture>
-        <BGPriceBlock style={vis ? pricesBlockVisible : pricesBlock}>
+        <BGPriceBlock
+          style={
+            vis
+              ? isMobile
+                ? pricesBlockVisibleMobile
+                : pricesBlockVisible
+              : pricesBlock
+          }
+        >
           <WrapSizes>
             <FaStarOfLife size={'5px'} />
             <p> {t('gallaryPage.pictureInfo.order.cm')}</p>

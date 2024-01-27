@@ -67,7 +67,7 @@ export const WrapInfoFromMe = styled.div`
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: 1.33;
   @media screen and (${p => p.theme.media.s}) {
-   padding-right: ${p => p.theme.space[2]}px;
+    padding-right: ${p => p.theme.space[2]}px;
     font-size: ${p => p.theme.fontSizes[1]}px;
     line-height: 1.12;
     font-style: italic;
@@ -99,7 +99,7 @@ export const WrapImage = styled.div`
   height: 600px;
   @media screen and (${p => p.theme.media.s}) {
     min-width: 300px;
-   max-width: 60vw;
+    max-width: 60vw;
     height: 50vh;
   }
 `;
@@ -138,6 +138,9 @@ export const WrapDescription = styled.div`
 ///////////////// orderBlock/////////////
 export const Text = styled.p`
   width: 50%;
+  @media screen and (${p => p.theme.media.s}) {
+    width: 100%;
+  }
 `;
 
 export const WrapOrderBlock = styled.div`
@@ -146,15 +149,21 @@ export const WrapOrderBlock = styled.div`
   padding: ${p => p.theme.space[3]}px;
   background-color: rgba(255, 255, 255, 0.7);
   background-color: ${p => p.theme.colors.modes.dark.text};
+  @media screen and (${p => p.theme.media.s}) {
+    padding: ${p => p.theme.space[2]}px;
+    padding: 0;
+  }
 `;
 
 export const H3 = styled.h3`
-  /* margin-bottom: ${p => p.theme.space[3]}px; */
   text-align: center;
   font-family: ${p => p.theme.fonts.forName};
-  /* font-style: italic; */
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
+  @media screen and (${p => p.theme.media.s}) {
+    padding-top: ${p => p.theme.space[3]}px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
 `;
 export const Desctiption = styled.div`
   padding: ${p => p.theme.space[4]}px;
@@ -162,6 +171,12 @@ export const Desctiption = styled.div`
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
+  @media screen and (${p => p.theme.media.s}) {
+    padding: ${p => p.theme.space[3]}px;
+    margin-bottom: ${p => p.theme.space[2]}px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    line-height: 1.12;
+  }
 `;
 
 export const Prepayment = styled.span`
@@ -172,12 +187,23 @@ export const Prepayment = styled.span`
   flex-direction: column;
 
   text-decoration: underline;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    line-height: 1.12;
+  }
 `;
 
 export const Price = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
+  @media screen and (${p => p.theme.media.s}) {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    line-height: 1.12;
+  }
 `;
 
 export const PricePicture = styled.p`
@@ -187,6 +213,10 @@ export const PricePicture = styled.p`
     scale: 1.1;
   }
   transition: ${p => p.theme.transitions};
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    line-height: 1.12;
+  }
 `;
 
 export const Form = styled.form`
@@ -197,6 +227,11 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    line-height: 1.12;
+    gap: 30px;
+  }
 `;
 
 export const WrapInputFields = styled.div`
@@ -206,13 +241,31 @@ export const WrapInputFields = styled.div`
   display: flex;
 
   gap: 120px;
-  /* justify-content: space-between; */
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    line-height: 1.12;
+    display: block;
+  }
+`;
+
+export const WrapIfOrder = styled.div`
+  width: 50%;
+  @media screen and (${p => p.theme.media.s}) {
+    width: 100%;
+    margin-bottom: ${p => p.theme.space[4]}px;
+  }
 `;
 
 export const Label = styled.label`
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
+
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    line-height: 1.12;
+    padding: 0;
+  }
 `;
 
 export const LableText = styled.span`
@@ -253,18 +306,33 @@ export const TextArea = styled.textarea`
     border-color: ${p => p.theme.colors.primary};
     border-radius: ${p => p.theme.radii.normal};
   }
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: 12px;
+    width: 90vw;
+    height: 50px;
+  }
 `;
 export const WrapIfBuy = styled.div`
   width: 50%;
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
+  @media screen and (${p => p.theme.media.s}) {
+    padding: ${p => p.theme.space[2]}px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    width: 100%;
+    margin-bottom: ${p => p.theme.space[4]}px;
+    line-height: 1.12;
+  }
 `;
 
 export const H4 = styled.h4`
   font-family: ${p => p.theme.fonts.forName};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.middleOne};
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
 `;
 
 export const Size = styled.span`

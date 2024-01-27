@@ -23,7 +23,9 @@ export const HomePage = ({ setMore }) => {
 
   const styles = {
     position: 'absolute',
-    right: '3.1%',
+    right: '2.5%',
+    bottom:'-20%',
+   
     padding: '3px 8px',
   };
 
@@ -41,7 +43,7 @@ export const HomePage = ({ setMore }) => {
 
         <PhotoWrap></PhotoWrap>
       </NameAndPhoto>
-      <div>
+      <div style={{position:'relative'}}>
         <Article>
           {t('aboutMe')} <br /> {t('aboutMe1')}
         </Article>

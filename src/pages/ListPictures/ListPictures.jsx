@@ -37,7 +37,6 @@ const ListPictures = memo(() => {
   const [loading, setLoading] = useState(false);
 
 
-
   const location = useLocation();
   const [t] = useTranslation();
 
@@ -91,7 +90,7 @@ const ListPictures = memo(() => {
     }
   };
 
-  if ((!pictures, !inStock)) {
+  if (!pictures || !inStock) {
     return (
       <>
         <NavLinkButton to={'/painting'}>

@@ -138,7 +138,7 @@ export const WrapForLine = styled.div`
 `;
 
 export const Wrap = styled.div`
-  width: 1000px;
+  width: 85vw;
   padding: ${p => p.theme.space[3]}px;
   margin: ${p => p.theme.space[3]}px;
   margin-bottom: ${p => p.theme.space[5]}px;
@@ -148,7 +148,7 @@ export const Wrap = styled.div`
 
   background-color: ${p => p.theme.colors.modes.light.background};
   @media screen and (${p => p.theme.media.s}) {
-    width: 320px;
+    width: 90vw;
     padding: ${p => p.theme.space[0]}px;
     margin-bottom: ${p => p.theme.space[3]}px;
   }
@@ -157,7 +157,7 @@ export const Wrap = styled.div`
 export const TextPost = styled.p`
   margin-left: auto;
   margin-right: auto;
-  width: 800px;
+  width: 80vw;
   /* font-family: ${p => p.theme.fonts.forBlog}; */
   font-style: italic;
   font-size: ${p => p.theme.fontSizes[3]}px;
@@ -166,7 +166,7 @@ export const TextPost = styled.p`
   color: grey;
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
-    width: 308px;
+    
   }
 `;
 
@@ -176,7 +176,7 @@ export const TitlePost = styled.h2`
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.heading};
   color: grey;
-  color: #585454;
+  color: ${p => p.theme.colors.forBut};
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
     padding-top: ${p => p.theme.fontSizes[3]}px;

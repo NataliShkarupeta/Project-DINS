@@ -36,9 +36,7 @@ export const PostInfo = () => {
 
   const isMobile = useMedia('(max-width:541px)');
 
-  useEffect(() => {
-    window.scrollTo(0, 120);
-  }, []);
+ 
 
   useEffect(() => {
     setLoading(true);
@@ -46,6 +44,18 @@ export const PostInfo = () => {
       .then(res => setPost(res))
       .finally(() => setLoading(false));
   }, [postId]);
+  
+   useEffect(() => {
+     window.scrollTo(0, 120);
+   }, []);
+
+   useEffect(() => {
+     if (canDelet || showModal) {
+       document.body.style.overflow = 'hidden';
+     } else {
+       document.body.style.overflow = '';
+     }
+   }, [canDelet, showModal]);
 
   const styles = {
     backgroundColor: 'transparent',

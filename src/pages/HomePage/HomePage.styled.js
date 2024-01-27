@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import img from '../../images/author/IMG_0043.jpg'
+import img from '../../images/author/IMG_0043.jpg';
 
 export const Motto = styled.span`
   display: block;
@@ -40,7 +40,6 @@ export const PhotoWrap = styled.div`
 export const WrapName = styled.div`
   margin-top: ${p => p.theme.space[5]}px;
   position: sticky;
-
 `;
 
 export const Article = styled.article`
@@ -56,10 +55,9 @@ export const Article = styled.article`
   /* overflow: hidden; */
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 3px 7px rgba(0, 0, 0, 0.3),
     inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0);
-  margin-bottom: ${p => p.theme.space[3]}px;
+  margin-bottom: ${p => p.theme.space[5]}px;
   position: relative;
 `;
-
 
 export const NavigationLink = styled(NavLink)`
   text-transform: uppercase;
@@ -97,11 +95,21 @@ export const Ul = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 35px;
- 
+  /* gap: 35px; */
+  @media screen and (${p => p.theme.media.m}) {
+    padding: 10px;
+    gap: 20px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    gap: 25px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    padding: 0;
+    gap: 35px;
+  }
 `;
 export const Li = styled.li`
-  font-size: ${p => p.theme.fontSizes[2]}px;
+  /* font-size: ${p => p.theme.fontSizes[2]}px; */
   font-family: ${p => p.theme.fonts.monospace};
   font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.normal};
@@ -111,5 +119,13 @@ export const Li = styled.li`
   }
 
   transition: 0.3s linear;
- 
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
+
+  @media screen and (${p => p.theme.media.l}) {
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
 `;

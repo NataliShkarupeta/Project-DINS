@@ -227,8 +227,7 @@ export const MiddleLine = styled.div`
   width: 65%;
   background-color: ${p => p.theme.colors.fourth};
   @media screen and (${p => p.theme.media.s}) {
-  width: 0;
-  height: 0;
+    width: 85%;
   }
 `;
 
