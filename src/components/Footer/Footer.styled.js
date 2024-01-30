@@ -20,13 +20,28 @@ export const WrapConnect = styled.div`
 
 export const WrapDate = styled.div`
   margin-bottom: ${p => p.theme.space[5]}px;
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
 `;
 
 export const TextConnect = styled.p`
   text-decoration: underline;
-  font-size:18px;
-    @media screen and (${p => p.theme.media.s}) {
+  font-size: 18px;
+  @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[1]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
   }
 `;
 const stylesBut = css`

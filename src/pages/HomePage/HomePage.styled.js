@@ -13,19 +13,37 @@ export const Motto = styled.span`
   line-height: ${p => p.theme.lineHeights.normal};
   padding-left: ${p => p.theme.space[3]}px;
   padding-right: ${p => p.theme.space[3]}px;
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
 `;
 
 export const NameAndPhoto = styled.div`
-  display: flex;
-  /* gap: 20px; */
-  justify-content: space-around;
-  /* align-items: center; */
+  /* display: flex;
+  justify-content: space-around; */
   margin-bottom: ${p => p.theme.space[4]}px;
   position: relative;
+  @media screen and (${p => p.theme.media.m}) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-around;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    /* display: flex;
+    justify-content: space-around; */
+  }
 `;
 export const PhotoWrap = styled.div`
-  width: 500px;
-  height: 700px;
+  /* width: 500px;
+  height: 700px; */
   border-color: ${p => p.theme.colors.secondary};
   background-image: url('${img}');
   background-size: cover;
@@ -35,11 +53,64 @@ export const PhotoWrap = styled.div`
     width: 100%;
     height: 500px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    width: 80vw;
+    height: 600px;
+    margin-left: 20%;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    margin: 0;
+    width: 450px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    width: 500px;
+    height: 700px;
+  }
 `;
 
 export const WrapName = styled.div`
-  margin-top: ${p => p.theme.space[5]}px;
+  /* margin-top: ${p => p.theme.space[5]}px; */
   position: sticky;
+  @media screen and (${p => p.theme.media.m}) {
+    margin-top: ${p => p.theme.space[3]}px;
+    padding: 0 0 0 16px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    /* padding: 0; */
+    margin-top: ${p => p.theme.space[5]}px;
+  }
+`;
+export const Name = styled.span`
+  font-weight: bold;
+  font-size: 120px;
+  line-height: 1.09;
+  transform: rotateX(35deg) rotateZ(1deg);
+
+  font-family: ${p => p.theme.fonts.forBlog};
+  font-style: italic;
+  /* color: ${p => p.theme.colors.modes.dark.primary}; */
+  position: sticky;
+  top: 0;
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: 60px;
+    position: static;
+    color: ${p => p.theme.colors.text};
+    font-weight: ${p => p.theme.fontWeights.middleOne};
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    position: sticky;
+    color: ${p => p.theme.colors.modes.dark.primary};
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: 80px;
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
+    position: sticky;
+    font-size: 120px;
+  }
 `;
 
 export const Article = styled.article`
@@ -57,6 +128,22 @@ export const Article = styled.article`
     inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0);
   margin-bottom: ${p => p.theme.space[5]}px;
   position: relative;
+  @media screen and (${p => p.theme.media.m}) {
+    padding: ${p => p.theme.space[2]}px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    padding: ${p => p.theme.space[3]}px;
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
+    line-height: 1.18;
+    font-size: ${p => p.theme.fontSizes[3]}px;
+    /* font-size: 19px; */
+  }
 `;
 
 export const NavigationLink = styled(NavLink)`
@@ -71,22 +158,6 @@ export const WrapHome = styled.div`
   gap: 20px;
 `;
 
-export const Name = styled.span`
-  font-weight: bold;
-  font-size: 120px;
-  line-height: 1.09;
-  transform: rotateX(35deg) rotateZ(1deg);
-
-  font-family: ${p => p.theme.fonts.forBlog};
-  font-style: italic;
-  color: ${p => p.theme.colors.modes.dark.primary};
-  position: sticky;
-  top: 0;
-  @media screen and (${p => p.theme.media.s}) {
-    font-size: ${p => p.theme.fontSizes[3]}px;
-  }
-`;
-
 export const WrapLinks = styled.div``;
 
 export const Ul = styled.ul`
@@ -97,11 +168,13 @@ export const Ul = styled.ul`
   justify-content: center;
   /* gap: 35px; */
   @media screen and (${p => p.theme.media.m}) {
-    padding: 10px;
+    padding: 3px;
+    justify-content: flex-end;
     gap: 20px;
   }
   @media screen and (${p => p.theme.media.l}) {
     gap: 25px;
+    justify-content: center;
   }
   @media screen and (${p => p.theme.media.xl}) {
     padding: 0;

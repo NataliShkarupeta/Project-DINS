@@ -10,10 +10,12 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { useEffect } from 'react';
+import { useMedia } from 'react-use';
 
 export const HomePage = ({ setMore }) => {
   const [t] = useTranslation();
   const setName = useFeatureStore(store => store.setName);
+   const isTabletM = useMedia('(max-width: 721px)');
 
   useEffect(() => {
     setName(true);
@@ -31,7 +33,7 @@ export const HomePage = ({ setMore }) => {
 
   return (
     <>
-      <Motto>{t('info')}</Motto>
+     {!isTabletM && <Motto>{t('info')}</Motto>}
       <NameAndPhoto>
         <WrapName>
           <Name>

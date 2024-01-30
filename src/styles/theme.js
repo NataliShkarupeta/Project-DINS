@@ -127,9 +127,11 @@ export const themeSecond = {
 
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 68, 72, 78, 106],
   fontWeights: {
-    body: 400,
-    heading: 900,
-    bold: 700,
+    body: 300,
+    middle: 400,
+    middleOne: 500,
+    heading: 700,
+    bold: 600,
   },
   lineHeights: {
     body: 1.5,

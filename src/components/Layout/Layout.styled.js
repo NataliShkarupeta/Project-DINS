@@ -34,14 +34,22 @@ export const Blog = styled.div`
     rgba(12, 116, 117, 1) 90%
   );
   color: ${p => p.theme.colors.modes.dark.text};
-  padding: ${p => p.theme.space[2]}px;
-  font-size: ${p => p.theme.fontSizes[3]}px;
+  /* padding: ${p => p.theme.space[2]}px;
+  font-size: ${p => p.theme.fontSizes[3]}px; */
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.body};
   font-weight: ${p => p.theme.fontWeights.middle};
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[1]}px;
     padding: ${p => p.theme.space[1]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    padding: ${p => p.theme.space[1]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    padding: ${p => p.theme.space[2]}px;
+    font-size: ${p => p.theme.fontSizes[3]}px;
   }
 `;
 
