@@ -18,7 +18,7 @@ export const BlockButton = styled.div`
   display: flex;
   justify-content: center;
   gap: 2px;
-  margin-left: 90%;
+
   margin-right: 16px;
   border: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.buttons.primary.bordCol};
@@ -29,15 +29,23 @@ export const BlockButton = styled.div`
   }
   @media screen and (${p => p.theme.media.s}) {
     background-color: #8a8a8a;
-      background-image: radial-gradient(
-    circle farthest-corner at 10% 20% ,
-    rgba(12, 116, 117, 1) 10%,
-    rgba(14, 174, 87, 1) 90%
-    
-  );
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(12, 116, 117, 1) 10%,
+      rgba(14, 174, 87, 1) 90%
+    );
     color: #fff;
     margin-left: 0;
     margin-right: 0;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    margin-left: 80%;
+  }
+ 
+  @media screen and (${p => p.theme.media.xl}) {
+    margin-left: 85%;
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
   }
 `;
 
@@ -57,6 +65,14 @@ export const WrapTitleAndDate = styled.div`
     margin-bottom: ${p => p.theme.space[3]}px;
     padding-left: ${p => p.theme.space[0]}px;
     padding-right: ${p => p.theme.space[0]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+  }
+  @media screen and (${p => p.theme.media.l}) {
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
   }
 `;
 
@@ -92,17 +108,32 @@ export const Li = styled.li`
     margin: ${p => p.theme.space[1]}px;
     margin-bottom: ${p => p.theme.space[4]}px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+  }
+  @media screen and (${p => p.theme.media.l}) {
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
+    
+  }
 `;
 
 export const Title = styled.h2`
   font-family: ${p => p.theme.fonts.monospace};
   font-style: italic;
-  font-size: ${p => p.theme.fontSizes[3]}px;
+
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.therd};
 
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
   }
 `;
 
@@ -114,7 +145,6 @@ export const Date = styled.span`
 export const Text = styled.p`
   margin-left: auto;
   margin-right: auto;
-  width: 800px;
   height: 400px;
   color: ${p => p.theme.colors.therd};
 
@@ -128,7 +158,15 @@ export const Text = styled.p`
     font-weight: ${p => p.theme.fontWeights.body};
     width: 308px;
     line-height: 1.22;
-    
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    width: 80vw;
+  }
+
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+    width: 800px;
   }
 `;
 
@@ -166,8 +204,14 @@ export const TextPost = styled.p`
   color: grey;
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
-    
   }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
+ 
 `;
 
 export const TitlePost = styled.h2`
@@ -181,6 +225,14 @@ export const TitlePost = styled.h2`
     font-size: ${p => p.theme.fontSizes[2]}px;
     padding-top: ${p => p.theme.fontSizes[3]}px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    margin-bottom: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
+ 
 `;
 
 

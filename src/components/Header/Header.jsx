@@ -17,7 +17,7 @@ export const Header = () => {
   const [t] = useTranslation();
   const location = useLocation();
 
-  const isTabletM = useMedia('(max-width: 721px)');
+  const isTabletM = useMedia('(max-width: 720px)');
 
 
   // елементи виїжджають знизу, за рахунок у, буде круто якщо стовбецем

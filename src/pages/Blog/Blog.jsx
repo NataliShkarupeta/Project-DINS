@@ -39,6 +39,7 @@ const BlogPage = memo(() => {
 
   const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
   const isMobile = useMedia('(max-width: 541px)');
+  // const isTabletM = useMedia('(max-width: 721px)');
 
   useEffect(() => {
     setSelectedMenu(false);

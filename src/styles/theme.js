@@ -3,8 +3,8 @@ export const theme = {
     xxl: '(min-width: 1141px)',
     xl: 'min-width: 961px',
     l: '(min-width: 721px)',
-    m: '(min-width: 541px)',
-    s: '(max-width: 540px)',
+    m: '(min-width: 542px)',
+    s: '(max-width: 541px)',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 388, 512, 634],
   fonts: {

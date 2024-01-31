@@ -88,7 +88,7 @@ export const Name = styled.span`
 
   font-family: ${p => p.theme.fonts.forBlog};
   font-style: italic;
-  /* color: ${p => p.theme.colors.modes.dark.primary}; */
+  color: ${p => p.theme.colors.modes.dark.primary};
   position: sticky;
   top: 0;
   @media screen and (${p => p.theme.media.s}) {
@@ -97,15 +97,16 @@ export const Name = styled.span`
   @media screen and (${p => p.theme.media.m}) {
     font-size: 60px;
     position: static;
-    color: ${p => p.theme.colors.text};
     font-weight: ${p => p.theme.fontWeights.middleOne};
   }
   @media screen and (${p => p.theme.media.l}) {
     position: sticky;
     color: ${p => p.theme.colors.modes.dark.primary};
+    font-size: 70px;
   }
   @media screen and (${p => p.theme.media.xl}) {
     font-size: 80px;
+    font-weight: ${p => p.theme.fontWeights.bold};
   }
   @media screen and (${p => p.theme.media.xxl}) {
     position: sticky;

@@ -15,7 +15,8 @@ import { useMedia } from 'react-use';
 export const HomePage = ({ setMore }) => {
   const [t] = useTranslation();
   const setName = useFeatureStore(store => store.setName);
-   const isTabletM = useMedia('(max-width: 721px)');
+ 
+  const isTabletM = useMedia('(max-width: 721px)');
 
   useEffect(() => {
     setName(true);
