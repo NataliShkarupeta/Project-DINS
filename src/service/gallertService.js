@@ -1,6 +1,15 @@
 import axios from 'axios';
 export const URLPIC = 'http://localhost:3001/pictures';
 
+export const changeInfoPicture = async (id, obj) => {
+  try {
+    const { data } = await axios.patch(`${URLPIC}/${id._id}`, obj);
+    return data.data.result;
+  } catch (error) {
+    return error.massage;
+  }
+};
+
 export const getAllPictures = async () => {
   try {
     const { data } = await axios.get(URLPIC);
@@ -64,6 +73,13 @@ export const getPlacePictures = async spot => {
     );
     console.log(sortPictures)
     return sortPictures;
+  } catch (error) {
+    return error.massage;
+  }
+};
+export const deletePicture = async id => {
+  try {
+    await axios.delete(`${URLPIC}/${id._id}`);
   } catch (error) {
     return error.massage;
   }

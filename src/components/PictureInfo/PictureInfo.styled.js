@@ -55,11 +55,8 @@ export const Span = styled.span`
 `;
 
 export const WrapInfoFromMe = styled.div`
-  /* width: 45%; */
-  /* height: 350px; */
   overflow: hidden;
   text-align: right;
-  color: ${p => p.theme.colors.therd};
   padding-right: ${p => p.theme.space[5]}px;
 
   font-family: ${p => p.theme.fonts.monospace};
@@ -76,6 +73,7 @@ export const WrapInfoFromMe = styled.div`
 ///////////// imageBlock////////////////////
 
 export const WrapImageAndDateCreate = styled.div`
+  position: relative;
   width: 50%;
   margin-bottom: ${p => p.theme.space[4]}px;
   display: flex;
@@ -93,7 +91,7 @@ export const WrapImageAndDateCreate = styled.div`
 
 export const WrapImage = styled.div`
   position: relative;
-  margin-top: ${p => p.theme.space[4]}px;
+  margin-top: ${p => p.theme.space[3]}px;
   /* width: 450px; */
   width: 70%;
   height: 600px;
@@ -106,11 +104,13 @@ export const WrapImage = styled.div`
 
 export const Img = styled.img`
   position: absolute;
-  width: 450px;
+  /* top: 45px; */
+  max-width: 450px;
+  max-height: 580px;
   @media screen and (${p => p.theme.media.s}) {
-    height: auto;
-    width: 250px;
-    top: 60px;
+    max-height: 45vh;
+    max-width: 250px;
+    /* top: 45px; */
   }
 `;
 

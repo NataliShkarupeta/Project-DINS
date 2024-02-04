@@ -1,28 +1,24 @@
-import { useEffect, useState } from 'react';
-import {
-  Overlay,
-  ModalContainer,
-  Title,
-  Text,
-  Button,
-  WrapButtonsModal,
-  ContainerPost,
-  Input,
-} from './Modal.styled';
-import { changePost } from 'service/blogService';
 
-export const Modal = ({
+import { Overlay, Text, Title } from 'components/ModalForBlog/ModalForDelete/ModalForDelete.styled';
+import { Button, WrapButtonsModal } from 'components/ModalForBlog/modalChangePost/Modal.styled';
+import { ModalContainer } from 'components/common/modal/modal.styled';
+import { useEffect, useState } from 'react';
+import { deletePicture } from 'service/gallertService';
+
+export const ModalForDeletePicture = ({
   text,
   descriptions,
   textButton,
-  close,
+  pictureForDelete,
   textButton1,
-  postForChange,
+  close,
+  closeAskModal,
 }) => {
   const [changepost, setchangePost] = useState(false);
-  
+
   useEffect(() => {
     const closeEsc = e => {
+     
       if (e.keyCode === 27) {
         close(false);
       }
@@ -31,16 +27,17 @@ export const Modal = ({
     return () => window.removeEventListener('keydown', closeEsc);
   }, [close]);
 
-  const onClose = evt => {
-    if ( evt.currentTarget === evt.target) {
+  const onClose = e => {
+    if ( e.currentTarget === e.target) {
       close(false);
     }
   };
 
   const handelSubmit = e => {
+
     e.preventDefault();
 
-     const form = document.querySelector('#formElement');
+    const form = document.querySelector('#formElement');
     const formData = new FormData(form);
     const secret = formData.get('text');
 
@@ -51,13 +48,12 @@ export const Modal = ({
     }
     form.reset();
   };
-  
-  const submitChange = e => {
+
+  const deletePostById = e => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const descriptions = formData.get('descriptions');
-    changePost(postForChange, descriptions);
-    close(false);
+    deletePicture(pictureForDelete);
+    setchangePost(false);
+    closeAskModal(false);
   };
 
   return (
@@ -82,22 +78,12 @@ export const Modal = ({
         </Overlay>
       ) : (
         <Overlay onClick={onClose}>
-          <ContainerPost>
-            <h2>{postForChange.title}</h2>
-            <form onSubmit={submitChange}>
-              <Input
-                defaultValue={postForChange.descriptions}
-                type="text"
-                name="descriptions"
-              />
-              <WrapButtonsModal>
-                <Button type="submit">Змінити</Button>
-                <Button onClick={onClose}>{textButton1}</Button>
-              </WrapButtonsModal>
-            </form>
-          </ContainerPost>
+          <ModalContainer>
+            <Title>{'Ти збираєшся видалити пост, впевнена?'}</Title>
+            <button onClick={deletePostById}>{'Видалити пост'}</button>
+          </ModalContainer>
         </Overlay>
       )}
     </>
-  );
-};
+  )
+      }

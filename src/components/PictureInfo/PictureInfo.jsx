@@ -23,6 +23,11 @@ import { NavLinkButton } from 'pages/ListPictures/ListPictures.styled';
 import { OrderBlock } from './Order';
 import { DefaultComponent } from 'components/common/default/defaultComponent';
 import { ThreeDots } from 'react-loader-spinner';
+import { RxCheck, RxCross2, RxPencil1, RxTrash } from 'react-icons/rx';
+import { ModalChangePicture } from './ModalForPicture/ModalForPicture';
+import { BlockButton, WrapForTooltip } from 'pages/Blog/Blog.styled';
+import { Tooltip } from 'react-tooltip';
+import { ModalForDeletePicture } from './ModalForPicture/ModalForDeletePicture';
 
 export const PictureInfo = () => {
   const [picture, setPicure] = useState(null);
@@ -94,6 +99,7 @@ export const PictureInfo = () => {
             text={leng === 'ua' ? descriptions : descriptionsEn}
             inStock={leng === 'ua' ? inStock : inStockEn}
             size={size}
+            picture={picture}
           />
         </WrapInfo>
         <OrderBlock
@@ -124,7 +130,7 @@ const InfoBlock = ({ isit, size }) => {
 const ImageBlock = ({ img, title, date }) => {
   const [t] = useTranslation();
   let imG = `${BASIC_URL}/${img}`;
- 
+
   return (
     <WrapImageAndDateCreate>
       <WrapImage
@@ -132,7 +138,6 @@ const ImageBlock = ({ img, title, date }) => {
           backgroundImage: `url(${imG})`,
           backgroundPosition: 'center',
           filter: 'blur(6px)',
-
         }}
       ></WrapImage>
       <Img src={imG} alt={title} />
@@ -143,14 +148,100 @@ const ImageBlock = ({ img, title, date }) => {
   );
 };
 
-const DescriptionsBlock = ({ title, text, inStock, size }) => {
+const DescriptionsBlock = ({ title, text, inStock, size, picture }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [canDelet, setCanDelete] = useState(false);
+  const [t] = useTranslation();
+  useEffect(() => {
+    if (canDelet || showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [canDelet, showModal]);
+  const styles = {
+    backgroundColor: 'transparent',
+    padding: '4px 4px',
+    border: 'none',
+    display: 'flex',
+    jastifyContext: 'center',
+  };
+
   return (
-    <WrapDescription>
-      <div style={{ height: '80%', overflow: 'hidden' }}>
-        <H2>{title}</H2>
-        <Span>{text}</Span>
-      </div>
-      <InfoBlock isit={inStock} size={size} />
-    </WrapDescription>
+    <>
+      {showModal && (
+        <ModalChangePicture
+          text={t('pageBlog.modal.attention')}
+          descriptions={t('pageBlog.modal.key')}
+          textButton={<RxCheck size={'20px'} color="grey" />}
+          textButton1={<RxCross2 size={'20px'} color="grey" />}
+          close={setShowModal}
+          pictureForChange={picture}
+        />
+      )}
+      {canDelet && (
+        <ModalForDeletePicture
+          text={t('pageBlog.modal.attentionDelete')}
+          textButton={<RxCheck size={'20px'} color="grey" />}
+          descriptions={t('pageBlog.modal.key')}
+          textButton1={<RxCross2 size={'20px'} color="grey" />}
+          close={setCanDelete}
+          pictureForDelete={picture}
+          closeAskModal={setCanDelete}
+        />
+      )}
+      <WrapDescription>
+        <div style={{ height: '80%', overflow: 'hidden' }}>
+          <H2>{title}</H2>
+          <Span>{text}</Span>
+        </div>
+        <InfoBlock isit={inStock} size={size} />
+        <BlockButton style={{ marginRight: '15%' }}>
+          <WrapForTooltip>
+            <p
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={t('button.commonButton.edit')}
+            >
+              <CommonButton
+                styled={styles}
+                text={
+                  // isMobile ? (
+                  // <RxPencil1 size={'16px'} color="white" />
+                  // ) : (
+                  <RxPencil1 size={'16px'} color="black" />
+                  // )
+                }
+                clickHandler={() => {
+                  setShowModal(true);
+                }}
+              ></CommonButton>
+            </p>
+            <Tooltip id="my-tooltip" />
+          </WrapForTooltip>
+
+          <WrapForTooltip>
+            <p
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={t('button.commonButton.delete')}
+            >
+              <CommonButton
+                styled={styles}
+                text={
+                  // isMobile ? (
+                  // <RxTrash size={'16px'} color="white" />
+                  // ) : (
+                  <RxTrash size={'16px'} color="black" />
+                  // )
+                }
+                clickHandler={() => {
+                  setCanDelete(true);
+                }}
+              ></CommonButton>
+            </p>
+            <Tooltip id="my-tooltip" />
+          </WrapForTooltip>
+        </BlockButton>
+      </WrapDescription>
+    </>
   );
 };
