@@ -42,22 +42,16 @@ export const BgFirst = styled.div`
   width: 100%;
   color: ${p => p.theme.colors.therd};
   background-color: rgba(255, 255, 255, 0.7);
- 
 `;
 
-export const BgSecond = styled.div`
-
-`;
+export const BgSecond = styled.div``;
 export const BgThirt = styled.div`
   width: 100%;
   color: ${p => p.theme.colors.therd};
   background-color: rgba(255, 255, 255, 0.7);
-
 `;
 
-export const BgFourth = styled.div`
- 
-`;
+export const BgFourth = styled.div``;
 export const P = styled.p`
   text-align: center;
   padding-top: ${p => p.theme.space[3]}px;
@@ -98,14 +92,29 @@ export const MainImageDiv = styled.div`
   }
 `;
 
+export const NameBlock = styled.div`
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: center;
+  @media screen and (${p => p.theme.media.s}) {
+    padding-top: ${p => p.theme.space[3]}px;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+`;
+
 export const Banner = styled.div`
   position: relative;
   padding-top: ${p => p.theme.space[7]}px;
   height: 100vh;
   display: flex;
-  gap: 10px;
-  align-items: baseline;
-  justify-content: center;
+  /* gap: 10px; */
+  /* align-items: baseline;
+  justify-content: center; */
+  flex-direction: column;
   @media screen and (${p => p.theme.media.s}) {
     padding-top: ${p => p.theme.space[3]}px;
     height: 50vh;
@@ -134,7 +143,7 @@ export const ButtonScroll = styled.button`
     position: static;
     width: 60px;
     height: 60px;
-    background-color:red;
+    background-color: red;
     color: black;
   }
 `;
@@ -174,16 +183,19 @@ export const FirstV = styled.p`
 `;
 
 export const SecondV = styled.p`
-  font-style: italic;
-  ${fontStyles}
+
+  font-size: ${p => p.theme.fontSizes[2]}px;
 `;
 
 export const ThirdV = styled.p`
-  ${fontStyles}/* z-index: 100; */
-  /* color: ${p => p.theme.colors.background}; */
+  ${fontStyles}
 `;
 
-export const MainSection = styled.div`
+export const OilPaintingWord = styled.div`
+  text-align: center;
+  @media screen and (${p => p.theme.media.s}) {
+    margin-bottom: 80px;
+  }
 `;
 
 export const RedBallBefore = styled.div`
@@ -219,7 +231,6 @@ export const RedBallBefore = styled.div`
 export const BorderTop = styled.div`
   display: flex;
   justify-content: space-between;
-
 `;
 
 export const MiddleLine = styled.div`
@@ -244,7 +255,7 @@ export const Ul = styled.ul`
   align-items: center;
   justify-content: space-evenly;
   @media screen and (${p => p.theme.media.s}) {
-   gap: 20px;
+    gap: 20px;
   }
 `;
 

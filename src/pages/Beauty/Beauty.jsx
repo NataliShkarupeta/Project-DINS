@@ -43,14 +43,37 @@ const styles = {
   borderRadius: '30px',
   top: '-37.5vh',
 };
+const styleXL = {
+  position: 'absolute',
+  width: '55vw',
+  // height: '60vh',
+  overflow: 'hidden',
+  borderRadius: '30px',
+  top: '-35.5vh',
+};
+const styleL = {
+  position: 'absolute',
+  width: '60vw',
+  // height: '60vh',
+  overflow: 'hidden',
+  borderRadius: '30px',
+  top: '-26.5vh',
+};
 
 const styleMobile = {
   position: 'absolute',
   width: '65vw',
-  // height: '75vh',
   overflow: 'hidden',
   borderRadius: '30px',
-  // top: '-12vh',
+
+};
+const styleTablet = {
+  position: 'absolute',
+  width: '65vw',
+  // height: '50vh',
+  overflow: 'hidden',
+  borderRadius: '30px',
+  
 };
 
 const BeautyPage = () => {
@@ -59,6 +82,9 @@ const BeautyPage = () => {
 
   const photoArr = [l4, l3, l6, l8, l9];
   const isMobile = useMedia('(max-width:541px)');
+  const isTabletM = useMedia('(max-width: 721px)');
+  const isTabletXL = useMedia('(max-width: 961px)');
+   const isComp = useMedia('(max-width: 1141px)');
 
   const onRight = () => {
     if (position < photoArr.length - 1) {
@@ -119,16 +145,26 @@ const BeautyPage = () => {
       <ContainerForSlider>
         <WrapBottonTurn>
           <ButtonTurn onClick={onRight}>
-            <BsChevronLeft />
+            <BsChevronLeft color="purple" />
           </ButtonTurn>
           <ButtonTurn onClick={onLeft}>
-            <BsChevronRight />
+            <BsChevronRight color="purple" />
           </ButtonTurn>
         </WrapBottonTurn>
         <Row>
           {photoArr.map((photo, index) => (
             <motion.div
-              style={isMobile ? styleMobile : styles}
+              style={
+                isMobile
+                  ? styleMobile
+                  : isTabletM
+                  ? styleTablet
+                  : isTabletXL
+                  ? styleL
+                  : isComp
+                  ? styleXL
+                  : styles
+              }
               key={index}
               initial={{ scale: 0, rotation: -180 }}
               // animate={{
@@ -137,7 +173,7 @@ const BeautyPage = () => {
               //   scale: index === position ? 1 : 0.8,
               // }}
               animate={
-                !isMobile
+                !isMobile && !isTabletM
                   ? {
                       rotate: 0,
                       left: `${(index - position) * 60 - 26}vw`,
@@ -154,7 +190,7 @@ const BeautyPage = () => {
                 type: 'tween',
               }}
             >
-              <Img src={photo} alt="" />
+                <Img src={photo} alt="/" />
             </motion.div>
           ))}
         </Row>

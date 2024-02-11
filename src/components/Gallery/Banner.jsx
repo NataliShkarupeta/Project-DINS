@@ -6,7 +6,10 @@ import {
   FirstV,
   LinkBlock,
   MiddleLine,
+  NameBlock,
+  OilPaintingWord,
   RedBallBefore,
+  SecondV,
   ThirdV,
   WhoAmI,
 } from './Gallery.styled';
@@ -43,7 +46,7 @@ const BannerComp = ({ refToPict }) => {
   const isMobile = useMedia('(max-width:541px');
   const location = useLocation();
   useEffect(() => {
-    isMobile ? window.scrollTo(0, 0) : window.scrollTo(0, 250);
+    isMobile ? window.scrollTo(0, 125) : window.scrollTo(0, 250);
   }, [isMobile]);
   // useEffect(() => {
   //   setTimeout(() => {
@@ -74,31 +77,18 @@ const BannerComp = ({ refToPict }) => {
         <MiddleLine></MiddleLine>
         <div></div>
       </BorderTop>
-      <Link to={'/painting/list_pictures'} state={{ from: location }}>
-        <RedBallBefore>
-          <CommonButton
-            styled={isMobile ? stylesMobile : styles}
-            text={t('gallaryPage.buttonListPicture')}
-          />
-        </RedBallBefore>
-      </Link>
-
+      <div>
+        <Link to={'/painting/list_pictures'} state={{ from: location }}>
+          <RedBallBefore>
+            <CommonButton
+              styled={isMobile ? stylesMobile : styles}
+              text={t('gallaryPage.buttonListPicture')}
+            />
+          </RedBallBefore>
+        </Link>
+      </div>
       <Banner>
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            ease: 'easeInOut',
-            duration: 1,
-            dalay: 0.4,
-          }}
-        >
-          <WhoAmI> {t('gallaryPage.banner.WhoAmI')} </WhoAmI>
-        </motion.div>
-
-        <RowTop title={t('gallaryPage.banner.name')} />
-        <RowBottom title={t('gallaryPage.banner.lastName')} />
-        {isMobile ? (
+        <NameBlock>
           <motion.div
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
@@ -108,31 +98,49 @@ const BannerComp = ({ refToPict }) => {
               dalay: 0.4,
             }}
           >
+            <WhoAmI> {t('gallaryPage.banner.WhoAmI')} </WhoAmI>
+          </motion.div>
+
+          <RowTop title={t('gallaryPage.banner.name')} />
+          <RowBottom title={t('gallaryPage.banner.lastName')} />
+          {/* <p>{t('gallaryPage.oilPanting')}</p> */}
+          {isMobile ? (
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                ease: 'easeInOut',
+                duration: 1,
+                dalay: 0.4,
+              }}
+            >
+              <ButtonScroll
+              // style={{position:'absolute'}}
+                onClick={() =>
+                  refToPict.current.scrollIntoView({ behavior: 'smooth' })
+                }
+              >
+                {t('gallaryPage.banner.scroll')}
+              </ButtonScroll>
+            </motion.div>
+          ) : (
             <ButtonScroll
               onClick={() =>
                 refToPict.current.scrollIntoView({ behavior: 'smooth' })
               }
-              // onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               {t('gallaryPage.banner.scroll')}
             </ButtonScroll>
-          </motion.div>
-        ) : (
-          <ButtonScroll
-            onClick={() =>
-              refToPict.current.scrollIntoView({ behavior: 'smooth' })
-            }
-            // onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            {t('gallaryPage.banner.scroll')}
-          </ButtonScroll>
-        )}
-
-        {/* <RowCenter title={'gallery'}  /> */}
+          )}
+        </NameBlock>
+        <OilPaintingWord >
+          <RowCenter title={t('gallaryPage.oilPanting')} />
+        </OilPaintingWord>
       </Banner>
     </motion.div>
   );
 };
+
 const AnimatedLetters = ({ title, disabled }) => (
   <motion.span variants={banner} initial="hidden" animate="show">
     {[...title].map((letter, index) => (
@@ -169,13 +177,13 @@ const RowTop = ({ title }) => {
   );
 };
 
-// const RowCenter = ({ title }) => {
-//   return (
-//     <SecondV>
-//       <AnimatedLetters title={title} />
-//     </SecondV>
-//   );
-// };
+const RowCenter = ({ title }) => {
+  return (
+    <SecondV>
+      <AnimatedLetters title={title} />
+    </SecondV>
+  );
+};
 
 const RowBottom = ({ title }) => {
   return (

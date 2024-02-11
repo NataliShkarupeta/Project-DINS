@@ -4,7 +4,7 @@
   "pageBlog": {
     "modal": {
       "attention": "Attention! This action is only available to the author.",
-      "attentionDelete": "Attention! This action is only available to the author (delete post).",
+      "attentionDelete": "Attention! This action is only available to the author (delete).",
       "key": "Enter key"
     }
   },
@@ -65,6 +65,7 @@
   },
   "gallaryPage": {
     "buttonListPicture": "To the gallery",
+    "oilPanting": "oil painting",
     "art": "Art speaks in all languages! Enjoy viewing pictures, all the best is invested in them! Buy for yourself and loved ones,create your space consciously.",
     "banner": {
       "WhoAmI": "Ukrainian artist",

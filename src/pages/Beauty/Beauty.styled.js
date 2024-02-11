@@ -3,20 +3,27 @@ import img from '../../images/beauty/lenaLash.jpg';
 
 export const H3 = styled.h3`
   margin-top: ${p => p.theme.space[4]}px;
-  font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
   line-height: ${p => p.theme.lineHeights.heading};
   font-family: ${p => p.theme.fonts.monospace};
   padding-left: ${p => p.theme.space[3]}px;
   padding-right: ${p => p.theme.space[3]}px;
   @media screen and (${p => p.theme.media.s}) {
-    font-size: ${p => p.theme.fontSizes[3]}px;
+    font-size: ${p => p.theme.fontSizes[2]}px;
     color: ${p => p.theme.colors.forBut};
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+   
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[4]}px;
   }
 `;
 
 export const Text = styled.p`
-  font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.body};
   font-style: italic;
   line-height: ${p => p.theme.lineHeights.heading};
@@ -29,8 +36,17 @@ export const Text = styled.p`
   padding-right: ${p => p.theme.space[3]}px;
   border-color: ${p => p.theme.colors.fourth};
   @media screen and (${p => p.theme.media.s}) {
-    font-size: ${p => p.theme.fontSizes[3]}px;
+    font-size: 18px;
     color: ${p => p.theme.colors.forBut};
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: 18px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[4]}px;
   }
 `;
 
@@ -39,7 +55,15 @@ export const WrapAdvice = styled.div`
   display: flex;
   flex-wrap: wrap;
   font-size: ${p => p.theme.fontSizes[3]}px;
-  padding: ${p => p.theme.space[4]}px;
+  @media screen and (${p => p.theme.media.s}) {
+    padding: ${p => p.theme.space[3]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    padding: ${p => p.theme.space[3]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    padding: ${p => p.theme.space[4]}px;
+  }
 `;
 export const Advice = styled.p`
   border-left: ${p => p.theme.borders.normal};
@@ -57,11 +81,21 @@ export const Advice = styled.p`
     margin-bottom: ${p => p.theme.space[3]}px;
   }
   @media screen and (${p => p.theme.media.s}) {
-    font-size: ${p => p.theme.fontSizes[2]}px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
     &:nth-child(even) {
       margin-left: 30%;
       line-height: ${p => p.theme.lineHeights.heading};
     }
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+   
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: 18px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
   }
 `;
 
@@ -86,7 +120,6 @@ export const SvgEye4 = styled.div`
 `;
 
 export const H2 = styled.h2`
-  font-size: ${p => p.theme.fontSizes[5]}px;
   @media screen and (${p => p.theme.media.s}) {
     margin-bottom: ${p => p.theme.space[3]}px;
     display: flex;
@@ -95,13 +128,31 @@ export const H2 = styled.h2`
     font-size: ${p => p.theme.fontSizes[2]}px;
     color: purple;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[5]}px;
+  }
 `;
 export const WordLashMaker = styled.span`
   font-family: ${p => p.theme.fonts.monospace};
-  font-size: 40px;
+
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[4]}px;
     /* padding: ${p => p.theme.space[2]}px; */
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[4]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: 40px;
   }
 `;
 
@@ -116,7 +167,6 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
-  font-size: ${p => p.theme.fontSizes[3]}px;
   margin-bottom: ${p => p.theme.space[3]}px;
 
   padding: ${p => p.theme.space[2]}px;
@@ -134,18 +184,37 @@ export const Li = styled.li`
     font-weight: ${p => p.theme.fontWeights.middle};
     color: ${p => p.theme.colors.forBut};
   }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: 18px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
 `;
 
 export const Description = styled.p`
   padding-left: ${p => p.theme.space[3]}px;
   padding-right: ${p => p.theme.space[3]}px;
   font-family: ${p => p.theme.fonts.body};
-  font-size: ${p => p.theme.fontSizes[3]}px;
+
   font-weight: ${p => p.theme.fontWeights.middle};
-  line-height: ${p => p.theme.lineHeights.normal};
   margin-bottom: ${p => p.theme.space[2]}px;
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    line-height: ${p => p.theme.lineHeights.heading};
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    line-height: ${p => p.theme.lineHeights.normal};
+    font-size: 18px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
   }
 `;
 
@@ -154,7 +223,7 @@ export const WrapTitleAndEye = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-bottom: ${p => p.theme.space[3]}px;
+
   @media screen and (${p => p.theme.media.s}) {
     justify-content: space-evenly;
     background-image: url('${img}');
@@ -162,6 +231,14 @@ export const WrapTitleAndEye = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     /* filter: blur(2px); */
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    margin-bottom: ${p => p.theme.space[0]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    margin-bottom: ${p => p.theme.space[3]}px;
   }
 `;
 
@@ -183,25 +260,47 @@ export const Row = styled.div`
   @media screen and (${p => p.theme.media.s}) {
     margin-right: 67%;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    margin-right: 64%;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    margin-right: 6%;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    margin-right: 0;
+  }
 `;
 
 export const Img = styled.img`
   width: 100%;
   height: 100%;
   background-size: cover;
+  background-position: center;
   @media screen and (${p => p.theme.media.s}) {
   }
 `;
 
 export const WrapBottonTurn = styled.div`
   position: absolute;
-  top: 15px;
-  left: 15px;
+  display: flex;
+  gap: 5px;
+
   @media screen and (${p => p.theme.media.s}) {
     transform: rotate(90deg);
     top: 40px;
     left: 80%;
     z-index: 2;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    transform: rotate(90deg);
+    top: 40px;
+    left: 88%;
+    z-index: 2;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    transform: rotate(0);
+    top: 15px;
+    left: 15px;
   }
 `;
 
@@ -209,4 +308,5 @@ export const ButtonTurn = styled.button`
   width: 40px;
   height: 25px;
   cursor: pointer;
+  border-color: transparent;
 `;

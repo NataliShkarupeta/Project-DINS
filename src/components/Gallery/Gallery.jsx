@@ -6,7 +6,6 @@ import {
   BgSecond,
   BgThirt,
   MainImageDiv,
-  MainSection,
   P,
   SectionBeforPictures,
   WrapButton,
@@ -57,7 +56,7 @@ const Gallary = () => {
   };
 
   return (
-    <MainSection>
+    <div>
       {loader ? (
         <motion.div key="loader">
           {!isMobile ? (
@@ -69,6 +68,7 @@ const Gallary = () => {
       ) : (
         <>
           <BannerComp refToPict={rref} />
+
           {!loader &&
             (!isMobile ? (
               <MainImageDiv>
@@ -131,7 +131,7 @@ const Gallary = () => {
           </SectionBeforPictures>
         </>
       )}
-    </MainSection>
+    </div>
   );
 };
 
