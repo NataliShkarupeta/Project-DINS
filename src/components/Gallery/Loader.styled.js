@@ -60,7 +60,6 @@ export const WrapIm4 = styled.div`
     position: absolute;
     width: 180px;
     top: 52%;
-    /* left: 2%; */
   }
 `;
 export const WrapIm5 = styled.div`
