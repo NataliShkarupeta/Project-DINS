@@ -8,7 +8,6 @@ import {
   Title,
 } from 'components/ModalForBlog/modalChangePost/Modal.styled';
 import { Button } from 'components/common/commonButton/button.styled';
-// import { ModalContainer, Overlay, Text, Title } from 'components/common/modal/modal.styled';
 
 import { useEffect, useState } from 'react';
 import { changeInfoPicture } from 'service/gallertService';
@@ -21,9 +20,11 @@ export const ModalChangePicture = ({
   textButton1,
   pictureForChange,
 }) => {
-      const [changePicture, setchangePicture] = useState(false);
 
-  //   const [changePicture, setchangePicture] = useState(false);
+
+  const [changePicture, setchangePicture] = useState(false);
+
+  
   useEffect(() => {
     const closeEsc = e => {
       if (e.keyCode === 27) {
@@ -55,20 +56,20 @@ export const ModalChangePicture = ({
     changeInfoPicture(pictureForChange, newInfo);
     close(false);
   };
-    const handelSubmit = e => {
-      e.preventDefault();
+  const handelSubmit = e => {
+    e.preventDefault();
 
-      const form = document.querySelector('#formElement');
-      const formData = new FormData(form);
-      const secret = formData.get('text');
+    const form = document.querySelector('#formElement');
+    const formData = new FormData(form);
+    const secret = formData.get('text');
 
-      if (secret.toUpperCase() === 'MOYAVERA25') {
-        return setchangePicture(true);
-      } else {
-        alert('secret key is not correct');
-      }
-      form.reset();
-    };
+    if (secret.toUpperCase() === 'MOYAVERA25') {
+      return setchangePicture(true);
+    } else {
+      alert('secret key is not correct');
+    }
+    form.reset();
+  };
 
   return (
     <>
