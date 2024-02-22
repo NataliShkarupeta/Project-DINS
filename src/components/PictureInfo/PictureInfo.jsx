@@ -24,10 +24,10 @@ import { OrderBlock } from './Order';
 import { DefaultComponent } from 'components/common/default/defaultComponent';
 import { ThreeDots } from 'react-loader-spinner';
 import { RxCheck, RxCross2, RxPencil1, RxTrash } from 'react-icons/rx';
-import { ModalChangePicture } from './ModalForPicture/ModalForPicture';
+import { ModalChangePicture } from '../ModalForPicture/ModalForPicture';
 import { BlockButton, WrapForTooltip } from 'pages/Blog/Blog.styled';
 import { Tooltip } from 'react-tooltip';
-import { ModalForDeletePicture } from './ModalForPicture/ModalForDeletePicture';
+import { ModalForDeletePicture } from '../ModalForPicture/ModalForDeletePicture';
 
 export const PictureInfo = () => {
   const [picture, setPicure] = useState(null);
