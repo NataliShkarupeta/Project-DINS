@@ -2,12 +2,12 @@ import {
   ContainerPost,
   Input,
   WrapButtonsModal,
-  ModalContainer,
   Overlay,
   Text,
   Title,
 } from 'components/ModalForBlog/modalChangePost/Modal.styled';
 import { Button } from 'components/common/commonButton/button.styled';
+import {  ModalContainer } from 'components/common/modal/modal.styled';
 
 import { useEffect, useState } from 'react';
 import { changeInfoPicture } from 'service/gallertService';
@@ -24,7 +24,7 @@ export const ModalChangePicture = ({
 
   const [changePicture, setchangePicture] = useState(false);
 
-  
+
   useEffect(() => {
     const closeEsc = e => {
       if (e.keyCode === 27) {
