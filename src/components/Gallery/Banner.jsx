@@ -44,10 +44,16 @@ const BannerComp = ({ refToPict }) => {
   const [t] = useTranslation();
   // const [play, setPlay] = useState(false);
   const isMobile = useMedia('(max-width:541px');
+  const isTabletM = useMedia('(max-width: 721px)');
   const location = useLocation();
   useEffect(() => {
-    isMobile ? window.scrollTo(0, 125) : window.scrollTo(0, 250);
-  }, [isMobile]);
+    isMobile
+      ? window.scrollTo(0, 120)
+      : isTabletM
+      ? window.scrollTo(0, 225)
+      : window.scrollTo(0, 250);
+  }, [isMobile, isTabletM]);
+
   // useEffect(() => {
   //   setTimeout(() => {
   //     setPlay(true);
@@ -62,13 +68,18 @@ const BannerComp = ({ refToPict }) => {
     fontSize: '18px',
   };
 
-   const stylesMobile = {
-     width: '60px',
-     fontSize: '14px',
-     lineHeight:'0.9',
-      marginTop:'10px',
-
-   };
+  const stylesMobile = {
+    width: '60px',
+    fontSize: '14px',
+    lineHeight: '0.9',
+    marginTop: '10px',
+  };
+  const stylesTablet = {
+    width: '75px',
+    fontSize: '14px',
+    lineHeight: '0.9',
+    marginTop: '20px',
+  };
 
   return (
     <motion.div variants={banner}>
@@ -81,7 +92,9 @@ const BannerComp = ({ refToPict }) => {
         <Link to={'/painting/list_pictures'} state={{ from: location }}>
           <RedBallBefore>
             <CommonButton
-              styled={isMobile ? stylesMobile : styles}
+              styled={
+                isMobile ? stylesMobile : isTabletM ? stylesTablet : styles
+              }
               text={t('gallaryPage.buttonListPicture')}
             />
           </RedBallBefore>
@@ -104,7 +117,7 @@ const BannerComp = ({ refToPict }) => {
           <RowTop title={t('gallaryPage.banner.name')} />
           <RowBottom title={t('gallaryPage.banner.lastName')} />
           {/* <p>{t('gallaryPage.oilPanting')}</p> */}
-          {isMobile ? (
+          {isMobile && isTabletM ? (
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               animate={{ opacity: 1, y: 0 }}
@@ -115,7 +128,7 @@ const BannerComp = ({ refToPict }) => {
               }}
             >
               <ButtonScroll
-              // style={{position:'absolute'}}
+                // style={{position:'absolute'}}
                 onClick={() =>
                   refToPict.current.scrollIntoView({ behavior: 'smooth' })
                 }
@@ -133,7 +146,7 @@ const BannerComp = ({ refToPict }) => {
             </ButtonScroll>
           )}
         </NameBlock>
-        <OilPaintingWord >
+        <OilPaintingWord>
           <RowCenter title={t('gallaryPage.oilPanting')} />
         </OilPaintingWord>
       </Banner>
@@ -160,7 +173,6 @@ const RowTop = ({ title }) => {
         animate={{ scale: 1 }}
         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, dalay: 1 }}
         // style={{ zIndex: 100 }}
-     
       >
         <FirstV>
           <AnimatedLetters title={title} />

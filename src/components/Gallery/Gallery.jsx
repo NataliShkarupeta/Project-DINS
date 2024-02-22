@@ -15,7 +15,6 @@ import BannerComp from './Banner';
 import Loader from './Loader';
 import { BASIC_URL } from 'service/basicUrl';
 import { useTranslation } from 'react-i18next';
-// import { FaStarOfLife } from 'react-icons/fa';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CommonButton } from 'components/common/commonButton/button';
@@ -31,6 +30,8 @@ const Gallary = () => {
   const rref = useRef();
 
   const isMobile = useMedia('(max-width:541px)');
+  const isTabletM = useMedia('(max-width: 721px)');
+
 
   useEffect(() => {
     setName(true);
@@ -54,12 +55,19 @@ const Gallary = () => {
     marginTop: '10px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
   };
+      const stylesTablet = {
+        width: '80px',
+        fontSize: '14px',
+        lineHeight: '0.9',
+        marginTop: '20px',
+        boxShadow: '0 4px 8px rgba(210, 77, 219, 0.97)',
+      };
 
   return (
     <div>
       {loader ? (
         <motion.div key="loader">
-          {!isMobile ? (
+          {!isMobile && !isTabletM ? (
             <Loader setLoading={setLoading} />
           ) : (
             <LoaderMobile setLoading={setLoading} />
@@ -70,7 +78,7 @@ const Gallary = () => {
           <BannerComp refToPict={rref} />
 
           {!loader &&
-            (!isMobile ? (
+            (!isMobile && !isTabletM ? (
               <MainImageDiv>
                 <motion.img
                   src={`${BASIC_URL}/imagesLoader/lions.jpg`}
@@ -121,7 +129,13 @@ const Gallary = () => {
                 <Link to={'/painting/list_pictures'} state={{ from: location }}>
                   <WrapButton>
                     <CommonButton
-                      styled={isMobile ? stylesMobile : styles}
+                      styled={
+                        isMobile
+                          ? stylesMobile
+                          : isTabletM
+                          ? stylesTablet
+                          : styles
+                      }
                       text={t('gallaryPage.buttonListPicture')}
                     />
                   </WrapButton>

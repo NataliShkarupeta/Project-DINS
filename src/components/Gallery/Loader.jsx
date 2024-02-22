@@ -58,9 +58,8 @@ const itemMain = {
   },
 };
 
-  
-
 const Loader = ({ setLoading }) => {
+
   useEffect(() => {
     window.scrollTo(0, 250);
   }, []);
@@ -70,8 +69,6 @@ const Loader = ({ setLoading }) => {
     }, 3500);
     return () => clearTimeout(timer);
   });
-
-
 
   return (
     <MainLoaderBlock>
@@ -84,6 +81,7 @@ const Loader = ({ setLoading }) => {
         <WrapIm2>
           <ImageBlock variants={item} id="phoenix" />
         </WrapIm2>
+
         <WrapIm3>
           <ImageBlock variants={item} id="pleasure" />
         </WrapIm3>
@@ -100,6 +98,7 @@ const Loader = ({ setLoading }) => {
             />
           </motion.div>
         </WrapIm5>
+
         <WrapIm1>
           <ImageBlock variants={item} id="hot bread" />
         </WrapIm1>
@@ -112,11 +111,11 @@ const ImageBlock = ({ id, variants }) => {
   return (
     <motion.div variants={variants}>
       {/* <div style={{ border: '#d6d0d9 10px solid', borderRadius: '3px' }}> */}
-        <img
-          src={`${BASIC_URL}/imagesLoader/${id}.jpg`}
-          alt={`${id}`}
-          style={{ borderRadius: '5px' }}
-        />
+      <img
+        src={`${BASIC_URL}/imagesLoader/${id}.jpg`}
+        alt={`${id}`}
+        style={{ borderRadius: '5px' }}
+      />
       {/* </div> */}
     </motion.div>
   );

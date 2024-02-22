@@ -1,13 +1,16 @@
-import styled from "styled-components";
-
-
+import styled from 'styled-components';
 
 export const MainLoaderBlock = styled.div`
   height: 100vh;
   position: relative;
   display: flex;
   @media screen and (${p => p.theme.media.s}) {
-  flex-direction: column;
+    flex-direction: column;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
 `;
 export const WrapIm1 = styled.div`
@@ -21,6 +24,7 @@ export const WrapIm1 = styled.div`
     /* top: 5%; */
     left: 0;
   }
+
 `;
 export const WrapIm2 = styled.div`
   position: absolute;
@@ -60,14 +64,22 @@ export const WrapIm4 = styled.div`
   }
 `;
 export const WrapIm5 = styled.div`
-  position: absolute;
-  width: 500px;
-  top: 20%;
-  left: 32%;
   @media screen and (${p => p.theme.media.s}) {
     position: absolute;
     width: 80vw;
     top: 5%;
     left: 10%;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    position: absolute;
+    width: 80vw;
+    top: 5%;
+    left: 10%;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    position: absolute;
+    width: 500px;
+    top: 20%;
+    left: 32%;
   }
 `;

@@ -36,19 +36,26 @@ export const AboutMe = styled.div`
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    /* padding: ${p => p.theme.space[4]}px; */
+  }
+  @media screen and (${p => p.theme.media.l}) {
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+  }
 `;
 
 export const BgFirst = styled.div`
   width: 100%;
   color: ${p => p.theme.colors.therd};
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
 `;
 
 export const BgSecond = styled.div``;
 export const BgThirt = styled.div`
   width: 100%;
   color: ${p => p.theme.colors.therd};
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
 `;
 
 export const BgFourth = styled.div``;
@@ -58,9 +65,20 @@ export const P = styled.p`
   padding-bottom: ${p => p.theme.space[3]}px;
   margin-left: auto;
   margin-right: auto;
-  width: 700px;
+
   @media screen and (${p => p.theme.media.s}) {
     width: 90vw;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    width: 90vw;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    width: 80vw;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+    width: 900px;
   }
 `;
 
@@ -108,8 +126,6 @@ export const NameBlock = styled.div`
 
 export const Banner = styled.div`
   position: relative;
-  padding-top: ${p => p.theme.space[7]}px;
-  height: 100vh;
   display: flex;
   /* gap: 10px; */
   /* align-items: baseline;
@@ -121,15 +137,22 @@ export const Banner = styled.div`
     flex-direction: column;
     align-items: center;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    padding-top: ${p => p.theme.space[6]}px;
+    height:65vh;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    padding-top: ${p => p.theme.space[7]}px;
+    height: 100vh;
+  }
 `;
 
 export const ButtonScroll = styled.button`
   color: ${p => p.theme.colors.text};
   position: absolute;
-  bottom: 15%;
-  left: 45%;
-  width: 110px;
-  height: 110px;
+
   border-color: ${p => p.theme.colors.muted};
   border-radius: ${p => p.theme.radii.round};
   background-color: ${p => p.theme.colors.modes.light.background};
@@ -145,6 +168,18 @@ export const ButtonScroll = styled.button`
     height: 60px;
     background-color: red;
     color: black;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    bottom: -5%;
+    left: 43.5%;
+    width: 100px;
+    height: 100px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    bottom: 15%;
+    left: 45%;
+    width: 110px;
+    height: 110px;
   }
 `;
 
@@ -163,18 +198,29 @@ export const AnimateBlock = styled.div`
 
 const fontStyles = css`
   font-family: ${p => p.theme.fonts.forBlog};
-  font-size: ${p => p.theme.fontSizes[6]}px;
+
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.middleOne};
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[4]}px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[5]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[6]}px;
+  }
 `;
 export const WhoAmI = styled.p`
-  /* padding-left: 2%; */
-  font-size: ${p => p.theme.fontSizes[3]}px;
+
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
   }
 `;
 
@@ -183,8 +229,7 @@ export const FirstV = styled.p`
 `;
 
 export const SecondV = styled.p`
-
-  font-size: ${p => p.theme.fontSizes[2]}px;
+font-size: ${p => p.theme.fontSizes[2]}px;
 `;
 
 export const ThirdV = styled.p`
@@ -201,15 +246,13 @@ export const OilPaintingWord = styled.div`
 export const RedBallBefore = styled.div`
   position: relative;
   text-align: right;
-  margin-right: 32px;
+
   &:before {
     position: absolute;
-    right: 8%;
-    top: -3px;
+
     /* content: '🦄'; */
     content: '';
-    width: 15px;
-    height: 15px;
+
     background-color: red;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-color: ${p => p.theme.colors.muted};
@@ -222,15 +265,34 @@ export const RedBallBefore = styled.div`
       right: -1%;
       top: 6px;
     }
+    @media screen and (${p => p.theme.media.m}) {
+      right: -1%;
+      top: 15px;
+      width: 15px;
+      height: 15px;
+    }
+    @media screen and (${p => p.theme.media.l}) {
+      right: 8%;
+      top: -3px;
+      width: 15px;
+      height: 15px;
+    }
   }
   @media screen and (${p => p.theme.media.s}) {
     margin-right: 16px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    margin-right: 16px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    margin-right: 32px;
   }
 `;
 
 export const BorderTop = styled.div`
   display: flex;
   justify-content: space-between;
+
 `;
 
 export const MiddleLine = styled.div`
