@@ -8,6 +8,13 @@ export const WrapButton = styled.div`
 
 export const SectionBeforPictures = styled.section`
   margin-top: -10%;
+  @media screen and (${p => p.theme.media.m}) {
+    /* margin-top: -20%; */
+  }
+  @media screen and (${p => p.theme.media.l}) {
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+  }
 `;
 export const AboutOrder = styled.div`
   color: ${p => p.theme.colors.text};
@@ -30,18 +37,16 @@ export const AboutOrder = styled.div`
 export const AboutMe = styled.div`
   color: ${p => p.theme.colors.text};
   font-family: ${p => p.theme.fonts.body};
-  font-size: ${p => p.theme.fontSizes[3]}px;
+  /* font-size: ${p => p.theme.fontSizes[3]}px; */
   font-weight: ${p => p.theme.fontWeights.body};
   position: relative;
-  @media screen and (${p => p.theme.media.s}) {
+  /* @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
-  }
+  } */
   @media screen and (${p => p.theme.media.m}) {
-    /* padding: ${p => p.theme.space[4]}px; */
+    margin-top: ${p => p.theme.space[4]}px;
   }
   @media screen and (${p => p.theme.media.l}) {
-  }
-  @media screen and (${p => p.theme.media.xl}) {
   }
 `;
 
@@ -83,16 +88,31 @@ export const P = styled.p`
 `;
 
 export const AboutArt = styled.p`
-  padding: ${p => p.theme.space[5]}px;
   text-align: center;
   font-family: ${p => p.theme.fonts.forName};
-  font-size: ${p => p.theme.fontSizes[4]}px;
+
   font-weight: ${p => p.theme.fontWeights.body};
   font-style: italic;
-  margin-bottom: ${p => p.theme.space[3]}px;
+
   color: #fff4e4cc;
-  /* color: ${p => p.theme.colors.text};
-  text-shadow: -7px 2px 8px rgba(24, 21, 21, 0.76); */
+  @media screen and (${p => p.theme.media.m}) {
+    padding: ${p => p.theme.space[2]}px;
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    margin-bottom: ${p => p.theme.space[4]}px;
+    line-height: ${p => p.theme.lineHeights.heading};
+    position: absolute;
+    top: 185vh;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    padding: ${p => p.theme.space[4]}px;
+    font-size: ${p => p.theme.fontSizes[3]}px;
+    margin-bottom: ${p => p.theme.space[3]}px;
+    position: static;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    padding: ${p => p.theme.space[5]}px;
+    font-size: ${p => p.theme.fontSizes[4]}px;
+  }
 `;
 
 export const MainImageDiv = styled.div`
@@ -108,6 +128,12 @@ export const MainImageDiv = styled.div`
     width: 100%;
     height: 550px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    height: 650px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    height: 750px;
+  }
 `;
 
 export const NameBlock = styled.div`
@@ -120,7 +146,12 @@ export const NameBlock = styled.div`
     height: 50vh;
     flex-direction: column;
     align-items: center;
-    
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    padding-top: ${p => p.theme.space[3]}px;
+
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -139,7 +170,7 @@ export const Banner = styled.div`
   }
   @media screen and (${p => p.theme.media.m}) {
     padding-top: ${p => p.theme.space[6]}px;
-    height:65vh;
+    height: 80vh;
     flex-direction: column;
     align-items: center;
   }
@@ -151,7 +182,6 @@ export const Banner = styled.div`
 
 export const ButtonScroll = styled.button`
   color: ${p => p.theme.colors.text};
-  position: absolute;
 
   border-color: ${p => p.theme.colors.muted};
   border-radius: ${p => p.theme.radii.round};
@@ -170,16 +200,18 @@ export const ButtonScroll = styled.button`
     color: black;
   }
   @media screen and (${p => p.theme.media.m}) {
-    bottom: -5%;
-    left: 43.5%;
-    width: 100px;
-    height: 100px;
+    position: static; width: 80px;
+    height: 80px;
+    background-color: ${p => p.theme.colors.forBSM};
+    margin-bottom: 20px;
   }
   @media screen and (${p => p.theme.media.l}) {
+    position: absolute;
     bottom: 15%;
     left: 45%;
     width: 110px;
     height: 110px;
+    margin-bottom: 0;
   }
 `;
 
@@ -212,7 +244,6 @@ const fontStyles = css`
   }
 `;
 export const WhoAmI = styled.p`
-
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
   }
@@ -229,7 +260,7 @@ export const FirstV = styled.p`
 `;
 
 export const SecondV = styled.p`
-font-size: ${p => p.theme.fontSizes[2]}px;
+  font-size: ${p => p.theme.fontSizes[2]}px;
 `;
 
 export const ThirdV = styled.p`
@@ -292,7 +323,6 @@ export const RedBallBefore = styled.div`
 export const BorderTop = styled.div`
   display: flex;
   justify-content: space-between;
-
 `;
 
 export const MiddleLine = styled.div`

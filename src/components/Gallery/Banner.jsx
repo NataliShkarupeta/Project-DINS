@@ -117,18 +117,35 @@ const BannerComp = ({ refToPict }) => {
           <RowTop title={t('gallaryPage.banner.name')} />
           <RowBottom title={t('gallaryPage.banner.lastName')} />
           {/* <p>{t('gallaryPage.oilPanting')}</p> */}
-          {isMobile && isTabletM ? (
+          {isMobile ? (
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 ease: 'easeInOut',
                 duration: 1,
-                dalay: 0.4,
+                delay: 1,
               }}
             >
               <ButtonScroll
-                // style={{position:'absolute'}}
+                onClick={() =>
+                  refToPict.current.scrollIntoView({ behavior: 'smooth' })
+                }
+              >
+                {t('gallaryPage.banner.scroll')}
+              </ButtonScroll>
+            </motion.div>
+          ) : isTabletM ? (
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                ease: 'easeInOut',
+                duration: 1,
+                delay: 1.5,
+              }}
+            >
+              <ButtonScroll
                 onClick={() =>
                   refToPict.current.scrollIntoView({ behavior: 'smooth' })
                 }

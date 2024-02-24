@@ -60,7 +60,6 @@ const Gallary = () => {
         fontSize: '14px',
         lineHeight: '0.9',
         marginTop: '20px',
-        boxShadow: '0 4px 8px rgba(210, 77, 219, 0.97)',
       };
 
   return (

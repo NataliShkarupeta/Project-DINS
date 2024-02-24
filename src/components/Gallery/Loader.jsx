@@ -59,7 +59,6 @@ const itemMain = {
 };
 
 const Loader = ({ setLoading }) => {
-
   useEffect(() => {
     window.scrollTo(0, 250);
   }, []);
@@ -88,6 +87,9 @@ const Loader = ({ setLoading }) => {
         <WrapIm4>
           <ImageBlock variants={item} id="secrets" />
         </WrapIm4>
+        <WrapIm1>
+          <ImageBlock variants={item} id="hot bread" />
+        </WrapIm1>
         <WrapIm5>
           <motion.div variants={itemMain}>
             <motion.img
@@ -98,10 +100,6 @@ const Loader = ({ setLoading }) => {
             />
           </motion.div>
         </WrapIm5>
-
-        <WrapIm1>
-          <ImageBlock variants={item} id="hot bread" />
-        </WrapIm1>
       </motion.div>
     </MainLoaderBlock>
   );

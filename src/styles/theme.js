@@ -39,6 +39,7 @@ export const theme = {
     fourth: '#800080',
     forBut: '#000000',
     colForBg: 'transparent',
+    forBSM:'#fff',
     modes: {
       dark: {
         text: '#fff',
@@ -102,6 +103,7 @@ export const themeSecond = {
     colForBg: '#d7e6da',
     muted: 'transparent',
     fourth: '#800080',
+    forBSM: '#211e1e',
     modes: {
       dark: {
         text: '#fff',
