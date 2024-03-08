@@ -30,8 +30,8 @@ const Gallary = () => {
   const rref = useRef();
 
   const isMobile = useMedia('(max-width:541px)');
-  const isTabletM = useMedia('(max-width: 721px)');
-
+  const isTabletM = useMedia('(max-width: 720px)');
+  const isTabletXL = useMedia('(max-width: 961px)');
 
   useEffect(() => {
     setName(true);
@@ -44,8 +44,7 @@ const Gallary = () => {
   const styles = {
     width: '120px',
     padding: '2px 15px',
-    backgroundColor: 'grey',
-    color: 'white',
+    marginTop: '15px',
     fontSize: '18px',
   };
   const stylesMobile = {
@@ -55,12 +54,19 @@ const Gallary = () => {
     marginTop: '10px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
   };
-      const stylesTablet = {
-        width: '80px',
-        fontSize: '14px',
-        lineHeight: '0.9',
-        marginTop: '20px',
-      };
+  const stylesTabletXL = {
+    width: '100px',
+    padding: '5px 10px',
+    fontSize: '16px',
+    lineHeight: '0.9',
+    marginTop: '20px',
+  };
+  const stylesTablet = {
+    width: '80px',
+    fontSize: '14px',
+    lineHeight: '0.9',
+    marginTop: '20px',
+  };
 
   return (
     <div>
@@ -133,6 +139,8 @@ const Gallary = () => {
                           ? stylesMobile
                           : isTabletM
                           ? stylesTablet
+                          : isTabletXL
+                          ? stylesTabletXL
                           : styles
                       }
                       text={t('gallaryPage.buttonListPicture')}

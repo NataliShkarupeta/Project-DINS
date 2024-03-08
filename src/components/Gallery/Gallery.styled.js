@@ -137,10 +137,10 @@ export const MainImageDiv = styled.div`
 `;
 
 export const NameBlock = styled.div`
+
   display: flex;
   gap: 10px;
-  align-items: baseline;
-  justify-content: center;
+
   @media screen and (${p => p.theme.media.s}) {
     padding-top: ${p => p.theme.space[3]}px;
     height: 50vh;
@@ -152,6 +152,13 @@ export const NameBlock = styled.div`
 
     flex-direction: column;
     align-items: center;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    padding-top: ${p => p.theme.space[3]}px;
+
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
   }
 `;
 
@@ -200,18 +207,28 @@ export const ButtonScroll = styled.button`
     color: black;
   }
   @media screen and (${p => p.theme.media.m}) {
-    position: static; width: 80px;
+    position: static;
+    width: 80px;
     height: 80px;
     background-color: ${p => p.theme.colors.forBSM};
     margin-bottom: 20px;
   }
   @media screen and (${p => p.theme.media.l}) {
-    position: absolute;
-    bottom: 15%;
-    left: 45%;
+    text-align: center;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 40px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    /* position: absolute; */
     width: 110px;
     height: 110px;
-    margin-bottom: 0;
+    left: calc(100vw / 2 - 55px);
+    bottom: 10%;
+    :hover,
+    :focus {
+      scale: 1.1;
+    }
   }
 `;
 
@@ -240,6 +257,9 @@ const fontStyles = css`
     font-size: ${p => p.theme.fontSizes[5]}px;
   }
   @media screen and (${p => p.theme.media.l}) {
+    font-size: 38px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
     font-size: ${p => p.theme.fontSizes[6]}px;
   }
 `;
@@ -289,7 +309,6 @@ export const RedBallBefore = styled.div`
     border-color: ${p => p.theme.colors.muted};
     border-radius: ${p => p.theme.radii.round};
 
-    /* z-index: ; */
     @media screen and (${p => p.theme.media.s}) {
       width: 12px;
       height: 12px;
@@ -303,10 +322,11 @@ export const RedBallBefore = styled.div`
       height: 15px;
     }
     @media screen and (${p => p.theme.media.l}) {
-      right: 8%;
-      top: -3px;
-      width: 15px;
-      height: 15px;
+      left: calc(100vw - 136px);
+    }
+    @media screen and (${p => p.theme.media.xl}) {
+      left: calc(100vw - 156px);
+      top: 10px;
     }
   }
   @media screen and (${p => p.theme.media.s}) {
