@@ -94,7 +94,7 @@ const Loader = ({ setLoading }) => {
           <motion.div variants={itemMain}>
             <motion.img
               style={{ borderRadius: '5px' }}
-              src={`${BASIC_URL}/imagesLoader/lions.jpg`}
+              src={`${BASIC_URL}/imagesLoader/S7832.jpeg`}
               alt="phoenix"
               layoutId="main-image"
             />

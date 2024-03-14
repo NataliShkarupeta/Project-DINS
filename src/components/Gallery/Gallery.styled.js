@@ -7,11 +7,12 @@ export const WrapButton = styled.div`
 `;
 
 export const SectionBeforPictures = styled.section`
-  margin-top: -10%;
+  margin-top: -8%;
   @media screen and (${p => p.theme.media.m}) {
     /* margin-top: -20%; */
   }
   @media screen and (${p => p.theme.media.l}) {
+    /* margin-top: -25%; */
   }
   @media screen and (${p => p.theme.media.xl}) {
   }
@@ -37,16 +38,17 @@ export const AboutOrder = styled.div`
 export const AboutMe = styled.div`
   color: ${p => p.theme.colors.text};
   font-family: ${p => p.theme.fonts.body};
-  /* font-size: ${p => p.theme.fontSizes[3]}px; */
   font-weight: ${p => p.theme.fontWeights.body};
   position: relative;
-  /* @media screen and (${p => p.theme.media.s}) {
-    font-size: ${p => p.theme.fontSizes[2]}px;
-  } */
+
   @media screen and (${p => p.theme.media.m}) {
     margin-top: ${p => p.theme.space[4]}px;
   }
   @media screen and (${p => p.theme.media.l}) {
+    margin-top: ${p => p.theme.space[5]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    margin-top:50px;
   }
 `;
 
@@ -104,14 +106,14 @@ export const AboutArt = styled.p`
     top: 185vh;
   }
   @media screen and (${p => p.theme.media.l}) {
-    padding: ${p => p.theme.space[4]}px;
-    font-size: ${p => p.theme.fontSizes[3]}px;
-    margin-bottom: ${p => p.theme.space[3]}px;
-    position: static;
+    padding: ${p => p.theme.space[2]}px;
+    font-size: 17px;
+    top: 215vh;
   }
   @media screen and (${p => p.theme.media.xl}) {
-    padding: ${p => p.theme.space[5]}px;
-    font-size: ${p => p.theme.fontSizes[4]}px;
+    position: static;
+    padding: ${p => p.theme.space[4]}px;
+    font-size: ${p => p.theme.fontSizes[3]}px;
   }
 `;
 

@@ -86,7 +86,7 @@ const Gallary = () => {
             (!isMobile && !isTabletM ? (
               <MainImageDiv>
                 <motion.img
-                  src={`${BASIC_URL}/imagesLoader/lions.jpg`}
+                  src={`${BASIC_URL}/imagesLoader/S7832.jpeg`}
                   alt={`picture 'Lions'`}
                   layoutId="main-image"
                   transition={{
