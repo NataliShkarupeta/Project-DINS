@@ -13,7 +13,6 @@ export const Overlay = styled.div`
   z-index: 1200;
 `;
 
-
 export const Button = styled.button`
   padding: 10px;
 `;
@@ -26,17 +25,17 @@ export const Title = styled.h3`
   font-family: ${p => p.theme.fonts.monospace};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.middle};
-     @media screen and (${p => p.theme.media.s}) {
+  @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[1]}px;
   }
 `;
 export const Text = styled.p`
-    text-align: center;
+  text-align: center;
   font-family: ${p => p.theme.fonts.forName};
   font-style: italic;
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
-     @media screen and (${p => p.theme.media.s}) {
+  @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[1]}px;
   }
 `;
