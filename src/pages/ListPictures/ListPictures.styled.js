@@ -5,10 +5,10 @@ export const WrapCheckboxes = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: ${p => p.theme.space[4]}px;
+  align-items: center;
   @media screen and (${p => p.theme.media.s}) {
     height: 90px;
     flex-wrap: wrap;
-    align-items: center;
   }
 `;
 
@@ -16,11 +16,17 @@ export const AllAndStockWords = styled.span`
   font-family: ${p => p.theme.fonts.forName};
   font-style: italic;
   font-weight: ${p => p.theme.fontWeights.body};
-  font-size: ${p => p.theme.fontSizes[2]}px;
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[0]}px;
     line-height: 1.12;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+
 `;
 
 export const WrapPlaces = styled.div`
@@ -30,18 +36,14 @@ export const WrapPlaces = styled.div`
 export const LiPlaces = styled.li`
   display: inline-block;
   vertical-align: top;
-  width: 90px;
   text-align: center;
   color: #6c7784;
-
-  line-height: 50px;
   perspective: 1000px;
   transition: color 0.3s;
   cursor: pointer;
   font-family: ${p => p.theme.fonts.forName};
   font-style: italic;
   font-weight: ${p => p.theme.fontWeights.body};
-  font-size: ${p => p.theme.fontSizes[2]}px;
 
   &:hover,
   &:active {
@@ -52,32 +54,61 @@ export const LiPlaces = styled.li`
     font-size: 10px;
     line-height: 30px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    width: 60px;
+    font-size: 12px;
+    line-height: 38px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    width: 70px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    line-height: 38px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    width: 90px;
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    line-height: 50px;
+  }
 `;
 
 export const UlPlaces = styled.ul`
   position: relative;
   width: 500px;
   height: 100%;
-  padding-left: 20px;
-  padding-right: 30px;
   list-style-type: none;
   font-size: 0;
   @media screen and (${p => p.theme.media.s}) {
     padding-left: 0px;
     padding-right: 0px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    padding-left: 25px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    padding-left: 20px;
+    padding-right: 30px;
+  }
 `;
 
 export const NavPlaces = styled.nav`
-  overflow: hidden;
-  left: 1.5%;
-  top: 10px;
-  width: auto;
-  height: 50px;
+  /* overflow: hidden; */
+  /* left: 1.5%; */
+  /* top: 10px; */
+  /* width: auto; */
   border-radius: 5px;
   box-shadow: 23px 0px 37px 0px rgba(0, 0, 0, 0.23);
   @media screen and (${p => p.theme.media.s}) {
     height: 30px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    height: 40px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    height: 50px;
   }
 `;
 
@@ -88,9 +119,6 @@ export const PlacesInput = styled.input`
   top: 0;
   opacity: 0;
   pointer-events: none;
-  @media screen and (${p => p.theme.media.s}) {
-    /* font-size: ${p => p.theme.fontSizes[0]}px; */
-  }
 `;
 
 export const PlacesContent = styled.div`
@@ -108,9 +136,24 @@ export const PlacesContent = styled.div`
     @media screen and (${p => p.theme.media.s}) {
       width: 250px;
     }
+    @media screen and (${p => p.theme.media.m}) {
+      width: 300px;
+    }
+    @media screen and (${p => p.theme.media.l}) {
+      width: 400px;
+    }
+    @media screen and (${p => p.theme.media.xl}) {
+      width: 500px;
+    }
   }
   @media screen and (${p => p.theme.media.s}) {
     width: 70px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    width: 90px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    width: 100px;
   }
 `;
 
@@ -126,27 +169,30 @@ export const TextPlace = styled.span`
     opacity: 1;
     transition: transform 2s cubic-bezier(0.48, 0.43, 0.7, 2.5), opacity 3s;
   }
- 
 `;
 export const LabPlaces = styled.label`
   z-index: 1;
   position: absolute;
-  top: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  transform: translateX(0) scale(1);
-
   color: ${p => p.theme.colors.modes.dark.muted};
   font-family: ${p => p.theme.fonts.forName};
   font-style: italic;
-  font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
 
   ${PlacesInput}:checked ~ & {
-    transform: translateX(500px) scale(0.85);
     transition: transform 1s ${p => p.theme.transitions};
     @media screen and (${p => p.theme.media.s}) {
       transform: translateY(-25px) scale(0.85);
+    }
+    @media screen and (${p => p.theme.media.m}) {
+      transform: translateX(320px) scale(0.85);
+    }
+    @media screen and (${p => p.theme.media.l}) {
+      transform: translateX(420px) scale(0.85);
+    }
+    @media screen and (${p => p.theme.media.xl}) {
+      transform: translateX(530px) scale(0.85);
     }
   }
 
@@ -158,9 +204,21 @@ export const LabPlaces = styled.label`
   @media screen and (${p => p.theme.media.s}) {
     transform: translateY(0) scale(1);
     font-size: ${p => p.theme.fontSizes[0]}px;
-    position: absolute;
     top: -10%;
     left: -7%;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    transform: translateY(0) scale(1);
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    top: 0%;
+    left: -7%;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    transform: translateX(0) scale(1);
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+top: 4px;
   }
 `;
 
@@ -172,26 +230,35 @@ export const NavLinkButton = styled(NavLink)`
 export const WrapCheckBlok = styled.div`
   margin-bottom: ${p => p.theme.space[3]}px;
   padding: ${p => p.theme.space[3]}px;
-
   display: flex;
   justify-content: flex-end;
-  gap: 30px;
+
   @media screen and (${p => p.theme.media.s}) {
-    /* width: 150px; */
     flex-direction: column;
     gap: 0;
     margin: 0;
     padding: 0;
     padding-right: ${p => p.theme.space[3]}px;
-   
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    padding-right: ${p => p.theme.space[3]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    flex-direction: row;
+    gap: 10px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    gap: 30px;
   }
 `;
 
 export const Input = styled.input`
   margin-left: ${p => p.theme.space[2]}px;
   appearance: none;
-  width: 1.6em;
-  height: 1.6em;
   border-radius: 0.15em;
   margin-right: 0.5em;
   border: 1px solid;
@@ -205,31 +272,46 @@ export const Input = styled.input`
     &:before {
       content: '✓';
       /* ✓ ✔  */
-      font-size: 1.5em;
       color: #fff;
       position: absolute;
-      right: 1px;
-      top: -3px;
+
       @media screen and (${p => p.theme.media.s}) {
         font-size: 1em;
         right: 1px;
         top: -1.8px;
       }
+      @media screen and (${p => p.theme.media.m}) {
+        font-size: 1em;
+        right: 2px;
+        top: -1px;
+      }
+      @media screen and (${p => p.theme.media.l}) {
+        font-size: 1em;
+        right: 3px;
+        top: -0px;
+      }
+      @media screen and (${p => p.theme.media.xl}) {
+        font-size: 1.5em;
+        right: 1px;
+        top: -3px;
+      }
     }
   }
-  /* & :checked,
-  :before {
-    content: 'v';
-
-    font-size: 1.5em;
-    color: #fff;
-    position: absolute;
-    right: 1px;
-    top: -5px;
-  } */
   @media screen and (${p => p.theme.media.s}) {
     width: 1em;
     height: 1em;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    width: 1.2em;
+    height: 1.2em;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    width: 1.6em;
+    height: 1.6em;
   }
 `;
 

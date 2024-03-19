@@ -22,16 +22,22 @@ export const AboutOrder = styled.div`
   font-family: ${p => p.theme.fonts.forName};
   font-style: italic;
   font-weight: ${p => p.theme.fontWeights.body};
-  font-size: ${p => p.theme.fontSizes[3]}px;
   margin-bottom: ${p => p.theme.space[4]}px;
   margin-top: ${p => p.theme.space[4]}px;
-  width: 700px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[1]}px;
     width: 80vw;
+  }
+   @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    width: 80vw;
+  }
+   @media screen and (${p => p.theme.media.l}) {
+   font-size: ${p => p.theme.fontSizes[3]}px;
+   width: 700px;
   }
 `;
 
@@ -364,18 +370,21 @@ export const Presentation = styled.div`
 
 export const Ul = styled.ul`
   display: flex;
-  gap: 25px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   @media screen and (${p => p.theme.media.s}) {
     gap: 20px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    gap: 25px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+  }
 `;
 
 export const Li = styled.li`
-  width: 450px;
-  /* width: calc(100% / 4); */
+  
   text-align: center;
   align-items: center;
   margin-bottom: ${p => p.theme.space[6]}px;
@@ -385,11 +394,25 @@ export const Li = styled.li`
     width: 140px;
     margin-bottom: ${p => p.theme.space[0]}px;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    width: 240px;
+    margin-bottom: ${p => p.theme.space[0]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    width: 300px;
+    margin-bottom: ${p => p.theme.space[2]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    width: 400px;
+    margin-bottom: ${p => p.theme.space[4]}px;
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
+    width: 450px;
+    margin-bottom: ${p => p.theme.space[4]}px;
+  }
 `;
 
 export const WrapPicture = styled.div`
-  /* box-shadow: 0 0 10px 20px #fff; */
-  /* box-shadow: 0 0 83px 10px #24aafd; */
   :hover,
   :focus {
     scale: 1.1;
