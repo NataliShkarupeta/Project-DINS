@@ -29,6 +29,7 @@ import {
 } from './ListPictures.styled';
 import { ThreeDots } from 'react-loader-spinner';
 import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
+import { useInView } from 'react-intersection-observer';
 
 const ListPictures = memo(() => {
   const [pictures, setPicures] = useState({});
@@ -36,6 +37,10 @@ const ListPictures = memo(() => {
   const [selectedItem, setSelectedItem] = useState('Всі');
   const [loading, setLoading] = useState(false);
 
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
   const location = useLocation();
   const [t] = useTranslation();
@@ -103,7 +108,7 @@ const ListPictures = memo(() => {
       </>
     );
   }
-
+  // console.log(pictures);
   return (
     <>
       <NavLinkButton to={'/painting'}>
@@ -136,7 +141,6 @@ const ListPictures = memo(() => {
                 ))}
               </UlPlaces>
             </PlacesContent>
-            
           </NavPlaces>
         </WrapPlaces>
 
@@ -185,8 +189,15 @@ const ListPictures = memo(() => {
                   to={`/painting/list_pictures/${_id}`}
                   state={{ from: location }}
                 >
-                  <WrapPicture>
-                    <img src={`${BASIC_URL}/${image}`} alt={title1} />
+                  <WrapPicture ref={ref}>
+                    {/* <img  loading='lazy' src={`${BASIC_URL}/${image}`} alt={title1} /> */}
+                    {inView ? (
+                      <img src={`${BASIC_URL}/${image}`} alt={title1} />
+                    ) : (
+                      <div style={{width:'200px',height:'200px'}}>
+                        <ThreeDots />
+                      </div>
+                    )}
                   </WrapPicture>
                 </Link>
               </Li>

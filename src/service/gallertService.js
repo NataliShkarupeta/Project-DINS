@@ -10,9 +10,9 @@ export const changeInfoPicture = async (id, obj) => {
   }
 };
 
-export const getAllPictures = async () => {
+export const getAllPictures = async (limit, skip) => {
   try {
-    const { data } = await axios.get(URLPIC);
+    const { data } = await axios.get(`${URLPIC}?limit=${limit}&skip=${skip}`);
 
     const sortDate = data.data.result.map(obj => ({
       ...obj,
@@ -24,6 +24,7 @@ export const getAllPictures = async () => {
     );
 
     return sortPictures;
+   
     // return data.data.result;
   } catch (error) {
     return error.massage;
@@ -71,7 +72,7 @@ export const getPlacePictures = async spot => {
     const sortPictures = [...sortDate].sort(
       (a, b) => b.createdAt - a.createdAt
     );
-    console.log(sortPictures)
+    console.log(sortPictures);
     return sortPictures;
   } catch (error) {
     return error.massage;
