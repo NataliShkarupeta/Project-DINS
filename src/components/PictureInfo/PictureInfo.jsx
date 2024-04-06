@@ -28,6 +28,7 @@ import { ModalChangePicture } from '../ModalForPicture/ModalForPicture';
 import { BlockButton, WrapForTooltip } from 'pages/Blog/Blog.styled';
 import { Tooltip } from 'react-tooltip';
 import { ModalForDeletePicture } from '../ModalForPicture/ModalForDeletePicture';
+import { useMedia } from 'react-use';
 
 export const PictureInfo = () => {
   const [picture, setPicure] = useState(null);
@@ -152,6 +153,11 @@ const DescriptionsBlock = ({ title, text, inStock, size, picture }) => {
   const [showModal, setShowModal] = useState(false);
   const [canDelet, setCanDelete] = useState(false);
   const [t] = useTranslation();
+
+  // const isMobile = useMedia('(max-width:541px)');
+  const isTabletM = useMedia('(max-width: 720px)');
+  // const isTabletXL = useMedia('(max-width: 961px)');
+
   useEffect(() => {
     if (canDelet || showModal) {
       document.body.style.overflow = 'hidden';
@@ -196,51 +202,53 @@ const DescriptionsBlock = ({ title, text, inStock, size, picture }) => {
           <Span>{text}</Span>
         </div>
         <InfoBlock isit={inStock} size={size} />
-        <BlockButton style={{ marginRight: '15%' }}>
-          <WrapForTooltip>
-            <p
-              data-tooltip-id="my-tooltip"
-              data-tooltip-content={t('button.commonButton.edit')}
-            >
-              <CommonButton
-                styled={styles}
-                text={
-                  // isMobile ? (
-                  // <RxPencil1 size={'16px'} color="white" />
-                  // ) : (
-                  <RxPencil1 size={'16px'} color="black" />
-                  // )
-                }
-                clickHandler={() => {
-                  setShowModal(true);
-                }}
-              ></CommonButton>
-            </p>
-            <Tooltip id="my-tooltip" />
-          </WrapForTooltip>
+        {!isTabletM && (
+          <BlockButton style={{ marginRight: '15%' }}>
+            <WrapForTooltip>
+              <p
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={t('button.commonButton.edit')}
+              >
+                <CommonButton
+                  styled={styles}
+                  text={
+                    // isMobile ? (
+                    // <RxPencil1 size={'16px'} color="white" />
+                    // ) : (
+                    <RxPencil1 size={'16px'} color="black" />
+                    // )
+                  }
+                  clickHandler={() => {
+                    setShowModal(true);
+                  }}
+                ></CommonButton>
+              </p>
+              <Tooltip id="my-tooltip" />
+            </WrapForTooltip>
 
-          <WrapForTooltip>
-            <p
-              data-tooltip-id="my-tooltip"
-              data-tooltip-content={t('button.commonButton.delete')}
-            >
-              <CommonButton
-                styled={styles}
-                text={
-                  // isMobile ? (
-                  // <RxTrash size={'16px'} color="white" />
-                  // ) : (
-                  <RxTrash size={'16px'} color="black" />
-                  // )
-                }
-                clickHandler={() => {
-                  setCanDelete(true);
-                }}
-              ></CommonButton>
-            </p>
-            <Tooltip id="my-tooltip" />
-          </WrapForTooltip>
-        </BlockButton>
+            <WrapForTooltip>
+              <p
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={t('button.commonButton.delete')}
+              >
+                <CommonButton
+                  styled={styles}
+                  text={
+                    // isMobile ? (
+                    // <RxTrash size={'16px'} color="white" />
+                    // ) : (
+                    <RxTrash size={'16px'} color="black" />
+                    // )
+                  }
+                  clickHandler={() => {
+                    setCanDelete(true);
+                  }}
+                ></CommonButton>
+              </p>
+              <Tooltip id="my-tooltip" />
+            </WrapForTooltip>
+          </BlockButton>
+        )}
       </WrapDescription>
     </>
   );

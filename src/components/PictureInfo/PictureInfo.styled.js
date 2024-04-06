@@ -16,15 +16,26 @@ export const Wrap = styled.div`
 `;
 
 export const WrapInfo = styled.div`
-  margin-bottom: ${p => p.theme.space[4]}px;
+  /* margin-bottom: ${p => p.theme.space[4]}px;
   display: flex;
   justify-content: space-evenly;
-  gap: 50px;
+  gap: 50px; */
   @media screen and (${p => p.theme.media.s}) {
     flex-direction: column;
     justify-content: space-between;
     gap: 0px;
     margin-bottom: ${p => p.theme.space[1]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    flex-direction: column;
+    margin-bottom: ${p => p.theme.space[1]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    margin-bottom: ${p => p.theme.space[4]}px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
   }
 `;
 export const H2 = styled.h2`
@@ -55,19 +66,22 @@ export const Span = styled.span`
 `;
 
 export const WrapInfoFromMe = styled.div`
-  overflow: hidden;
-  text-align: right;
-  padding-right: ${p => p.theme.space[5]}px;
-
-  font-family: ${p => p.theme.fonts.monospace};
-
-  font-weight: ${p => p.theme.fontWeights.body};
-  line-height: 1.33;
   @media screen and (${p => p.theme.media.s}) {
     padding-right: ${p => p.theme.space[2]}px;
     font-size: ${p => p.theme.fontSizes[1]}px;
     line-height: 1.12;
     font-style: italic;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    overflow: hidden;
+    text-align: right;
+    padding-right: ${p => p.theme.space[4]}px;
+    font-family: ${p => p.theme.fonts.monospace};
+    font-weight: ${p => p.theme.fontWeights.body};
+    line-height: 1.33;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    padding-right: ${p => p.theme.space[5]}px;
   }
 `;
 ///////////// imageBlock////////////////////
@@ -87,50 +101,108 @@ export const WrapImageAndDateCreate = styled.div`
     font-size: ${p => p.theme.fontSizes[0]}px;
     margin: 0;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    position: relative;
+    width: 100%;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    margin: 0;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    gap: 10px;
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    margin: 0;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    position: relative;
+    width: 50%;
+    margin-bottom: ${p => p.theme.space[4]}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;
 
 export const WrapImage = styled.div`
   position: relative;
   margin-top: ${p => p.theme.space[3]}px;
-  /* width: 450px; */
-  width: 70%;
+  width: 450px;
+  /* width: 70%; */
   height: 600px;
   @media screen and (${p => p.theme.media.s}) {
     min-width: 300px;
     max-width: 60vw;
     height: 50vh;
   }
+  @media screen and (${p => p.theme.media.m}) {
+    position: relative;
+    margin-top: ${p => p.theme.space[3]}px;
+    width: 450px;
+    /* width: 80vw; */
+    height: 500px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    position: relative;
+    margin-top: ${p => p.theme.space[3]}px;
+    /* width: 450px; */
+    width: 70%;
+    height: 600px;
+  }
 `;
 
 export const Img = styled.img`
   position: absolute;
-  /* top: 45px; */
   max-width: 450px;
   max-height: 580px;
   @media screen and (${p => p.theme.media.s}) {
     max-height: 45vh;
     max-width: 250px;
-    /* top: 45px; */
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    width: 350px;
+  }
+  /* @media screen and (${p => p.theme.media.l}) {
+    width: 450px;
+  } */
+  @media screen and (${p => p.theme.media.xl}) {
+    position: absolute;
+    max-width: 450px;
+    max-height: 580px;
   }
 `;
 
 ////////////// descriptionBlock//////////
 
 export const WrapDescription = styled.div`
-  padding: ${p => p.theme.space[3]}px;
-  display: flex;
+  /* padding: ${p => p.theme.space[3]}px; */
+  /* display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 45%;
   margin-top: ${p => p.theme.space[3]}px;
   margin-bottom: ${p => p.theme.space[3]}px;
-  overflow-y: scroll;
+  overflow-y: scroll; */
   @media screen and (${p => p.theme.media.s}) {
     padding: ${p => p.theme.space[3]}px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
     width: 100%;
+    overflow-y: scroll;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    padding: ${p => p.theme.space[3]}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    overflow-y: scroll;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    width: 45%;
+    margin-top: ${p => p.theme.space[3]}px;
+    margin-bottom: ${p => p.theme.space[3]}px;
     overflow-y: scroll;
   }
 `;

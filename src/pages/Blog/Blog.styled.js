@@ -11,10 +11,7 @@ export const WrapForTooltip = styled.div`
 `;
 
 export const BlockButton = styled.div`
-  /* margin-left: auto;
-  margin-right: auto;
-  position: sticky; */
-  /* bottom: -10px; */
+  
   display: flex;
   justify-content: center;
   gap: 2px;

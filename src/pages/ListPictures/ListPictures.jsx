@@ -37,7 +37,7 @@ const ListPictures = memo(() => {
   const [selectedItem, setSelectedItem] = useState('Всі');
   const [loading, setLoading] = useState(false);
 
-  const [ref, inView] = useInView({
+  const [ref] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
@@ -190,14 +190,14 @@ const ListPictures = memo(() => {
                   state={{ from: location }}
                 >
                   <WrapPicture ref={ref}>
-                    {/* <img  loading='lazy' src={`${BASIC_URL}/${image}`} alt={title1} /> */}
-                    {inView ? (
+                    <img  loading='lazy' src={`${BASIC_URL}/${image}`} alt={title1} />
+                    {/* {inView ? (
                       <img src={`${BASIC_URL}/${image}`} alt={title1} />
                     ) : (
                       <div style={{width:'200px',height:'200px'}}>
                         <ThreeDots />
                       </div>
-                    )}
+                    )} */}
                   </WrapPicture>
                 </Link>
               </Li>
