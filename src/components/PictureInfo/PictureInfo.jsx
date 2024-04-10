@@ -12,6 +12,7 @@ import {
   WrapImageAndDateCreate,
   WrapInfo,
   WrapInfoFromMe,
+  WrapTitleAndText,
 } from './PictureInfo.styled';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useParams } from 'react-router-dom';
@@ -197,13 +198,13 @@ const DescriptionsBlock = ({ title, text, inStock, size, picture }) => {
         />
       )}
       <WrapDescription>
-        <div style={{ height: '80%', overflow: 'hidden' }}>
+        <WrapTitleAndText >
           <H2>{title}</H2>
           <Span>{text}</Span>
-        </div>
+        </WrapTitleAndText>
         <InfoBlock isit={inStock} size={size} />
         {!isTabletM && (
-          <BlockButton style={{ marginRight: '15%' }}>
+          <BlockButton style={{ marginRight: '0%' }}>
             <WrapForTooltip>
               <p
                 data-tooltip-id="my-tooltip"

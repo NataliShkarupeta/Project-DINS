@@ -16,10 +16,9 @@ export const Wrap = styled.div`
 `;
 
 export const WrapInfo = styled.div`
-  /* margin-bottom: ${p => p.theme.space[4]}px;
-  display: flex;
+  /* display: flex;
   justify-content: space-evenly;
-  gap: 50px; */
+  gap: 50px;  */
   @media screen and (${p => p.theme.media.s}) {
     flex-direction: column;
     justify-content: space-between;
@@ -27,14 +26,17 @@ export const WrapInfo = styled.div`
     margin-bottom: ${p => p.theme.space[1]}px;
   }
   @media screen and (${p => p.theme.media.m}) {
+    display: flex;
     flex-direction: column;
     margin-bottom: ${p => p.theme.space[1]}px;
   }
   @media screen and (${p => p.theme.media.l}) {
     margin-bottom: ${p => p.theme.space[4]}px;
-    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    margin-bottom: ${p => p.theme.space[4]}px;
     gap: 50px;
   }
 `;
@@ -57,12 +59,19 @@ export const Span = styled.span`
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-style: italic;
   font-weight: ${p => p.theme.fontWeights.body};
+  height: 300px;
+  overflow-y: scroll;
   @media screen and (${p => p.theme.media.s}) {
     margin-bottom: ${p => p.theme.space[0]}px;
     font-size: ${p => p.theme.fontSizes[2]}px;
     line-height: 1.12;
     font-style: italic;
   }
+`;
+
+export const WrapTitleAndText = styled.div`
+  height: 80%;
+  overflow: hidden;
 `;
 
 export const WrapInfoFromMe = styled.div`
@@ -81,6 +90,9 @@ export const WrapInfoFromMe = styled.div`
     line-height: 1.33;
   }
   @media screen and (${p => p.theme.media.l}) {
+    padding-right:0px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
     padding-right: ${p => p.theme.space[5]}px;
   }
 `;
@@ -96,18 +108,18 @@ export const WrapImageAndDateCreate = styled.div`
   flex-direction: column;
   @media screen and (${p => p.theme.media.s}) {
     gap: 10px;
-    position: relative;
+    /* position: relative; */
     width: 100%;
     font-size: ${p => p.theme.fontSizes[0]}px;
     margin: 0;
   }
   @media screen and (${p => p.theme.media.m}) {
-    position: relative;
     width: 100%;
     font-size: ${p => p.theme.fontSizes[1]}px;
     margin: 0;
   }
   @media screen and (${p => p.theme.media.l}) {
+    width: 50%;
     gap: 10px;
     font-size: ${p => p.theme.fontSizes[2]}px;
     margin: 0;
@@ -127,7 +139,6 @@ export const WrapImage = styled.div`
   position: relative;
   margin-top: ${p => p.theme.space[3]}px;
   width: 450px;
-  /* width: 70%; */
   height: 600px;
   @media screen and (${p => p.theme.media.s}) {
     min-width: 300px;
@@ -135,16 +146,14 @@ export const WrapImage = styled.div`
     height: 50vh;
   }
   @media screen and (${p => p.theme.media.m}) {
-    position: relative;
-    margin-top: ${p => p.theme.space[3]}px;
     width: 450px;
-    /* width: 80vw; */
     height: 500px;
   }
+  @media screen and (${p => p.theme.media.l}) {
+    width: 350px;
+    height: 450px;
+  }
   @media screen and (${p => p.theme.media.xl}) {
-    position: relative;
-    margin-top: ${p => p.theme.space[3]}px;
-    /* width: 450px; */
     width: 70%;
     height: 600px;
   }
@@ -161,9 +170,9 @@ export const Img = styled.img`
   @media screen and (${p => p.theme.media.m}) {
     width: 350px;
   }
-  /* @media screen and (${p => p.theme.media.l}) {
-    width: 450px;
-  } */
+  @media screen and (${p => p.theme.media.l}) {
+    width: 300px;
+  }
   @media screen and (${p => p.theme.media.xl}) {
     position: absolute;
     max-width: 450px;
