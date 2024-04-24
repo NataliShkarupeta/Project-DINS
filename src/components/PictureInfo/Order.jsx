@@ -18,6 +18,7 @@ import {
   WrapSizes,
   TextExplanation,
   WrapIfOrder,
+  SetAdress,
 } from './PictureInfo.styled';
 import { FaStarOfLife } from 'react-icons/fa';
 import { CommonButton } from 'components/common/commonButton/button';
@@ -88,7 +89,7 @@ export const OrderBlock = ({ tit, size, inStock }) => {
             <IfBuy name={tit} size={size} />
           )}
 
-          <div>
+          <SetAdress>
             <Label>
               <span
                 style={
@@ -106,7 +107,7 @@ export const OrderBlock = ({ tit, size, inStock }) => {
                 placeholder={t('gallaryPage.pictureInfo.order.placeholder')}
               ></TextArea>
             </Label>
-          </div>
+          </SetAdress>
         </WrapInputFields>
         <CommonButton
           styled={styles}
@@ -194,7 +195,7 @@ const SelectOrderOrBuy = ({ setSelectedItem, selectedItem, inStock }) => {
 
 const IfOrder = ({ size }) => {
   const [t] = useTranslation();
-    const isMobile = useMedia('(max-width:541px)');
+  const isMobile = useMedia('(max-width:541px)');
   const checkList = ['40*40', '40*50', '40*60', '50*70', '80*70', '100*110'];
   return (
     <WrapIfOrder>
@@ -226,18 +227,19 @@ const DescriptionPreOrder = () => {
 
   const leng = useFeatureStore(state => state.leng);
   const isMobile = useMedia('(max-width:541px)');
+  const isTabletM = useMedia('(max-width: 720px)');
 
   const list = [
     'до 40*60 - 70 y.e',
-    'до 70*80 -120 y.e',
-    'до 100*110 - 250 y.e',
+    'до 70*80 -150 y.e',
+    'до 100*110 - 300 y.e',
     'від 100*110 - договірна(в приватному листуванні)',
   ];
 
   const listEn = [
     'up to 40*60 - 70 y.e',
-    'up to 70*80 -120 y.e',
-    'up to 100*110 - 250 y.e',
+    'up to 70*80 -150 y.e',
+    'up to 100*110 - 300 y.e',
     'from 100*110 - contractual (in private correspondence)',
   ];
   const pricesBlock = {
@@ -245,7 +247,6 @@ const DescriptionPreOrder = () => {
     visibility: 'hidden',
   };
   const pricesBlockVisible = {
-    // backgroundColor: '#fff4e4',
     marginTop: '30px',
     padding: '10px 20px',
     position: 'absolute',
@@ -258,6 +259,13 @@ const DescriptionPreOrder = () => {
     visibility: 'visible',
     bottom: '20px',
     fontSize: '10px',
+  };
+
+  const FontSizeTablet = {
+    fontSize: '12px',
+  };
+  const FontSize = {
+    fontSize: '14px',
   };
 
   return (
@@ -287,7 +295,7 @@ const DescriptionPreOrder = () => {
             <p> {t('gallaryPage.pictureInfo.order.cm')}</p>
           </WrapSizes>
 
-          <ul>
+          <ul style={isTabletM ? FontSizeTablet : FontSize}>
             {leng === 'ua'
               ? list.map((item, index) => <li key={index}>{item}</li>)
               : listEn.map((item, index) => <li key={index}>{item}</li>)}

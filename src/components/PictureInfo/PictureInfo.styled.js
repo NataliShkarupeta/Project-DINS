@@ -59,7 +59,7 @@ export const Span = styled.span`
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-style: italic;
   font-weight: ${p => p.theme.fontWeights.body};
-  height: 300px;
+  /* height: 300px; */
   overflow-y: scroll;
   @media screen and (${p => p.theme.media.s}) {
     margin-bottom: ${p => p.theme.space[0]}px;
@@ -90,7 +90,7 @@ export const WrapInfoFromMe = styled.div`
     line-height: 1.33;
   }
   @media screen and (${p => p.theme.media.l}) {
-    padding-right:0px;
+    padding-right: 0px;
   }
   @media screen and (${p => p.theme.media.xl}) {
     padding-right: ${p => p.theme.space[5]}px;
@@ -108,12 +108,16 @@ export const WrapImageAndDateCreate = styled.div`
   flex-direction: column;
   @media screen and (${p => p.theme.media.s}) {
     gap: 10px;
-    /* position: relative; */
     width: 100%;
     font-size: ${p => p.theme.fontSizes[0]}px;
     margin: 0;
   }
   @media screen and (${p => p.theme.media.m}) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
     font-size: ${p => p.theme.fontSizes[1]}px;
     margin: 0;
@@ -125,49 +129,45 @@ export const WrapImageAndDateCreate = styled.div`
     margin: 0;
   }
   @media screen and (${p => p.theme.media.xl}) {
-    position: relative;
-    width: 50%;
+    width: 60%;
     margin-bottom: ${p => p.theme.space[4]}px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
   }
 `;
 
 export const WrapImage = styled.div`
-  position: relative;
-  margin-top: ${p => p.theme.space[3]}px;
-  width: 450px;
-  height: 600px;
   @media screen and (${p => p.theme.media.s}) {
+    position: relative;
+    margin-top: ${p => p.theme.space[3]}px;
     min-width: 300px;
     max-width: 60vw;
     height: 50vh;
   }
   @media screen and (${p => p.theme.media.m}) {
+    position: relative;
     width: 450px;
     height: 500px;
   }
   @media screen and (${p => p.theme.media.l}) {
+    margin-top: ${p => p.theme.space[3]}px;
     width: 350px;
     height: 450px;
   }
   @media screen and (${p => p.theme.media.xl}) {
-    width: 70%;
+    position: relative;
+    width: 450px;
     height: 600px;
+    width: 75%;
   }
 `;
 
 export const Img = styled.img`
-  position: absolute;
-  max-width: 450px;
-  max-height: 580px;
   @media screen and (${p => p.theme.media.s}) {
+    position: absolute;
     max-height: 45vh;
     max-width: 250px;
   }
   @media screen and (${p => p.theme.media.m}) {
+    position: absolute;
     width: 350px;
   }
   @media screen and (${p => p.theme.media.l}) {
@@ -176,21 +176,13 @@ export const Img = styled.img`
   @media screen and (${p => p.theme.media.xl}) {
     position: absolute;
     max-width: 450px;
-    max-height: 580px;
+    width: 60%;
   }
 `;
 
 ////////////// descriptionBlock//////////
 
 export const WrapDescription = styled.div`
-  /* padding: ${p => p.theme.space[3]}px; */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 45%;
-  margin-top: ${p => p.theme.space[3]}px;
-  margin-bottom: ${p => p.theme.space[3]}px;
-  overflow-y: scroll; */
   @media screen and (${p => p.theme.media.s}) {
     padding: ${p => p.theme.space[3]}px;
     display: flex;
@@ -212,7 +204,6 @@ export const WrapDescription = styled.div`
     width: 45%;
     margin-top: ${p => p.theme.space[3]}px;
     margin-bottom: ${p => p.theme.space[3]}px;
-    overflow-y: scroll;
   }
 `;
 
@@ -247,7 +238,6 @@ export const H3 = styled.h3`
   }
 `;
 export const Desctiption = styled.div`
-  padding: ${p => p.theme.space[4]}px;
   margin-bottom: ${p => p.theme.space[3]}px;
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
@@ -257,6 +247,14 @@ export const Desctiption = styled.div`
     margin-bottom: ${p => p.theme.space[2]}px;
     font-size: ${p => p.theme.fontSizes[1]}px;
     line-height: 1.12;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    padding: ${p => p.theme.space[0]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    padding: ${p => p.theme.space[4]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
   }
 `;
 
@@ -284,6 +282,14 @@ export const Price = styled.div`
     gap: 10px;
     font-size: ${p => p.theme.fontSizes[1]}px;
     line-height: 1.12;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
   }
 `;
 
@@ -316,16 +322,20 @@ export const Form = styled.form`
 `;
 
 export const WrapInputFields = styled.div`
-  /* padding: ${p => p.theme.space[4]}px; */
-  /* margin-top: ${p => p.theme.space[4]}px; */
-  /* padding: 0px; */
-  display: flex;
+  /* display: flex;
 
-  gap: 120px;
+  gap: 120px; */
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
     line-height: 1.12;
     display: block;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+  }
+
+  @media screen and (${p => p.theme.media.l}) {
+    display: flex;
+    gap: 120px;
   }
 `;
 
@@ -394,7 +404,7 @@ export const TextArea = styled.textarea`
   }
 `;
 export const WrapIfBuy = styled.div`
-  width: 50%;
+ 
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
@@ -404,6 +414,12 @@ export const WrapIfBuy = styled.div`
     width: 100%;
     margin-bottom: ${p => p.theme.space[4]}px;
     line-height: 1.12;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    width: 100%;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+     width: 50%;
   }
 `;
 
@@ -425,9 +441,22 @@ export const Size = styled.span`
 export const WrapSizes = styled.div`
   display: flex;
   gap: 5px;
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: 14px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: 16px;
+  }
 `;
 export const TextExplanation = styled.span`
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[1]}px;
   font-weight: ${p => p.theme.fontWeights.body};
+`;
+
+export const SetAdress = styled.div`
+  margin-top: 0px;
+  @media screen and (${p => p.theme.media.m}) {
+    margin-top: ${p => p.theme.space[4]}px;
+  }
 `;
