@@ -19,6 +19,7 @@ import {
   TextExplanation,
   WrapIfOrder,
   SetAdress,
+  WrapTextArea,
 } from './PictureInfo.styled';
 import { FaStarOfLife } from 'react-icons/fa';
 import { CommonButton } from 'components/common/commonButton/button';
@@ -102,10 +103,12 @@ export const OrderBlock = ({ tit, size, inStock }) => {
                 <FaStarOfLife size={'10px'} color="purple" />
                 <p> {t('gallaryPage.pictureInfo.order.delivery')}</p>
               </Prepayment>
-              <TextArea
-                name="adress"
-                placeholder={t('gallaryPage.pictureInfo.order.placeholder')}
-              ></TextArea>
+              <WrapTextArea>
+                <TextArea
+                  name="adress"
+                  placeholder={t('gallaryPage.pictureInfo.order.placeholder')}
+                ></TextArea>
+              </WrapTextArea>
             </Label>
           </SetAdress>
         </WrapInputFields>
@@ -196,7 +199,7 @@ const SelectOrderOrBuy = ({ setSelectedItem, selectedItem, inStock }) => {
 const IfOrder = ({ size }) => {
   const [t] = useTranslation();
   const isMobile = useMedia('(max-width:541px)');
-  const checkList = ['40*40', '40*50', '40*60', '50*70', '80*70', '100*110'];
+  const checkList = ['40*40','40*50','40*60','50*70','60*60','60*80','80*70','80*100','100*110'];
   return (
     <WrapIfOrder>
       <Label>
@@ -230,8 +233,8 @@ const DescriptionPreOrder = () => {
   const isTabletM = useMedia('(max-width: 720px)');
 
   const list = [
-    'до 40*60 - 70 y.e',
-    'до 70*80 -150 y.e',
+    'до 40*60 - 100 y.e',
+    'до 70*80 -200 y.e',
     'до 100*110 - 300 y.e',
     'від 100*110 - договірна(в приватному листуванні)',
   ];
@@ -247,7 +250,7 @@ const DescriptionPreOrder = () => {
     visibility: 'hidden',
   };
   const pricesBlockVisible = {
-    marginTop: '30px',
+    marginTop: '20px',
     padding: '10px 20px',
     position: 'absolute',
     visibility: 'visible',

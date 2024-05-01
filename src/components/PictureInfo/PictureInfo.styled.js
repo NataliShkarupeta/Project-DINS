@@ -295,6 +295,7 @@ export const Price = styled.div`
 
 export const PricePicture = styled.p`
   cursor: pointer;
+  scale: 1;
   :hover,
   :focus {
     scale: 1.1;
@@ -322,28 +323,32 @@ export const Form = styled.form`
 `;
 
 export const WrapInputFields = styled.div`
-  /* display: flex;
-
-  gap: 120px; */
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
     line-height: 1.12;
     display: block;
   }
-  @media screen and (${p => p.theme.media.m}) {
-  }
-
   @media screen and (${p => p.theme.media.l}) {
     display: flex;
+    gap: 30px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
     gap: 120px;
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
   }
 `;
 
 export const WrapIfOrder = styled.div`
-  width: 50%;
   @media screen and (${p => p.theme.media.s}) {
     width: 100%;
     margin-bottom: ${p => p.theme.space[4]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    width: 100%;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    width: 50%;
   }
 `;
 
@@ -402,9 +407,28 @@ export const TextArea = styled.textarea`
     width: 90vw;
     height: 50px;
   }
+  @media screen and (${p => p.theme.media.l}) {
+    width: 40vw;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+  }
+`;
+
+export const WrapTextArea = styled.div`
+  @media screen and (${p => p.theme.media.m}) {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    margin: 0;
+    display: block;
+  }
+
+  display: flex;
+  justify-content: center;
 `;
 export const WrapIfBuy = styled.div`
- 
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};
@@ -418,8 +442,8 @@ export const WrapIfBuy = styled.div`
   @media screen and (${p => p.theme.media.m}) {
     width: 100%;
   }
-  @media screen and (${p => p.theme.media.l}) {
-     width: 50%;
+  @media screen and (${p => p.theme.media.xl}) {
+    width: 50%;
   }
 `;
 
@@ -455,8 +479,15 @@ export const TextExplanation = styled.span`
 `;
 
 export const SetAdress = styled.div`
-  margin-top: 0px;
   @media screen and (${p => p.theme.media.m}) {
     margin-top: ${p => p.theme.space[4]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    margin-top: 0px;
+    width: 50%;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
   }
 `;
