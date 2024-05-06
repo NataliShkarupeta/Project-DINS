@@ -154,9 +154,8 @@ export const WrapImage = styled.div`
   }
   @media screen and (${p => p.theme.media.xl}) {
     position: relative;
-    width: 450px;
-    height: 600px;
-    width: 75%;
+    width: 500px;
+    height: 650px;
   }
 `;
 
@@ -174,9 +173,7 @@ export const Img = styled.img`
     width: 300px;
   }
   @media screen and (${p => p.theme.media.xl}) {
-    position: absolute;
-    max-width: 450px;
-    width: 60%;
+    width: 400px;
   }
 `;
 

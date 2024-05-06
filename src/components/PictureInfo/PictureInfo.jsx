@@ -155,9 +155,7 @@ const DescriptionsBlock = ({ title, text, inStock, size, picture }) => {
   const [canDelet, setCanDelete] = useState(false);
   const [t] = useTranslation();
 
-  // const isMobile = useMedia('(max-width:541px)');
   const isTabletM = useMedia('(max-width: 720px)');
-  // const isTabletXL = useMedia('(max-width: 961px)');
 
   useEffect(() => {
     if (canDelet || showModal) {

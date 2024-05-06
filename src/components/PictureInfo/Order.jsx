@@ -31,6 +31,9 @@ import { BGPriceBlock, Input } from 'pages/ListPictures/ListPictures.styled';
 import { useTranslation } from 'react-i18next';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { useMedia } from 'react-use';
+import { sendOrder } from 'service/gallertService';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const styles = {
   width: '100px',
@@ -56,20 +59,28 @@ export const OrderBlock = ({ tit, size, inStock }) => {
   //     setSelected(updatedList);
   //   };
 
+  // const notifyYes = () => toast('Замовлення відправлене');
+  const notify = () => toast('Перевірте правельність зазначеної адреси');
+
   const submitOrder = e => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
-    console.log(tit, formJson);
-    // form.reset();
+    const order = { tit, ...formJson };
+    if (order.adress.length <= 10) {
+      notify();
+    } else {
+      sendOrder(order);
+      form.reset();
+    }
   };
 
   return (
     <WrapOrderBlock>
+      <ToastContainer />
       <H3>{t('gallaryPage.pictureInfo.order.title')}</H3>
       <DescriptionPreOrder />
-
       <BorderTop>
         <div></div>
         <MiddleLine></MiddleLine>
@@ -199,7 +210,17 @@ const SelectOrderOrBuy = ({ setSelectedItem, selectedItem, inStock }) => {
 const IfOrder = ({ size }) => {
   const [t] = useTranslation();
   const isMobile = useMedia('(max-width:541px)');
-  const checkList = ['40*40','40*50','40*60','50*70','60*60','60*80','80*70','80*100','100*110'];
+  const checkList = [
+    '40*40',
+    '40*50',
+    '40*60',
+    '50*70',
+    '60*60',
+    '60*80',
+    '80*70',
+    '80*100',
+    '100*110',
+  ];
   return (
     <WrapIfOrder>
       <Label>

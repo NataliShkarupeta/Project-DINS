@@ -1,5 +1,24 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const URLPIC = 'http://localhost:3001/pictures';
+
+export const sendOrder = async order => {
+  const notifyYes = () => toast('Замовлення відправлене');
+  const notifyNo = () => toast('Щось пішло не так, спробуйте ще раз');
+
+  try {
+    const { data } = await axios.post(`${URLPIC}/order`, order);
+    
+    if (data.status === 'success') {
+      return notifyYes();
+    } else {
+      return notifyNo();
+    }
+  } catch (error) {
+    return error.massage;
+  }
+};
 
 export const changeInfoPicture = async (id, obj) => {
   try {
@@ -18,13 +37,12 @@ export const getAllPictures = async (limit, skip) => {
       ...obj,
       createdAt: Date.parse(obj.createdAt),
     }));
-    // console.log(sortDate);
     const sortPictures = [...sortDate].sort(
       (a, b) => b.createdAt - a.createdAt
     );
 
     return sortPictures;
-   
+
     // return data.data.result;
   } catch (error) {
     return error.massage;
