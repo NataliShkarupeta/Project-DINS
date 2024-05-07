@@ -380,6 +380,7 @@ export const Ul = styled.ul`
     gap: 25px;
   }
   @media screen and (${p => p.theme.media.l}) {
+    gap: 10px;
   }
 `;
 

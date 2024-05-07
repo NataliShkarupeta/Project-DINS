@@ -59,8 +59,9 @@ export const OrderBlock = ({ tit, size, inStock }) => {
   //     setSelected(updatedList);
   //   };
 
-  // const notifyYes = () => toast('Замовлення відправлене');
-  const notify = () => toast('Перевірте правельність зазначеної адреси');
+  const notify = () => toast.info(t('toast.order'));
+  const notifyYes = () => toast.success(t('toast.service.notifyYes'));
+  const notifyNo = () => toast.error(t('toast.service.notifyNo'));
 
   const submitOrder = e => {
     e.preventDefault();
@@ -68,17 +69,24 @@ export const OrderBlock = ({ tit, size, inStock }) => {
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
     const order = { tit, ...formJson };
-    if (order.adress.length <= 10) {
+    if (order.adress.length <= 20) {
       notify();
     } else {
-      sendOrder(order);
-      form.reset();
+      sendOrder(order)
+        .then(res => {
+          if (res) {
+            return notifyYes();
+          } else {
+            return notifyNo();
+          }
+        })
+        .finally(form.reset());
     }
   };
 
   return (
     <WrapOrderBlock>
-      <ToastContainer />
+      <ToastContainer position="top-center" />
       <H3>{t('gallaryPage.pictureInfo.order.title')}</H3>
       <DescriptionPreOrder />
       <BorderTop>

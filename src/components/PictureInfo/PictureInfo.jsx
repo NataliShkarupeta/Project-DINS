@@ -196,7 +196,7 @@ const DescriptionsBlock = ({ title, text, inStock, size, picture }) => {
         />
       )}
       <WrapDescription>
-        <WrapTitleAndText >
+        <WrapTitleAndText>
           <H2>{title}</H2>
           <Span>{text}</Span>
         </WrapTitleAndText>

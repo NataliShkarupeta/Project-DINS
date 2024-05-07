@@ -1,4 +1,11 @@
 {
+  "toast": {
+    "service": {
+      "notifyYes": "The order has been sent",
+      "notifyNo": "Something went wrong, please try again"
+    },
+    "order": "Check the correctness of the specified data"
+  },
   "defoultText": "It's a mess, something went wrong! Try reloading the page or check back later.",
   "blog": "My blog",
   "pageBlog": {
@@ -105,7 +112,7 @@
       "dateOfAdd": "The date the image was added",
       "order": {
         "title": "Order or buy a painting",
-        "setAdress": "Enter your: name and surname; local phone number; email. I will be able to form the shipment and find out the approximate cost of delivery for you.",
+        "setAdress": "Enter your: name and surname; adress; local phone number; email. I will be able to form the shipment and find out the approximate cost of delivery for you.",
         "delivery": "Delivery services are paid by the customer",
         "placeholder": "Silviya Vetska; VetskaSil@gmail.com; 787496417; Warszawa, InPost Słowicza 1  05-500  Mysiadło",
         "buttonSubmit": "Send order",

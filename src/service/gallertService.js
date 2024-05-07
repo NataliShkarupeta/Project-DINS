@@ -1,20 +1,13 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export const URLPIC = 'http://localhost:3001/pictures';
 
 export const sendOrder = async order => {
-  const notifyYes = () => toast('Замовлення відправлене');
-  const notifyNo = () => toast('Щось пішло не так, спробуйте ще раз');
+  // const [t] = useTranslation();
 
   try {
     const { data } = await axios.post(`${URLPIC}/order`, order);
-    
-    if (data.status === 'success') {
-      return notifyYes();
-    } else {
-      return notifyNo();
-    }
+    return data;
   } catch (error) {
     return error.massage;
   }

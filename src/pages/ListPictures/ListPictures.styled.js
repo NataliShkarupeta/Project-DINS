@@ -26,7 +26,6 @@ export const AllAndStockWords = styled.span`
   @media screen and (${p => p.theme.media.l}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
   }
-
 `;
 
 export const WrapPlaces = styled.div`
@@ -95,10 +94,6 @@ export const UlPlaces = styled.ul`
 `;
 
 export const NavPlaces = styled.nav`
-  /* overflow: hidden; */
-  /* left: 1.5%; */
-  /* top: 10px; */
-  /* width: auto; */
   border-radius: 5px;
   box-shadow: 23px 0px 37px 0px rgba(0, 0, 0, 0.23);
   @media screen and (${p => p.theme.media.s}) {
@@ -218,7 +213,7 @@ export const LabPlaces = styled.label`
     font-size: ${p => p.theme.fontSizes[2]}px;
   }
   @media screen and (${p => p.theme.media.xl}) {
-top: 4px;
+    top: 4px;
   }
 `;
 

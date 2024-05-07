@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import img from '../../images/Depositphotos_211953146_XL (1).jpg';
 
 export const WrapForTooltip = styled.div`
   margin: 0;
@@ -74,17 +73,7 @@ export const WrapTitleAndDate = styled.div`
 
 export const Section = styled.section`
   text-align: center;
-  /* padding: ${p => p.theme.space[4]}px; */
 
-  /* background-image:  */
-  /* linear-gradient(
-      to bottom,
-      rgba(255, 255, 0, 0.37),
-      rgba(83, 177, 226, 1)
-    ), */
-  /* linear-gradient(to bottom, rgba(47, 48, 58,0.2), rgba(47, 48, 58,0.2)), */
-  /* url('${img}'); */
-  /* background-size: cover; */
 `;
 
 export const Li = styled.li`

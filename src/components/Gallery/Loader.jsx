@@ -108,13 +108,11 @@ const Loader = ({ setLoading }) => {
 const ImageBlock = ({ id, variants }) => {
   return (
     <motion.div variants={variants}>
-      {/* <div style={{ border: '#d6d0d9 10px solid', borderRadius: '3px' }}> */}
       <img
         src={`${BASIC_URL}/imagesLoader/${id}.jpg`}
         alt={`${id}`}
         style={{ borderRadius: '5px' }}
       />
-      {/* </div> */}
     </motion.div>
   );
 };

@@ -190,7 +190,16 @@ const ListPictures = memo(() => {
                   state={{ from: location }}
                 >
                   <WrapPicture ref={ref}>
-                    <img  loading='lazy' src={`${BASIC_URL}/${image}`} alt={title1} />
+                    {loading && (
+                      <WrapDots>
+                        <ThreeDots />
+                      </WrapDots>
+                    )}
+                    <img
+                      loading="lazy"
+                      src={`${BASIC_URL}/${image}`}
+                      alt={title1}
+                    />
                     {/* {inView ? (
                       <img src={`${BASIC_URL}/${image}`} alt={title1} />
                     ) : (
