@@ -14,26 +14,23 @@ import {
   Ul,
   H3,
   Text,
-  // SvgEye,
-  // SvgEye2,
-  // SvgEye3,
-  // SvgEye4,
   Li,
   WordLashMaker,
   WrapTitleAndEye,
 } from './Beauty.styled';
 import { motion } from 'framer-motion';
-import l3 from '../../images/beauty/lash3 (1).jpg';
-import l4 from '../../images/beauty/lash4 (1).jpg';
-import l6 from '../../images/beauty/lash6 (1).jpg';
-import l8 from '../../images/beauty/lash8 (1).jpg';
-import l9 from '../../images/beauty/lash9 (1).jpg';
+// import l3 from '../../images/beauty/lash3 (1).jpg';
+// import l4 from '../../images/beauty/lash4 (1).jpg';
+// import l6 from '../../images/beauty/lash6 (1).jpg';
+// import l8 from '../../images/beauty/lash8 (1).jpg';
+// import l9 from '../../images/beauty/lash9 (1).jpg';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { SiApachecassandra } from 'react-icons/si';
 import { GiDeadHead, GiGems, GiTwoShadows, GiBullseye } from 'react-icons/gi';
 import { useTranslation } from 'react-i18next';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { useEffectOnce, useMedia } from 'react-use';
+import { BASIC_URL } from 'service/basicUrl';
 
 const styles = {
   position: 'absolute',
@@ -46,7 +43,6 @@ const styles = {
 const styleXL = {
   position: 'absolute',
   width: '55vw',
-  // height: '60vh',
   overflow: 'hidden',
   borderRadius: '30px',
   top: '-35.5vh',
@@ -54,7 +50,6 @@ const styleXL = {
 const styleL = {
   position: 'absolute',
   width: '60vw',
-  // height: '60vh',
   overflow: 'hidden',
   borderRadius: '30px',
   top: '-26.5vh',
@@ -65,26 +60,25 @@ const styleMobile = {
   width: '65vw',
   overflow: 'hidden',
   borderRadius: '30px',
-
 };
 const styleTablet = {
   position: 'absolute',
   width: '65vw',
-  // height: '50vh',
   overflow: 'hidden',
   borderRadius: '30px',
-  
 };
+
+const URLPHOTO = `${BASIC_URL}/imagesLash`;
 
 const BeautyPage = () => {
   const [position, positionSet] = useState(2);
   const [t] = useTranslation();
+  // const photoArr = [l4, l3, l6, l8, l9];
 
-  const photoArr = [l4, l3, l6, l8, l9];
   const isMobile = useMedia('(max-width:541px)');
   const isTabletM = useMedia('(max-width: 721px)');
   const isTabletXL = useMedia('(max-width: 961px)');
-   const isComp = useMedia('(max-width: 1141px)');
+  const isComp = useMedia('(max-width: 1141px)');
 
   const onRight = () => {
     if (position < photoArr.length - 1) {
@@ -102,6 +96,18 @@ const BeautyPage = () => {
   useEffectOnce(() => {
     setSelectedMenu(false);
   }, [setSelectedMenu]);
+
+  const photoArr = [
+    `${URLPHOTO}/4A5ECBA5-6CB3-4D77-94B7-487CD5332A67_1_201_a.jpeg`,
+    `${URLPHOTO}/39F68309-2CDC-4CF6-BC91-0F9D485B75D8_1_201_a.jpeg`,
+    `${URLPHOTO}/687CCF9A-3140-4044-B256-3742B8EB638C_1_201_a.jpeg`,
+    `${URLPHOTO}/831D949E-C450-4090-AFF7-FE9E930B2922_1_201_a.jpeg`,
+    `${URLPHOTO}/3572EF5D-AA11-419E-9C27-EC1E2FFBDBC2_1_201_a.jpeg`,
+    `${URLPHOTO}/6324E2E5-020C-4694-A25C-0DCDAA6B6CE4_1_201_a.jpeg`,
+    `${URLPHOTO}/88318323-1389-4D24-882E-D627AA1C3273_1_201_a.jpeg`,
+    `${URLPHOTO}/D8D2D165-3934-44A4-9178-E6B355920325_1_201_a.jpeg`,
+    `${URLPHOTO}/FFB3C878-5C2F-4B58-B47E-7869832352B4_1_201_a.jpeg`,
+  ];
 
   return (
     <>
@@ -167,11 +173,6 @@ const BeautyPage = () => {
               }
               key={index}
               initial={{ scale: 0, rotation: -180 }}
-              // animate={{
-              //   rotate: 0,
-              //   left: `${(index - position) * 60 - 26}vw`,
-              //   scale: index === position ? 1 : 0.8,
-              // }}
               animate={
                 !isMobile && !isTabletM
                   ? {
@@ -190,7 +191,8 @@ const BeautyPage = () => {
                 type: 'tween',
               }}
             >
-                <Img src={photo} alt="/" />
+              {/* <div></div> */}
+              <Img src={photo} alt="/" />
             </motion.div>
           ))}
         </Row>
@@ -198,19 +200,6 @@ const BeautyPage = () => {
       <div>
         <H3>{t('lashMakerPage.needKnow.text')}</H3>
         <WrapAdvice>
-          {/* <SvgEye>
-            <SiSvg size={60} color="pink" />
-          </SvgEye>
-          <SvgEye2>
-            <SiSvg size={60} color="pink" />
-          </SvgEye2>
-          <SvgEye3>
-            <SiSvg size={60} color="pink" />
-          </SvgEye3>
-          <SvgEye4>
-            <SiSvg size={60} color="pink" />
-          </SvgEye4> */}
-
           <Advice>
             {t('lashMakerPage.needKnow.first')} <GiTwoShadows size={30} />
           </Advice>

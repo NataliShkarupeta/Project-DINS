@@ -16,7 +16,6 @@ export const H3 = styled.h3`
     font-size: ${p => p.theme.fontSizes[3]}px;
   }
   @media screen and (${p => p.theme.media.l}) {
-   
   }
   @media screen and (${p => p.theme.media.xl}) {
     font-size: ${p => p.theme.fontSizes[4]}px;
@@ -89,7 +88,6 @@ export const Advice = styled.p`
   }
   @media screen and (${p => p.theme.media.m}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
-   
   }
   @media screen and (${p => p.theme.media.l}) {
     font-size: 18px;
@@ -257,17 +255,22 @@ export const ContainerForSlider = styled.div`
 
 export const Row = styled.div`
   position: relative;
+
   @media screen and (${p => p.theme.media.s}) {
     margin-right: 67%;
+    margin-bottom: 40px;
   }
   @media screen and (${p => p.theme.media.m}) {
     margin-right: 64%;
+    margin-bottom: 85px;
   }
   @media screen and (${p => p.theme.media.l}) {
     margin-right: 6%;
+    /* margin-bottom: 150px; */
   }
   @media screen and (${p => p.theme.media.xl}) {
     margin-right: 0;
+    margin-bottom: 0px;
   }
 `;
 
@@ -276,8 +279,7 @@ export const Img = styled.img`
   height: 100%;
   background-size: cover;
   background-position: center;
-  @media screen and (${p => p.theme.media.s}) {
-  }
+
 `;
 
 export const WrapBottonTurn = styled.div`

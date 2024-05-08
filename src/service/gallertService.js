@@ -3,8 +3,6 @@ import 'react-toastify/dist/ReactToastify.css';
 export const URLPIC = 'http://localhost:3001/pictures';
 
 export const sendOrder = async order => {
-  // const [t] = useTranslation();
-
   try {
     const { data } = await axios.post(`${URLPIC}/order`, order);
     return data;
