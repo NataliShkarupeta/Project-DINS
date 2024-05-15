@@ -9,7 +9,7 @@ import './18n';
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
 
-  <BrowserRouter basename="/Project-DINS">
+  <BrowserRouter >
     <Suspense >
       <App />
     </Suspense>

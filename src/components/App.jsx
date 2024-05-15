@@ -13,9 +13,6 @@ import { useMedia } from 'react-use';
 import { LayoutMobile } from './Layout/LayoutMobile';
 import { HomePageMobile } from 'pages/HomePage/HomePageMobile';
 import { PictureInfoMobile } from './PictureInfo/PictureInfoMobile';
-// import { useFeatureStore } from './Features/Features/store';
-// import { ListPictures } from 'pages/ListPictures/ListPictures';
-// import { useFeatureStore } from './Features/Features/store';
 
 const FrontEndPage = lazy(() => import('pages/FrontEndPage/FrontEndPage'));
 const PaintingPage = lazy(() => import('pages/Painting/Painting'));
@@ -40,8 +37,6 @@ export const App = () => {
   const [more, setMore] = useState(false);
   const isMobile = useMedia('(max-width: 541px)');
 
-  // const leng = useFeatureStore(state => state.leng);
-  //
   useEffect(() => {
     localStorage.setItem('thema', JSON.stringify(mainThema));
   }, [mainThema]);
@@ -52,7 +47,6 @@ export const App = () => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Natali Shkarupera</title>
-          {/* <link rel="canonical" href="http://mysite.com/example" /> */}
           <meta name="description" content="Natali Shkarupera" />
         </Helmet>
         <Routes>

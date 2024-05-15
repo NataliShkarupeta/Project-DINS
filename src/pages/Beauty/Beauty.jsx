@@ -73,7 +73,6 @@ const URLPHOTO = `${BASIC_URL}/imagesLash`;
 const BeautyPage = () => {
   const [position, positionSet] = useState(2);
   const [t] = useTranslation();
-  // const photoArr = [l4, l3, l6, l8, l9];
 
   const isMobile = useMedia('(max-width:541px)');
   const isTabletM = useMedia('(max-width: 721px)');
