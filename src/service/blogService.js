@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { BASIC_URL } from './basicUrl';
 
-const URL = 'http://localhost:3001/blog';
+const URL = `${BASIC_URL}/blog`; 
 
 export const getAllPosts = async () => {
   try {
@@ -10,7 +11,6 @@ export const getAllPosts = async () => {
       ...obj,
       createdAt: Date.parse(obj.createdAt),
     }));
-    // console.log(sortDate);
     const sortPosts = [...sortDate].sort((a, b) => b.createdAt - a.createdAt);
 
     return sortPosts;

@@ -19,7 +19,6 @@ import { CommonButton } from 'components/common/commonButton/button';
 import { Link, useLocation } from 'react-router-dom';
 import { useMedia } from 'react-use';
 
-// import { NavigationLink } from 'pages/Painting/Painting.styled';
 
 const banner = {
   hidden: {},
@@ -42,7 +41,6 @@ const letterAnimation = {
 
 const BannerComp = ({ refToPict }) => {
   const [t] = useTranslation();
-  // const [play, setPlay] = useState(false);
   const isMobile = useMedia('(max-width:541px');
   const isTabletM = useMedia('(max-width: 720px)');
   const isTabletXL = useMedia('(max-width: 961px)');
@@ -55,11 +53,6 @@ const BannerComp = ({ refToPict }) => {
       : window.scrollTo(0, 250);
   }, [isMobile, isTabletM]);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setPlay(true);
-  //   }, 2000);
-  // }, []);
 
   const styles = {
     width: '120px',
@@ -129,53 +122,6 @@ const BannerComp = ({ refToPict }) => {
 
           <RowTop title={t('gallaryPage.banner.name')} />
           <RowBottom title={t('gallaryPage.banner.lastName')} />
-
-          {/* <p>{t('gallaryPage.oilPanting')}</p> */}
-          {/* {isMobile ? (
-            <motion.div
-              initial={{ opacity: 0, y: 80 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                ease: 'easeInOut',
-                duration: 1,
-                delay: 1,
-              }}
-            >
-              <ButtonScroll
-                onClick={() =>
-                  refToPict.current.scrollIntoView({ behavior: 'smooth' })
-                }
-              >
-                {t('gallaryPage.banner.scroll')}
-              </ButtonScroll>
-            </motion.div>
-          ) : isTabletM ? (
-            <motion.div
-              initial={{ opacity: 0, y: 80 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                ease: 'easeInOut',
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
-              <ButtonScroll
-                onClick={() =>
-                  refToPict.current.scrollIntoView({ behavior: 'smooth' })
-                }
-              >
-                {t('gallaryPage.banner.scroll')}
-              </ButtonScroll>
-            </motion.div>
-          ) : (
-            <ButtonScroll
-              onClick={() =>
-                refToPict.current.scrollIntoView({ behavior: 'smooth' })
-              }
-            >
-              {t('gallaryPage.banner.scroll')}
-            </ButtonScroll>
-          )} */}
         </NameBlock>
         <motion.div
           initial={{ opacity: 0, y: 80 }}
@@ -213,24 +159,18 @@ const AnimatedLetters = ({ title, disabled }) => (
 );
 
 const RowTop = ({ title }) => {
-  // const [t] = useTranslation();
   return (
     <>
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, dalay: 1 }}
-        // style={{ zIndex: 100 }}
       >
         <FirstV>
           <AnimatedLetters title={title} />
         </FirstV>
 
         <LinkBlock>
-          {/* <NavigationLink to={'/painting/social-project'}> */}
-          {/* <h3>{t('paintin_page.paintinTitle2')}</h3> */}
-          {/* <h3>{t('paintin_page.paintinTitle1')}</h3> */}
-          {/* </NavigationLink> */}
         </LinkBlock>
       </motion.div>
     </>
@@ -252,7 +192,7 @@ const RowBottom = ({ title }) => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, dalay: 1 }}
-        // style={{ zIndex: 100 }}
+        
       >
         <ThirdV>
           <AnimatedLetters title={title} />

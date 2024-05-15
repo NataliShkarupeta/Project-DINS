@@ -78,17 +78,17 @@ const Loader = ({ setLoading }) => {
         exit="exit"
       >
         <WrapIm2>
-          <ImageBlock variants={item} id="phoenix" />
+          <ImageBlock variants={item} id="s13075" />
         </WrapIm2>
 
         <WrapIm3>
-          <ImageBlock variants={item} id="pleasure" />
+          <ImageBlock variants={item} id="sIMG_6096" />
         </WrapIm3>
         <WrapIm4>
-          <ImageBlock variants={item} id="secrets" />
+          <ImageBlock variants={item} id="14240" />
         </WrapIm4>
         <WrapIm1>
-          <ImageBlock variants={item} id="hot bread" />
+          <ImageBlock variants={item} id="sIMG_6195" />
         </WrapIm1>
         <WrapIm5>
           <motion.div variants={itemMain}>
@@ -109,7 +109,7 @@ const ImageBlock = ({ id, variants }) => {
   return (
     <motion.div variants={variants}>
       <img
-        src={`${BASIC_URL}/imagesLoader/${id}.jpg`}
+        src={`${BASIC_URL}/imagesLoader/${id}.jpeg`}
         alt={`${id}`}
         style={{ borderRadius: '5px' }}
       />

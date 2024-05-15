@@ -1,6 +1,8 @@
 import axios from 'axios';
-import 'react-toastify/dist/ReactToastify.css';
-export const URLPIC = 'http://localhost:3001/pictures';
+import { BASIC_URL } from './basicUrl';
+ 
+export const URLPIC = `${BASIC_URL}/pictures`;
+
 
 export const sendOrder = async order => {
   try {

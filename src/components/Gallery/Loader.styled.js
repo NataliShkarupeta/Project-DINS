@@ -15,9 +15,6 @@ export const MainLoaderBlock = styled.div`
 `;
 export const WrapIm1 = styled.div`
   position: absolute;
-  /* width: 350px;
-  top: 45%;
-  left: 70%; */
   @media screen and (${p => p.theme.media.s}) {
     position: absolute;
     width: 150px;
@@ -29,7 +26,7 @@ export const WrapIm1 = styled.div`
     right: 2%;
   }
   @media screen and (${p => p.theme.media.xxl}) {
-    width: 28%;
+    width: 27%;
     right: 3%;
     bottom: -27%;
   }
@@ -64,11 +61,15 @@ export const WrapIm3 = styled.div`
   }
   @media screen and (${p => p.theme.media.l}) {
     width: 220px;
-    right: 2%;
+    right: 6%;
+  }
+   @media screen and (${p => p.theme.media.xl}) {
+    
+    right: 4.5%;
   }
   @media screen and (${p => p.theme.media.xxl}) {
     width: 18%;
-    right: 3%;
+    right: 8%;
   }
 `;
 export const WrapIm4 = styled.div`
@@ -85,8 +86,8 @@ export const WrapIm4 = styled.div`
     left: 2%;
   }
   @media screen and (${p => p.theme.media.xxl}) {
-    width: 28%;
-    left: 3%;
+    width: 25%;
+    left: 4.5%;
     bottom: -27%;
   }
 `;
