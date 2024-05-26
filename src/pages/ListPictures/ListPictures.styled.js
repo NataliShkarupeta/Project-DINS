@@ -72,15 +72,17 @@ export const LiPlaces = styled.li`
 
 export const UlPlaces = styled.ul`
   position: relative;
-  width: 500px;
+
   height: 100%;
   list-style-type: none;
   font-size: 0;
   @media screen and (${p => p.theme.media.s}) {
+    width: 300px;
     padding-left: 0px;
     padding-right: 0px;
   }
   @media screen and (${p => p.theme.media.m}) {
+    width: 500px;
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -271,9 +273,12 @@ export const Input = styled.input`
       position: absolute;
 
       @media screen and (${p => p.theme.media.s}) {
-        font-size: 1em;
+        /* font-size: 1em;
         right: 1px;
-        top: -1.8px;
+        top: -1.8px; */
+        font-size: 1em;
+        right: 2px;
+        top: -1px;
       }
       @media screen and (${p => p.theme.media.m}) {
         font-size: 1em;
@@ -293,8 +298,10 @@ export const Input = styled.input`
     }
   }
   @media screen and (${p => p.theme.media.s}) {
-    width: 1em;
-    height: 1em;
+    /* width: 1em;
+    height: 1em; */
+    width: 1.2em;
+    height: 1.2em;
   }
   @media screen and (${p => p.theme.media.m}) {
     width: 1.2em;

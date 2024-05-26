@@ -99,7 +99,7 @@ const Gallary = () => {
             ) : (
               <MainImageDiv>
                 <motion.img
-                  src={`${BASIC_URL}/imagesLoader/hot bread.jpg`}
+                  src={`${BASIC_URL}/imagesLoader/s10327.jpeg`}
                   alt={`picture 'Hot bread.jpg'`}
                   layoutId="main-image"
                   transition={{

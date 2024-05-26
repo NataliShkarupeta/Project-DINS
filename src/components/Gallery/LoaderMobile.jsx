@@ -77,7 +77,7 @@ export const LoaderMobile = ({ setLoading }) => {
           <motion.div variants={itemMain}>
             <motion.img
               style={{ borderRadius: '5px' }}
-              src={`${BASIC_URL}/imagesLoader/hot bread.jpg`}
+              src={`${BASIC_URL}/imagesLoader/s10327.jpeg`}
               alt="phoenix"
               layoutId="main-image"
             />

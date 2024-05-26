@@ -108,7 +108,6 @@ const ListPictures = memo(() => {
       </>
     );
   }
-  // console.log(pictures);
   return (
     <>
       <NavLinkButton to={'/painting'}>
