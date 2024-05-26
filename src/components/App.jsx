@@ -47,7 +47,7 @@ export const App = () => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Natali Shkarupera</title>
-          <meta name="description" content="Natali Shkarupera" />
+          <meta name="description" content="Natali Shkarupeta" />
         </Helmet>
         <Routes>
           <Route
