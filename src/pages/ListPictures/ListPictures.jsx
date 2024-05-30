@@ -1,4 +1,3 @@
-// import { useFeatureStore } from 'components/Features/Features/store';
 import {
   AboutOrder,
   Li,
@@ -10,7 +9,7 @@ import { DefaultComponent } from 'components/common/default/defaultComponent';
 import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import { BASIC_URL } from 'service/basicUrl';
+import { S3_URL } from 'service/basicUrl';
 import { getAllPictures, getPlacePictures } from 'service/gallertService';
 import {
   AllAndStockWords,
@@ -51,7 +50,7 @@ const ListPictures = memo(() => {
       .then(res => setPicures(res))
       .finally(() => setLoading(false));
   }, []);
-
+  
   const onChangeHandlerInStock = event => {
     setSelectedItem(event.target.name);
     findInStockPict();
@@ -196,7 +195,7 @@ const ListPictures = memo(() => {
                     )}
                     <img
                       loading="lazy"
-                      src={`${BASIC_URL}/${image}`}
+                      src={`${S3_URL}/${image}`}
                       alt={title1}
                     />
                     {/* {inView ? (
@@ -224,7 +223,7 @@ const ListPictures = memo(() => {
                 state={{ from: location }}
               >
                 <WrapPicture>
-                  <img src={`${BASIC_URL}/${image}`} alt={title1} />
+                  <img src={`${S3_URL}/${image}`} alt={title1} />
                 </WrapPicture>
               </Link>
             </Li>

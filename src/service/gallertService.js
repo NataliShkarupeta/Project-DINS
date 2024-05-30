@@ -36,7 +36,6 @@ export const getAllPictures = async (limit, skip) => {
 
     return sortPictures;
 
-    // return data.data.result;
   } catch (error) {
     return error.massage;
   }
