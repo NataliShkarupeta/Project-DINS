@@ -1,6 +1,5 @@
-// import { ModalCommon } from 'components/common/modal/modal';
 import { normalizedDate } from 'pages/Blog/normalizeDate';
-import { BASIC_URL } from 'service/basicUrl';
+import { S3_URL } from 'service/basicUrl';
 import {
   H2,
   Img,
@@ -32,9 +31,7 @@ export const PictureInfoMobile = () => {
   const location = useLocation();
   const [t] = useTranslation();
 
-  //   useEffect(() => {
-  //     window.scrollTo(0, 120);
-  //   }, []);
+  
   useEffect(() => {
     setLoading(true);
     getPictureById(paintingId)
@@ -122,7 +119,7 @@ const InfoBlock = ({ isit, size }) => {
 
 const ImageBlock = ({ img, title, date }) => {
   const [t] = useTranslation();
-  let imG = `${BASIC_URL}/${img}`;
+  let imG = `${S3_URL}/${img}`;
 
   return (
     <WrapImageAndDateCreate>
