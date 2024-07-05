@@ -50,12 +50,10 @@ export const LiPlaces = styled.li`
   }
   @media screen and (${p => p.theme.media.s}) {
     width: 50px;
-    font-size: 10px;
     line-height: 30px;
   }
   @media screen and (${p => p.theme.media.m}) {
     width: 60px;
-    font-size: 12px;
     line-height: 38px;
   }
   @media screen and (${p => p.theme.media.l}) {
@@ -78,12 +76,12 @@ export const UlPlaces = styled.ul`
   font-size: 0;
   @media screen and (${p => p.theme.media.s}) {
     width: 300px;
-    padding-left: 0px;
+    padding-left: 5px;
     padding-right: 0px;
   }
   @media screen and (${p => p.theme.media.m}) {
     width: 500px;
-    padding-left: 0px;
+    padding-left: 6px;
     padding-right: 0px;
   }
   @media screen and (${p => p.theme.media.l}) {
@@ -162,9 +160,19 @@ export const TextPlace = styled.span`
   transition: transform 1s cubic-bezier(0.48, 0.43, 0.7, 2.5), opacity 250ms;
 
   ${PlacesInput}:checked ~ ${PlacesContent}  & {
+    font-size: 8px;
     transform: rotateY(0);
     opacity: 1;
     transition: transform 2s cubic-bezier(0.48, 0.43, 0.7, 2.5), opacity 3s;
+    @media screen and (${p => p.theme.media.m}) {
+      font-size: 10px;
+    }
+    @media screen and (${p => p.theme.media.l}) {
+      font-size: 12px;
+    }
+    @media screen and (${p => p.theme.media.xl}) {
+      font-size: ${p => p.theme.fontSizes[2]}px;
+    }
   }
 `;
 export const LabPlaces = styled.label`

@@ -8,11 +8,10 @@ import './18n';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-
   <BrowserRouter >
     <Suspense >
       <App />
     </Suspense>
   </BrowserRouter>
-  // </React.StrictMode>
+  //  </React.StrictMode>
 );

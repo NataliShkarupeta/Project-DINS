@@ -124,7 +124,6 @@ const InfoBlock = ({ isit, size }) => {
       <p>
         {t('gallaryPage.pictureInfo.size')}: {size}
       </p>
-      {/* <p> {t('gallaryPage.pictureInfo.info')}</p> */}
     </WrapInfoFromMe>
   );
 };
