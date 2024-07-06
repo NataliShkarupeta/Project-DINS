@@ -28,21 +28,20 @@ import {
 } from './ListPictures.styled';
 import { ThreeDots } from 'react-loader-spinner';
 import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
-import { useInView } from 'react-intersection-observer';
+import { TfiArrowUp } from 'react-icons/tfi';
+import { Button } from 'components/common/commonButton/button.styled';
+import { useFeatureStore } from 'components/Features/Features/store';
 
 const ListPictures = memo(() => {
   const [pictures, setPicures] = useState({});
   const [inStock, setInStock] = useState({});
   const [selectedItem, setSelectedItem] = useState('Всі');
   const [loading, setLoading] = useState(false);
-
-  const [ref] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
+  const [scroll, setScroll] = useState(0);
 
   const location = useLocation();
   const [t] = useTranslation();
+  const refTop = useFeatureStore(state => state.refTop);
 
   useEffect(() => {
     setLoading(true);
@@ -50,7 +49,15 @@ const ListPictures = memo(() => {
       .then(res => setPicures(res))
       .finally(() => setLoading(false));
   }, []);
-  
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
   const onChangeHandlerInStock = event => {
     setSelectedItem(event.target.name);
     findInStockPict();
@@ -107,6 +114,13 @@ const ListPictures = memo(() => {
       </>
     );
   }
+
+  const topButton = {
+    position: 'fixed',
+    bottom: '34px',
+    right: '34px',
+  };
+
   return (
     <>
       <NavLinkButton to={'/painting'}>
@@ -114,6 +128,15 @@ const ListPictures = memo(() => {
       </NavLinkButton>
 
       <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
+
+      {scroll > document.documentElement.clientHeight && (
+        <Button
+          style={topButton}
+          onClick={() => refTop.current.scrollIntoView({ behavior: 'smooth' })}
+        >
+          <TfiArrowUp size={20} />
+        </Button>
+      )}
 
       <WrapCheckboxes>
         <WrapPlaces>
@@ -187,7 +210,7 @@ const ListPictures = memo(() => {
                   to={`/painting/list_pictures/${_id}`}
                   state={{ from: location }}
                 >
-                  <WrapPicture ref={ref}>
+                  <WrapPicture>
                     {loading && (
                       <WrapDots>
                         <ThreeDots />
@@ -198,13 +221,6 @@ const ListPictures = memo(() => {
                       src={`${S3_URL}/${image}`}
                       alt={title1}
                     />
-                    {/* {inView ? (
-                      <img src={`${BASIC_URL}/${image}`} alt={title1} />
-                    ) : (
-                      <div style={{width:'200px',height:'200px'}}>
-                        <ThreeDots />
-                      </div>
-                    )} */}
                   </WrapPicture>
                 </Link>
               </Li>

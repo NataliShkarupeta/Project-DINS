@@ -8,20 +8,48 @@ import {
   Section,
 } from './LearnMore.styled';
 import { Button } from 'components/common/commonButton/button.styled';
-
+import { useEffect, useState } from 'react';
+import { TfiArrowUp } from 'react-icons/tfi';
+import { useFeatureStore } from 'components/Features/Features/store';
 
 export const LearnMore = ({ setMore }) => {
   const [t] = useTranslation();
+  
+  const [scroll, setScroll] = useState(0);
 
-   const styles = {
-     marginBottom: '32px',
-     marginLeft: '16px',
-     padding: '2px 5px',
-   };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  const styles = {
+    marginBottom: '32px',
+    marginLeft: '16px',
+    padding: '2px 5px',
+  };
+  const topButton = {
+    position: 'fixed',
+    bottom: '34px',
+    right: '34px',
+  };
+  const refTop = useFeatureStore(state => state.refTop);
 
   return (
     <>
-      <Button style={styles} onClick={() => setMore(false)}>{t('button.back')}</Button>
+      {scroll > document.documentElement.clientHeight && (
+        <Button
+          style={topButton}
+          onClick={() => refTop.current.scrollIntoView({ behavior: 'smooth' })}
+        >
+          <TfiArrowUp size={20} />
+        </Button>
+      )}
+      <Button  style={styles} onClick={() => setMore(false)}>
+        {t('button.back')}
+      </Button>
       <Section>
         <WrapForMargin>
           <P>{t('learn_more2')}</P>

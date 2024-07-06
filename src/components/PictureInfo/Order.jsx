@@ -47,17 +47,7 @@ export const OrderBlock = ({ tit, size, inStock }) => {
   const isMobile = useMedia('(max-width:541px)');
 
   const [t] = useTranslation();
-  //   const handleCheck = e => {
-  //     console.log('e', e.target.value);
-  //     let updatedList = [...selected];
-  //     if (e.target.checked) {
-  //       updatedList = [...selected, e.target.value];
-  //     } else {
-  //       updatedList.splice(selected.indexOf(e.target.value), 1);
-  //     }
-  //     console.log('updatedList', updatedList);
-  //     setSelected(updatedList);
-  //   };
+
 
   const notify = () => toast.info(t('toast.order'));
   const notifyYes = () => toast.success(t('toast.service.notifyYes'));

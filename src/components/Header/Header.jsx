@@ -12,22 +12,22 @@ import { Link, useLocation } from 'react-router-dom';
 import img from '../../images/free-icon-space-8657325 (1).png';
 import { Button } from 'components/common/commonButton/button.styled';
 import { useMedia } from 'react-use';
+import { useEffect, useRef } from 'react';
+import { useFeatureStore } from 'components/Features/Features/store';
 
 export const Header = () => {
   const [t] = useTranslation();
   const location = useLocation();
+  const setRefTop = useFeatureStore(store => store.setRefTop);
+  const reff = useRef();
 
   const isTabletM = useMedia('(max-width: 720px)');
+  useEffect(() => {
+    setRefTop(reff);
+  }, [setRefTop]);
 
-
-  // елементи виїжджають знизу, за рахунок у, буде круто якщо стовбецем
-  // const pVariantsList = {
-  //   hidden: { opacity: 0 ,y:100},
-  //   visible: i => ({ opacity: 1, transition:{delay: i *0.5,} ,y:0}),
-  // };
-  //.map((el,i)=>( <motion.li key={} variants={pVariantsList} initial ='hidden' animate="visible" custom={i}
   return (
-    <Head>
+    <Head ref={reff}>
       <div style={{ cursor: 'pointer' }}>
         <Link to={`/`}>
           <motion.p
@@ -56,7 +56,7 @@ export const Header = () => {
               {t('professions.dev')}
             </NavigationLink>
           </Li>
-          <Li >
+          <Li>
             <NavigationLink to="/painting" state={{ from: location }}>
               {t('professions.art')}
             </NavigationLink>
@@ -92,7 +92,6 @@ export const Header = () => {
           </SmallWrap>
           <>
             <Button
-             
               onClick={e => {
                 window.location.href = 'mailto:natalinardi.kh@gmail.com';
                 e.preventDefault();
