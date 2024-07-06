@@ -31,7 +31,6 @@ export const PictureInfoMobile = () => {
   const location = useLocation();
   const [t] = useTranslation();
 
-  
   useEffect(() => {
     setLoading(true);
     getPictureById(paintingId)
@@ -121,6 +120,14 @@ const ImageBlock = ({ img, title, date }) => {
   const [t] = useTranslation();
   let imG = `${S3_URL}/${img}`;
 
+  const showPhoto = ({ target }) => {
+    if (!document.fullscreenElement) {
+      target.requestFullscreen().catch(error => console.log(error));
+    } else {
+      document.exitFullscreen();
+    }
+  };
+
   return (
     <WrapImageAndDateCreate>
       <WrapImage
@@ -130,7 +137,7 @@ const ImageBlock = ({ img, title, date }) => {
           filter: 'blur(6px)',
         }}
       ></WrapImage>
-      <Img src={imG} alt={title} />
+      <Img onClick={showPhoto} src={imG} alt={title} />
       <p>
         {t('gallaryPage.pictureInfo.dateOfAdd')}: {normalizedDate(date)}
       </p>
