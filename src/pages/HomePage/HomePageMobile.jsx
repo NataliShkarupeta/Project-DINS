@@ -6,29 +6,31 @@ import {
 import { PhotoWrap } from './HomePage.styled';
 import { useTranslation } from 'react-i18next';
 import { useFeatureStore } from 'components/Features/Features/store';
-import { useEffect } from 'react';
+import { useEffect} from 'react';
 
 export const HomePageMobile = () => {
   const setName = useFeatureStore(store => store.setName);
   const setSelectedMenu = useFeatureStore(store => store.setSelectedMenu);
-  
+
+
   useEffect(() => {
     setSelectedMenu(false);
   }, [setSelectedMenu]);
 
+ 
 
-   useEffect(() => {
-     setName(true);
+  useEffect(() => {
+    setName(true);
 
-     return () => {
-       setName(null);
-     };
-   }, [setName]);
+    return () => {
+      setName(null);
+    };
+  }, [setName]);
 
   const [t] = useTranslation();
   return (
     <>
-      <WrapNameText>
+      <WrapNameText >
         <WrapNameNobile>
           <p>Natali</p>
           <p>Shkarupeta</p>

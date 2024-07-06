@@ -31,6 +31,7 @@ import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
 import { TfiArrowUp } from 'react-icons/tfi';
 import { Button } from 'components/common/commonButton/button.styled';
 import { useFeatureStore } from 'components/Features/Features/store';
+import { useMedia } from 'react-use';
 
 const ListPictures = memo(() => {
   const [pictures, setPicures] = useState({});
@@ -42,6 +43,11 @@ const ListPictures = memo(() => {
   const location = useLocation();
   const [t] = useTranslation();
   const refTop = useFeatureStore(state => state.refTop);
+  const refTopMob = useFeatureStore(state => state.refTopMob);
+  const isMobile = useMedia('(max-width: 541px)');
+  const isTabletM = useMedia('(max-width: 721px)');
+
+
 
   useEffect(() => {
     setLoading(true);
@@ -120,6 +126,11 @@ const ListPictures = memo(() => {
     bottom: '34px',
     right: '34px',
   };
+  const topButtonMob = {
+    position: 'fixed',
+    bottom: '24px',
+    right: '24px',
+  };
 
   return (
     <>
@@ -129,14 +140,26 @@ const ListPictures = memo(() => {
 
       <AboutOrder>{t('gallaryPage.aboutOrder')}</AboutOrder>
 
-      {scroll > document.documentElement.clientHeight && (
-        <Button
-          style={topButton}
-          onClick={() => refTop.current.scrollIntoView({ behavior: 'smooth' })}
-        >
-          <TfiArrowUp size={20} />
-        </Button>
-      )}
+      {scroll > document.documentElement.clientHeight &&
+        (isMobile ? (
+          <Button
+            style={topButtonMob}
+            onClick={() =>
+              refTopMob.current.scrollIntoView({ behavior: 'smooth' })
+            }
+          >
+            <TfiArrowUp size={10} />
+          </Button>
+        ) : (
+          <Button
+            style={isTabletM ? topButtonMob : topButton}
+            onClick={() =>
+              refTop.current.scrollIntoView({ behavior: 'smooth' })
+            }
+          >
+            <TfiArrowUp size={isTabletM ? 10 : 20} />
+          </Button>
+        ))}
 
       <WrapCheckboxes>
         <WrapPlaces>

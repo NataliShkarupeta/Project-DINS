@@ -31,7 +31,7 @@ import { useFeatureStore } from 'components/Features/Features/store';
 import { useTranslation } from 'react-i18next';
 import { BsBrightnessHigh, BsMoonFill } from 'react-icons/bs';
 
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { WrapDots } from 'components/PictureInfo/PictureInfo.styled';
 import { ThreeDots } from 'react-loader-spinner';
 import { Footer } from 'components/Footer/Footer';
@@ -65,6 +65,8 @@ export const LayoutMobile = ({ setMainThema }) => {
 
   const location = useLocation();
   const name = useFeatureStore(store => store.name);
+  const reff = useRef();
+  const setRefTopMob = useFeatureStore(store => store.setRefTopMob);
   const handelTranslate = () => {
     setSelectedMenu(!selectedMenu);
   };
@@ -76,6 +78,10 @@ export const LayoutMobile = ({ setMainThema }) => {
       document.body.style.overflow = '';
     }
   }, [selectedMenu]);
+
+  useEffect(() => {
+    setRefTopMob(reff);
+  }, [setRefTopMob]);
 
   return (
     <Background>
@@ -146,7 +152,7 @@ export const LayoutMobile = ({ setMainThema }) => {
             </NavigationLink>
           </Nav>
         </MenuBody>
-        <HeaderMobile>
+        <HeaderMobile ref={reff}>
           <WrapLogo>
             <Link to={`/`}>
               <motion.div

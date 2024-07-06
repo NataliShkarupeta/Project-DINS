@@ -9,8 +9,7 @@ export const Head = styled.header`
   justify-content: space-between;
   border-bottom: ${p => p.theme.borders.normal};
   box-shadow: 0px 8px 21px rgba(61, 29, 29, 0.25);
-  /* background: linear-gradient(to bottom, #fff 28%, #fff4e4cc 100%); */
-  /* background-color: #e32f21; */
+  
 `;
 
 export const WrapSender = styled.div`
