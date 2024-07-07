@@ -1,8 +1,16 @@
-
-
 import { useEffect, useState } from 'react';
 import { changeInfoPicture } from 'service/gallertService';
-import { Button, ContainerPost, Input, ModalContainer, Overlay, Text, Title, WrapButtonsModal } from './ModalForPicture.styled';
+import {
+  Button,
+  ContainerPost,
+  Input,
+  ModalContainer,
+  Overlay,
+  Text,
+  Title,
+  WrapButtonsModal,
+} from './ModalForPicture.styled';
+// import { useFeatureStore } from 'components/Features/Features/store';
 
 export const ModalChangePicture = ({
   text,
@@ -12,8 +20,8 @@ export const ModalChangePicture = ({
   textButton1,
   pictureForChange,
 }) => {
-
   const [changePicture, setchangePicture] = useState(false);
+
 
   useEffect(() => {
     const closeEsc = e => {
@@ -30,11 +38,13 @@ export const ModalChangePicture = ({
       close(false);
     }
   };
+  // const leng = useFeatureStore(state => state.leng);
 
   const submitChange = e => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const descriptions = formData.get('descriptions');
+    const descriptionsEn = formData.get('descriptionsEn');
     const inStock = formData.get('inStock');
     const inStockEn = formData.get('inStockEn');
 
@@ -42,6 +52,7 @@ export const ModalChangePicture = ({
       descriptions,
       inStock,
       inStockEn,
+      descriptionsEn,
     };
     changeInfoPicture(pictureForChange, newInfo);
     close(false);
@@ -93,7 +104,7 @@ export const ModalChangePicture = ({
                 type="text"
                 name="descriptions"
               />
-              <input
+               <input
                 defaultValue={pictureForChange.inStock}
                 type="text"
                 name="inStock"
@@ -115,5 +126,3 @@ export const ModalChangePicture = ({
     </>
   );
 };
-
-

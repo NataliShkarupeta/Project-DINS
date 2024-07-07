@@ -125,11 +125,17 @@ const ListPictures = memo(() => {
     position: 'fixed',
     bottom: '34px',
     right: '34px',
+    zIndex:'5',
+    backgroundColor:'purple',
+    borderColor:'transparent'
   };
   const topButtonMob = {
     position: 'fixed',
     bottom: '24px',
     right: '24px',
+    zIndex:'5',
+    backgroundColor:'purple',
+    borderColor:'transparent'
   };
 
   return (
@@ -148,7 +154,7 @@ const ListPictures = memo(() => {
               refTopMob.current.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            <TfiArrowUp size={10} />
+            <TfiArrowUp size={15} color='white'/>
           </Button>
         ) : (
           <Button
@@ -157,7 +163,7 @@ const ListPictures = memo(() => {
               refTop.current.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            <TfiArrowUp size={isTabletM ? 10 : 20} />
+            <TfiArrowUp size={isTabletM ? 15 : 20} color='white'/>
           </Button>
         ))}
 

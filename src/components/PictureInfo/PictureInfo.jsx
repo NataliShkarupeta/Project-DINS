@@ -39,6 +39,8 @@ export const PictureInfo = () => {
   const location = useLocation();
   const [t] = useTranslation();
 
+
+
   useEffect(() => {
     window.scrollTo(0, 120);
   }, []);
@@ -164,6 +166,8 @@ const DescriptionsBlock = ({ title, text, inStock, size, picture }) => {
   const [t] = useTranslation();
 
   const isTabletM = useMedia('(max-width: 720px)');
+
+
 
   useEffect(() => {
     if (canDelet || showModal) {
