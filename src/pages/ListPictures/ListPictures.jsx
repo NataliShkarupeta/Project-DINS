@@ -154,7 +154,7 @@ const ListPictures = memo(() => {
               refTopMob.current.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            <TfiArrowUp size={15} color='white'/>
+            <TfiArrowUp size={15} color="white" />
           </Button>
         ) : (
           <Button
@@ -163,7 +163,7 @@ const ListPictures = memo(() => {
               refTop.current.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            <TfiArrowUp size={isTabletM ? 15 : 20} color='white'/>
+            <TfiArrowUp size={isTabletM ? 15 : 20} color="white" />
           </Button>
         ))}
 

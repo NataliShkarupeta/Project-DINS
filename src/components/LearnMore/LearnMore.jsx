@@ -6,16 +6,20 @@ import {
   WrapSen,
   WrapForMargin,
   Section,
+  Blockquot,
 } from './LearnMore.styled';
 import { Button } from 'components/common/commonButton/button.styled';
 import { useEffect, useState } from 'react';
 import { TfiArrowUp } from 'react-icons/tfi';
 import { useFeatureStore } from 'components/Features/Features/store';
+import { useMedia } from 'react-use';
 
 export const LearnMore = ({ setMore }) => {
   const [t] = useTranslation();
-  
+
   const [scroll, setScroll] = useState(0);
+  const isMobile = useMedia('(max-width: 541px)');
+  const isTabletM = useMedia('(max-width: 721px)');
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -34,20 +38,44 @@ export const LearnMore = ({ setMore }) => {
     position: 'fixed',
     bottom: '34px',
     right: '34px',
+    zIndex: '5',
+    backgroundColor: 'purple',
+    borderColor: 'transparent',
+  };
+  const topButtonMob = {
+    position: 'fixed',
+    bottom: '24px',
+    right: '24px',
+    zIndex: '5',
+    backgroundColor: 'purple',
+    borderColor: 'transparent',
   };
   const refTop = useFeatureStore(state => state.refTop);
+  const refTopMob = useFeatureStore(state => state.refTopMob);
 
   return (
     <>
-      {scroll > document.documentElement.clientHeight && (
-        <Button
-          style={topButton}
-          onClick={() => refTop.current.scrollIntoView({ behavior: 'smooth' })}
-        >
-          <TfiArrowUp size={20} />
-        </Button>
-      )}
-      <Button  style={styles} onClick={() => setMore(false)}>
+      {scroll > document.documentElement.clientHeight &&
+        (isMobile ? (
+          <Button
+            style={topButtonMob}
+            onClick={() =>
+              refTopMob.current.scrollIntoView({ behavior: 'smooth' })
+            }
+          >
+            <TfiArrowUp size={15} color="white" />
+          </Button>
+        ) : (
+          <Button
+            style={isTabletM ? topButtonMob : topButton}
+            onClick={() =>
+              refTop.current.scrollIntoView({ behavior: 'smooth' })
+            }
+          >
+            <TfiArrowUp size={isTabletM ? 15 : 20} color="white" />
+          </Button>
+        ))}
+      <Button style={styles} onClick={() => setMore(false)}>
         {t('button.back')}
       </Button>
       <Section>
@@ -56,9 +84,9 @@ export const LearnMore = ({ setMore }) => {
         </WrapForMargin>
 
         <>
-          <blockquote>
+          <Blockquot>
             <WrapSen>{t('dalay_lama._6')}</WrapSen> -{t('dalay_lama.name')}
-          </blockquote>
+          </Blockquot>
         </>
 
         <P>{t('learn_more3')}</P>

@@ -40,7 +40,6 @@ export const PictureInfo = () => {
   const [t] = useTranslation();
 
 
-
   useEffect(() => {
     window.scrollTo(0, 120);
   }, []);
@@ -54,7 +53,7 @@ export const PictureInfo = () => {
   if (!picture) {
     return (
       <>
-        <NavLinkButton to={location.state?.from ?? '/'}>
+        <NavLinkButton to={location.state.key?.from ?? '/'}>
           <CommonButton text={t('button.back')} />
         </NavLinkButton>
         {loading && (
