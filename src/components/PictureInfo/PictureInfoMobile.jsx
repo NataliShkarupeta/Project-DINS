@@ -33,14 +33,15 @@ export const PictureInfoMobile = () => {
   const [t] = useTranslation();
 
   useEffect(() => {
-    window.scrollTo(0, 120);
-  }, []);
-  useEffect(() => {
     setLoading(true);
     getPictureById(paintingId)
       .then(res => setPicure(res))
       .finally(() => setLoading(false));
   }, [paintingId]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     setRefKey(paintingId);

@@ -39,15 +39,18 @@ export const PictureInfo = () => {
   const location = useLocation();
   const [t] = useTranslation();
 
-  useEffect(() => {
-    window.scrollTo(0, 120);
-  }, []);
+
+
   useEffect(() => {
     setLoading(true);
     getPictureById(paintingId)
       .then(res => setPicure(res))
       .finally(() => setLoading(false));
   }, [paintingId]);
+  
+    useEffect(() => {
+      window.scrollTo(0, 120);
+    }, []);
 
   useEffect(() => {
     setRefKey(paintingId);

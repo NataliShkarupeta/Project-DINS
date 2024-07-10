@@ -47,6 +47,7 @@ const ListPictures = memo(() => {
   const isMobile = useMedia('(max-width: 541px)');
   const isTabletM = useMedia('(max-width: 721px)');
   const refKey = useFeatureStore(state => state.refKey);
+  const setRefKey = useFeatureStore(state => state.setRefKey);
 
   useEffect(() => {
     setLoading(true);
@@ -56,17 +57,18 @@ const ListPictures = memo(() => {
   }, []);
 
   useEffect(() => {
-    if (refKey && Object.values(pictures).length !== 0) {
-      const refId = Object.values(pictures).find(el => el._id === refKey);
-      let scrollElement = document.getElementById(`${refId._id}`);
-      scrollElement.scrollIntoView({ behavior: 'smooth',offset:100 });
-    }
-  }, [pictures, refKey]);
-
-  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (refKey && Object.values(pictures).length !== 0) {
+      const refId = Object.values(pictures).find(el => el._id === refKey);
+      const mainRoot = document.getElementById(refId._id);
+      mainRoot.scrollIntoView();
+      setRefKey(null);
+    }
+  }, [pictures, refKey, setRefKey]);
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -283,6 +285,7 @@ const ListPictures = memo(() => {
           ))}
         </Ul>
       )}
+      <div id="qwe">erqywetqfyu</div>
     </>
   );
 });
