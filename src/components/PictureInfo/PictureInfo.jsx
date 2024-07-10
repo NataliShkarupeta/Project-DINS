@@ -1,4 +1,3 @@
-
 import { normalizedDate } from 'pages/Blog/normalizeDate';
 import { S3_URL } from 'service/basicUrl';
 import {
@@ -36,9 +35,9 @@ export const PictureInfo = () => {
   const [loading, setLoading] = useState(false);
   const { paintingId } = useParams();
   const leng = useFeatureStore(state => state.leng);
+  const setRefKey = useFeatureStore(state => state.setRefKey);
   const location = useLocation();
   const [t] = useTranslation();
-
 
   useEffect(() => {
     window.scrollTo(0, 120);
@@ -50,10 +49,14 @@ export const PictureInfo = () => {
       .finally(() => setLoading(false));
   }, [paintingId]);
 
+  useEffect(() => {
+    setRefKey(paintingId);
+  }, [paintingId, setRefKey]);
+
   if (!picture) {
     return (
       <>
-        <NavLinkButton to={location.state.key?.from ?? '/'}>
+        <NavLinkButton to={location.state?.from ?? '/'}>
           <CommonButton text={t('button.back')} />
         </NavLinkButton>
         {loading && (
@@ -133,13 +136,13 @@ const ImageBlock = ({ img, title, date }) => {
   const [t] = useTranslation();
   let imG = `${S3_URL}/${img}`;
 
-const showPhoto = ({ target }) => {
-  if (!document.fullscreenElement) {
-    target.requestFullscreen().catch(error => console.log(error));
-  } else {
-    document.exitFullscreen();
-  }
-};
+  const showPhoto = ({ target }) => {
+    if (!document.fullscreenElement) {
+      target.requestFullscreen().catch(error => console.log(error));
+    } else {
+      document.exitFullscreen();
+    }
+  };
   return (
     <WrapImageAndDateCreate>
       <WrapImage
@@ -157,16 +160,12 @@ const showPhoto = ({ target }) => {
   );
 };
 
-
-
 const DescriptionsBlock = ({ title, text, inStock, size, picture }) => {
   const [showModal, setShowModal] = useState(false);
   const [canDelet, setCanDelete] = useState(false);
   const [t] = useTranslation();
 
   const isTabletM = useMedia('(max-width: 720px)');
-
-
 
   useEffect(() => {
     if (canDelet || showModal) {

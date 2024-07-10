@@ -33,4 +33,7 @@ export const useFeatureStore = create(set => ({
 
   refTopMob: null,
   setRefTopMob: feature => set({ refTopMob: feature }),
+
+  refKey: null,
+  setRefKey: feature => set({ refKey: feature }),
 }));

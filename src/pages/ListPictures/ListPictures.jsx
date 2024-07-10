@@ -46,8 +46,7 @@ const ListPictures = memo(() => {
   const refTopMob = useFeatureStore(state => state.refTopMob);
   const isMobile = useMedia('(max-width: 541px)');
   const isTabletM = useMedia('(max-width: 721px)');
-
-
+  const refKey = useFeatureStore(state => state.refKey);
 
   useEffect(() => {
     setLoading(true);
@@ -57,9 +56,18 @@ const ListPictures = memo(() => {
   }, []);
 
   useEffect(() => {
+    if (refKey && Object.values(pictures).length !== 0) {
+      const refId = Object.values(pictures).find(el => el._id === refKey);
+      let scrollElement = document.getElementById(`${refId._id}`);
+      scrollElement.scrollIntoView({ behavior: 'smooth',offset:100 });
+    }
+  }, [pictures, refKey]);
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const handleScroll = () => {
     setScroll(window.scrollY);
   };
@@ -125,17 +133,17 @@ const ListPictures = memo(() => {
     position: 'fixed',
     bottom: '34px',
     right: '34px',
-    zIndex:'5',
-    backgroundColor:'purple',
-    borderColor:'transparent'
+    zIndex: '5',
+    backgroundColor: 'purple',
+    borderColor: 'transparent',
   };
   const topButtonMob = {
     position: 'fixed',
     bottom: '24px',
     right: '24px',
-    zIndex:'5',
-    backgroundColor:'purple',
-    borderColor:'transparent'
+    zIndex: '5',
+    backgroundColor: 'purple',
+    borderColor: 'transparent',
   };
 
   return (
@@ -234,7 +242,7 @@ const ListPictures = memo(() => {
         <Ul>
           {pictures &&
             Object.values(pictures).map(({ title1, image, _id }) => (
-              <Li key={_id}>
+              <Li key={_id} id={_id}>
                 <Link
                   to={`/painting/list_pictures/${_id}`}
                   state={{ from: location }}

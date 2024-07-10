@@ -28,15 +28,23 @@ export const PictureInfoMobile = () => {
   const [loading, setLoading] = useState(false);
   const { paintingId } = useParams();
   const leng = useFeatureStore(state => state.leng);
+  const setRefKey = useFeatureStore(state => state.setRefKey);
   const location = useLocation();
   const [t] = useTranslation();
 
+  useEffect(() => {
+    window.scrollTo(0, 120);
+  }, []);
   useEffect(() => {
     setLoading(true);
     getPictureById(paintingId)
       .then(res => setPicure(res))
       .finally(() => setLoading(false));
   }, [paintingId]);
+
+  useEffect(() => {
+    setRefKey(paintingId);
+  }, [paintingId, setRefKey]);
 
   if (!picture) {
     return (
