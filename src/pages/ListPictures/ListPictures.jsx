@@ -74,7 +74,6 @@ const ListPictures = memo(() => {
     setScroll(window.scrollY);
   };
   
-
   const onChangeHandlerInStock = event => {
     setSelectedItem(event.target.name);
     findInStockPict();
