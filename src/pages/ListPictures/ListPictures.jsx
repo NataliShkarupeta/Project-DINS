@@ -65,7 +65,7 @@ const ListPictures = memo(() => {
     if (refKey && Object.values(pictures).length !== 0) {
       const refId = Object.values(pictures).find(el => el._id === refKey);
       const mainRoot = document.getElementById(refId._id);
-      mainRoot.scrollIntoView();
+      mainRoot.scrollIntoView({offset:100});
       setRefKey(null);
     }
   }, [pictures, refKey, setRefKey]);
