@@ -40,8 +40,8 @@ export const PictureInfoMobile = () => {
   }, [paintingId]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    picture && window.scrollTo(0, 0);
+  }, [picture]);
 
   useEffect(() => {
     setRefKey(paintingId);

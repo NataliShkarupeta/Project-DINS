@@ -285,7 +285,6 @@ const ListPictures = memo(() => {
           ))}
         </Ul>
       )}
-      <div id="qwe">erqywetqfyu</div>
     </>
   );
 });
