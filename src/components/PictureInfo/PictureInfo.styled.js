@@ -292,12 +292,31 @@ export const Price = styled.div`
 
 export const PricePicture = styled.p`
   cursor: pointer;
-  scale: 1;
-  :hover,
-  :focus {
-    scale: 1.1;
+  animation: pulsing 5s infinite;
+
+  @-webkit-keyframes pulsing {
+    0% {
+      transform: scale(0.8, 0.8);
+    }
+    50% {
+      transform: scale(1, 1);
+    }
+    100% {
+      transform: scale(0.8, 0.8);
+    }
   }
-  transition: ${p => p.theme.transitions};
+
+  @keyframes pulsing {
+    0% {
+      transform: scale(0.8, 0.8);
+    }
+    50% {
+      transform: scale(1, 1);
+    }
+    100% {
+      transform: scale(0.8, 0.8);
+    }
+  }
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[1]}px;
     line-height: 1.12;
@@ -462,6 +481,7 @@ export const Size = styled.span`
 export const WrapSizes = styled.div`
   display: flex;
   gap: 5px;
+
   @media screen and (${p => p.theme.media.m}) {
     font-size: 12px;
   }
