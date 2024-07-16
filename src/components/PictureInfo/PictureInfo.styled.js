@@ -463,10 +463,10 @@ export const WrapSizes = styled.div`
   display: flex;
   gap: 5px;
   @media screen and (${p => p.theme.media.m}) {
-    font-size: 14px;
+    font-size: 12px;
   }
   @media screen and (${p => p.theme.media.l}) {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 export const TextExplanation = styled.span`

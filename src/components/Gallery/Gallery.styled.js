@@ -31,13 +31,13 @@ export const AboutOrder = styled.div`
     font-size: ${p => p.theme.fontSizes[1]}px;
     width: 80vw;
   }
-   @media screen and (${p => p.theme.media.m}) {
+  @media screen and (${p => p.theme.media.m}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
     width: 80vw;
   }
-   @media screen and (${p => p.theme.media.l}) {
-   font-size: ${p => p.theme.fontSizes[3]}px;
-   width: 700px;
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+    width: 700px;
   }
 `;
 
@@ -54,7 +54,7 @@ export const AboutMe = styled.div`
     margin-top: ${p => p.theme.space[5]}px;
   }
   @media screen and (${p => p.theme.media.xl}) {
-    margin-top:50px;
+    margin-top: 50px;
   }
 `;
 
@@ -145,7 +145,6 @@ export const MainImageDiv = styled.div`
 `;
 
 export const NameBlock = styled.div`
-
   display: flex;
   gap: 10px;
 
@@ -254,10 +253,10 @@ export const AnimateBlock = styled.div`
 `;
 
 const fontStyles = css`
-  font-family: ${p => p.theme.fonts.forBlog};
+  font-family: ${p => p.theme.fonts.forName};
 
   line-height: ${p => p.theme.lineHeights.heading};
-  font-weight: ${p => p.theme.fontWeights.middleOne};
+  font-weight: ${p => p.theme.fontWeights.middle};
   @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[4]}px;
   }
@@ -385,7 +384,6 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
-  
   text-align: center;
   align-items: center;
   margin-bottom: ${p => p.theme.space[6]}px;

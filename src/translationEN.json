@@ -127,7 +127,8 @@
         "prepayment": "The advance payment is 20% of the cost of the paintings, and is NOT refundable in case of rejection of the order.",
         "afterPrepayment": "As soon as the prepayment is credited, the painting will begin to be created, or will be sent to the specified address.",
         "findPrice": "Get acquainted with the cost of paintings",
-        "cm": "dimensions are in centimeters"
+        "cm": "dimensions are in centimeters",
+        "howMeasure": "the size is recognized along the longer side of the canvas"
       }
     }
   },

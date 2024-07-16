@@ -10,7 +10,7 @@ export const WrapName = styled.div`
   font-family: ${p => p.theme.fonts.forBlog};
   font-weight: ${p => p.theme.fontWeights.body};
   margin-top: ${p => p.theme.space[2]}px;
-   @media screen and (${p => p.theme.media.s}) {
+  @media screen and (${p => p.theme.media.s}) {
     font-size: ${p => p.theme.fontSizes[3]}px;
   }
 `;
@@ -88,7 +88,6 @@ export const HeaderMobile = styled.header`
 
   border-bottom: ${p => p.theme.borders.normal};
   box-shadow: 0px 8px 21px rgba(61, 29, 29, 0.25);
- 
 `;
 
 export const WrapNameNobile = styled.div`
@@ -103,7 +102,7 @@ export const WrapNameNobile = styled.div`
 `;
 export const TextMobile = styled.p`
   font-size: ${p => p.theme.fontSizes[2]}px;
-  font-family: ${p => p.theme.fonts.forBlog};
+  font-family: ${p => p.theme.fonts.forName};
   font-style: italic;
   font-weight: ${p => p.theme.fontWeights.body};
 `;
@@ -115,7 +114,7 @@ export const WrapNameText = styled.div`
   align-items: center;
 `;
 
-export  const MenuBody = styled.div`
+export const MenuBody = styled.div`
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -137,16 +136,15 @@ export  const MenuBody = styled.div`
     background: rgba(0, 0, 0, 0.35);
   } */
   /* z-index: 1; */
-
 `;
 
- export const Nav = styled.nav`
-   position: relative;
-   height: 100%;
+export const Nav = styled.nav`
+  position: relative;
+  height: 100%;
 
-   background: rgba(0, 0, 0, 0.8);
-   z-index: 4;
- `;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 4;
+`;
 
 export const UlMobile = styled.ul`
   display: flex;
@@ -167,9 +165,9 @@ export const LiMobile = styled.li`
 `;
 
 export const MenuBtn = styled.button`
-background: none;
-border: none;
-cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
   /* transition: ${p => p.theme.transitions}; */
 `;
 
@@ -232,7 +230,6 @@ export const SubL2 = styled.div`
   transform-origin: left;
   transform: rotate(35deg) translate(-5px, -8px);
 `;
-
 
 export const ButEmailMobile = styled.button`
   border: none;

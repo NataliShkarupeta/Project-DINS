@@ -48,7 +48,6 @@ export const OrderBlock = ({ tit, size, inStock }) => {
 
   const [t] = useTranslation();
 
-
   const notify = () => toast.info(t('toast.order'));
   const notifyYes = () => toast.success(t('toast.service.notifyYes'));
   const notifyNo = () => toast.error(t('toast.service.notifyNo'));
@@ -252,16 +251,16 @@ const DescriptionPreOrder = () => {
   const isTabletM = useMedia('(max-width: 720px)');
 
   const list = [
-    'до 40*60 - 100 y.e',
-    'до 70*80 -200 y.e',
-    'до 100*110 - 300 y.e',
+    'до 40*60 - 100 y.o.',
+    'до 70*80 -200 y.o.',
+    'до 100*110 - 300 y.o.',
     'від 100*110 - договірна(в приватному листуванні)',
   ];
 
   const listEn = [
-    'up to 40*60 - 70 y.e',
-    'up to 70*80 -150 y.e',
-    'up to 100*110 - 300 y.e',
+    'up to 40*60 - 100 y.e.',
+    'up to 70*80 -200 y.e.',
+    'up to 100*110 - 300 y.e.',
     'from 100*110 - contractual (in private correspondence)',
   ];
   const pricesBlock = {
@@ -315,6 +314,10 @@ const DescriptionPreOrder = () => {
           <WrapSizes>
             <FaStarOfLife size={'5px'} />
             <p> {t('gallaryPage.pictureInfo.order.cm')}</p>
+          </WrapSizes>
+          <WrapSizes>
+            <FaStarOfLife size={'5px'} />
+            <p> {t('gallaryPage.pictureInfo.order.howMeasure')} </p>
           </WrapSizes>
 
           <ul style={isTabletM ? FontSizeTablet : FontSize}>
