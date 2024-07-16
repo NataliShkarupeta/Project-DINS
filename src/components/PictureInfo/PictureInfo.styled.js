@@ -290,21 +290,9 @@ export const Price = styled.div`
   }
 `;
 
-export const PricePicture = styled.p`
+export const PricePicture = styled.div`
   cursor: pointer;
   animation: pulsing 5s infinite;
-
-  @-webkit-keyframes pulsing {
-    0% {
-      transform: scale(0.8, 0.8);
-    }
-    50% {
-      transform: scale(1, 1);
-    }
-    100% {
-      transform: scale(0.8, 0.8);
-    }
-  }
 
   @keyframes pulsing {
     0% {
