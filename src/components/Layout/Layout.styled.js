@@ -7,7 +7,7 @@ export const WrapName = styled.div`
   align-items: flex-end;
   font-size: ${p => p.theme.fontSizes[5]}px;
   line-height: ${p => p.theme.lineHeights.heading};
-  font-family: ${p => p.theme.fonts.forBlog};
+  font-family: ${p => p.theme.fonts.nameBtwBt};
   font-weight: ${p => p.theme.fontWeights.body};
   margin-top: ${p => p.theme.space[2]}px;
   @media screen and (${p => p.theme.media.s}) {

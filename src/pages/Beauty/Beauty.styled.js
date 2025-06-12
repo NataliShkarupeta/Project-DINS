@@ -26,9 +26,7 @@ export const Text = styled.p`
   font-weight: ${p => p.theme.fontWeights.body};
   font-style: italic;
   line-height: ${p => p.theme.lineHeights.heading};
-
   text-align: center;
-
   border-top: ${p => p.theme.borders.normal};
   padding-top: ${p => p.theme.space[3]}px;
   padding-left: ${p => p.theme.space[3]}px;
@@ -279,7 +277,6 @@ export const Img = styled.img`
   height: 100%;
   background-size: cover;
   background-position: center;
-
 `;
 
 export const WrapBottonTurn = styled.div`

@@ -5,7 +5,6 @@ import img from '../../images/author/IMG_0043.jpg';
 export const Motto = styled.span`
   display: block;
   font-family: ${p => p.theme.fonts.body};
-  /* font-style: italic; */
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.middle};
   margin-bottom: ${p => p.theme.space[4]}px;
@@ -22,8 +21,6 @@ export const Motto = styled.span`
 `;
 
 export const NameAndPhoto = styled.div`
-  /* display: flex;
-  justify-content: space-around; */
   margin-bottom: ${p => p.theme.space[4]}px;
   position: relative;
   @media screen and (${p => p.theme.media.m}) {
@@ -42,8 +39,6 @@ export const NameAndPhoto = styled.div`
   }
 `;
 export const PhotoWrap = styled.div`
-  /* width: 500px;
-  height: 700px; */
   border-color: ${p => p.theme.colors.secondary};
   background-image: url('${img}');
   background-size: cover;
@@ -124,7 +119,6 @@ export const Article = styled.article`
   font-weight: ${p => p.theme.fontWeights.middle};
   line-height: ${p => p.theme.lineHeights.normal};
   font-family: ${p => p.theme.fonts.body};
-  /* overflow: hidden; */
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 3px 7px rgba(0, 0, 0, 0.3),
     inset 0 1px rgba(255, 255, 255, 1), inset 0 -3px 2px rgba(0, 0, 0, 0);
   margin-bottom: ${p => p.theme.space[5]}px;
@@ -143,7 +137,6 @@ export const Article = styled.article`
   @media screen and (${p => p.theme.media.xxl}) {
     line-height: 1.18;
     font-size: ${p => p.theme.fontSizes[3]}px;
-    /* font-size: 19px; */
   }
 `;
 

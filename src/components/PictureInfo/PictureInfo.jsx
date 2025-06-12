@@ -57,7 +57,8 @@ export const PictureInfo = () => {
   if (!picture) {
     return (
       <>
-        <NavLinkButton to={location.state?.from ?? '/'}>
+        <NavLinkButton to={'/list_pictures'}>
+          {/* location.state?.from ?? '/' */}
           <CommonButton text={t('button.back')} />
         </NavLinkButton>
         {loading && (

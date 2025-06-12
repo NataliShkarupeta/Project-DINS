@@ -46,6 +46,7 @@ export const H2 = styled.h2`
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.text};
+  padding-left: 5px;
   @media screen and (${p => p.theme.media.s}) {
     margin-top: ${p => p.theme.space[2]}px;
     text-align: center;
@@ -61,6 +62,7 @@ export const Span = styled.span`
   font-weight: ${p => p.theme.fontWeights.body};
   /* height: 300px; */
   overflow-y: scroll;
+   padding-left: 5px;
   @media screen and (${p => p.theme.media.s}) {
     margin-bottom: ${p => p.theme.space[0]}px;
     font-size: ${p => p.theme.fontSizes[2]}px;

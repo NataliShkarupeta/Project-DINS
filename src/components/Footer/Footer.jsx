@@ -30,15 +30,27 @@ const getGreetingTime = (d = DateTime.now()) => {
 export const Footer = () => {
   const [t] = useTranslation();
   const isMobile = useMedia('(max-width: 541px)');
+ 
 
   return (
     <FooterContainer>
-      {!isMobile &&
-      <WrapDate>
-        {t('footer.date', { date: new Date(), context: getGreetingTime() })}
-      </WrapDate>}
+      {!isMobile && (
+        <WrapDate>
+          {t('footer.date', { date: new Date(), context: getGreetingTime() })}
+          {/* {t('footer.date', {
+            date: DateTime.now()
+              .setZone('America/New_York')
+              .minus({ weeks: 1 })
+              .endOf('day')
+              .toISO(),
+            context: getGreetingTime(),
+          })} */}
+        </WrapDate>
+      )}
       <WrapConnect>
-        <TextConnect>{t('footer.connect_me')}</TextConnect>
+        <TextConnect>
+          {t('footer.connect_me')}
+        </TextConnect>
         <Ul>
           <motion.li>
             <ButtonLin>

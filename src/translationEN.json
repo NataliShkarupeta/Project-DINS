@@ -172,7 +172,7 @@
     "step3": " When children appeared and began to get sick, the theme of medicine played very brightly. When she asked the doctor about her child's illness: 'is it an infection or a consequence', usually not receiving an adequate answer, she was very upset, annoyed, and, not understanding anything, was glad that she did not become a part of modern medicine. At moments when I felt that something really interesting had happened to me, I dreamed of writing a book. I adore books - they are a treasure, a gift of human genius. Can you imagine - a person can put his life on creating a book, and everyone else can survive this experience in a week or two! There are no words to adequately express the influence of books on personality development, without books the canvas of life loses many shades.",
     "step4": " When my daughter was three years old and she began to show interest in drawing, I took her to the artist for classes. While they had a lesson, I asked them to draw quietly so as not to waste time. After their class, when she saw my drawing, she asked in surprise where I learned to draw, to the answer - I didn't study - she said - ʼdrop your work and draw - you have talentʼ. And life turned upside down! Something caught fire in the middle, and it took away the peace for a long time :). As they say - ʼwhen you start painting - first the borscht disappears from the refrigerator, then instead of meat in the freezer paints appear, and then the house forgets about cleanliness :)ʼ",
     "step5": " All this happened while I worked as a master of eyelash extensions, I devoted 13 years to this occupation. For the last four, I have already drawn pictures and sold them. Consciousness was rebuilt, I realized that I can do everything that I was drawn to and was drawn to. It takes a little effort and consciousness to understand when to put it into practice, when there will be a good moment. Not abandoning the search for health support, both for myself and for my family, I began to study herbs. In the warm season, when we visit a village or country house, I study the surrounding herbs - you will be surprised when you learn that all the medicines grow under your feet! I managed to enroll in an astrology course and start studying the planets (correspondence study - 2 times a week, instead of a movie after work).",
-    "step6": " When the war started, I stopped growing eyelashes, left the Academy of Astrology (because it is in Moscow). BUT!!! - development entered my life! And it's fantastic! This is a logical, digital balance of my creativity. I have new thoughts and projects, and I will definitely implement them.",
+    "step6": " When the war started, I stopped growing eyelashes, left the Academy of Astrology (because it is in Moscow). BUT!!! - development entered my life (by the way, I wrote this site - a moment of self-presentation :))))! And it's fantastic! This is a logical, digital balance of my creativity. I have new thoughts and projects, and I will definitely implement them.",
     "step7": " Seven/ten years to master a profession, achieve success in it and lose interest in it is enough, seven/ten years for each, a minimum of seven professions - a guarantee of an interesting and full life."
   },
   "lashMakerPage": {
@@ -192,7 +192,7 @@
       "third": "At the expense of jewelry on eyelashes - it's cool, but it should be appropriate. Making eyelashes before an event, do not forget that the event will pass, and eyelashes decorated with rhinestones or glitter will remain with you for another three weeks. ",
       "fourth": "If you think that eyelash extensions are immediately noticeable, you are wrong. Thanks to the variety of materials, your master can make extensions invisible to others."
     },
-    "text": "Actually, I think that eyelash extensions are a really cool service that makes a woman's life a little more convenient. Feeling attractive in the morning, after a hard day's work, on a day off, when you don't want to get out of bed...ummm, it's really convenient. If you will be in Kharkiv - come for the procedure ;)"
+    "text": "Actually, I think that eyelash extensions are a really cool service that makes a woman's life a little more convenient. Feeling attractive in the morning, after a hard day's work, on a day off, when you don't want to get out of bed...ummm, it's really convenient."
   },
   "herbalPage": {
     "word": "MMMMM.....HERBS",
@@ -325,5 +325,27 @@
   },
   "defaultComponent": {
     "frontEndPage": " I`m alrady working to fill this page )"
+  },
+  "astrologyPage": {
+    "title": "Astrological horoscope",
+    "description": "Can you imagine purchasing an unfamiliar device without instructions? It seems like it's just like all the others, and there's nothing complicated about using it. There's an on button, there's an off button. It consumes electricity, somehow, it's not very clear why it moves, well, it's good that it exists. My neighbor has a similar device that washes clothes, another one - it cooks food, my sister's creates music - naively, and yours is capable of something. And so you try to get the same results from it as others, spending, at best, half the time of its overall functioning, and in the process losing quite a bit of productivity, because the device simply wears out.",
+    "description1": "You receive the device with instructions, after studying which you use the functions and options provided in it to obtain the expected results. You can choose not to use it if you don't want to, but you still need to know.",
+    "horoscope": "I think you can draw an analogy between a person's horoscope and instructions. It's like an instruction for your life, your own. A list of your settings (like available functions ;)), realizing and using which, you are able to achieve your desires. And this does not make life easy and does not guarantee achievements, but it gives an understanding of one's own talents and potential, which can save a person from mistakes and disappointments.",
+    "or": "or",
+    "question": "Natal horoscope ",
+    "question0.0": "(personal)",
+    "question1": "Compatibility horoscope ",
+    "question01": "(You and your partner, you and your child, you and your boss or colleague, etc.)",
+    "question2": "Child's horoscope ",
+    "question02": "(psychotype, talents, areas of tension, general health features, needs for harmonious growth)",
+    "mywork": {
+      "general": "How I work:(Unfortunately, I currently provide services only in Ukrainian)",
+      "explanation": "! Preparation for the consultation takes 7-10 days",
+      "first": "You are sending a request for consultation in Telegram",
+      "second": "You will receive a questionnaire with questions (the answers to these questions will help me understand the roots of the problem and not waste consultation time on this, it will take up to 10 minutes of your time)",
+      "third": "Send me the completed questionnaire",
+      "fourth": "We arrange a meeting.",
+      "aboutMain": "And about the most important thing: shifting responsibility for your life onto characters from helping professions is a path to nowhere. An astrologer does not make decisions for you. You must clearly understand why you are contacting a specialist. Productively and qualitatively, this is when you are determined to look and analyze in your life the manifestation of those parameters that (with the help of a large number of calculations) the astrologer will highlight for you."
+    }
   }
 }

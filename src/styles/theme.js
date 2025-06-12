@@ -11,7 +11,8 @@ export const theme = {
     body: 'Raleway, sans-serif',
     forName: 'Noto Sans Duployan, sans-serif',
     monospace: 'Mukta, sans-serif',
-    forBlog: 'Dancing Script, cursive',
+    forBlog: 'Noto Sans Duployan',
+    nameBtwBt: 'Dancing Script, cursive',
   },
 
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 68, 72, 78, 116],
@@ -25,7 +26,7 @@ export const theme = {
   lineHeights: {
     body: 1.5,
     heading: 1.125,
-    normal:1.22,
+    normal: 1.22,
   },
 
   colors: {
@@ -39,7 +40,7 @@ export const theme = {
     fourth: '#800080',
     forBut: '#000000',
     colForBg: 'transparent',
-    forBSM:'#fff',
+    forBSM: '#fff',
     modes: {
       dark: {
         text: '#fff',
@@ -125,7 +126,8 @@ export const themeSecond = {
     body: 'Raleway, sans-serif',
     forName: 'Noto Sans Duployan, sans-serif',
     monospace: 'Mukta, sans-serif',
-    forBlog: 'Dancing Script, cursive',
+    forBlog: 'Noto Sans Duployan',
+    nameBtwBt: 'Dancing Script, cursive',
   },
 
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 68, 72, 78, 106],

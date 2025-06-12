@@ -65,15 +65,16 @@ const ListPictures = memo(() => {
     if (refKey && Object.values(pictures).length !== 0) {
       const refId = Object.values(pictures).find(el => el._id === refKey);
       const mainRoot = document.getElementById(refId._id);
-      mainRoot.scrollIntoView({offset:-50});
+      mainRoot.scrollIntoView({ offset: -50 });
       setRefKey(null);
     }
+    console.log('refKey', refKey)
   }, [pictures, refKey, setRefKey]);
 
   const handleScroll = () => {
     setScroll(window.scrollY);
   };
-  
+
   const onChangeHandlerInStock = event => {
     setSelectedItem(event.target.name);
     findInStockPict();
