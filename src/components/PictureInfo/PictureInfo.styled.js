@@ -372,9 +372,19 @@ export const Label = styled.label`
 
 export const LableText = styled.span`
   margin-right: ${p => p.theme.space[3]}px;
+`;
 
-  /* display: flex;
-  flex-direction: row; */
+export const Warning = styled.span`
+  margin-right: ${p => p.theme.space[3]}px;
+  font-family: ${p => p.theme.fonts.body};
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-weight: ${p => p.theme.fontWeights.middleOne};
+
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    line-height: 1.12;
+    padding: 0;
+  }
 `;
 
 export const Select = styled.select`
@@ -382,7 +392,6 @@ export const Select = styled.select`
   outline: none;
   cursor: pointer;
   width: 100px;
-  /* margin-left: ${p => p.theme.space[4]}px; */
   font-family: ${p => p.theme.fonts.body};
   font-size: ${p => p.theme.fontSizes[2]}px;
   font-weight: ${p => p.theme.fontWeights.body};

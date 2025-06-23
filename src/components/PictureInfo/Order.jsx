@@ -20,6 +20,7 @@ import {
   WrapIfOrder,
   SetAdress,
   WrapTextArea,
+  Warning,
 } from './PictureInfo.styled';
 import { FaStarOfLife } from 'react-icons/fa';
 import { CommonButton } from 'components/common/commonButton/button';
@@ -221,6 +222,8 @@ const IfOrder = ({ size }) => {
   return (
     <WrapIfOrder>
       <Label>
+        <Warning>{t('gallaryPage.pictureInfo.order.payAttention')}</Warning>
+        <br />
         <LableText>{t('gallaryPage.pictureInfo.order.selectSize')}</LableText>
         <Select name="selectedSize" defaultValue={size}>
           {checkList.map((item, index) => (
@@ -251,9 +254,9 @@ const DescriptionPreOrder = () => {
   const isTabletM = useMedia('(max-width: 720px)');
 
   const list = [
-    'до 40*60 - 100 y.o.',
-    'до 70*80 -200 y.o.',
-    'до 100*110 - 300 y.o.',
+    'до 40*60 - 4000грн.',
+    'до 70*80 -6000грн.',
+    'до 100*110 - 10000грн.',
     'від 100*110 - договірна(в приватному листуванні)',
   ];
 

@@ -93,7 +93,7 @@ export const Background = styled.p`
 `;
 export const Content = styled.p`
   position: relative;
-  z-index: 10;
+  z-index: 1;
   color: ${p => p.theme.colors.therd};
   font-weight: ${p => p.theme.fontWeights.middle};
   margin-bottom: ${p => p.theme.space[4]}px;
