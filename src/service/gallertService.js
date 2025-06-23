@@ -25,7 +25,8 @@ export const changeInfoPicture = async (id, obj) => {
 export const getAllPictures = async (limit, skip) => {
   try {
     const { data } = await axios.get(`${URLPIC}?limit=${limit}&skip=${skip}`);
-
+console.log('data', data);
+console.log('qwe');
     const sortDate = data.data.result.map(obj => ({
       ...obj,
       createdAt: Date.parse(obj.createdAt),

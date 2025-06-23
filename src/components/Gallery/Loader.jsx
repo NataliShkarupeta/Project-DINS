@@ -106,7 +106,8 @@ const Loader = ({ setLoading }) => {
 };
 
 const ImageBlock = ({ id, variants }) => {
-  return (
+  
+   return (
     <motion.div variants={variants}>
       <img
         src={`${BASIC_URL}/imagesLoader/${id}.jpeg`}
