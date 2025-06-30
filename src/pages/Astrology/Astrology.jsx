@@ -42,6 +42,7 @@ const AstrologyPage = () => {
       )}
       <H2 style={{ paddingLeft: '16px' }}> {t('astrologyPage.title')}</H2>
 
+   
       <Content>
         <Background> </Background>
         <DescriptionBlok>

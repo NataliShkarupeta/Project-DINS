@@ -51,7 +51,7 @@ export const Version = styled.div`
   }
   @media screen and (${p => p.theme.media.l}) {
     padding: ${p => p.theme.space[3]}px;
-    font-size: ${p => p.theme.fontSizes[2]}px;
+    font-size: 18px;
   }
   @media screen and (${p => p.theme.media.xl}) {
     padding: ${p => p.theme.space[3]}px;
@@ -104,29 +104,18 @@ export const AboutWork = styled.div`
   justify-content: space-evenly;
   margin-bottom: ${p => p.theme.space[4]}px;
   @media screen and (${p => p.theme.media.s}) {
-    /* display: flex;
-    align-items: center; */
     flex-direction: column;
     font-size: ${p => p.theme.fontSizes[2]}px;
-    
   }
-`;
-export const Instruction = styled.ul`
-  list-style: inside;
-  padding-left: ${p => p.theme.space[4]}px;
-  font-weight: ${p => p.theme.fontWeights.middle};
-  line-height: ${p => p.theme.lineHeights.normal};
-  font-family: ${p => p.theme.fonts.body};
-
   @media screen and (${p => p.theme.media.m}) {
-    padding: ${p => p.theme.space[2]}px;
+    /* padding: ${p => p.theme.space[2]}px; */
     font-size: ${p => p.theme.fontSizes[1]}px;
   }
   @media screen and (${p => p.theme.media.l}) {
     font-size: ${p => p.theme.fontSizes[2]}px;
   }
   @media screen and (${p => p.theme.media.xl}) {
-    padding: ${p => p.theme.space[3]}px;
+    /* padding: ${p => p.theme.space[3]}px; */
     font-size: ${p => p.theme.fontSizes[2]}px;
   }
   @media screen and (${p => p.theme.media.xxl}) {
@@ -134,8 +123,43 @@ export const Instruction = styled.ul`
     font-size: ${p => p.theme.fontSizes[3]}px;
   }
 `;
+export const Instruction = styled.ul`
+  list-style: inside;
+  margin: 8px 16px;
+  font-weight: ${p => p.theme.fontWeights.middle};
+  line-height: ${p => p.theme.lineHeights.normal};
+  font-family: ${p => p.theme.fonts.body};
+  font-size: ${p => p.theme.fontSizes[1]}px;
+
+  @media screen and (${p => p.theme.media.m}) {
+    padding: 8px 16px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    padding: ${p => p.theme.space[3]}px;
+    font-size: 20px;
+  }
+  @media screen and (${p => p.theme.media.xxl}) {
+    line-height: 1.18;
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
+`;
+
+export const Explanation = styled.p`
+  padding: 8px 16px;
+  font-size: ${p => p.theme.fontSizes[1]}px;
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+`;
+
 export const H3 = styled.h3`
   padding-left: ${p => p.theme.space[3]}px;
+  
   @media screen and (${p => p.theme.media.s}) {
     display: flex;
     align-items: center;
@@ -144,10 +168,11 @@ export const H3 = styled.h3`
     color: purple;
   }
   @media screen and (${p => p.theme.media.m}) {
-    font-size: ${p => p.theme.fontSizes[1]}px;
+    font-size: ${p => p.theme.fontSizes[2]}px;
   }
   @media screen and (${p => p.theme.media.l}) {
-    font-size: ${p => p.theme.fontSizes[2]}px;
+    font-size: ${p => p.theme.fontSizes[3]}px;
+
   }
   @media screen and (${p => p.theme.media.xl}) {
     font-size: ${p => p.theme.fontSizes[4]}px;
@@ -182,32 +207,59 @@ export const RedBallBefore = styled.div`
   }
 `;
 
-export const Explanation = styled.p`
-  padding-left: ${p => p.theme.space[3]}px;
-`;
+
 
 export const QuestionsBlock = styled.div`
   display: flex;
+  gap: 20px;
   justify-content: center;
+
+  font-family: ${p => p.theme.fonts.body};
+  @media screen and (${p => p.theme.media.s}) {
+    padding: 0px 0 20px 20px;
+    gap: 10px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    padding: 0px 0 20px 20px;
+    gap: 10px;
+  }
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
 `;
 
 export const When = styled.p`
-  margin: 20px auto;
   font-family: ${p => p.theme.fonts.body};
   font-weight: ${p => p.theme.fontWeights.middle};
 
   @media screen and (${p => p.theme.media.s}) {
-    font-size: ${p => p.theme.fontSizes[2]}px;
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    text-align: center;
   }
   @media screen and (${p => p.theme.media.m}) {
+    margin: 0px auto;
     font-size: ${p => p.theme.fontSizes[2]}px;
     line-height: ${p => p.theme.lineHeights.heading};
   }
   @media screen and (${p => p.theme.media.l}) {
+    padding-top: 20px;
     line-height: ${p => p.theme.lineHeights.normal};
-    font-size: 18px;
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    width: 40%;
+    text-align: right;
   }
   @media screen and (${p => p.theme.media.xl}) {
     font-size: ${p => p.theme.fontSizes[3]}px;
+    width: auto;
+  }
+`;
+
+export const ListWrapper = styled.div`
+
+  @media screen and (${p => p.theme.media.l}) {
+    margin: 20px auto;
+    max-width: 700px;
   }
 `;
