@@ -186,3 +186,28 @@ export const Explanation = styled.p`
   padding-left: ${p => p.theme.space[3]}px;
 `;
 
+export const QuestionsBlock = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const When = styled.p`
+  margin: 20px auto;
+  font-family: ${p => p.theme.fonts.body};
+  font-weight: ${p => p.theme.fontWeights.middle};
+
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    line-height: ${p => p.theme.lineHeights.heading};
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    line-height: ${p => p.theme.lineHeights.normal};
+    font-size: 18px;
+  }
+  @media screen and (${p => p.theme.media.xl}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+  }
+`;
