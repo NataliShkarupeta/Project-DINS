@@ -32,6 +32,7 @@ import { TfiArrowUp } from 'react-icons/tfi';
 import { Button } from 'components/common/commonButton/button.styled';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { useMedia } from 'react-use';
+import LazyImage from './LazyImage';
 
 const ListPictures = memo(() => {
   const [pictures, setPicures] = useState({});
@@ -57,6 +58,7 @@ const ListPictures = memo(() => {
   }, []);
 
   useEffect(() => {
+    const handleScroll = () => setScroll(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -68,12 +70,7 @@ const ListPictures = memo(() => {
       mainRoot.scrollIntoView({ offset: -50 });
       setRefKey(null);
     }
-    console.log('refKey', refKey)
   }, [pictures, refKey, setRefKey]);
-
-  const handleScroll = () => {
-    setScroll(window.scrollY);
-  };
 
   const onChangeHandlerInStock = event => {
     setSelectedItem(event.target.name);
@@ -248,7 +245,8 @@ const ListPictures = memo(() => {
               <Li key={_id} id={_id}>
                 <Link
                   to={`/painting/list_pictures/${_id}`}
-                  state={{ from: location }}
+                  // state={{ from: location }} було до правок
+                  state={{ from: location, filter: selectedItem, refKey: _id }}
                 >
                   <WrapPicture>
                     {loading && (
@@ -256,11 +254,8 @@ const ListPictures = memo(() => {
                         <ThreeDots />
                       </WrapDots>
                     )}
-                    <img
-                      loading="lazy"
-                      src={`${S3_URL}/${image}`}
-                      alt={title1}
-                    />
+
+                    <LazyImage src={`${S3_URL}/${image}`} alt={title1} />
                   </WrapPicture>
                 </Link>
               </Li>
@@ -276,10 +271,11 @@ const ListPictures = memo(() => {
             <Li key={_id}>
               <Link
                 to={`/painting/list_pictures/${_id}`}
-                state={{ from: location }}
+                // state={{ from: location }} було до правок
+                state={{ from: location, filter: selectedItem, refKey: _id }}
               >
                 <WrapPicture>
-                  <img src={`${S3_URL}/${image}`} alt={title1} />
+                  <LazyImage src={`${S3_URL}/${image}`} alt={title1} />
                 </WrapPicture>
               </Link>
             </Li>

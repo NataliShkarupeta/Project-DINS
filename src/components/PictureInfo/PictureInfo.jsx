@@ -14,6 +14,7 @@ import {
   WrapTitleAndText,
 } from './PictureInfo.styled';
 import { useTranslation } from 'react-i18next';
+
 import { useLocation, useParams } from 'react-router-dom';
 import { CommonButton } from 'components/common/commonButton/button';
 import { useEffect, useState } from 'react';
@@ -33,11 +34,13 @@ import { useMedia } from 'react-use';
 export const PictureInfo = () => {
   const [picture, setPicure] = useState(null);
   const [loading, setLoading] = useState(false);
-  const { paintingId } = useParams();
   const leng = useFeatureStore(state => state.leng);
   const setRefKey = useFeatureStore(state => state.setRefKey);
-  const location = useLocation();
   const [t] = useTranslation();
+  const location = useLocation();
+  const { paintingId } = useParams();
+  const filter = location.state?.filter || 'Всі';
+  const placeFilter = location.state?.placeFilter || null;
 
   useEffect(() => {
     setLoading(true);
@@ -57,8 +60,17 @@ export const PictureInfo = () => {
   if (!picture) {
     return (
       <>
-        <NavLinkButton to={'/list_pictures'}>
-          {/* location.state?.from ?? '/' */}
+        {/* <NavLinkButton to={'/list_pictures'}>  було до правок
+          <CommonButton text={t('button.back')} />
+        </NavLinkButton> */}
+        <NavLinkButton
+          to={location.state?.from ?? '/list_pictures'}
+          state={{
+            filter,
+            placeFilter,
+            refKey: paintingId,
+          }}
+        >
           <CommonButton text={t('button.back')} />
         </NavLinkButton>
         {loading && (
