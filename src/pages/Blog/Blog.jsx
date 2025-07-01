@@ -24,6 +24,7 @@ import { ThreeDots } from 'react-loader-spinner';
 import { Wrap } from 'components/common/default/defaultComponent.styled';
 import { useMedia } from 'react-use';
 import { Blog } from 'components/Layout/Layout.styled';
+import { Seo } from 'components/Seo/Seo';
 
 // const styleDefoult = {
 //   height: '400px',
@@ -76,6 +77,12 @@ const BlogPage = memo(() => {
 
   return (
     <>
+      <Seo
+        title="Блог Наталі Шкарупети — мистецтво, астрологія, натхнення"
+        description="Роздуми, творчі практики та особистий досвід у поєднанні мистецтва і глибинного пізнання."
+        url="https://shkarupeta.art/blog"
+        image="https://shkarupeta.art/preview-blog.jpg"
+      />
       {!isMobile && (
         <Link to={'/'}>
           <ButtonHome />

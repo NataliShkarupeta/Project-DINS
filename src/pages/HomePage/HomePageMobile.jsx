@@ -7,6 +7,7 @@ import { PhotoWrap } from './HomePage.styled';
 import { useTranslation } from 'react-i18next';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { useEffect} from 'react';
+import { Seo } from 'components/Seo/Seo';
 
 export const HomePageMobile = () => {
   const setName = useFeatureStore(store => store.setName);
@@ -30,6 +31,11 @@ export const HomePageMobile = () => {
   const [t] = useTranslation();
   return (
     <>
+     <Seo
+            title="Наталі Шкарупета — художниця і астролог"
+            description="Авторські картини, астрологічні гороскопи й творчий простір Наталі Шкарупети."
+            url="https://shkarupeta.art"
+          />
       <WrapNameText >
         <WrapNameNobile>
           <p>Natali</p>

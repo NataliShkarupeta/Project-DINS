@@ -21,6 +21,7 @@ import { CommonButton } from 'components/common/commonButton/button';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { useMedia } from 'react-use';
 import { LoaderMobile } from './LoaderMobile';
+import { Seo } from 'components/Seo/Seo';
 
 const Gallary = () => {
   const [loader, setLoading] = useState(true);
@@ -70,6 +71,12 @@ const Gallary = () => {
 
   return (
     <div>
+      <Seo
+        title="Укрїнська художниця Наталі Шкарупета "
+        description="Переглянь авторську галерею живопису Наталі. Глибокі образи та емоції на полотні."
+        url="https://shkarupeta.art/painting"
+        image="https://shkarupeta.art/meta/painting-preview.jpg"
+      />
       {loader ? (
         <motion.div key="loader">
           {!isMobile && !isTabletM ? (

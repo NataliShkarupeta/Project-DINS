@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { useFeatureStore } from 'components/Features/Features/store';
 import { useEffect } from 'react';
 import { useMedia } from 'react-use';
+import { Seo } from 'components/Seo/Seo';
 
 export const HomePage = ({ setMore }) => {
   const [t] = useTranslation();
@@ -34,7 +35,13 @@ export const HomePage = ({ setMore }) => {
 
   return (
     <>
-     {!isTabletM && <Motto>{t('info')}</Motto>}
+      <Seo
+        title="Наталі Шкарупета — художниця і астролог"
+        description="Авторські картини, астрологічні гороскопи та творчий простір Наталі Шкарупети."
+        url="https://shkarupeta.art"
+        image="https://shkarupeta.art/meta/main-preview.jpg"
+      />
+      {!isTabletM && <Motto>{t('info')}</Motto>}
       <NameAndPhoto>
         <WrapName>
           <Name>
@@ -46,7 +53,7 @@ export const HomePage = ({ setMore }) => {
 
         <PhotoWrap></PhotoWrap>
       </NameAndPhoto>
-      <div style={{position:'relative'}}>
+      <div style={{ position: 'relative' }}>
         <Article>
           {t('aboutMe')} <br /> {t('aboutMe1')}
         </Article>

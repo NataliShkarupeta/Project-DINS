@@ -22,6 +22,7 @@ import {
   WrapVersion,
 } from './Astrology.styled';
 import AnimatedList from './AnimatedList';
+import { Seo } from 'components/Seo/Seo';
 
 const AstrologyPage = () => {
   const [t] = useTranslation();
@@ -35,6 +36,12 @@ const AstrologyPage = () => {
 
   return (
     <>
+      <Seo
+        title="Астролог Наталі Шкарупета"
+        description="Індивідуальні гороскопи та консультації"
+        url="https://shkarupeta.art/astrology"
+        image="https://shkarupeta.art/meta/astrology-preview.jpg"
+      />
       {!isMobile && (
         <Link to={'/'}>
           <ButtonHome />
@@ -42,7 +49,6 @@ const AstrologyPage = () => {
       )}
       <H2 style={{ paddingLeft: '16px' }}> {t('astrologyPage.title')}</H2>
 
-   
       <Content>
         <Background> </Background>
         <DescriptionBlok>

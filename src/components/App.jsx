@@ -46,8 +46,11 @@ export const App = () => {
       <ThemeProvider theme={mainThema ? theme : themeSecond}>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Natali Shkarupera</title>
-          <meta name="description" content="Natali Shkarupeta" />
+          <title>Наталі Шкарупета — художниця, астролог</title>
+          <meta
+            name="description"
+            content="Авторські картини, астрологічні консультації та натхнення від Наталі Шкарупети."
+          />
         </Helmet>
         <Routes>
           <Route
