@@ -72,7 +72,7 @@ const Gallary = () => {
   return (
     <div>
       <Seo
-        title="Укрїнська художниця Наталі Шкарупета "
+        title="Українська художниця Наталі Шкарупета "
         description="Переглянь авторську галерею живопису Наталі. Глибокі образи та емоції на полотні."
         url="https://shkarupeta.art/painting"
         image="https://shkarupeta.art/meta/painting-preview.jpg"

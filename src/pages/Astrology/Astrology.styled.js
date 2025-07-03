@@ -1,5 +1,6 @@
-import styled from 'styled-components';
 import img from '../../images/astrology/image.png';
+import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const DescriptionBlok = styled.div`
   display: flex;
@@ -90,6 +91,13 @@ export const Background = styled.p`
   filter: blur(8px);
   width: 100%;
   height: 100%;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
 `;
 export const Content = styled.p`
   position: relative;
@@ -159,7 +167,7 @@ export const Explanation = styled.p`
 
 export const H3 = styled.h3`
   padding-left: ${p => p.theme.space[3]}px;
-  
+
   @media screen and (${p => p.theme.media.s}) {
     display: flex;
     align-items: center;
@@ -172,7 +180,6 @@ export const H3 = styled.h3`
   }
   @media screen and (${p => p.theme.media.l}) {
     font-size: ${p => p.theme.fontSizes[3]}px;
-
   }
   @media screen and (${p => p.theme.media.xl}) {
     font-size: ${p => p.theme.fontSizes[4]}px;
@@ -207,8 +214,6 @@ export const RedBallBefore = styled.div`
   }
 `;
 
-
-
 export const QuestionsBlock = styled.div`
   display: flex;
   gap: 20px;
@@ -227,7 +232,6 @@ export const QuestionsBlock = styled.div`
     flex-direction: column;
     gap: 10px;
   }
-  
 `;
 
 export const When = styled.p`
@@ -257,9 +261,67 @@ export const When = styled.p`
 `;
 
 export const ListWrapper = styled.div`
-
   @media screen and (${p => p.theme.media.l}) {
     margin: 20px auto;
     max-width: 700px;
+  }
+`;
+
+const pulse = keyframes`
+  0% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0 0 10px ${p => p.theme.colors.primary};
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+`;
+
+export const TelegramButton = styled(motion.a)`
+  font-family: ${p => p.theme.fonts.nameBtwBt};
+  color: ${p => p.theme.colors.therd};
+  font-style: italic;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: ${p => p.theme.colors.colForBg};
+  font-weight: ${p => p.theme.fontWeights.body};
+  border: ${p => p.theme.borders.normal};
+  border-radius: 8px;
+  border-color: ${p => p.theme.colors.forBut};
+  padding: 8px 14px;
+
+  font-size: 18px;
+  transition: all 0.3s ease;
+  animation: ${pulse} 3s infinite;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: ${p => p.theme.colors.primary};
+    border-color: ${p => p.theme.colors.primary};
+    transform: scale(1.05);
+  }
+
+  @media screen and (${p => p.theme.media.s}) {
+    font-size: ${p => p.theme.fontSizes[1]}px;
+    padding: 4px 6px;
+  }
+  @media screen and (${p => p.theme.media.m}) {
+    font-size: ${p => p.theme.fontSizes[2]}px;
+    padding: 6px 8px;
+  }
+  @media screen and (${p => p.theme.media.l}) {
+    font-size: ${p => p.theme.fontSizes[3]}px;
+    padding: 8px 10px;
   }
 `;

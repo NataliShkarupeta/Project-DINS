@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useMedia } from 'react-use';
+import { useInView } from 'react-intersection-observer';
 import {
   AboutWork,
   Background,
@@ -20,9 +21,12 @@ import {
   VersionExpl,
   When,
   WrapVersion,
+  TelegramButton,
+  Wrapper,
 } from './Astrology.styled';
 import AnimatedList from './AnimatedList';
 import { Seo } from 'components/Seo/Seo';
+import { FaTelegramPlane } from 'react-icons/fa';
 
 const AstrologyPage = () => {
   const [t] = useTranslation();
@@ -48,7 +52,6 @@ const AstrologyPage = () => {
         </Link>
       )}
       <H2 style={{ paddingLeft: '16px' }}> {t('astrologyPage.title')}</H2>
-
       <Content>
         <Background> </Background>
         <DescriptionBlok>
@@ -67,7 +70,6 @@ const AstrologyPage = () => {
         <When> Деякі з можливих "коли" :</When>
         <AnimatedList />
       </QuestionsBlock>
-
       <AboutWork>
         <div>
           <H3>{t('astrologyPage.mywork.general')}</H3>
@@ -109,8 +111,33 @@ const AstrologyPage = () => {
           </WrapVersion>
         )}
       </AboutWork>
+      <TelegramLinkButton />
       <Text>{t('astrologyPage.mywork.aboutMain')}</Text>
     </>
+  );
+};
+
+const TelegramLinkButton = () => {
+  const [t] = useTranslation();
+  const { ref, inView } = useInView({
+    triggerOnce: true, // тільки один раз при появі
+    threshold: 0.2, // активується, коли 20% елемента видно
+  });
+
+  return (
+    <Wrapper ref={ref}>
+      <TelegramButton
+        href="https://t.me/NataliShkarupeta"
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={inView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        <FaTelegramPlane size={20} />
+        {t('astrologyPage.telegramButton')}
+      </TelegramButton>
+    </Wrapper>
   );
 };
 

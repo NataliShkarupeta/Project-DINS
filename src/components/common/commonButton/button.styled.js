@@ -20,4 +20,5 @@ export const Button = styled.button`
      
      font-size: ${p => p.theme.fontSizes[0]}px;
   }
+  
 `;
